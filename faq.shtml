@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<!-- $Id$ -->
+<link rev="made" href="mailto:danmc@users.sourceforge.net">
+<title>PCB F.A.Q.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="DESCRIPTION" content="PCB:  Interactive printed circuit board editor">
+<meta name="KEYWORDS" content="
+pcb,
+PCB,
+pwb,
+PWB,
+printed circuit board,
+gerber,
+rs274x,
+">
+</head>
+
+<!-- Start the main page table -->
+<!--#include virtual="page_start.incl"-->
+
+<!-- The main action area -->
+    <center>
+    <font face="helvetica, arial" size="+2">
+      PCB F.A.Q.
+    </font>
+    <br>
+    <br>
+    </center>
+    
+    <font face="helvetica, arial">
+    <H2>Can I run PCB on my favorite operating system?</H2>
+    <p>
+	PCB should run under any unix-like operating system that has X11 installed.
+    </p>
+    
+    <H2>When I try to bootstrap and build the CVS version, autogen.sh complains of configure.in missing</H2>
+    <p>
+    Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.
+    Try running	"<code>autoconf --version</code>" 
+    to figure out what version
+    you have.
+    </p>
+
+    </font>
+
+  </td>
+
+</tr>
+
+<!-- The left hand column -->
+<!--#include virtual="left_column.incl"-->
+
+</table>
+<p>
+
+<!--#include virtual="main_footer.incl"-->
+
+
+</body>
+</html>
