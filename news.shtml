@@ -36,6 +36,61 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20040903">Development snapshot 20040903 available</A></H2>
+    <p>
+      A new snapshot, pcb-20040903, release is available.  As always, this is
+      a snapshot of a work in progress.  Thanks to everyone who has provided
+      feedback.  A summary of the changes since the last snapshot is:
+      </p>
+    <UL>
+      <LI> enable -Wall when compiling with gcc.  Many compiler warnings have
+        been fixed.
+      </LI>
+
+      <LI> add a short man page which refers the user to the real documentation
+      </LI>
+
+      <LI> Added ExecuteFile(file) action which allows the execution of several
+        actions contained in a text file.
+      </LI>
+
+      <LI> Added -script &lt;file&gt; flag which specifies a file containing actions
+        to be executed upon startup.
+      </LI>
+
+      <LI> Various documentation improvements
+      </LI>
+      
+      <LI> Protect some gcc extensions with tests for gcc.  This allows
+        compilation with the IRIX c compiler.
+      </LI>
+
+      <LI> Updated the ~geda library 150 and 300 mil width SOIC packages
+        to remove silk on pads and to more closely follow the IPC
+        recommendations
+      </LI>
+
+      <LI> Added support for menu accelerators.
+      </LI>
+
+      <LI> segfault when breaking apart an element with no element selected
+        bug fixed.
+      </LI>
+
+      <LI> autorouter improvements
+      </LI>
+      
+      <LI> added more 400mil DIP packages to ~geda library
+      </LI>
+
+      <LI> fix a trace optimizer bug which produced a segfault
+      </LI>
+
+      <LI> other various bug fixes
+      </LI>
+    </UL>
+
+    <HR>
     <H2><A NAME="20040530">Development snapshot 20040530 available</A></H2>
     <p>
        This has been an exciting 3 months for PCB.  Many improvements have
