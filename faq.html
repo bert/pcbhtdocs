@@ -41,12 +41,35 @@ rs274x,
     </center>
     
     <font face="helvetica, arial">
+    <UL>
+    <LI><A HREF="#windows">What about PCB under Windows?</A></LI>
+
+    <LI><A HREF="#appdefault">When I build PCB in cygwin (or Mac OS X) and start it within
+    XFree86, it comes up looking just fine but it doesn't respond to
+    keyboard chars, nor does it seem to have functional menus. I can
+    click on and highlight any menu heading, but nothing
+    drops down.</A></LI>
+
+    <LI><A HREF="#wrongautconf">When I try to bootstrap and build the CVS version,
+    autogen.sh complains of configure.in missing</A></LI>
+
+    <LI><A HREF="#ghostscript">How can I get Ghostscript to read the Postscript output from PCB?</A></LI>
+
+    <LI><A HREF="#tcltk"><tt>configure</tt> complains that wish is not found, but I
+    have TCL/TK installed!</A></LI>
+
+    <LI><A HREF="#flex">When compiling, yywrap is missing during linking.</A></LI>
+
+    </UL>
+
+    <HR>
+
     <H2>Can I run PCB on my favorite operating system?</H2>
     <p>
 	PCB should run under any unix-like operating system that has X11 installed.
     </p>
     
-    <H2>What about PCB under Windows?</H2>
+    <H2><A NAME="#windows">What about PCB under Windows?</A></H2>
     <p>
 	Although a native windows port of PCB does not exist, PCB has
 	been compiled successfully under cygwin.  You will need
@@ -55,11 +78,13 @@ rs274x,
 	developers and support for this port may be lacking.
     </p>
    
-    <H2>When I build PCB in cygwin (or Mac OS X) and start it within
+    <HR>
+
+    <H2><A NAME="#appdefault">When I build PCB in cygwin (or Mac OS X) and start it within
     XFree86, it comes up looking just fine but it doesn't respond to
     keyboard chars, nor does it seem to have functional menus. I can
     click on and highlight any menu heading, but nothing
-    drops down.
+    drops down.</A>
     </H2>
     <p>
     This is the symptom when PCB can't find its X application defaults
@@ -69,7 +94,10 @@ rs274x,
     on 2003-11-08.  Please make sure your sources are newer than this.
     </p>
 
-    <H2>When I try to bootstrap and build the CVS version, autogen.sh complains of configure.in missing</H2>
+    <HR>
+
+    <H2><A NAME="#wrongautconf">When I try to bootstrap and build the CVS version,
+    autogen.sh complains of configure.in missing</A></H2>
     <p>
     Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.
     Try running	"<code>autoconf --version</code>" 
@@ -77,13 +105,17 @@ rs274x,
     you have.
     </p>
     
-    <H2>How can I get Ghostscript to read the Postscript output from PCB?</H2>
+    <HR>
+
+    <H2><A NAME="#ghostscript">How can I get Ghostscript to read the Postscript output from PCB?</A></H2>
     <p>
     Select a page size other than <tt>executive</tt>.
     </p>
 
-    <H2><tt>configure</tt> complains that wish is not found, but I
-    have TCL/TK installed!</H2>
+    <HR>
+
+    <H2><A NAME="#tcltk"><tt>configure</tt> complains that wish is not found, but I
+    have TCL/TK installed!</A></H2>
     <p>
     If you get a message like the following:<br>
     <tt>
@@ -108,6 +140,30 @@ configure: error: Did not find the wish executible.  You need to make sure
     Now when you run the <tt>./configure</tt> script, it should be
     possible to find wish.
     </p>
+
+    <HR>
+
+    <H2><A NAME="#flex">When compiling, yywrap is missing during linking.</A></H2>
+    <P>
+    If you get a message like the following:<BR>
+    <PRE>
+    Undefined         first referenced
+     symbol                in file
+     yywrap               parse_l.o
+     ld: fatal: Symbol referencing errors. No output....
+    </PRE>
+    <BR>when trying to compile PCB, it is probably because you do not have
+    <A HREF="http://www.gnu.org/software/flex/flex.html">flex</A> installed
+    on your system or the <tt>configure</tt> script did not find it.  You 
+    may need to help out <tt>configure</tt> if flex is not installed in the
+    standard system library directory.  For example, if you have installed 
+    flex in <tt>/opt/flex</tt> then you'll want to use something like:<br>
+    <tt>env LDFLAGS="-L/opt/flex/lib" ./configure</tt><br>
+    to make sure the linker can find libfl.a.
+    </P>
+
+    <HR>
+
     </font>
 
   </td>
