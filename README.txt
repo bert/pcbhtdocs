@@ -14,4 +14,3 @@ To modify the web pages:
 -) run make again
 
 -) check in the .html files
-
