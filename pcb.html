@@ -21,6 +21,7 @@ board layout system for <code>X11</code>.
 <ul>
 <li><a href="#Copying">Copying</a>:                 <code>Pcb</code> is freely redistributable! 
 <li><a href="#History">History</a>:                 How it all began. 
+<li><a href="#Overview">Overview</a>:                An overview of <code>Pcb</code>. 
 <li><a href="#Intro">Intro</a>:                   A short description of the basic objects. 
 <li><a href="#Getting%20Started">Getting Started</a>:         Introduction to <code>Pcb</code>. 
 <li><a href="#User%20Commands">User Commands</a>:           User commands of <code>Pcb</code>. 
@@ -30,6 +31,8 @@ board layout system for <code>X11</code>.
 <li><a href="#Library%20Creation">Library Creation</a>:        Detailed description of symbol library creation. 
 <li><a href="#Schematic%20Frontends">Schematic Frontends</a>:     Schematic capture programs that work with PCB. 
 <li><a href="#Installation">Installation</a>:            Compiling, installing and troubleshooting. 
+<li><a href="#Custom%20Menus">Custom Menus</a>:            Customizing the menu bar. 
+<li><a href="#Index">Index</a>:                   The Index. 
 </ul>
 
 <p><hr>
@@ -57,7 +60,7 @@ MERCHANT-ABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 
 <p><hr>
 Node:<a name="History">History</a>,
-Next:<a rel=next href="#Intro">Intro</a>,
+Next:<a rel=next href="#Overview">Overview</a>,
 Previous:<a rel=previous href="#Copying">Copying</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
@@ -65,8 +68,9 @@ Up:<a rel=up href="#Top">Top</a>
 <h1>History</h1>
 
 <p><code>Pcb</code> is a handy tool for laying out printed circuit
-boards. 
-It was first written by Thomas Nau for an Atari ST in 1990 and
+boards.
+
+<p><code>Pcb</code> was first written by Thomas Nau for an Atari ST in 1990 and
 ported to <code>UNIX</code> and <code>X11</code> in 1994. 
 It was not intended as a professional layout system,
 but as a tool which supports people who do some
@@ -156,9 +160,36 @@ files.  Thanks to all of them. If you feel left out of this list, I
 appologize; please send me an e-mail and I'll try to correct the omission.
 
 <p><hr>
+Node:<a name="Overview">Overview</a>,
+Next:<a rel=next href="#Intro">Intro</a>,
+Previous:<a rel=previous href="#History">History</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Overview</h1>
+
+<p>Pcb is a printed circuit board editor for the X11 window system. 
+Pcb includes many professional features such as:
+<ul>
+<li>Up to 8 copper layer designs
+<li>RS-274-X (Gerber) output
+<li>NC Drill output
+<li>Centroid (X-Y) data output
+<li>Postscript and Encapsulated Postscript output
+<li>Autorouter
+<li>Trace optimizer
+<li>Rats nest
+<li>Design Rule Checker (DRC)
+<li>Connectivity verification
+<li>Pcb is Free Software
+<li>Can interoperate with free schematic capture tools such as gEDA and
+  xcircuit
+</ul>
+
+<p><hr>
 Node:<a name="Intro">Intro</a>,
 Next:<a rel=next href="#Getting%20Started">Getting Started</a>,
-Previous:<a rel=previous href="#History">History</a>,
+Previous:<a rel=previous href="#Overview">Overview</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
 
@@ -1744,9 +1775,14 @@ Up:<a rel=up href="#Getting%20Started">Getting Started</a>
 
 <p><code>Pcb</code> now has support for device drivers,
 <code>PostScript</code>, <em>encapsulated PostScript</em>,
-and <em>Gerber X</em> drivers are
-available so far.  The <em>Gerber X</em>
-driver generates a NC drill file for automated drilling. 
+and <em>Gerber RS-274-X</em> drivers are
+available so far.  The <em>Gerber RS-274-X</em>
+driver additionally generates a numerical control (NC) drill file for
+automated drilling,
+a bill of materials file to assist in materials procurement and
+inventory control, and a centroid (X-Y) file which includes the
+centroid data needed
+by automatic assembly (pick and place) machines. 
  I recommend the use of <code>GhostScript</code> if you
 don't have a <code>PostScript</code> printer for handling the PostScript
 output. Printing always generates
@@ -2748,7 +2784,7 @@ Up:<a rel=up href="#X11%20Interface">X11 Interface</a>
 <p>All user accessible commands may be bound to almost any <code>X</code> event. Almost
 no default binding for commands is done in the binaries, so it is vital for the
 application that at least a system-wide application resource file exists. 
-This file normally resides in the <code>X11/lib/app-defaults</code> directory and
+This file normally resides in the <code>share/pcb</code> directory and
 is called <code>Pcb</code>. The bindings to which the manual refers to are the
 ones as defined by the shipped resource file. Besides binding an action to
 an X11 event, you can also execute any action command using a ":" command
@@ -2818,6 +2854,14 @@ Default:
 !Mod1 Shift&lt;Key&gt;s: Change2ndSize(Object, -5)
 </pre>
 
+<dt><code>ChangeFlag(Object|SelectElements|SelectedPins|SelectedVias|Selected,thermal|octagon|square,0|1)</code>
+<dd>Sets/clears the indicated flag.  This adds/removes thermals, adds/removes the flag
+which indicates a pin/pad should be square, or adds/removes the flag which
+indicates a pin/pad should be octagonal.
+<pre>:ChangeFlag(SelectedVias,thermal,1)
+:ChangeFlag(SelectedPads,square,0)
+</pre>
+
 <br><dt><code>ChangeHole(Object|SelectedVias)</code>
 <dd>This action routine converts a via to and from a hole.  A hole is
 a via that has no copper annulus. The drill size for the via
@@ -2868,6 +2912,13 @@ Default:
 certain pin, normally the first one, of circuits. It is also used to
 make SMD pads have square ends.
 <pre>None&lt;Key&gt;q:   ChangeSquare(Object)
+</pre>
+
+<dt><code>ClrFlag(Object|SelectElements|SelectedPins|SelectedVias|Selected,thermal|octagon|square)</code>
+<dd>Clears the indicated flag.  This removes thermals, removes the flag
+which indicates a pin/pad should be square, or removes the flag which
+indicates a pin/pad should be octagonal.
+<pre>:ClrFlag(SelectedVias,thermal)
 </pre>
 
 <br><dt><code>Command()</code>
@@ -3176,6 +3227,13 @@ Default:
 None&lt;Btn3Down&gt;,None&lt;Btn3Motion&gt;: See resource file - this is complex
 </pre>
 
+<dt><code>SetFlag(Object|SelectElements|SelectedPins|SelectedVias|Selected,thermal|octagon|square)</code>
+<dd>Sets the indicated flag.  This adds thermals, sets the flag
+which indicates a pin/pad should be square, or sets the flag which
+indicates a pin/pad should be octagonal.
+<pre>:SetFlag(Selected,thermal)
+</pre>
+
 <br><dt><code>SetValue(Grid|LineSize|TextScale|ViaDrillingHole|ViaSize|Zoom, value)</code>
 <dd>Some internal values may be changed online by this function. 
 The first parameter specifies which data has to be changed. The other one
@@ -3220,6 +3278,14 @@ is hidden you won't see it on the screen and it will not appear
 on the silk layer when you print the layout.
 <pre>None&lt;Key&gt;h:	ToggleHideName(Object)
 !Shift&lt;Key&gt;h:	ToggleHideName(SelectedElements)
+</pre>
+
+<br><dt><code>ToggleVisibility(Layer)</code>
+<dd>Toggles the visibility of the layer.
+<pre>Mod1&lt;Key&gt;1:	ToggleVisibility(1)
+Mod1&lt;Key&gt;2:	ToggleVisibility(2)
+Mod1&lt;Key&gt;3:	ToggleVisibility(3)
+Mod1&lt;Key&gt;4:	ToggleVisibility(4)
 </pre>
 
 <br><dt><code>Undo()</code>
@@ -4145,7 +4211,9 @@ that reads:
 </pre>
 The <code>CAP0402</code> portion comes directly from the third field in
 <code>example.list</code> and the longer description comes from descriptions
-macros in <code>example.m4</code>.
+macros in <code>example.m4</code>.  Please note that any extra white space
+at the end of a line in the <code>.list</code> files will cause them to
+not work properly.
 
 <h3>Troubleshooting Old Style Libraries</h3>
 
@@ -4199,7 +4267,9 @@ PCB program.  A single footprint is saved in each file.
 <li>Make the component layer active. 
 <li>For a leaded part, select the via tool and place vias where the
 pads for the part should go.  For surface mount pads, draw line
-segments. 
+segments.  Note that until the footprint is completed, the surface
+mount pads will remain rounded.  Currently a rectangle or polygon
+may not be used as a pad. 
 <li>For each via and line segment which will become a pad, select it,
 right-click to bring up the popup menu and choose "edit name".  Enter
 the pin number and press enter.  Alternatively, you can use the "n"
@@ -4467,6 +4537,7 @@ page for PCB which can be found from the PCB homepage at
 
 <p><hr>
 Node:<a name="Installation">Installation</a>,
+Next:<a rel=next href="#Custom%20Menus">Custom Menus</a>,
 Previous:<a rel=previous href="#Schematic%20Frontends">Schematic Frontends</a>,
 Up:<a rel=up href="#Top">Top</a>
 <br>
@@ -4742,6 +4813,192 @@ FTP sites.
 <code>TeX-3.0</code> failed, <code>TeX-3.14</code> worked just fine. Check our FTP server
 <em>ftp.uni-ulm.de</em> for ready-to-print versions of the manuals.
 
+<p><hr>
+Node:<a name="Custom%20Menus">Custom Menus</a>,
+Next:<a rel=next href="#Index">Index</a>,
+Previous:<a rel=previous href="#Installation">Installation</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
+<h1>Customizing the Menus</h1>
+
+<p>The menu system is driven off a data file that contains
+<dfn>resources</dfn>.  A resource is a hierarchical description of a data
+tree which, in this case, is mapped to the hierarchical menus used by
+Pcb.
+
+<ul>
+<li><a href="#Resource%20Syntax">Resource Syntax</a>:           What a resource file looks like. 
+<li><a href="#Menu%20Definitions">Menu Definitions</a>:          Using a resource to define a menu. 
+<li><a href="#Menu%20Files%20and%20Defaults">Menu Files and Defaults</a>:   Where Pcb looks for its menu resource. 
+</ul>
+
+<p><hr>
+Node:<a name="Resource%20Syntax">Resource Syntax</a>,
+Next:<a rel=next href="#Menu%20Definitions">Menu Definitions</a>,
+Up:<a rel=up href="#Custom%20Menus">Custom Menus</a>
+<br>
+
+<h2>Resource Syntax</h2>
+
+<p>A resource file is a simple text file.  It contains curly braces to
+group things, spaces between things, and double quotes when strings
+need to include spaces.  There are four fundamental ways of adding
+data to a resource.
+
+<p>First, a string (either a single word or a quoted string with spaces,
+we call both "strings" in this appendix) can be added all by itself,
+to add a string resource to the current resource.  This is used, for
+example, to define the string printed on a menu button.  In this
+example, four strings are added to the <var>File</var> resource:
+
+<pre>File = {
+  Sample
+  "longer sample"
+  some text
+}
+</pre>
+
+<p>Second, a named string may be added by giving two strings separated by
+an equals sign.  This is used to specify X resources and a few other
+optional parameters of menus, for example.  Note that a string all by
+itself is thus an "unnamed" string.
+
+<pre>{"Layer groups" foreground=red sensitive=false}
+</pre>
+
+<p>Third, an unnamed subresource may be added.  This is used to create
+submenus and menu buttons.  To add a subresource, simply group other
+things in curly braces.  This example describes a resource containing
+one string and three subresources:
+
+<pre>{File
+  {New do_new()}
+  {Save do_save()}
+  {Quit do_quit()}
+}
+</pre>
+
+<p>Lastly, a named subresource may be added by prefixing an unnamed
+subresource with a string and an equals sign, just as when naming
+strings.  This syntax is used to name the resources used for the main
+menu and popup menus:
+
+<pre>MainMenu = {
+  <small>...</small>
+  }
+</pre>
+
+<p>Additionally, the menu parser allows for "hooks" whereby portions of
+the menu system can be programmatically created at runtime by the
+application.  These hooks are invoked by a single word preceeded by an
+at sign, such as this example where most of the Sizes menu is created
+automatically:
+
+<pre>{Sizes
+    @sizes
+    {"Adjust active sizes ..." AdjustStyle(0)}
+    }
+</pre>
+
+<p><hr>
+Node:<a name="Menu%20Definitions">Menu Definitions</a>,
+Next:<a rel=next href="#Menu%20Files%20and%20Defaults">Menu Files and Defaults</a>,
+Previous:<a rel=previous href="#Resource%20Syntax">Resource Syntax</a>,
+Up:<a rel=up href="#Custom%20Menus">Custom Menus</a>
+<br>
+
+<h2>Menu Definitions</h2>
+
+<p>To best understand this section, you should find the
+<code>pcb-menu.res</code> file that your Pcb uses and refer to it for
+examples (see <a href="#Menu%20Files%20and%20Defaults">Menu Files and Defaults</a>).
+
+<p>A resource defines a menu when it meets certain semantic requirements. 
+The menu heirarchy is reflected as a heirarchy of unnamed
+subresources, with the first string of each subresource defining the
+label used for the menu button.  A subresource that itself contains
+subresources becomes a submenu, a subresource that does not becomes a
+button.
+
+<p>A submenu should only contain subresources for the buttons or submenus
+within that submenu.  Two exceptions are allowed: an initial string
+sets the label, and the string "-" (a single dash) will create a
+separator.
+
+<p>A button should not contain subresources, but will contain many
+strings, named and unnamed.  The first member shall be an unnamed
+string which is the label for the button.  Any other unnamed strings
+within the button's resource will be used as actions (much like the
+.Xdefaults action strings), which are functions that will be called
+when the button is pressed (or popped up, or created, depending on the
+action).  As a convenience, if a left parenthesis is seen, the current
+"word" will continue at least until the matching right parenthesis. 
+This allows you to pass strings with spaces as arguments to actions
+without needing to quote the action.
+
+<p>Named resources in button resources will be used as X resources.  Such
+resources can be used to set the font, color, and spacing of buttons. 
+As a convenience, "fg" can be used as an abbreviation for "foreground".
+
+<p>Within the menu's resource file, Pcb will look for a few key named
+subresources.  At the moment, the only one it looks for is one called
+<code>MainMenu</code>.  This will be used for the main menu bar.  In the
+future, other named subresources will be used for popup resources.
+
+<p>Given all this, a small sample <code>pcb-menu.res</code> would be:
+
+<pre>MainMenu = {
+  {File
+    {"Load layout" Load(Layout)}
+    -
+    {"Quit Program" Quit() fg=red font=10x20}
+  }
+}
+</pre>
+
+<p>Within the Pcb sources are specially crafted comments that mark all
+the actions, flags, menu hooks, and whatnot that Pcb offers.  Read the
+file <code>src/gather-actions</code> in the Pcb source tree for
+documentation for these comments.
+
+<p><hr>
+Node:<a name="Menu%20Files%20and%20Defaults">Menu Files and Defaults</a>,
+Previous:<a rel=previous href="#Menu%20Definitions">Menu Definitions</a>,
+Up:<a rel=up href="#Custom%20Menus">Custom Menus</a>
+<br>
+
+<h2>Menu Files and Defaults</h2>
+
+<p>Pcb will look for a file which defines its menus, trying the following
+names:
+
+<pre>./pcb-menu.res
+$HOME/.pcb-menu.res
+$PCBLIBDIR/pcb-menu.res
+&lt;internal&gt;
+</pre>
+
+<p>Note that <var>pcblibdir</var> defaults to <code>/usr/local/share/pcb</code>
+(hence, <code>/usr/local/share/pcb/pcb-menu.res</code>).  The
+<code>&lt;internal&gt;</code> entry refers to a menu definition within the Pcb
+application itself.  The master file for all this is the file
+<code>src/pcb-menu.res</code> in the Pcb source tree.  This master source is
+used to create the internal menu definition as well as being installed
+in <code>$pcblibdir</code>.
+
+<p>You can view the internal menu definition (the default) by running
+<code>pcb</code> with the <code>-dumpmenu</code> option, like this:
+
+<pre>pcb -dumpmenu
+</pre>
+
+<p><hr>
+Node:<a name="Index">Index</a>,
+Previous:<a rel=previous href="#Custom%20Menus">Custom Menus</a>,
+Up:<a rel=up href="#Top">Top</a>
+<br>
+
 <h1>Index of Resources</h1>
 
 <ul compact>
@@ -4864,11 +5121,13 @@ FTP sites.
 <li><code>Atomic()</code>: <a href="#Actions">Actions</a>
 <li><code>Bell()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeDrillSize()</code>: <a href="#Actions">Actions</a>
+<li><code>ChangeFlag()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeHole()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeName()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeOctagon()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeSize()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeSquare()</code>: <a href="#Actions">Actions</a>
+<li><code>ClrFlag()</code>: <a href="#Actions">Actions</a>
 <li><code>Command()</code>: <a href="#Actions">Actions</a>
 <li><code>Connection()</code>: <a href="#Actions">Actions</a>
 <li><code>DeleteRats()</code>: <a href="#Actions">Actions</a>
@@ -4891,10 +5150,12 @@ FTP sites.
 <li><code>RouteStyle()</code>: <a href="#Actions">Actions</a>
 <li><code>Save()</code>: <a href="#Actions">Actions</a>
 <li><code>Select()</code>: <a href="#Actions">Actions</a>
+<li><code>SetFlag()</code>: <a href="#Actions">Actions</a>
 <li><code>SetValue()</code>: <a href="#Actions">Actions</a>
 <li><code>SwapSides()</code>: <a href="#Actions">Actions</a>
 <li><code>SwitchDrawingLayer()</code>: <a href="#Actions">Actions</a>
 <li><code>ToggleHideName()</code>: <a href="#Actions">Actions</a>
+<li><code>ToggleVisibility()</code>: <a href="#Actions">Actions</a>
 <li><code>Undo()</code>: <a href="#Actions">Actions</a>
 <li><code>Unselect()</code>: <a href="#Actions">Actions</a>
 </ul>
@@ -4911,13 +5172,13 @@ FTP sites.
 <li>Alpha: <a href="#DEC%20Alpha">DEC Alpha</a>
 <li>arc: <a href="#Arc%20Objects">Arc Objects</a>
 <li>arc, an example: <a href="#Arcs">Arcs</a>
-<li>architecture: <a href="#HP">HP</a>, <a href="#Linux">Linux</a>, <a href="#SCO">SCO</a>, <a href="#DEC%20Alpha">DEC Alpha</a>, <a href="#SGI">SGI</a>, <a href="#Sun">Sun</a>
+<li>architecture: <a href="#Sun">Sun</a>, <a href="#SCO">SCO</a>, <a href="#DEC%20Alpha">DEC Alpha</a>, <a href="#SGI">SGI</a>, <a href="#HP">HP</a>, <a href="#Linux">Linux</a>
 <li>arrow tool: <a href="#Arrow%20Tool">Arrow Tool</a>
 <li>ASCII files, format of: <a href="#File%20Formats">File Formats</a>
 <li>Atari version: <a href="#History">History</a>
 <li>atomic: <a href="#Actions">Actions</a>
 <li>auto-router: <a href="#Menu">Menu</a>
-<li>backup: <a href="#Loading%20and%20Saving">Loading and Saving</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>backup: <a href="#Loading%20and%20Saving">Loading and Saving</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>basic types: <a href="#Basic%20Types">Basic Types</a>
 <li>bell: <a href="#Actions">Actions</a>
 <li>bloat: <a href="#Resources">Resources</a>
@@ -4935,7 +5196,7 @@ FTP sites.
 <li>change sizes: <a href="#Actions">Actions</a>
 <li>change square flag: <a href="#Actions">Actions</a>
 <li>change viewing side: <a href="#Actions">Actions</a>
-<li>characters per line: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>characters per line: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>clearance: <a href="#Line%20Objects">Line Objects</a>
 <li>clearance, for new lines: <a href="#Menu">Menu</a>
 <li>clipping lines to 45 degree: <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>
@@ -4951,7 +5212,7 @@ FTP sites.
 <li>connections, colors: <a href="#Resources">Resources</a>
 <li>connections, creating list of: <a href="#Connection%20Lists">Connection Lists</a>
 <li>connections, reseting: <a href="#Actions">Actions</a>
-<li>connections, reseting after element: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>connections, reseting after element: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>connections, searching for: <a href="#Actions">Actions</a>
 <li>Connects, popup menu: <a href="#Menu">Menu</a>
 <li>copy an object: <a href="#Translations">Translations</a>
@@ -4971,16 +5232,16 @@ FTP sites.
 <li>default text scaling: <a href="#Resources">Resources</a>
 <li>default translations: <a href="#Translations">Translations</a>
 <li>design rule checker, invoking: <a href="#Menu">Menu</a>
-<li>design rule checking: <a href="#Actions">Actions</a>, <a href="#Design%20Rule%20Checking">Design Rule Checking</a>
+<li>design rule checking: <a href="#Design%20Rule%20Checking">Design Rule Checking</a>, <a href="#Actions">Actions</a>
 <li>device, selecting an output: <a href="#Printing">Printing</a>
-<li>directory /tmp: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Loading%20and%20Saving">Loading and Saving</a>
+<li>directory /tmp: <a href="#Resources">Resources</a>, <a href="#Loading%20and%20Saving">Loading and Saving</a>, <a href="#Options">Options</a>
 <li>display: <a href="#Resources">Resources</a>
-<li>displaying element names: <a href="#Actions">Actions</a>, <a href="#Menu">Menu</a>
+<li>displaying element names: <a href="#Menu">Menu</a>, <a href="#Actions">Actions</a>
 <li>displaying pinout: <a href="#Actions">Actions</a>
 <li>displaying status information: <a href="#Status-line%20and%20Input-field">Status-line and Input-field</a>
 <li>DOS filenames: <a href="#Printing">Printing</a>
 <li>drawing objects: <a href="#Drawing%20and%20Removing">Drawing and Removing</a>
-<li>drc: <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>, <a href="#Design%20Rule%20Checking">Design Rule Checking</a>, <a href="#Resources">Resources</a>
+<li>drc: <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>, <a href="#Design%20Rule%20Checking">Design Rule Checking</a>, <a href="#Resources">Resources</a>
 <li>drill: <a href="#Actions">Actions</a>
 <li>drill report: <a href="#Menu">Menu</a>
 <li>drilling hole, changing of objects: <a href="#Actions">Actions</a>
@@ -4991,7 +5252,7 @@ FTP sites.
 <li>element, an example: <a href="#Elements">Elements</a>
 <li>element, an overview: <a href="#Element%20Objects">Element Objects</a>
 <li>element, color: <a href="#Resources">Resources</a>
-<li>element, command: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>element, command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>element, creating a new package: <a href="#Elements">Elements</a>
 <li>element, display names of: <a href="#Menu">Menu</a>, <a href="#Actions">Actions</a>
 <li>element, editing: <a href="#Menu">Menu</a>
@@ -5027,10 +5288,13 @@ FTP sites.
 <li>file format, library contents: <a href="#Library%20Contents%20File">Library Contents File</a>
 <li>file formats: <a href="#File%20Formats">File Formats</a>
 <li>file formats, basic types: <a href="#Basic%20Types">Basic Types</a>
-<li>file load command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
-<li>file save command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>file load command: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>file save command: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>File, popup menu: <a href="#Menu">Menu</a>
-<li>font command: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>flags, changing: <a href="#Actions">Actions</a>
+<li>flags, clearing: <a href="#Actions">Actions</a>
+<li>flags, setting: <a href="#Actions">Actions</a>
+<li>font command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>font file, format of: <a href="#Font%20File">Font File</a>
 <li>font files: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>font, an overview: <a href="#Symbol%20Objects">Symbol Objects</a>
@@ -5044,13 +5308,13 @@ FTP sites.
 <li>gEDA, how to interface with: <a href="#gEDA">gEDA</a>
 <li>GNU build system: <a href="#quickstart">quickstart</a>
 <li>GNU configure script: <a href="#running%20configure">running configure</a>
-<li>grid: <a href="#Resources">Resources</a>, <a href="#Layout%20Area">Layout Area</a>, <a href="#Resources">Resources</a>
+<li>grid: <a href="#Layout%20Area">Layout Area</a>, <a href="#Resources">Resources</a>
 <li>grid color: <a href="#Resources">Resources</a>
 <li>grid, absolute and relative: <a href="#Actions">Actions</a>
 <li>grid, alignment: <a href="#Menu">Menu</a>
 <li>grid, display: <a href="#Actions">Actions</a>, <a href="#Menu">Menu</a>
 <li>grid, setting of: <a href="#Actions">Actions</a>
-<li>groups: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>groups: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>groups, editing of: <a href="#Actions">Actions</a>
 <li>gschem, how to interface with: <a href="#gEDA">gEDA</a>
 <li>Hewlett Packard: <a href="#HP">HP</a>
@@ -5060,13 +5324,14 @@ FTP sites.
 <li>Info, popup menu: <a href="#Menu">Menu</a>
 <li>information about objects: <a href="#Actions">Actions</a>
 <li>input-field, position of: <a href="#Status-line%20and%20Input-field">Status-line and Input-field</a>
-<li>inputfield, saving entered command-line: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>inputfield, saving entered command-line: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>inputfield, start user input: <a href="#Actions">Actions</a>
 <li>install, how to: <a href="#compiling">compiling</a>
 <li>key translations: <a href="#Actions">Actions</a>
 <li>keyboard bell: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>layer controls: <a href="#Layer%20Controls">Layer Controls</a>
 <li>layer groups: <a href="#Layer%20Objects">Layer Objects</a>
+<li>layer visibility, toggling: <a href="#Actions">Actions</a>
 <li>layer, change active: <a href="#Actions">Actions</a>
 <li>layer, name of: <a href="#Resources">Resources</a>
 <li>layers, an overview: <a href="#Layer%20Objects">Layer Objects</a>
@@ -5075,7 +5340,7 @@ FTP sites.
 <li>layers, editing of groups: <a href="#Actions">Actions</a>
 <li>layers, groups: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>layers, switching on/off: <a href="#Layer%20Controls">Layer Controls</a>
-<li>layout files: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>layout files: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>layout files, format of: <a href="#Layout%20File">Layout File</a>
 <li>layout files, saving of: <a href="#User%20Commands">User Commands</a>
 <li>layout objects, an overview: <a href="#Intro">Intro</a>
@@ -5086,11 +5351,11 @@ FTP sites.
 <li>layout, merging a: <a href="#User%20Commands">User Commands</a>
 <li>layout, printing a: <a href="#Actions">Actions</a>
 <li>layout, start a new: <a href="#Actions">Actions</a>
-<li>layout-name: <a href="#User%20Commands">User Commands</a>, <a href="#Element%20Objects">Element Objects</a>
-<li>length of a pin name: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>layout-name: <a href="#Element%20Objects">Element Objects</a>, <a href="#User%20Commands">User Commands</a>
+<li>length of a pin name: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>length of outputline: <a href="#Options">Options</a>
 <li>library accuracy: <a href="#Element%20Objects">Element Objects</a>
-<li>library command: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>library command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>library contents command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>library contents file, format of: <a href="#Library%20Contents%20File">Library Contents File</a>
 <li>library creation: <a href="#Library%20Creation">Library Creation</a>
@@ -5103,7 +5368,7 @@ FTP sites.
 <li>linelength: <a href="#Resources">Resources</a>
 <li>lines, an example: <a href="#Lines">Lines</a>
 <li>lines, an overview: <a href="#Line%20Objects">Line Objects</a>
-<li>lines, clipping to 45 degree: <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>
+<li>lines, clipping to 45 degree: <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>
 <li>lines, setting of initial size: <a href="#Actions">Actions</a>
 <li>lines, size: <a href="#Resources">Resources</a>
 <li>Linux: <a href="#Linux">Linux</a>
@@ -5111,7 +5376,7 @@ FTP sites.
 <li>listing libraries: <a href="#Options">Options</a>
 <li>listing library contents: <a href="#Resources">Resources</a>
 <li>loading a layout to buffer: <a href="#User%20Commands">User Commands</a>
-<li>loading elements: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>loading elements: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>loading elements to buffer: <a href="#User%20Commands">User Commands</a>
 <li>loading files: <a href="#Actions">Actions</a>
 <li>loading fonts: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
@@ -5127,7 +5392,7 @@ FTP sites.
 <li>media, size of: <a href="#Printing">Printing</a>
 <li>menus: <a href="#Menu">Menu</a>
 <li>merging layouts: <a href="#User%20Commands">User Commands</a>
-<li>messages: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Log%20Window">Log Window</a>
+<li>messages: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Log%20Window">Log Window</a>
 <li>mirroring printout: <a href="#Printing">Printing</a>
 <li>mode selection: <a href="#Tool%20Selectors">Tool Selectors</a>
 <li>mode, selecting of: <a href="#Actions">Actions</a>
@@ -5141,7 +5406,7 @@ FTP sites.
 <li>name, change an objects: <a href="#Actions">Actions</a>
 <li>namelength of pins: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>NetBSD: <a href="#BSD">BSD</a>
-<li>netlist: <a href="#Net%20Objects">Net Objects</a>, <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>, <a href="#Rats%20Nest">Rats Nest</a>
+<li>netlist: <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>, <a href="#Rats%20Nest">Rats Nest</a>, <a href="#Resources">Resources</a>, <a href="#Net%20Objects">Net Objects</a>
 <li>Netlist Window: <a href="#Netlist%20Window">Netlist Window</a>
 <li>netlist, file format: <a href="#Netlist%20File">Netlist File</a>
 <li>netlist, reading: <a href="#Netlist%20File">Netlist File</a>
@@ -5152,8 +5417,11 @@ FTP sites.
 <li>object, creating an: <a href="#Common">Common</a>
 <li>object, drawing and removing: <a href="#Drawing%20and%20Removing">Drawing and Removing</a>
 <li>object, move an: <a href="#Translations">Translations</a>
-<li>object, removing an: <a href="#Common">Common</a>, <a href="#Translations">Translations</a>
+<li>object, removing an: <a href="#Translations">Translations</a>, <a href="#Common">Common</a>
 <li>objects, moving to current layer: <a href="#Actions">Actions</a>
+<li>octagonal flag, changing: <a href="#Actions">Actions</a>
+<li>octagonal flag, clearing: <a href="#Actions">Actions</a>
+<li>octagonal flag, setting: <a href="#Actions">Actions</a>
 <li>octagonal pins and vias: <a href="#Actions">Actions</a>
 <li>off limit color: <a href="#Resources">Resources</a>
 <li>offset of pinnames: <a href="#Resources">Resources</a>
@@ -5176,9 +5444,10 @@ FTP sites.
 <li>path for font files: <a href="#Resources">Resources</a>
 <li>path for layout files: <a href="#Resources">Resources</a>
 <li>path for libraries: <a href="#Resources">Resources</a>
-<li>PC UNIX: <a href="#Linux">Linux</a>, <a href="#BSD">BSD</a>, <a href="#SCO">SCO</a>
+<li>PC UNIX: <a href="#SCO">SCO</a>, <a href="#Linux">Linux</a>, <a href="#BSD">BSD</a>
+<li>PCB, an overview: <a href="#Overview">Overview</a>
 <li>pin color: <a href="#Resources">Resources</a>
-<li>pin, name of: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>pin, name of: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>pinout, display of: <a href="#Actions">Actions</a>
 <li>pinout, font to display pin names: <a href="#Resources">Resources</a>
 <li>pinout, zoomfactor of display: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
@@ -5192,9 +5461,9 @@ FTP sites.
 <li>polygon, closing a: <a href="#Actions">Actions</a>
 <li>popping up menus: <a href="#Menu">Menu</a>
 <li>postprocessing layout data: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
-<li>preprocessing element data: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
-<li>preprocessing font data: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
-<li>preprocessing layout data: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>preprocessing element data: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>preprocessing font data: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>preprocessing layout data: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>preventing loss of data: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Loading%20and%20Saving">Loading and Saving</a>
 <li>print command: <a href="#Printing">Printing</a>
 <li>print media: <a href="#Printing">Printing</a>, <a href="#Resources">Resources</a>
@@ -5203,34 +5472,34 @@ FTP sites.
 <li>printing a layout: <a href="#Actions">Actions</a>
 <li>printing, an example: <a href="#Printing">Printing</a>
 <li>problems: <a href="#problems">problems</a>
-<li>quit: <a href="#User%20Commands">User Commands</a>, <a href="#Actions">Actions</a>
+<li>quit: <a href="#Actions">Actions</a>, <a href="#User%20Commands">User Commands</a>
 <li>rat's nest: <a href="#User%20Commands">User Commands</a>
-<li>rat-line: <a href="#Actions">Actions</a>, <a href="#Rats%20Nest">Rats Nest</a>
-<li>rats nest: <a href="#Actions">Actions</a>, <a href="#Rats%20Nest">Rats Nest</a>, <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>
+<li>rat-line: <a href="#Rats%20Nest">Rats Nest</a>, <a href="#Actions">Actions</a>
+<li>rats nest: <a href="#Resources">Resources</a>, <a href="#Rats%20Nest">Rats Nest</a>, <a href="#Actions">Actions</a>
 <li>rats-nest: <a href="#Net%20Objects">Net Objects</a>
 <li>recover: <a href="#Actions">Actions</a>
 <li>rectangle, an example: <a href="#Polygons">Polygons</a>
-<li>redo: <a href="#Menu">Menu</a>, <a href="#Actions">Actions</a>
+<li>redo: <a href="#Actions">Actions</a>, <a href="#Menu">Menu</a>
 <li>redrawing layout: <a href="#Actions">Actions</a>
 <li>refreshing layout: <a href="#Actions">Actions</a>
 <li>release, current: <a href="#Special%20Options">Special Options</a>
 <li>removing connections: <a href="#Translations">Translations</a>
-<li>removing objects: <a href="#Translations">Translations</a>, <a href="#Common">Common</a>, <a href="#Drawing%20and%20Removing">Drawing and Removing</a>
+<li>removing objects: <a href="#Common">Common</a>, <a href="#Translations">Translations</a>, <a href="#Drawing%20and%20Removing">Drawing and Removing</a>
 <li>removing selected objects: <a href="#Actions">Actions</a>
 <li>report: <a href="#Actions">Actions</a>, <a href="#Menu">Menu</a>
-<li>reseting found connections: <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>reseting found connections: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>
 <li>resources: <a href="#Resources">Resources</a>
 <li>rotate: <a href="#Resources">Resources</a>
 <li>rotating a buffer: <a href="#Actions">Actions</a>
 <li>rotating printout: <a href="#Printing">Printing</a>
 <li>routing style: <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>, <a href="#Options">Options</a>
 <li>rubber band: <a href="#Menu">Menu</a>
-<li>rubberband: <a href="#Resources">Resources</a>, <a href="#Actions">Actions</a>
+<li>rubberband: <a href="#Actions">Actions</a>, <a href="#Resources">Resources</a>
 <li>saving connections: <a href="#Actions">Actions</a>
 <li>saving files: <a href="#Actions">Actions</a>
 <li>saving found connections: <a href="#Actions">Actions</a>
 <li>saving last entered user command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
-<li>saving layouts: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#User%20Commands">User Commands</a>, <a href="#Resources">Resources</a>, <a href="#Loading%20and%20Saving">Loading and Saving</a>
+<li>saving layouts: <a href="#Options">Options</a>, <a href="#User%20Commands">User Commands</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Loading%20and%20Saving">Loading and Saving</a>
 <li>saving, an example: <a href="#Loading%20and%20Saving">Loading and Saving</a>
 <li>scaling a printout: <a href="#Printing">Printing</a>
 <li>scanning connections: <a href="#Actions">Actions</a>
@@ -5269,7 +5538,10 @@ FTP sites.
 <li>solder mask, viewing and editing: <a href="#Menu">Menu</a>
 <li>spacing, minimum: <a href="#Design%20Rule%20Checking">Design Rule Checking</a>
 <li>speaker volume: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>square flag, changing: <a href="#Actions">Actions</a>
 <li>square flag, changing of objects: <a href="#Actions">Actions</a>
+<li>square flag, clearing: <a href="#Actions">Actions</a>
+<li>square flag, setting: <a href="#Actions">Actions</a>
 <li>start user input: <a href="#Actions">Actions</a>
 <li>starting a new layout: <a href="#Actions">Actions</a>
 <li>starting <code>Pcb</code>: <a href="#Command-Line%20Options">Command-Line Options</a>
@@ -5284,10 +5556,14 @@ FTP sites.
 <li>text, an example: <a href="#Text">Text</a>
 <li>text, an overview: <a href="#Text%20Objects">Text Objects</a>
 <li>text, default scaling: <a href="#Resources">Resources</a>
+<li>thermal flag, changing: <a href="#Actions">Actions</a>
+<li>thermal flag, clearing: <a href="#Actions">Actions</a>
+<li>thermal flag, setting: <a href="#Actions">Actions</a>
 <li>thickness of lines: <a href="#Resources">Resources</a>
 <li>thickness of objects: <a href="#Common">Common</a>
 <li>thickness of vias: <a href="#Resources">Resources</a>
 <li>thickness, changing of objects: <a href="#Actions">Actions</a>
+<li>toggle layer visilibility: <a href="#Actions">Actions</a>
 <li>tool selection: <a href="#Tool%20Selectors">Tool Selectors</a>
 <li>tool, arrow: <a href="#Arrow%20Tool">Arrow Tool</a>
 <li>trace optimizer: <a href="#Trace%20Optimizer">Trace Optimizer</a>
@@ -5297,7 +5573,7 @@ FTP sites.
 <li>undo: <a href="#Actions">Actions</a>, <a href="#Menu">Menu</a>
 <li>undo, multi-action resources: <a href="#Actions">Actions</a>
 <li>unique names: <a href="#Menu">Menu</a>
-<li>unix command: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
+<li>unix command: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>, <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
 <li>unselect objects: <a href="#Actions">Actions</a>
 <li>user commands: <a href="#User%20Commands">User Commands</a>
 <li>user input: <a href="#Translations">Translations</a>
@@ -5320,7 +5596,7 @@ FTP sites.
 <li>X11, problems: <a href="#X11">X11</a>
 <li>xcircuit, how to interface with: <a href="#xcircuit">xcircuit</a>
 <li>zoom of Layout area: <a href="#Resources">Resources</a>
-<li>zoom of pinout window: <a href="#Resources">Resources</a>, <a href="#Options">Options</a>
+<li>zoom of pinout window: <a href="#Options">Options</a>, <a href="#Resources">Resources</a>
 <li>zoom, setting: <a href="#Menu">Menu</a>
 <li>zoom, setting of: <a href="#Actions">Actions</a>
 </ul>
@@ -5330,6 +5606,7 @@ FTP sites.
 <li><a href="#Top">Pcb</a>
 <li><a href="#Copying">Copying</a>
 <li><a href="#History">History</a>
+<li><a href="#Overview">Overview</a>
 <li><a href="#Intro">Introduction</a>
 <ul>
 <li><a href="#Symbol%20Objects">Symbols</a>
@@ -5454,9 +5731,15 @@ FTP sites.
 <li><a href="#TeX%20and%20Manuals">Problems related to TeX</a>
 </ul>
 </ul>
-<li><a href="#TeX%20and%20Manuals">Index of Resources</a>
-<li><a href="#TeX%20and%20Manuals">Index of Actions, Commands and Options</a>
-<li><a href="#TeX%20and%20Manuals">Index of Concepts</a>
+<li><a href="#Custom%20Menus">Customizing the Menus</a>
+<ul>
+<li><a href="#Resource%20Syntax">Resource Syntax</a>
+<li><a href="#Menu%20Definitions">Menu Definitions</a>
+<li><a href="#Menu%20Files%20and%20Defaults">Menu Files and Defaults</a>
+</ul>
+<li><a href="#Index">Index of Resources</a>
+<li><a href="#Index">Index of Actions, Commands and Options</a>
+<li><a href="#Index">Index of Concepts</a>
 </ul>
 
 
