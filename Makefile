@@ -15,6 +15,7 @@ SHTML_INCLUDE_PATH= $(srcdir)
 SHTML_IN=	\
 	faq.shtml \
 	index.shtml \
+	links.shtml \
 	news.shtml 
 
 INCL_FILES=\

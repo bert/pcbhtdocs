@@ -4,7 +4,7 @@
   <head>
     <!-- $Id$ -->
     <link rev="made" href="mailto:danmc@users.sourceforge.net">
-    <title>PCB</title>
+    <title>PCB Related Links</title>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
     <meta name="KEYWORDS" content="
@@ -26,10 +26,9 @@
     <p>
 
       <font face="helvetica, arial">
-      PCB in an interactive printed circuit board editor for the X11
-      window system.  In includes a rats nest feature, design rule
-      checking, and can provide industry standard RS-274-X (Gerber)
-      output for use in the fabrication process.
+      This page contains links to other sites with information either
+      directly about PCB or about tools which may be of interest to
+      users of PCB.
 
       <UL>
       <LI>
@@ -47,36 +46,23 @@
       Package</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
       </LI>
       <LI>
-      Some quick notes about <A HREF="Pad.html">surface mount pad specifications</A>.
+      Bill Wilson's <A
+      HREF="http://web.wt.net/~billw/gsch2pcb/gsch2pcb.html">gsch2pcb</A>
+      tool for interfacing gEDA and PCB.
+      </LI>
+      <LI>
+      <A HREF="http://www.geda.seul.org">GNU EDA (gEDA)</A>.  The gEDA
+      suite can, among other things, provide a schematic capture front
+      end for PCB.
+      </LI>
+      <LI>
+      Stephen Meier's <A
+      HREF="http://www.meierrippin.com/pcb_landpattern_design.pdf">Land
+      Pattern Creation for Thomas Nau's and Harry Eaton's PCB</A>.
       </LI>
       </UL>
       </font>
 
-    <dl>
-      <dt><dd><font face="helvetica, arial" color="#000066">
-	  <b>Recent News</b>
-	</font>
-	<font face="helvetica, arial" size="-1">
-	  &nbsp;[<a href="news.html">More</a>] 
-	</font>
-    </dl>
-
-    <ul>
-
-      <!-- Recent news  -->
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20030813">Links page added.</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20030622">DJ Delorie's trace optimizer added.</a>
-	</font></li>
-
-
-      <!-- End of news -->
-
-    </ul>
   </td>
 
   </tr>

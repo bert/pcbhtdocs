@@ -34,6 +34,14 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20030813">Web page links section added</A></H2>
+    <p>
+    August 13, 2003.  A new <A HREF="links.html">links</A> section has
+    been added to the web pages to give pointers to additional PCB
+    related resources.
+    </p>
+
+    <HR>
     <H2><A NAME="20030622">Trace optimizer added</A></H2>
     <p>
     June 22, 2003.  DJ Delorie has incorporated his trace optimizer.
