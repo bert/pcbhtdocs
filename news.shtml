@@ -36,6 +36,27 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20040105">Internal resolution changed to 0.01 mil from 1 mil</A></H2>
+    <p>
+    January 5, 2004.  Harry Eaton has committed a series of changes which
+    increase the resolution of PCB.  Prior versions of PCB used 1 mil as the
+    fundamental unit.  As packaging and board fabrication technology has
+    progressed, this resolution is no longer adequate.  The new internal unit is 0.01
+    mil.  Old libraries may still be used and old designs may be opened, but
+    the design will be saved in the new hi-resolution format.  This means
+    you will not be able to re-open the layout in an older version of PCB.
+    </p>
+    <p>
+    The source tree immediately prior to the hi-resolution changes is tagged
+    with "low_res".  To update your CVS tree to the last version of the
+    low resolution PCB, use <tt>cvs update -PdA -r low_res</tt>.
+    </p>
+    <p>
+    We believe that most if not all of the bugs related to this change have been
+    worked out, but further independent testing is always useful.
+    </p>
+
+    <HR>
     <H2><A NAME="20031113">Development snashot 20031113 available</A></H2>
     <p>
     November 13, 2003.  A snapshot of the development sources for PCB
