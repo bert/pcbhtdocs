@@ -61,7 +61,7 @@ rs274x,
 	PCB should run under any unix-like operating system that has X11 installed.
     </p>
     
-    <H2><A NAME="#windows">What about PCB under Windows?</A></H2>
+    <H2><A NAME="windows">What about PCB under Windows?</A></H2>
     <p>
 	Although a native windows port of PCB does not exist, PCB has
 	been compiled successfully under cygwin.  You will need
@@ -72,7 +72,7 @@ rs274x,
    
     <HR>
 
-    <H2><A NAME="#appdefault">When I build PCB in cygwin (or Mac OS X) and start it within
+    <H2><A NAME="appdefault">When I build PCB in cygwin (or Mac OS X) and start it within
     XFree86, it comes up looking just fine but it doesn't respond to
     keyboard chars, nor does it seem to have functional menus. I can
     click on and highlight any menu heading, but nothing
@@ -88,7 +88,7 @@ rs274x,
 
     <HR>
 
-    <H2><A NAME="#wrongautconf">When I try to bootstrap and build the CVS version,
+    <H2><A NAME="wrongautconf">When I try to bootstrap and build the CVS version,
     autogen.sh complains of configure.in missing</A></H2>
     <p>
     Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.
@@ -99,14 +99,14 @@ rs274x,
     
     <HR>
 
-    <H2><A NAME="#ghostscript">How can I get Ghostscript to read the Postscript output from PCB?</A></H2>
+    <H2><A NAME="ghostscript">How can I get Ghostscript to read the Postscript output from PCB?</A></H2>
     <p>
     Select a page size other than <tt>executive</tt>.
     </p>
 
     <HR>
 
-    <H2><A NAME="#tcltk"><tt>configure</tt> complains that wish is not found, but I
+    <H2><A NAME="tcltk"><tt>configure</tt> complains that wish is not found, but I
     have TCL/TK installed!</A></H2>
     <p>
     If you get a message like the following:<br>
@@ -135,7 +135,7 @@ configure: error: Did not find the wish executible.  You need to make sure
 
     <HR>
 
-    <H2><A NAME="#flex">When compiling, yywrap is missing during linking.</A></H2>
+    <H2><A NAME="flex">When compiling, yywrap is missing during linking.</A></H2>
     <P>
     If you get a message like the following:<BR>
     <PRE>
