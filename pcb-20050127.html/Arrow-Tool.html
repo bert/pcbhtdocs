@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Arrow%20Tool">Arrow Tool</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Rats-Nest.html#Rats%20Nest">Rats Nest</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Connection-Lists.html#Connection%20Lists">Connection Lists</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting%20Started">Getting Started</a>
+<hr><br>
+</div>
+
+<h3 class="section">Arrow Tool</h3>
+
+<p>Some commands mentioned earlier in this chapter also are able to operate on all
+selected and visible objects. The Arrow tool is used to select/deselect
+objects and also to move objects or selections.  If you click and release
+on an object with the Arrow tool, it will unselect everything else and
+select the object. Selected objects change color to reflect that
+they are selected. If you <em>Shift</em> click, it will add the object to
+(or remove) the object from the existing selection. If you drag with
+the mouse button down with the Arrow tool, one of several things could
+happen: if you first pressed the button on a selected object, you
+will be moving the selection to where you release the button. If you
+first pressed the button on an unselected object, you will be moving
+that object. If you first pressed the button over empty space, you
+will be drawing a box to select everything inside the box. The <em>Shift</em>
+key works the same way with box selections as it does with single objects.
+
+   <p>Moving a single un-selected object is different from moving a selection. 
+First of all, you can move the end of line, or a point in a polygon this
+way which is impossible by moving selections. Secondly, if rubber banding
+is turned on, moving a single object will rubber-band the attached lines. 
+Finally, it is faster to move a single object this way since there is no need
+to select it first.
+
+   <p>You can select any visible object unless it is locked. If you select an
+object, then turn off its visibility with the Layer controls, it won't
+be moved if you move the remaining visible selection.
+
+   <p>If you have not configured to use strokes in the <code>Pcb</code> user interface, then
+the middle mouse button is automatically bound to the arrow tool, regardless
+of the active tool (which is bound to the first mouse button). So using
+the middle button any time is just like using the first mouse button
+with the Arrow tool active.
+
+   <p>The entries of the <em>Selection</em> menu are hopefully self-explanatory. 
+Many of the <em>Action Commands</em> can take various key words that make
+them function on all or some of the selected items.
+
+   </body></html>
+

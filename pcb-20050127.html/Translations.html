@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Translations">Translations</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Actions.html#Actions">Actions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="X11-Interface.html#X11%20Interface">X11 Interface</a>
+<hr><br>
+</div>
+
+<h3 class="section">Default Translations</h3>
+
+<p>This section covers some default translations of key and button events as
+defined in the shipped default application resource file. Most of them have
+already been listed in <a href="Actions.html#Actions">Actions</a>. <code>Pcb</code> makes use of a nice <code>X11</code>
+feature; calling several action routines for one event.
+
+     <dl>
+
+     <br><dt><code>None&lt;Key&gt;BackSpace:</code>
+     <dd><br><dt><code>None&lt;key&gt;Delete:</code>
+     <dd><dt><code>!Shift&lt;Key&gt;BackSpace:</code>
+     <dd><dt><code>!Shift Ctrl&lt;Btn1&gt;:</code>
+     <dd>The object at the cursor location is removed by <em>None&lt;Key&gt;BackSpace</em> or
+<em>Shift Ctrl&lt;Btn1&gt;</em> whereas <em>Shift&lt;Key&gt;BackSpace</em> also removes
+all other objects that are fully-connected to the one at the cursor location.
+
+     <br><dt><code>!Mod1 Ctrl&lt;Key&gt;Left:</code>
+     <dd><dt><code>!Mod1 Ctrl&lt;Key&gt;Right:</code>
+     <dd><dt><code>!Mod1 Ctrl&lt;Key&gt;Up:</code>
+     <dd><dt><code>!Mod1 Ctrl&lt;Key&gt;Down:</code>
+     <dd>Scroll one page in one of the four directions.
+
+     <br><dt><code>None&lt;Key&gt;Left:, !Shift&lt;Key&gt;Left:</code>
+     <dd><dt><code>None&lt;Key&gt;Right:, !Shift&lt;Key&gt;Right:</code>
+     <dd><dt><code>None&lt;Key&gt;Up:, !Shift&lt;Key&gt;Up:</code>
+     <dd><dt><code>None&lt;Key&gt;Down:, !Shift&lt;Key&gt;Down:</code>
+     <dd>Move cross hair either one or ten points in grid.
+
+     <br><dt><code>None&lt;Key&gt;Return:</code>
+     <dd>Finished user input, selects the 'default' button of dialogs.
+
+     <br><dt><code>None&lt;Key&gt;Escape:</code>
+     <dd><em>Mode(Reset)</em>, aborts user input, selects the 'abort' button of
+dialogs or resets all modes.
+
+     <br><dt><code>None&lt;Btn2Down&gt;, Btn2&lt;Motion&gt;, None&lt;Btn2Up&gt;:</code>
+     <dd><dt><code>!Mod1&lt;Btn2Down&gt;, Btn2&lt;Motion&gt;, !Mod1&lt;Btn2Up&gt;:</code>
+     <dd>The first sequence moves the object or element name at the cursor location. 
+The second one copies the objects. Copying isn't available for
+element names.
+
+   </dl>
+
+   </body></html>
+

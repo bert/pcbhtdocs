@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Font%20File">Font File</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Netlist-File.html#Netlist%20File">Netlist File</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Element-File.html#Element%20File">Element File</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="File-Formats.html#File%20Formats">File Formats</a>
+<hr><br>
+</div>
+
+<h3 class="section">Font File Format</h3>
+
+<p>A number of user defined symbols are called a font. There is only one per
+layout. All symbols are made of lines. See the file <code>default_font</code>
+as an example.
+
+   <p>The lowest x and y coordinates of all lines of a font are transformed to (0,0).
+
+<pre class="example">     File            = Font
+     Font            = {FontData}...
+     FontData        = {Symbol}...
+     Symbol          = "Symbol(" SymbolID FontPosition ")"
+     		      "(" {SymbolData}... ")"
+     SymbolData      = {SymbolLine}...
+     </pre>
+
+     <dl>
+
+     <br><dt><code>Symbol</code>
+     <dd>The two arguments are the <code>ASCII</code> code of the symbol and its distance to
+the next symbol. Undefined symbols are drawn as filled rectangles. 
+The <code>ASCII</code> code may be passed as a character constant or as a hexadecimal
+value.
+
+          <dl>
+<dt><code>SymbolLine</code>
+          <dd>The symbol data itself is made up of several entries
+of type <em>SymbolLine</em>. 
+</dl>
+
+   </dl>
+
+   </body></html>
+
