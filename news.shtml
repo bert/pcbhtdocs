@@ -56,7 +56,7 @@ rs274x,
       <LI> Significant improvements to autorouting of congested designs.
       <LI> Autorouter can now use power planes.
       <LI> Improved appearance in autorouter output.
-      <LI> Silk on pads/pins is clipped in RS  <LI>274  <LI>X output
+      <LI> Silk on pads/pins is clipped in RS-274-X output
       <LI> Ordering is preserved when writing output files so that diff
            may be effectively used on pcb files.
       <LI> The autoplace feature now actually works
