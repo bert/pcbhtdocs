@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+  <head>
+    <!-- $Id$ -->
+    <link rev="made" href="mailto:danmc@users.sourceforge.net">
+    <title>PCB Manual</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
+    <meta name="KEYWORDS" content="
+	  pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
+  </head>
+
+  <!-- Start the main page table -->
+  <!--#include virtual="page_start.incl"-->
+
+  <!-- The main action area -->
+    <center>
+
+      <a href="images/logo.png"><img src="images/logo.png" 
+				      width="497" height="47"
+				      alt="[PCB Logo]" 
+				      border="0"
+				      hspace="10" vspace="5"> </a>
+    </center>
+    <p>
+
+      <font face="helvetica, arial">
+      This page contains links to the PCB manual and other documentation.
+
+      <UL>
+      <LI>
+      The PCB manual:  <A HREF="pcb.html">HTML, One page</A>.
+      </LI>
+      <LI>
+      The PCB manual:  <A HREF="pcb.ps">postscript (600 kB)</A>.
+      </LI>
+      <LI>
+      The PCB manual:  <A HREF="pcb.pdf">PDF (712 kB)</A>.
+      </LI>
+      </UL>
+      </font>
+
+  </td>
+
+  </tr>
+
+    <!-- The left hand column -->
+    <!--#include virtual="left_column.incl"-->
+
+  </table>
+    <p>
+
+      <!--#include virtual="main_footer.incl"-->
+
+
+  </body>
+</html>

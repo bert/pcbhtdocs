@@ -16,6 +16,7 @@ SHTML_IN=	\
 	faq.shtml \
 	index.shtml \
 	links.shtml \
+	manual.shtml \
 	news.shtml 
 
 INCL_FILES=\
