@@ -44,7 +44,21 @@ rs274x,
 	Please note that cygwin is not the typical platform of PCB
 	developers and support for this port may be lacking.
     </p>
-    
+   
+    <H2>When I build PCB in cygwin (or Mac OS X) and start it within
+    XFree86, it comes up looking just fine but it doesn't respond to
+    keyboard chars, nor does it seem to have functional menus. I can
+    click on and highlight any menu heading, but nothing
+    drops down.
+    </H2>
+    <p>
+    This is the symptom when PCB can't find its X application defaults
+    file.  On systems such as cygwin or Mac OS X which do not have case
+    sensitive file systems, the applications default file, "Pcb", was
+    being overwritten by the script "pcb".  This was corrected in CVS
+    on 2003-11-08.  Please make sure your sources are newer than this.
+    </p>
+
     <H2>When I try to bootstrap and build the CVS version, autogen.sh complains of configure.in missing</H2>
     <p>
     Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.
