@@ -66,6 +66,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20031111">PCB Ported to Cygwin</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20030815">Development snapshot available</a>
 	</font></li>
 
