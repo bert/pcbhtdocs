@@ -4,7 +4,7 @@
 
 srcdir=	.
 top_srcdir=	.
-AWK=	awk
+AWK?=	awk
 
 .PHONY: default
 default: all
