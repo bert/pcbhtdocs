@@ -34,6 +34,23 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20030815">Development snashot 20030815 available</A></H2>
+    <p>
+    August 15, 2003.  A snapshot of the development sources for PCB
+    has been released and is available from the PCB <A
+    HREF="http://www.sourceforge.net/projects/pcb">Sourceforge 
+    Project Summary Page</A>.  We plan on making periodic snapshots
+    available to assist those who are unable to use the anonymous CVS
+    service.  This will also allow developers of various packaging
+    systems to create PCB snapshot packages.
+    </p>
+    <p>
+    Please note that these snapshots have not gone through a rigorous
+    release engineering cycle but rather are simple snapshots of a
+    work in progress.
+    </p>
+
+    <HR>
     <H2><A NAME="20030813">Web page links section added</A></H2>
     <p>
     August 13, 2003.  A new <A HREF="links.html">links</A> section has

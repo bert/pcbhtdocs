@@ -66,6 +66,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20030815">Development snapshot available</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20030813">Links page added.</a>
 	</font></li>
 
