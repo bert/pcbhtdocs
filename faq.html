@@ -44,6 +44,15 @@ rs274x,
 	PCB should run under any unix-like operating system that has X11 installed.
     </p>
     
+    <H2>What about PCB under Windows?</H2>
+    <p>
+	Although a native windows port of PCB does not exist, PCB has
+	been compiled successfully under cygwin.  You will need
+	Xfree86 to be installed as well as gcc, make, m4, and tcl/tk.
+	Please note that cygwin is not the typical platform of PCB
+	developers and support for this port may be lacking.
+    </p>
+    
     <H2>When I try to bootstrap and build the CVS version, autogen.sh complains of configure.in missing</H2>
     <p>
     Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.
@@ -57,6 +66,32 @@ rs274x,
     Select a page size other than <tt>executive</tt>.
     </p>
 
+    <H2><tt>configure</tt> complains that wish is not found, but I
+    have TCL/TK installed!</H2>
+    <p>
+    If you get a message like the following:<br>
+    <tt>
+configure: error: Did not find the wish executible.  You need to make sure
+        that tcl is installed on your system and that wish is in your path
+	</tt>
+	<br>
+	This can happen if the wish program that comes with TK is not
+    called "wish" on your system.  In this case, you need to set the
+    WISH environment variable to the complete path to the wish
+    executible.  For example in <tt>sh/ksh/bash</tt>:
+    <br><tt>
+	WISH=/usr/bin/wish83<br>
+	export WISH<br>
+	</tt>
+	or in <tt>csh/tcsh</tt>:
+    <br><tt>
+	setenv WISH /usr/bin/wish84<br>
+	</tt>
+    </p>
+    <p>
+    Now when you run the <tt>./configure</tt> script, it should be
+    possible to find wish.
+    </p>
     </font>
 
   </td>
