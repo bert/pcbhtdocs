@@ -43,6 +43,11 @@ rs274x,
     to figure out what version
     you have.
     </p>
+    
+    <H2>How can I get Ghostscript to read the Postscript output from PCB?</H2>
+    <p>
+    Select a page size other than <tt>executive</tt>.
+    </p>
 
     </font>
 
