@@ -36,6 +36,117 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20050127">Development snapshot 20050127 available</A></H2>
+    <p>
+      A new snapshot release, pcb-20050127, is available.  As always, this is
+      a snapshot of a work in progress.  There have been many bug fixes and
+      feature additions and as always there is still more to do.
+      Thanks to everyone who has provided
+      feedback.  A summary of the changes since the last snapshot is:
+      </p>
+    <UL>
+
+	<LI>Fix drill size for PLCC sockets in ~geda library.  Fix drill size for
+  LED3 and LED5 footprints in ~geda library.
+	</LI>
+
+	<LI>Move the right-click popup menu to pcb-menu.res.
+	</LI>
+
+	<LI>Add DisperseElements() action for spreading out elements in an initial
+  layout.
+	</LI>
+
+	<LI>Fix fab drawing output for the case where a very small number of
+  drill sizes are used.
+	</LI>
+
+	<LI>Various documentation improvements.
+	</LI>
+
+	<LI>Remove many compiler warnings.
+	</LI>
+
+	<LI>Added metric output to the cursor display
+	</LI>
+
+	<LI>Fix &lt;Key&gt;. for toggling 45 degree mode.
+	</LI>
+
+	<LI>Crosshair snap snaps to center of pads and also to the mark of the
+  element.
+	</LI>
+
+	<LI>Protect all strcmp() calls with a check for a NULL pointer.  Fixes
+  various crashes.
+	</LI>
+
+	<LI>Fixed the mode buttons which were unresponsive in some versions of 
+  the X libraries.
+	</LI>
+
+	<LI>Element names may be edited over the element.
+	</LI>
+
+	<LI>Added --enable-efence for ElectricFence debugging.  Off by default
+	</LI>
+
+	<LI>Added --disable-rpath to avoid using rpath for the X libraries.
+	</LI>
+
+	<LI>Added vendor resource file support.  This allows lets you specify
+  a set of allowed drill sizes and drc rules for a particular vendor.
+	</LI>
+
+	<LI>Added -action command line option to allow executing an action on
+  startup.
+	</LI>
+
+	<LI>Date and time of compilation added to About dialog.
+	</LI>
+
+	<LI>Fix a bug where the soldermask relief on a new element is 100x smaller
+  than the default when "convert buffer to element" is used.
+	</LI>
+
+	<LI>Fix a name_tree corruption bug when changing an element name.
+	</LI>
+
+	<LI>Don't remove the formatted manual with a 'make clean' since they are
+  part of the distfile.  
+	</LI>
+
+	<LI>Let automake handle the html and pdf conversion.  This ends up using
+  texi2pdf for the pdf output which seems to do a better job than ps2pdf.
+	</LI>
+
+	<LI>Sort actions by modifier so that both Ctrl&lt;Key&gt;x and &lt;Key&gt;x work.
+	</LI>
+
+	<LI>Fix a SelectByName bug.
+	</LI>
+
+	<LI>Fix non-gcc compilation
+	</LI>
+
+	<LI>Command history added to :
+	</LI>
+
+	<LI>Fixed pinout window crash
+	</LI>
+
+	<LI>Allow Ctrl-drag to copy objects in arrow mode.
+	</LI>
+
+	<LI>Fixed a polygon clearance bug
+	</LI>
+
+	<LI>Fix an arc bounding box calculation error.
+	</LI>
+    </UL>
+
+
+    <HR>
     <H2><A NAME="20040903">Development snapshot 20040903 available</A></H2>
     <p>
       A new snapshot, pcb-20040903, release is available.  As always, this is
