@@ -49,6 +49,11 @@ clean:
 	rm -f *~ ${HTML_OUT}
 
 .PHONY: all
-all: ${HTML_OUT}
+all: ${HTML_OUT} favicon.ico
+
+
+favicon.ico: favicon.xpm
+	xpmtoppm favicon.xpm | ppmtowinicon > $@
+
 
 
