@@ -43,7 +43,11 @@
       </LI>
       <LI>
       A <A HREF="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/pcb/README.html">PCB
-      Package</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
+      Package (stable release)</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
+      </LI>
+      <LI>
+      A <A HREF="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/pcb-current/README.html">PCB
+      Package (development version)</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
       </LI>
       <LI>
       Bill Wilson's <A
