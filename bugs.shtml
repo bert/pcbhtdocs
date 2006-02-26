@@ -33,7 +33,7 @@
       <p>
       Bugs should be reported in the <a href="http://sourceforge.net/tracker/?group_id=73743&atid=538811">
       PCB bug tracker</a>.  While it is fine to ask questions
-      on the <a href="http://www.geda.seul.org/mailinglist/index.html>gEDA mailing lists</a>,
+      on the <a href="http://www.geda.seul.org/mailinglist/index.html">gEDA mailing lists</a>,
       the bug tracker is the prefered location for bug reports.  This is because when
       a developer has some time to work on bugs they are collected in one location.
       </p>
