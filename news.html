@@ -44,6 +44,40 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20050609">Development snapshot 20050609 available</A></H2>
+    <p>
+      A new snapshot release, pcb-200609, is available.  As always, this is
+      a snapshot of a work in progress.
+      A summary of the changes since the last snapshot is:
+      </p>
+    <UL>
+    <LI><EM>The GUI is now based on gtk2 instead of Xaw</EM>. This represents
+     a fairly major change.  You will now need gtk-2.6 or higher installed
+     along with any of its dependencies to build pcb.  On linux
+     distributions, it is probably the case that you already have this.
+     For *BSD, Solaris, and others, you may want to use NetBSD's pkgsrc
+     to help install gtk2 and its dependencies.
+     </LI>
+
+     <LI>
+     Flags are stored symbolically in the .pcb file.  This is the start
+     of moving to support >8 layers.  Please note that >8 layer support
+     is not yet available in this snapshot.
+     </LI>
+
+     <LI>
+     Fixes for gcc-4
+     </LI>
+
+     <LI>
+     As part of the switch to gtk2, the user customizable menu feature has
+     been temporarily broken.  Hopefully this will be fixed by the next
+     snapshot.  In addition, the loading of background images has also been
+     temporarily broken.
+     </LI>
+    </UL>
+
+    <HR>
     <H2><A NAME="20050315">Development snapshot 20050315 available</A></H2>
     <p>
       A new snapshot release, pcb-20050315, is available.  As always, this is
@@ -469,6 +503,7 @@ rs274x,
     </td></tr>
    <tr><td bgcolor="#FFFFFF" nowrap>
       <font face="helvetica, arial" size="-1">
+	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
 	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
 	&nbsp;<a href="faq.html">F.A.Q.</a><br>
 	&nbsp;<a href="index.html">Home</a><br>

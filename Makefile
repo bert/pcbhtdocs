@@ -59,8 +59,9 @@ favicon.ico: favicon.xpm
 .PHONY: update-man
 update-man: pcb.html pcb-cvs.pdf pcb-cvs.ps
 
-pcb.html: ../pcb/doc/pcb.html
-	cp -p ../pcb/doc/pcb.html $@
+.PHONY: pcb.html
+pcb-cvs.html: ../pcb/doc/pcb.html
+	cp -p ../pcb/doc/pcb.html/* $@
 
 pcb-cvs.pdf: ../pcb/doc/pcb.pdf
 	cp -p ../pcb/doc/pcb.pdf $@
