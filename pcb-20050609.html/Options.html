@@ -1,0 +1,151 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Options">Options</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Special-Options.html#Special%20Options">Special Options</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Options.html#Command-Line%20Options">Command-Line Options</a>
+<hr><br>
+</div>
+
+<h3 class="section">Options</h3>
+
+     <dl>
+
+     <br><dt><code>-alldirections/+alldirections</code>
+     <dd>Disables or enables line clipping to 45 degree angles. Overwrites the
+resource <em>allDirectionLines</em>.
+
+     <br><dt><code>-background file</code>
+     <dd>Selects a PPM file to be displayed as the board background (for tracing). 
+See backgroundImage in <a href="Resources.html#Resources">Resources</a> for details.
+
+     <br><dt><code>-backup value</code>
+     <dd>Time between two backups in seconds. Passing zero disables the backup feature. 
+Overwrites the resource <em>backupInterval</em>.
+
+     <br><dt><code>-c value</code>
+     <dd>Number of characters per output line. The resource <em>charactersPerLine</em> is
+overwritten.
+
+     <br><dt><code>-fontfile filename</code>
+     <dd>The default set of symbols (font) for a new layout is read from this file. 
+All directories as defined by the resource <em>fontPath</em> are scanned
+for the file. The scan is only performed if the filename doesn't contain
+a directory component. The <em>fontFile</em> resource is changed.
+
+     <br><dt><code>-lelement command-line</code>
+     <dd>Sets the command to be executed when an element is loaded from a file to the
+paste buffer. The command may contain %f and %p to pass the requested filename
+and the searchpath to the command. It must write the data to its
+standard output. The related resource is <em>elementCommand</em>.
+
+     <br><dt><code>-lfile command-line</code>
+     <dd>Sets the command to be executed when a new layout is loaded from a file. 
+The command may contain %f and %p to pass the requested filename
+and the searchpath to the command. It must write the data to its
+standard output. The related resource is <em>fileCommand</em>.
+
+     <br><dt><code>-lfont command-line</code>
+     <dd>Sets the command to be executed when a font is loaded from a file. 
+The command may contain %f and %p to pass the requested filename
+and the searchpath to the command. It must write the data to its
+standard output. The related resource is <em>fontCommand</em>.
+
+     <br><dt><code>-lg layergroups</code>
+     <dd>This option overwrites the resource <em>layerGroups</em>. See its description
+for more information. The value is used for new layouts only.
+
+     <br><dt><code>-libname filename</code>
+     <dd>The default filename for the library. Overwrites the resource
+<em>libraryFilename</em>.
+
+     <br><dt><code>-libpath path</code>
+     <dd>The default search path for the the library. Overwrites the resource
+<em>libraryPath</em>.
+
+     <br><dt><code>-llib command-line</code>
+     <dd>Sets the command to be executed when an element is loaded from the library. 
+The command may contain %f and %p to pass the requested filename
+and the searchpath to the command. %a is replaces by the three arguments
+<em>template</em>, <em>value</em> and <em>package</em>. The command must write
+the data to its standard output. The related resource is <em>libraryCommand</em>.
+
+     <br><dt><code>-llibcont command-line</code>
+     <dd>The command lists the contents of the library. 
+The command may contain %f and %p to pass the library filename
+and the searchpath to the command. Also refer to <a href="Library-File.html#Library%20File">Library File</a>
+and <a href="Library-Contents-File.html#Library%20Contents%20File">Library Contents File</a>. 
+The related resource is <em>libraryContentsCommand</em>.
+
+     <br><dt><code>-loggeometry geometry</code>
+     <dd>Determines the geometry of the log window.
+
+     <br><dt><code>-pnl value</code>
+     <dd>Restricts the displayed length of the name of a pin in the pinout window to
+the passed value. See also, the resource <em>pinoutNameLength</em>.
+
+     <br><dt><code>-pz value</code>
+     <dd>Sets the zoom factor for the pinout window according to the formula:
+scale = 1:(2 power value). The related resource is <em>pinoutZoom</em>.
+
+     <br><dt><code>-reset/+reset</code>
+     <dd>If enabled, all connections are reset after each element is scanned. 
+This feature is only used while scanning connections to all elements. 
+See also, <em>resetAfterElement</em>.
+
+     <br><dt><code>-ring/+ring</code>
+     <dd>Overrides the resource <em>ringBellWhenFinished</em>. If enabled, the bell
+sounds when connection searching has finished.
+
+     <br><dt><code>-rs string</code>
+     <dd>Overrides the resource <em>routeStyle</em>. The string defines a colon
+separated list of route styles. The route styles consist of a
+comma separated list of name, line thickness, via diameter, and via drill size. 
+e.g. "Fat,50,100,40:Skinny,8,35,20:75Ohm,110,110,20"
+
+     <br><dt><code>-s/+s</code>
+     <dd>Enables/Disables the saving of the previous commandline. Overrides the
+<em>saveLastCommand</em> resource.
+
+     <br><dt><code>-save/+save</code>
+     <dd>See the resource description of <em>saveInTMP</em> for details.
+
+     <br><dt><code>-sfile command-line</code>
+     <dd>Sets the command to be executed when an layout file is saved. 
+The command may contain %f which is replaced by the filename. The command
+must read its data from the standard input. 
+The resource <em>saveCommand</em> is overwritten.
+
+     <br><dt><code>-script filename</code>
+     <dd>Specifies a script file containing PCB actions to be executed
+upon startup.  Overwrites the resource
+<em>scriptFilename</em>.
+
+     <br><dt><code>-size &lt;width&gt;x&lt;height&gt;</code>
+     <dd>Overrides the resource <em>size</em> which determines the maximum size
+of a layout.
+
+     <br><dt><code>-v value</code>
+     <dd>Sets the volume of the X speaker. The value is passed to <code>XBell()</code> and
+must be in the range -100..100.
+
+</dl>
+
+   </body></html>
+

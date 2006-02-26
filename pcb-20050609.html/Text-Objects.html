@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Text%20Objects">Text Objects</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Net-Objects.html#Net%20Objects">Net Objects</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Polygon-Objects.html#Polygon%20Objects">Polygon Objects</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Intro.html#Intro">Intro</a>
+<hr><br>
+</div>
+
+<h3 class="section">Text</h3>
+
+<p>Text objects should be used to label a layout or to put additional
+information on the board. Elements have their <code>layout-name</code> labels on the
+silk-screen layer. If you are making a board without a silkscreen,
+you can use copper text to label the elements, but you have to do
+this manually.
+
+   <p>Text is always horizontal when first created, but the
+rotate mode can align it along 0, 90, 180 and 270 degree angles. 
+Text on the far side of the board will automatically appear mirror-imaged.
+
+   <p><em>Warning:</em> <b>TEXT OBJECTS ON A COPPER LAYER CREATE COPPER LINES BUT THEY ARE NOT SCANNED FOR
+CONNECTIONS OR TESTED FOR CREATING SHORTS VS. THE NETLIST. NEITHER ARE TEXT OBJECTS TESTED AGAINST ANY DESIGN RULES</b>.
+
+   </body></html>
+

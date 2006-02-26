@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="User%20Commands">User Commands</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Command-Line-Options.html#Command-Line%20Options">Command-Line Options</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Getting-Started.html#Getting%20Started">Getting Started</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr><br>
+</div>
+
+<h2 class="chapter">User Commands</h2>
+
+<p>The entering of user-commands is initiated by the action routine
+<em>Command()</em> (the <code>(":")</code> character) and finished by either
+<em>&lt;Key&gt;Return</em>
+or <em>&lt;Key&gt;Escape</em> to confirm or to abort. These two key-bindings
+cannot be changed from the resource file. 
+The triggering event, normally a key press, is ignored. 
+The input area will replace the bottom statusline. It pops
+up when <em>Command()</em> is called. The arguments of the user-commands
+are passed to the external commands without modification. 
+See also, the resource <em>saveInTMP</em>.
+
+   <p>There are simple <em>usage</em> dialogs for each command and one for the
+complete set of commands.
+
+     <dl>
+
+     <br><dt><code>l [filename]</code>
+     <dd>Loads a new datafile (layout) and, if confirmed, overwrites any existing unsaved data. 
+The filename and the searchpath (<em>filePath</em>) are passed to the
+command defined by <em>fileCommand</em>. 
+If no filename is specified a file select box will popup.
+
+     <br><dt><code>le [filename]</code>
+     <dd>Loads an element description into the paste buffer. 
+The filename and the searchpath (<em>elementPath</em>) are passed to the
+command defined by <em>elementCommand</em>. 
+If no filename is specified a file select box will popup.
+
+     <br><dt><code>m [filename]</code>
+     <dd>Loads an layout file into the paste buffer. 
+The filename and the searchpath (<em>filePath</em>) are passed to the
+command defined by <em>fileCommand</em>. 
+If no filename is specified a file select box will popup.
+
+     <br><dt><code>q[!]</code>
+     <dd>Quits the program without saving any data (after confirmation). 
+q! doesn't ask for confirmation, it just quits.
+
+     <br><dt><code>s [filename]</code>
+     <dd>Data and the filename are passed to the command defined by the resource
+<em>saveCommand</em>. It must read the layout data from <em>stdin</em>. 
+If no filename is entered, either the last one is used
+again or, if it is not available, a file select box will pop up.
+
+     <br><dt><code>rn [filename]</code>
+     <dd>Reads in a netlist file.  If no filename is given
+a file select box will pop up. 
+The file is read via the command defined by the
+<em>RatCommand</em> resource. The command must send its output to <em>stdout</em>.
+
+     <p>Netlists are used for generating rat's nests (see <a href="Rats-Nest.html#Rats%20Nest">Rats Nest</a>) and for
+verifying the board layout (which is also accomplished by the <em>Ratsnest</em>
+command).
+
+     <br><dt><code>w[q] [filename]</code>
+     <dd>These commands have been added for the convenience of <code>vi</code> users and
+have the same functionality as <em>s</em> combined with <em>q</em>.
+
+     <br><dt><code>actionCommand</code>
+     <dd>Causes the actionCommand to be executed.  This allows you to initiate actions
+for which no bindings exist in the resource file.  It can be used to initiate any
+action with whatever arguments you enter.  This makes it possible to do things
+that otherwise would be extremely tedious.  For example, to change the drilling
+hole diameter of all vias in the layout to 32 mils, you could select everything using the
+selection menu, then type "<em>:ChangeDrillSize(SelectedVias, 32)</em>".  (This will
+only work provided the via's diameter is sufficiently large to accommodate a 32 mil hole). 
+Another example might be to set the grid to 1 mil by typing "<em>:SetValue(Grid, 1)</em>". 
+Note that some actions use the current cursor location, so be sure to place the cursor
+where you want before entering the command.  This is one of my favorite new
+features in 1.5 and can be a powerful tool. Study the <a href="Actions.html#Actions">Actions</a> section to
+see what actions are available.
+
+   </dl>
+
+   </body></html>
+
