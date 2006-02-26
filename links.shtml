@@ -45,16 +45,11 @@
       </LI>
       <LI>
       A <A HREF="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/pcb/README.html">PCB
-      Package (stable release)</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
-      </LI>
-      <LI>
-      A <A HREF="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/pcb-current/README.html">PCB
-      Package (development version)</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
+      Package</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
       </LI>
       <LI>
       Bill Wilson's <A
-      HREF="http://web.wt.net/~billw/gsch2pcb/gsch2pcb.html">gsch2pcb</A>
-      tool for interfacing gEDA and PCB.
+      HREF="http://members.dslextreme.com/users/billw/gsch2pcb/tutorial.html">Tutorial on using gEDA and PCB</a>.
       </LI>
       <LI>
       <A HREF="http://www.geda.seul.org">GNU EDA (gEDA)</A>.  The gEDA
@@ -66,6 +61,11 @@
       HREF="http://www.meierrippin.com/pcb_landpattern_design.pdf">Land
       Pattern Creation for Thomas Nau's and Harry Eaton's PCB</A>.
       </LI>
+
+      <LI>
+      Some quick notes about <A HREF="Pad.html">surface mount pad specifications</A>.
+      </LI>
+
       <LI>
       Information <A HREF="http://twiki.twibright.com/bin/view/Main/PCBUnderWindows">
       about PCB under windows</A> from Karel "Clock" Kulhavy.

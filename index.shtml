@@ -35,30 +35,6 @@
       board fabrication and assembly process.  PCB offers high end
       features such as an autorouter and trace optimizer which can
       tremendously reduce layout time.
-
-      <UL>
-      <LI>
-      harry eaton's <A HREF="http://bach.ece.jhu.edu/~haceaton/pcb/">PCB
-      Homepage</A>.
-      </LI>
-      <LI>
-      The PCB <A HREF="http://www.sourceforge.net/projects/pcb">Sourceforge
-      Project Summary Page</A>.  Thats where you can find information on how 
-      to submit bug reports and how to access the most recent sources via
-      CVS (in the `pcb' module).
-      </LI>
-      <LI>
-      A <A HREF="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/pcb/README.html">PCB
-      Package (stable release)</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
-      </LI>
-      <LI>
-      A <A HREF="ftp://ftp.netbsd.org/pub/NetBSD/packages/pkgsrc/cad/pcb-current/README.html">PCB
-      Package (development snapshot)</A> for <A HREF="http://www.netbsd.org">NetBSD</A>.
-      </LI>
-      <LI>
-      Some quick notes about <A HREF="Pad.html">surface mount pad specifications</A>.
-      </LI>
-      </UL>
       </font>
 
     <dl>
@@ -73,6 +49,10 @@
     <ul>
 
       <!-- Recent news  -->
+
+      <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20050609">pcb-20050609 snapshot available</a>
+	</font></li>
 
       <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20050315">pcb-20050315 snapshot available</a>

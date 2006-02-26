@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+  <head>
+    <!-- $Id$ -->
+    <link rev="made" href="mailto:danmc@users.sourceforge.net">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Reporting Bugs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
+    <meta name="KEYWORDS" content="
+	  pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
+  </head>
+
+  <!-- Start the main page table -->
+  <!--#include virtual="page_start.incl"-->
+
+  <!-- The main action area -->
+    <center>
+
+      <a href="images/logo.png"><img src="images/logo.png" 
+				      width="497" height="47"
+				      alt="[PCB Logo]" 
+				      border="0"
+				      hspace="10" vspace="5"> </a>
+    </center>
+      <font face="helvetica, arial">
+      <p>
+      Please note that while the PCB developers do care about fixing bugs,
+      we all work on PCB in our free time and patience is appreciated.
+      </p>
+      <p>
+      Bugs should be reported in the <a href="http://sourceforge.net/tracker/?group_id=73743&atid=538811">
+      PCB bug tracker</a>.  While it is fine to ask questions
+      on the <a href="http://www.geda.seul.org/mailinglist/index.html>gEDA mailing lists</a>,
+      the bug tracker is the prefered location for bug reports.  This is because when
+      a developer has some time to work on bugs they are collected in one location.
+      </p>
+
+
+      <p>
+      When reporting bugs in PCB, please follow these guidelines.
+      <UL>
+      <LI>
+      Please see if this bug has already been reported.
+      </LI>
+
+      <LI>
+      Include the exact pcb version.  If it is a snapshot release, include the
+      release number, if you built from CVS sources, include the date
+      when you last updated your sources.
+      </LI>
+
+      <LI>
+      Describe how the problem can easily be reproduced.  If you are able to provide
+      a <em>small</em> test case that will be a tremendous help.  Bugs which require
+      hours of effort to reproduce are likely to take a low priority.
+      </LI>
+
+      <LI>
+      If you are able to provide a patch, that is always helpful.
+      </LI>
+
+      <LI>
+      Please log into the bug tracking system.  This allows you to receive a notification
+      when additional content is added to the bug report or if its status changes.  It is
+      also useful when seeking feedback to see if a particular bug has been fixed.
+      </LI>
+
+      </UL>
+      </font>
+
+  </td>
+
+  </tr>
+
+    <!-- The left hand column -->
+    <!--#include virtual="left_column.incl"-->
+
+  </table>
+    <p>
+
+      <!--#include virtual="main_footer.incl"-->
+
+
+  </body>
+</html>

@@ -13,6 +13,7 @@ default: all
 SHTML_INCLUDE_PATH= $(srcdir)
 
 SHTML_IN=	\
+	bugs.shtml \
 	faq.shtml \
 	index.shtml \
 	links.shtml \
