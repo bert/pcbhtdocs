@@ -57,10 +57,11 @@ favicon.ico: favicon.xpm
 	xpmtoppm favicon.xpm | ppmtowinicon > $@
 
 .PHONY: update-man
-update-man: pcb.html pcb-cvs.pdf pcb-cvs.ps
+update-man: pcb-cvs.html pcb-cvs.pdf pcb-cvs.ps
 
-.PHONY: pcb.html
+.PHONY: pcb-cvs.html
 pcb-cvs.html: ../pcb/doc/pcb.html
+	rm $@/*.html
 	cp -p ../pcb/doc/pcb.html/* $@
 
 pcb-cvs.pdf: ../pcb/doc/pcb.pdf
