@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+<title>Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.6">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+Node:&nbsp;<a name="Centroid%20File%20Format">Centroid File Format</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Index.html#Index">Index</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Standard-Drill-Sizes.html#Standard%20Drill%20Sizes">Standard Drill Sizes</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+<hr><br>
+</div>
+
+<h2 class="appendix">Centroid (X-Y) File Format</h2>
+
+<h3 class="section">Overview</h3>
+
+<h3 class="section">File Format</h3>
+
+<p>The centroid output file is in a standard comma seperated values (CSV)
+format.  Comment lines begin with a "#".  The output file contains a
+header with an RCS Id tag (useful for those who will check the file
+into a version control system), a version number for the file format,
+some comments containing the author and title of the board, and a
+comment describing the remainder of the file format.
+
+   <p>An example centroid file is shown below.
+
+<pre class="example">     
+     # <tt>$</tt>Id<tt>$</tt>
+     # PcbXY Version 1.0
+     # Date: Fri Jul 22 03:40:08 2005 UTC
+     # Author: PCB User
+     # Title: MyBoard - PCB X-Y
+     # RefDes, Description, Value, X, Y, rotation, top/bottom
+     # X,Y in mils.  rotation in degrees.
+     # --------------------------------------------
+     R61,"0603","10",2610.00,3560.00,90,top
+     J5,"AMPHENOL_ARFX1231","unknown",2390.00,4220.00,180,top
+     C13,"0402","0.01u",2340.00,3014.00,270,top
+     
+     </pre>
+
+<h3 class="section">Computation of Centroid and Rotation</h3>
+
+<p>The center of each element is found by averaging the (X,Y) coordinates
+for the center of each pin and pad in the element.  For example if an
+element has 2 pins, 1 at (1,0) and another at (1,4) then the centroid
+will be at (1,2).
+
+   <p>The calculation of rotation is a bit more complex.  Currently a
+rotation is not stored for each element but rather the rotated element
+is stored.  In other words if the element from the library has a pin
+at (0,0) and (0,2) and it has been rotated by 90 degrees, then the
+<code>.pcb</code> file will store (0,0) and (2,0) for the pin locations with
+no indication that they have been rotated from the original.
+
+   <p>In the event that the element has only 1 pin, then the rotation is set
+to zero.  If the element has only one pad (as opposed to a
+through-hole pin), then the rotation of the pad is used.
+
+   <p>When the element has multiple pins, the location of pin #1 is placed
+in the coordinate system which has the centroid of the part at (0,0). 
+Then which quadrant pin #1 falls in determines the rotation.  Zero
+degrees of rotation is defined as pin #1 being in the upper left
+quadrant.  Increasing angles correspond to counterclockwise rotation so a
+rotation of 90 degrees places pin #1 in the lower left quadrant. 
+Currently, the only allowed rotations are 0, 90, 180, and 270 degrees.
+
+   <p>If pin #1 happens to be at the centroid of the part, then pin #2 is
+examined to see which quadrant it is located in.  The same rules apply
+for the definitions of rotation.  In other words, when pin #1 is at
+the centroid of the part and pin #2 is in the upper left quadrant, the
+rotation is declared to be zero degrees.
+
+   </body></html>
+

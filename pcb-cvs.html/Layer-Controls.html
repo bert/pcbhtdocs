@@ -1,14 +1,9 @@
 <html lang="en">
 <head>
-<title>Layer Controls - Pcb</title>
+<title>Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.7">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Application-Window.html#Application-Window" title="Application Window">
-<link rel="prev" href="Panner-Control.html#Panner-Control" title="Panner Control">
-<link rel="next" href="Tool-Selectors.html#Tool-Selectors" title="Tool Selectors">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta name="generator" content="makeinfo 4.6">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -17,22 +12,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Layer-Controls"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Tool-Selectors.html#Tool-Selectors">Tool Selectors</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Panner-Control.html#Panner-Control">Panner Control</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Application-Window.html#Application-Window">Application Window</a>
+Node:&nbsp;<a name="Layer%20Controls">Layer Controls</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Tool-Selectors.html#Tool%20Selectors">Tool Selectors</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Panner-Control.html#Panner%20Control">Panner Control</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Application-Window.html#Application%20Window">Application Window</a>
 <hr><br>
 </div>
 
-   <p><a name="index-layer-controls-61"></a><a name="index-layers_002c-switching-on_002foff-62"></a><a name="index-layers_002c-changing-which-is-active-63"></a><a name="index-change-active-layer-64"></a>
-
-<h4 class="subsection">3.1.4 The Layer Controls</h4>
+<h3 class="subsection">The Layer Controls</h4>
 
 <p>The layer control panel, located below the panner control, is used to turn on
 and off the display of layer groups and to select the active drawing layer. 
@@ -49,8 +41,8 @@ When the layers are grouped, clicking on these buttons will toggle
 the visibility of all layers in the same group. This is a good idea because
 layers in the same group reside on the same physical layer of
 the actual board. Notice that this example has 2 groups each having
-3 layers, plus two other layers named <span class="samp">unused</span>. 
-Use the <span class="samp">Edit layer groups</span> option in the <span class="samp">Settings</span> menu to
+3 layers, plus two other layers named <code>unused</code>. 
+Use the <code>Edit layer groups</code> option in the <code>Settings</code> menu to
 change the layer groupings. Note that changing the groupings can
 radically alter the connectivity on the board. 
 Grouping layers is only useful for helping you to color-code
@@ -79,7 +71,7 @@ board. Only the solder, component, silkscreen, and solder-mask layers
 are always drawn in their physical order. Bringing the active layer
 to the top makes it easier to select and change objects on the active layer. 
 Try changing the active layer's name to <em>ABC</em> by selecting
-<span class="samp">edit name of active layer</span> from the <span class="samp">Edit</span> menu. 
+<code>edit name of active layer</code> from the <code>Edit</code> menu. 
 Changing the active layer can also be done by pressing keys
 <em>1..MAX_LAYER</em>.
 
@@ -92,7 +84,7 @@ with turning on and off each of the layers to see what happens.
    <p>The netlist layer is a special layer for adding connections to
 the netlist by drawing rat lines. This is not the recommended
 way to add to the netlist, but occasionally may be convenient. 
-To learn how to use the netlist layer see <a href="Net-Objects.html#Net-Objects">Net Objects</a>.
+To learn how to use the netlist layer see <a href="Net-Objects.html#Net%20Objects">Net Objects</a>.
 
    </body></html>
 

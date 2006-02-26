@@ -1,13 +1,9 @@
 <html lang="en">
 <head>
-<title>Vendor drill mapping - Pcb</title>
+<title>Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.7">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Getting-Started.html#Getting-Started" title="Getting Started">
-<link rel="prev" href="Measuring-distances.html#Measuring-distances" title="Measuring distances">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta name="generator" content="makeinfo 4.6">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -16,21 +12,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Vendor-drill-mapping"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Measuring-distances.html#Measuring-distances">Measuring distances</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting-Started">Getting Started</a>
+Node:&nbsp;<a name="Vendor%20drill%20mapping">Vendor drill mapping</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Measuring-distances.html#Measuring%20distances">Measuring distances</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Getting-Started.html#Getting%20Started">Getting Started</a>
 <hr><br>
 </div>
 
-   <p><a name="index-Vendor-rules-159"></a><a name="index-Vendor-mapping-160"></a><a name="index-Drill-table-161"></a><a name="index-Vendor-drill-table-162"></a>
-
-<h3 class="section">3.16 Vendor Drill Mapping</h3>
+<h3 class="section">Vendor Drill Mapping</h3>
 
 <p><code>Pcb</code> includes support for mapping drill holes to a specified set
 of sizes used by a particular vendor.  Many PCB manufacturers have a
@@ -41,7 +34,7 @@ instantiated.
 
    <p>The first step in using the vendor drill mapping feature is to create
 a resource file describing the capabilities of your vendor.  The file
-format is the resource file format described in <a href="Resource-Syntax.html#Resource-Syntax">Resource Syntax</a>. 
+format is the resource file format described in <a href="Resource-Syntax.html#Resource%20Syntax">Resource Syntax</a>. 
 A complete example is given below.
 
 <pre class="example">     # Optional name of the vendor
@@ -92,29 +85,29 @@ A complete example is given below.
         silk_width = 10
         copper_overlap = 4
      }
-</pre>
+     </pre>
+
    <p>The vendor resource is loaded using the <em>LoadVendor</em> action. 
 This is invoked by entering:
 <pre class="example">     :LoadVendor(vendorfile)
-</pre>
-   <p>from within <code>Pcb</code>.  Substitute the file name of your vendor
-resource file for <span class="samp">vendorfile</span>.  This action will load the vendor
+     </pre>
+   from within <code>Pcb</code>.  Substitute the file name of your vendor
+resource file for <code>vendorfile</code>.  This action will load the vendor
 resource and modify all the drill holes in the design as well as the
 default via hole size for the various routing styles.
 
    <p>Once a vendor drill map has been loaded, new vias and elements will
 automatically have their drill hole sizes mapped to the vendor drill
-table.  Automatic drill mapping may be disabled under the &ldquo;Settings&rdquo;
+table.  Automatic drill mapping may be disabled under the "Settings"
 menu.  To re-apply an already loaded vendor drill table to a design,
-choose &ldquo;Apply vendor drill mapping&rdquo; from the &ldquo;Connects&rdquo; menu.
+choose "Apply vendor drill mapping" from the "Connects" menu.
 
    <p>See <a href="Actions.html#Actions">Actions</a> for a complete description of the actions associated
 with vendor drill mapping.
 
    <p>Note that the expressions used in the <code>skips</code> section are regular
-expressions.  See <a href="Regular-Expressions.html#Regular-Expressions">Regular Expressions</a> for an introduction to
+expressions.  See <a href="Regular-Expressions.html#Regular%20Expressions">Regular Expressions</a> for an introduction to
 regular expressions.
 
-<!--  chapter 3 - -->
-</body></html>
+   </body></html>
 

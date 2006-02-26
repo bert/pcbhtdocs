@@ -1,13 +1,9 @@
 <html lang="en">
 <head>
-<title>Library File - Pcb</title>
+<title>Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.7">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="File-Formats.html#File-Formats" title="File Formats">
-<link rel="prev" href="Library-Contents-File.html#Library-Contents-File" title="Library Contents File">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta name="generator" content="makeinfo 4.6">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -16,21 +12,18 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Library-File"></a>Previous:&nbsp;<a rel="previous" accesskey="p" href="Library-Contents-File.html#Library-Contents-File">Library Contents File</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="File-Formats.html#File-Formats">File Formats</a>
+Node:&nbsp;<a name="Library%20File">Library File</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Library-Contents-File.html#Library%20Contents%20File">Library Contents File</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="File-Formats.html#File%20Formats">File Formats</a>
 <hr><br>
 </div>
 
-   <p><a name="index-library-file_002c-format-of-764"></a><a name="index-format-of-libraries-765"></a><a name="index-file-format_002c-libraries-766"></a>
-
-<h3 class="section">7.7 Library File Format</h3>
+<h3 class="section">Library File Format</h3>
 
 <p>This section provides an overview about the existing <code>m4</code> definitions
 of the elements. There are basically two different types of files. One
@@ -44,10 +37,12 @@ macro file but are defined with two different value labels.
      define(`Param1_43256_dil', 28)
      define(`Param2_43256_dil', 600)
      define(`PinList_43256_dil', ``pin1', `pin2', ...')
-</pre>
+     </pre>
+
    <p>And the list file:
 <pre class="example">     43256_dil:N:43256:62256
-</pre>
+     </pre>
+
    <p>The macro must define a description, the pin list and up to two additional
 parameters that are passed to the package definitions. The first one is
 the number of pins whereas the second one defines for example the width
@@ -60,11 +55,12 @@ It is required by some low-level macros that
 
    <p>The list file uses a syntax:
 <pre class="example">     template:package:value[:more values]
-</pre>
+     </pre>
+
    <p>This means that the shown example will create two element entries with the
 same package and pinout but with different names.
 
-   <p>A number of packages are defined in <span class="file">common.m4</span>. Included are:
+   <p>A number of packages are defined in <code>common.m4</code>. Included are:
 
 <pre class="example">     DIL packages with suffix D, DW, J, JD, JG, N, NT, P
      PLCC
@@ -73,23 +69,24 @@ same package and pinout but with different names.
      DIN 41.612 connectors
      zick-zack (SD suffix)
      15 pin multiwatt
-</pre>
+     </pre>
+
    <p>If you are going to start your own library please take care about <code>m4</code>
 functions. Be aware of quoting and so on and, most important check your
 additional entry by calling the macro:
 
 <pre class="example">     CreateObject(`template', `value', `package suffix')
-</pre>
+     </pre>
+
    <p>If quoting is incorrect an endless loop may occur (broken by a out-of-memory
 message).
 
-   <p>The scripts in the <span class="file">lib</span> directory handle the creation of libraries
+   <p>The scripts in the <code>lib</code> directory handle the creation of libraries
 as well as of their contents files. Querying is also supported.
 
    <p>I know quite well that this description of the library implementation is
 not what some out there expect. But in my opinion it's much more useful to
 look at the comments and follow the macros step by step.
 
-<!--  chapter 7 - -->
-</body></html>
+   </body></html>
 

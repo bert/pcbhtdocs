@@ -1,14 +1,9 @@
 <html lang="en">
 <head>
-<title>Elements - Pcb</title>
+<title>Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.7">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="up" href="Drawing-and-Removing.html#Drawing-and-Removing" title="Drawing and Removing">
-<link rel="prev" href="Vias.html#Vias" title="Vias">
-<link rel="next" href="Pastebuffer.html#Pastebuffer" title="Pastebuffer">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta name="generator" content="makeinfo 4.6">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -17,22 +12,19 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
-  span.sc { font-variant:small-caps }
-  span.roman { font-family: serif; font-weight: normal; } 
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-<a name="Elements"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Pastebuffer.html#Pastebuffer">Pastebuffer</a>,
+Node:&nbsp;<a name="Elements">Elements</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="Pastebuffer.html#Pastebuffer">Pastebuffer</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="Vias.html#Vias">Vias</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Drawing-and-Removing.html#Drawing-and-Removing">Drawing and Removing</a>
+Up:&nbsp;<a rel="up" accesskey="u" href="Drawing-and-Removing.html#Drawing%20and%20Removing">Drawing and Removing</a>
 <hr><br>
 </div>
 
-   <p><a name="index-element_002c-an-example-95"></a><a name="index-example-of-element-handling-96"></a>
-
-<h4 class="subsection">3.5.6 Elements</h4>
+<h3 class="subsection">Elements</h4>
 
 <p>Some of the functions related to elements only work if both the package
 layer and the pin layer are switched on.
@@ -45,11 +37,11 @@ There are four ways to do this:
         2) load the data from a file
         3) copy data from an already existing element
         4) convert objects in the buffer into an element
-</pre>
-   <p>We don't have any elements on the screen yet nor anything in the
+     </pre>
+   We don't have any elements on the screen yet nor anything in the
 buffer, so we use number one.
 
-   <p><a name="index-example-files-97"></a><a name="index-m4_002c-preprocessing-example-files-98"></a>Select <em>lsi</em> from the menu in the library window press
+   <p>Select <em>lsi</em> from the menu in the library window press
 <em>&lt;Btn1&gt;</em> twice at the appropriate text-line to get
 the MC68030 CPU. 
 The data is loaded and the mode is switched to <em>pastebuffer-mode</em>. 
@@ -64,7 +56,7 @@ are valid until new data is loaded into it either by a cut-to-buffer
 operation, copy-to-buffer operation or by loading a new data file. 
 There are 5 buffers
 available  (possibly more or less if changed at compile time
-with the <code>MAX_BUFFER</code> variable in <span class="file">globalconfig.h</span>). 
+with the <code>MAX_BUFFER</code> variable in <code>globalconfig.h</code>). 
 Switching between them is done by selecting a menu entry or
 by <em>Shift&lt;Key&gt;1..MAX_BUFFER</em>. 
 Each of the two board sides has its own buffers.
@@ -75,7 +67,7 @@ but you can lift them from the example itself if you want.
 If you have problems with the color of the cross hair, change the resource
 <em>cross hairColor</em> setting to a different one.
 
-   <p><a name="index-example-of-loading-an-element-file-99"></a><a name="index-pins_002c-an-example-100"></a><a name="index-example-of-pin-handling-101"></a>Now load a second circuit, the MC68882 FPU for example. 
+   <p>Now load a second circuit, the MC68882 FPU for example. 
 Create the circuit as explained above. You now have two different unnamed
 elements. Unnamed means that the layout-name of the element
 hasn't been set yet. Selecting <em>description</em> from the <em>Display</em>
@@ -92,9 +84,9 @@ Doing so again un-hides the element name.
 the second way to load circuits.
 
    <p>The third way to create a new element is to copy an existing one. 
-Please refer to <a href="Moving-and-Copying.html#Moving-and-Copying">Moving and Copying</a>.
+Please refer to <a href="Moving-and-Copying.html#Moving%20and%20Copying">Moving and Copying</a>.
 
-   <p><a name="index-example-of-creating-an-element-102"></a><a name="index-element_002c-creating-a-new-package-103"></a><a name="index-pastebuffer_002c-convert-contents-to-element-104"></a><a name="index-buffer_002c-convert-contents-to-element-105"></a>The fourth way to create a new element is to convert a buffer's contents
+   <p>The fourth way to create a new element is to convert a buffer's contents
 into an element.  Here's how it's done: Select the Via-tool from the
 <em>Tool pallet</em>.  Set the grid spacing to something appropriate for
 the element pin spacing.  Now create a series of vias where the pins
@@ -134,7 +126,7 @@ the non-square pins are round or octagonal with the <em>!Ctrl&lt;Key&gt;o</em>.
    <p>SMD elements and silkscreen objects are drawn in the "invisible object"
 color if they are located on the opposite side of the board.
 
-   <p>For information on element connections refer to <a href="Connection-Lists.html#Connection-Lists">Connection Lists</a>.
+   <p>For information on element connections refer to <a href="Connection-Lists.html#Connection%20Lists">Connection Lists</a>.
 
    </body></html>
 
