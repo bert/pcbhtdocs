@@ -1,9 +1,14 @@
 <html lang="en">
 <head>
-<title>Pcb</title>
+<title>Polygon Objects - Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.6">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Intro.html#Intro" title="Intro">
+<link rel="prev" href="Arc-Objects.html#Arc-Objects" title="Arc Objects">
+<link rel="next" href="Text-Objects.html#Text-Objects" title="Text Objects">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -12,19 +17,33 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
+table.cartouche {
+  border-collapse: collapse;
+  border: 1px solid #800000;
+  width: 100%;
+}
+table.cartouche td {
+  padding: 4px;
+}
+pre.format {
+  font-family: monospace;
+}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-Node:&nbsp;<a name="Polygon%20Objects">Polygon Objects</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="Text-Objects.html#Text%20Objects">Text Objects</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Arc-Objects.html#Arc%20Objects">Arc Objects</a>,
+<a name="Polygon-Objects"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Text-Objects.html#Text-Objects">Text Objects</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Arc-Objects.html#Arc-Objects">Arc Objects</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="Intro.html#Intro">Intro</a>
 <hr><br>
 </div>
 
-<h3 class="section">Polygons</h3>
+   <p><a name="index-polygon_002c-an-overview-17"></a>
+
+<h3 class="section">2.7 Polygons</h3>
 
 <p>Sometimes it's useful to fill large areas with solid copper. 
 The way to do this is with polygons. 
@@ -64,7 +83,7 @@ each other, but not for points within the same polygon to do so.
 and/or power planes can be easily made with polygons and seen on the screen. 
 If you don't want this auto-clearance behavior, or you load a layout created by
 an early version of <code>Pcb</code>, the old behavior
-(shorts to all piercing pins and vias) is available.  A <code>ChangeSize</code>
+(shorts to all piercing pins and vias) is available.  A <span class="samp">ChangeSize</span>
 operation (<em>S</em> key) toggles a polygon between the new and old polygon/pin
 behavior.
 

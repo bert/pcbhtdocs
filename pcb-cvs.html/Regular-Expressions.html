@@ -1,9 +1,13 @@
 <html lang="en">
 <head>
-<title>Pcb</title>
+<title>Regular Expressions - Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.6">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Custom-Menus.html#Custom-Menus" title="Custom Menus">
+<link rel="next" href="Standard-Drill-Sizes.html#Standard-Drill-Sizes" title="Standard Drill Sizes">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -12,21 +16,35 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
+table.cartouche {
+  border-collapse: collapse;
+  border: 1px solid #800000;
+  width: 100%;
+}
+table.cartouche td {
+  padding: 4px;
+}
+pre.format {
+  font-family: monospace;
+}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-Node:&nbsp;<a name="Regular%20Expressions">Regular Expressions</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Drill-Sizes.html#Standard%20Drill%20Sizes">Standard Drill Sizes</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Custom-Menus.html#Custom%20Menus">Custom Menus</a>,
+<a name="Regular-Expressions"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Standard-Drill-Sizes.html#Standard-Drill-Sizes">Standard Drill Sizes</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Custom-Menus.html#Custom-Menus">Custom Menus</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr><br>
 </div>
 
-<h2 class="appendix">Element Search/Regular Expressions</h2>
+   <p><a name="index-Element-Search-818"></a><a name="index-Regular-Expressions-819"></a><a name="index-Element-Search-820"></a><a name="index-Regular-Expressions-821"></a>
 
-<h3 class="section">Element Search/Regular Expressions</h3>
+<h2 class="appendix">Appendix C Element Search/Regular Expressions</h2>
+
+<h3 class="section">C.1 Element Search/Regular Expressions</h3>
 
 <p><code>Pcb</code>'s search is based on POSIX 1003.2 Regular Expressions.  Full POSIX
 Regular Expressions are supported by <code>Pcb</code> if the regex library was
@@ -35,38 +53,27 @@ It is easier to show by example how to search than explain POSIX 1003.2.  The fo
 Regular Expression characters used to find elements in <code>Pcb</code>:
 
      <dl>
-<dt><code>\</code>
-     <dd>Indicates next character should not be interpreted literally if it
+<dt><span class="samp">\</span><dd>Indicates next character should not be interpreted literally if it
 normally is, and should be interpreted literally if it normally isn't. 
-<br><dt><code>*</code>
-     <dd>Matches 0 or more instances of preceding character. 
-<br><dt><code>+</code>
-     <dd>Matches 1 or more instances of preceding character. 
-<br><dt><code>?</code>
-     <dd>Matches 0 or 1 instances of preceding character. 
-<br><dt><code>.</code>
-     <dd>Matches any single character other than the newline character. 
+<br><dt><span class="samp">*</span><dd>Matches 0 or more instances of preceding character. 
+<br><dt><span class="samp">+</span><dd>Matches 1 or more instances of preceding character. 
+<br><dt><span class="samp">?</span><dd>Matches 0 or 1 instances of preceding character. 
+<br><dt><span class="samp">.</span><dd>Matches any single character other than the newline character. 
 </dl>
 
    <p>The following examples illustrate how regular expressions are used to
 specify element names (reference designators) to search for.
      <dl>
-<dt><code>Search for "C1":</code>
-     <dd>Enter "C1". 
-<br><dt><code>Search for all elements that start with "C", such as capacitors:</code>
-     <dd>Enter "C.*", that is "C-dot-star". 
-<br><dt><code>Search for all elements that start with "C" and end with "1",</code>
-     <dd>such as "C1", or "C51":
+<dt><span class="samp">Search for "C1":</span><dd>Enter "C1". 
+<br><dt><span class="samp">Search for all elements that start with "C", such as capacitors:</span><dd>Enter "C.*", that is "C-dot-star". 
+<br><dt><span class="samp">Search for all elements that start with "C" and end with "1",</span><dd>such as "C1", or "C51":
 Enter "C.*1", that is "C-dot-star-1". 
-<br><dt><code>Search for only R1 or R10, will not match R100:</code>
-     <dd>Enter "R10?". 
-<br><dt><code>Search for all parts starting with "R12" and ending with the number eight, or eighty-eight etc:</code>
-     <dd>Enter "R128+". 
-<br><dt><code>Search for all terminal blocks having a one digit designator such as TB1 or TB2:</code>
-     <dd>"TB.", that is "TB-dot". 
-<br><dt><code>Search for all terminal blocks having a two digit designator such as TB21 or TB15:</code>
-     <dd>"TB..", that is "TB-dot-dot". 
+<br><dt><span class="samp">Search for only R1 or R10, will not match R100:</span><dd>Enter "R10?". 
+<br><dt><span class="samp">Search for all parts starting with "R12" and ending with the number eight, or eighty-eight etc:</span><dd>Enter "R128+". 
+<br><dt><span class="samp">Search for all terminal blocks having a one digit designator such as TB1 or TB2:</span><dd>"TB.", that is "TB-dot". 
+<br><dt><span class="samp">Search for all terminal blocks having a two digit designator such as TB21 or TB15:</span><dd>"TB..", that is "TB-dot-dot". 
 </dl>
 
-   </body></html>
+<!--  Appendix - drill sizes - -->
+</body></html>
 

@@ -1,9 +1,13 @@
 <html lang="en">
 <head>
-<title>Pcb</title>
+<title>Options - Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.6">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="Command_002dLine-Options.html#Command_002dLine-Options" title="Command-Line Options">
+<link rel="next" href="Special-Options.html#Special-Options" title="Special Options">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -12,137 +16,128 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
+table.cartouche {
+  border-collapse: collapse;
+  border: 1px solid #800000;
+  width: 100%;
+}
+table.cartouche td {
+  padding: 4px;
+}
+pre.format {
+  font-family: monospace;
+}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-Node:&nbsp;<a name="Options">Options</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="Special-Options.html#Special%20Options">Special Options</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="Command-Line-Options.html#Command-Line%20Options">Command-Line Options</a>
+<a name="Options"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Special-Options.html#Special-Options">Special Options</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="Command_002dLine-Options.html#Command_002dLine-Options">Command-Line Options</a>
 <hr><br>
 </div>
 
-<h3 class="section">Options</h3>
+<h3 class="section">5.1 Options</h3>
 
-     <dl>
-
-     <br><dt><code>-alldirections/+alldirections</code>
-     <dd>Disables or enables line clipping to 45 degree angles. Overwrites the
+     
+<a name="index-allDirectionLines-195"></a>
+<a name="index-line-clipping-196"></a>
+<a name="index-clipping-of-lines-197"></a>
+<a name="index-_002dalldirections-198"></a>
+<a name="index-_002balldirections-199"></a>
+<dl><dt><span class="samp">-alldirections/+alldirections</span><dd>Disables or enables line clipping to 45 degree angles. Overwrites the
 resource <em>allDirectionLines</em>.
 
-     <br><dt><code>-background file</code>
-     <dd>Selects a PPM file to be displayed as the board background (for tracing). 
+     <p><a name="index-backgroundImage-200"></a><a name="index-background-201"></a><a name="index-_002dbackground-202"></a><br><dt><span class="samp">-background file</span><dd>Selects a PPM file to be displayed as the board background (for tracing). 
 See backgroundImage in <a href="Resources.html#Resources">Resources</a> for details.
 
-     <br><dt><code>-backup value</code>
-     <dd>Time between two backups in seconds. Passing zero disables the backup feature. 
+     <p><a name="index-backupInterval-203"></a><a name="index-backup-204"></a><a name="index-_002dbackup-205"></a><br><dt><span class="samp">-backup value</span><dd>Time between two backups in seconds. Passing zero disables the backup feature. 
 Overwrites the resource <em>backupInterval</em>.
 
-     <br><dt><code>-c value</code>
-     <dd>Number of characters per output line. The resource <em>charactersPerLine</em> is
+     <p><a name="index-charactersPerLine-206"></a><a name="index-characters-per-line-207"></a><a name="index-length-of-outputline-208"></a><a name="index-outputline_002c-length-of-209"></a><a name="index-_002dc-210"></a><br><dt><span class="samp">-c value</span><dd>Number of characters per output line. The resource <em>charactersPerLine</em> is
 overwritten.
 
-     <br><dt><code>-fontfile filename</code>
-     <dd>The default set of symbols (font) for a new layout is read from this file. 
+     <p><a name="index-fontFile-211"></a><a name="index-default-font-212"></a><a name="index-_002dfontfile-213"></a><a name="index-default-font-214"></a><a name="index-symbols-215"></a><br><dt><span class="samp">-fontfile filename</span><dd>The default set of symbols (font) for a new layout is read from this file. 
 All directories as defined by the resource <em>fontPath</em> are scanned
 for the file. The scan is only performed if the filename doesn't contain
 a directory component. The <em>fontFile</em> resource is changed.
 
-     <br><dt><code>-lelement command-line</code>
-     <dd>Sets the command to be executed when an element is loaded from a file to the
+     <p><a name="index-elementCommand-216"></a><a name="index-_002dlelement-217"></a><a name="index-element_002c-command-218"></a><a name="index-element_002c-files-219"></a><a name="index-loading-elements-220"></a><a name="index-preprocessing-element-data-221"></a><a name="index-unix-command-222"></a><br><dt><span class="samp">-lelement command-line</span><dd>Sets the command to be executed when an element is loaded from a file to the
 paste buffer. The command may contain %f and %p to pass the requested filename
 and the searchpath to the command. It must write the data to its
 standard output. The related resource is <em>elementCommand</em>.
 
-     <br><dt><code>-lfile command-line</code>
-     <dd>Sets the command to be executed when a new layout is loaded from a file. 
+     <p><a name="index-fileCommand-223"></a><a name="index-_002dlfile-224"></a><a name="index-file-load-command-225"></a><a name="index-layout-files-226"></a><a name="index-loading-layouts-227"></a><a name="index-preprocessing-layout-data-228"></a><a name="index-unix-command-229"></a><br><dt><span class="samp">-lfile command-line</span><dd>Sets the command to be executed when a new layout is loaded from a file. 
 The command may contain %f and %p to pass the requested filename
 and the searchpath to the command. It must write the data to its
 standard output. The related resource is <em>fileCommand</em>.
 
-     <br><dt><code>-lfont command-line</code>
-     <dd>Sets the command to be executed when a font is loaded from a file. 
+     <p><a name="index-fontCommand-230"></a><a name="index-font-command-231"></a><a name="index-font-files-232"></a><a name="index-loading-fonts-233"></a><a name="index-loading-symbols-234"></a><a name="index-preprocessing-font-data-235"></a><a name="index-unix-command-236"></a><a name="index-_002dlfont-237"></a><br><dt><span class="samp">-lfont command-line</span><dd>Sets the command to be executed when a font is loaded from a file. 
 The command may contain %f and %p to pass the requested filename
 and the searchpath to the command. It must write the data to its
 standard output. The related resource is <em>fontCommand</em>.
 
-     <br><dt><code>-lg layergroups</code>
-     <dd>This option overwrites the resource <em>layerGroups</em>. See its description
+     <p><a name="index-layerGroups-238"></a><a name="index-layers_002c-groups-239"></a><a name="index-groups-240"></a><a name="index-_002dlg-241"></a><br><dt><span class="samp">-lg layergroups</span><dd>This option overwrites the resource <em>layerGroups</em>. See its description
 for more information. The value is used for new layouts only.
 
-     <br><dt><code>-libname filename</code>
-     <dd>The default filename for the library. Overwrites the resource
+     <p><a name="index-libraryFilename-242"></a><a name="index-_002dlibname-243"></a><a name="index-library-name-244"></a><br><dt><span class="samp">-libname filename</span><dd>The default filename for the library. Overwrites the resource
 <em>libraryFilename</em>.
 
-     <br><dt><code>-libpath path</code>
-     <dd>The default search path for the the library. Overwrites the resource
+     <p><a name="index-libraryPath-245"></a><a name="index-_002dlibpath-246"></a><a name="index-library-search-path-247"></a><br><dt><span class="samp">-libpath path</span><dd>The default search path for the the library. Overwrites the resource
 <em>libraryPath</em>.
 
-     <br><dt><code>-llib command-line</code>
-     <dd>Sets the command to be executed when an element is loaded from the library. 
+     <p><a name="index-libraryCommand-248"></a><a name="index-library-command-249"></a><a name="index-loading-elements-250"></a><a name="index-preprocessing-element-data-251"></a><a name="index-unix-command-252"></a><a name="index-_002dllib-253"></a><br><dt><span class="samp">-llib command-line</span><dd>Sets the command to be executed when an element is loaded from the library. 
 The command may contain %f and %p to pass the requested filename
 and the searchpath to the command. %a is replaces by the three arguments
 <em>template</em>, <em>value</em> and <em>package</em>. The command must write
 the data to its standard output. The related resource is <em>libraryCommand</em>.
 
-     <br><dt><code>-llibcont command-line</code>
-     <dd>The command lists the contents of the library. 
+     <p><a name="index-libraryContentsCommand-254"></a><a name="index-library-contents-command-255"></a><a name="index-listing-libraries-256"></a><a name="index-unix-command-257"></a><a name="index-_002dllibcont-258"></a><br><dt><span class="samp">-llibcont command-line</span><dd>The command lists the contents of the library. 
 The command may contain %f and %p to pass the library filename
-and the searchpath to the command. Also refer to <a href="Library-File.html#Library%20File">Library File</a>
-and <a href="Library-Contents-File.html#Library%20Contents%20File">Library Contents File</a>. 
+and the searchpath to the command. Also refer to <a href="Library-File.html#Library-File">Library File</a>
+and <a href="Library-Contents-File.html#Library-Contents-File">Library Contents File</a>. 
 The related resource is <em>libraryContentsCommand</em>.
 
-     <br><dt><code>-loggeometry geometry</code>
-     <dd>Determines the geometry of the log window.
+     <p><a name="index-log-window-259"></a><a name="index-messages-260"></a><a name="index-_002dloggeometry-261"></a><br><dt><span class="samp">-loggeometry geometry</span><dd>Determines the geometry of the log window.
 
-     <br><dt><code>-pnl value</code>
-     <dd>Restricts the displayed length of the name of a pin in the pinout window to
+     <p><a name="index-pinoutNameLength-262"></a><a name="index-_002dpnl-263"></a><a name="index-namelength-of-pins-264"></a><a name="index-pin_002c-name-of-265"></a><a name="index-length-of-a-pin-name-266"></a><br><dt><span class="samp">-pnl value</span><dd>Restricts the displayed length of the name of a pin in the pinout window to
 the passed value. See also, the resource <em>pinoutNameLength</em>.
 
-     <br><dt><code>-pz value</code>
-     <dd>Sets the zoom factor for the pinout window according to the formula:
+     <p><a name="index-pinoutZoom-267"></a><a name="index-pinout_002c-zoomfactor-of-display-268"></a><a name="index-zoom-of-pinout-window-269"></a><a name="index-_002dpz-270"></a><br><dt><span class="samp">-pz value</span><dd>Sets the zoom factor for the pinout window according to the formula:
 scale = 1:(2 power value). The related resource is <em>pinoutZoom</em>.
 
-     <br><dt><code>-reset/+reset</code>
-     <dd>If enabled, all connections are reset after each element is scanned. 
+     <p><a name="index-resetAfterElement-271"></a><a name="index-_002dreset-272"></a><a name="index-_002breset-273"></a><a name="index-connections_002c-reseting-after-element-274"></a><a name="index-reseting-found-connections-275"></a><br><dt><span class="samp">-reset/+reset</span><dd>If enabled, all connections are reset after each element is scanned. 
 This feature is only used while scanning connections to all elements. 
 See also, <em>resetAfterElement</em>.
 
-     <br><dt><code>-ring/+ring</code>
-     <dd>Overrides the resource <em>ringBellWhenFinished</em>. If enabled, the bell
+     <p><a name="index-ringBellWhenFinished-276"></a><a name="index-_002dring-277"></a><a name="index-_002bring-278"></a><a name="index-keyboard-bell-279"></a><br><dt><span class="samp">-ring/+ring</span><dd>Overrides the resource <em>ringBellWhenFinished</em>. If enabled, the bell
 sounds when connection searching has finished.
 
-     <br><dt><code>-rs string</code>
-     <dd>Overrides the resource <em>routeStyle</em>. The string defines a colon
+     <p><a name="index-routeStyle-280"></a><a name="index-_002drs-281"></a><a name="index-routing-style-282"></a><br><dt><span class="samp">-rs string</span><dd>Overrides the resource <em>routeStyle</em>. The string defines a colon
 separated list of route styles. The route styles consist of a
 comma separated list of name, line thickness, via diameter, and via drill size. 
 e.g. "Fat,50,100,40:Skinny,8,35,20:75Ohm,110,110,20"
 
-     <br><dt><code>-s/+s</code>
-     <dd>Enables/Disables the saving of the previous commandline. Overrides the
+     <p><a name="index-saveLastCommand-283"></a><a name="index-saving-last-entered-user-command-284"></a><a name="index-inputfield_002c-saving-entered-command_002dline-285"></a><a name="index-_002ds-286"></a><a name="index-_002bs-287"></a><br><dt><span class="samp">-s/+s</span><dd>Enables/Disables the saving of the previous commandline. Overrides the
 <em>saveLastCommand</em> resource.
 
-     <br><dt><code>-save/+save</code>
-     <dd>See the resource description of <em>saveInTMP</em> for details.
+     <p><a name="index-saveInTMP-288"></a><a name="index-_002dsave-289"></a><a name="index-_002bsave-290"></a><a name="index-backup-291"></a><a name="index-saving-layouts-292"></a><a name="index-preventing-loss-of-data-293"></a><a name="index-temporary-files-294"></a><a name="index-_002ftmp-295"></a><a name="index-directory-_002ftmp-296"></a><br><dt><span class="samp">-save/+save</span><dd>See the resource description of <em>saveInTMP</em> for details.
 
-     <br><dt><code>-sfile command-line</code>
-     <dd>Sets the command to be executed when an layout file is saved. 
+     <p><a name="index-saveCommand-297"></a><a name="index-file-save-command-298"></a><a name="index-layout-files-299"></a><a name="index-saving-layouts-300"></a><a name="index-postprocessing-layout-data-301"></a><a name="index-unix-command-302"></a><a name="index-_002dsfile-303"></a><br><dt><span class="samp">-sfile command-line</span><dd>Sets the command to be executed when an layout file is saved. 
 The command may contain %f which is replaced by the filename. The command
 must read its data from the standard input. 
 The resource <em>saveCommand</em> is overwritten.
 
-     <br><dt><code>-script filename</code>
-     <dd>Specifies a script file containing PCB actions to be executed
+     <p><a name="index-scriptFilename-304"></a><a name="index-_002dscript-305"></a><a name="index-startup-actions-script-306"></a><br><dt><span class="samp">-script filename</span><dd>Specifies a script file containing PCB actions to be executed
 upon startup.  Overwrites the resource
 <em>scriptFilename</em>.
 
-     <br><dt><code>-size &lt;width&gt;x&lt;height&gt;</code>
-     <dd>Overrides the resource <em>size</em> which determines the maximum size
+     <p><a name="index-size-307"></a><a name="index-size-of-a-layout-308"></a><a name="index-layout-size-309"></a><a name="index-_002dsize-310"></a><br><dt><span class="samp">-size &lt;width&gt;x&lt;height&gt;</span><dd>Overrides the resource <em>size</em> which determines the maximum size
 of a layout.
 
-     <br><dt><code>-v value</code>
-     <dd>Sets the volume of the X speaker. The value is passed to <code>XBell()</code> and
+     <p><a name="index-volume-311"></a><a name="index-speaker-volume-312"></a><a name="index-volume-of-speaker-313"></a><a name="index-_002dv-314"></a><br><dt><span class="samp">-v value</span><dd>Sets the volume of the X speaker. The value is passed to <code>XBell()</code> and
 must be in the range -100..100.
 
 </dl>

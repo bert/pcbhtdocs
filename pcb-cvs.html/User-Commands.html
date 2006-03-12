@@ -1,9 +1,13 @@
 <html lang="en">
 <head>
-<title>Pcb</title>
+<title>User Commands - Pcb</title>
 <meta http-equiv="Content-Type" content="text/html">
 <meta name="description" content="Pcb">
-<meta name="generator" content="makeinfo 4.6">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="prev" href="Getting-Started.html#Getting-Started" title="Getting Started">
+<link rel="next" href="Command_002dLine-Options.html#Command_002dLine-Options" title="Command-Line Options">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <style type="text/css"><!--
   pre.display { font-family:inherit }
@@ -12,19 +16,33 @@
   pre.smallformat  { font-family:inherit; font-size:smaller }
   pre.smallexample { font-size:smaller }
   pre.smalllisp    { font-size:smaller }
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
+table.cartouche {
+  border-collapse: collapse;
+  border: 1px solid #800000;
+  width: 100%;
+}
+table.cartouche td {
+  padding: 4px;
+}
+pre.format {
+  font-family: monospace;
+}
 --></style>
 </head>
 <body>
 <div class="node">
 <p>
-Node:&nbsp;<a name="User%20Commands">User Commands</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="Command-Line-Options.html#Command-Line%20Options">Command-Line Options</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Getting-Started.html#Getting%20Started">Getting Started</a>,
+<a name="User-Commands"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Command_002dLine-Options.html#Command_002dLine-Options">Command-Line Options</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Getting-Started.html#Getting-Started">Getting Started</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 <hr><br>
 </div>
 
-<h2 class="chapter">User Commands</h2>
+   <p><a name="index-user-commands-165"></a><a name="index-entering-user-commands-166"></a>
+
+<h2 class="chapter">4 User Commands</h2>
 
 <p>The entering of user-commands is initiated by the action routine
 <em>Command()</em> (the <code>(":")</code> character) and finished by either
@@ -40,52 +58,46 @@ See also, the resource <em>saveInTMP</em>.
    <p>There are simple <em>usage</em> dialogs for each command and one for the
 complete set of commands.
 
-     <dl>
-
-     <br><dt><code>l [filename]</code>
-     <dd>Loads a new datafile (layout) and, if confirmed, overwrites any existing unsaved data. 
+     
+<a name="index-_003al-167"></a>
+<a name="index-loading-layouts-168"></a>
+<a name="index-layout_002c-loading-a-169"></a>
+<dl><dt><span class="samp">l [filename]</span><dd>Loads a new datafile (layout) and, if confirmed, overwrites any existing unsaved data. 
 The filename and the searchpath (<em>filePath</em>) are passed to the
 command defined by <em>fileCommand</em>. 
 If no filename is specified a file select box will popup.
 
-     <br><dt><code>le [filename]</code>
-     <dd>Loads an element description into the paste buffer. 
+     <p><a name="index-_003ale-170"></a><a name="index-loading-elements-to-buffer-171"></a><a name="index-element_002c-loading-to-buffer-172"></a><br><dt><span class="samp">le [filename]</span><dd>Loads an element description into the paste buffer. 
 The filename and the searchpath (<em>elementPath</em>) are passed to the
 command defined by <em>elementCommand</em>. 
 If no filename is specified a file select box will popup.
 
-     <br><dt><code>m [filename]</code>
-     <dd>Loads an layout file into the paste buffer. 
+     <p><a name="index-_003am-173"></a><a name="index-loading-a-layout-to-buffer-174"></a><a name="index-merging-layouts-175"></a><a name="index-layout_002c-loading-to-buffer-176"></a><a name="index-layout_002c-merging-a-177"></a><br><dt><span class="samp">m [filename]</span><dd>Loads an layout file into the paste buffer. 
 The filename and the searchpath (<em>filePath</em>) are passed to the
 command defined by <em>fileCommand</em>. 
 If no filename is specified a file select box will popup.
 
-     <br><dt><code>q[!]</code>
-     <dd>Quits the program without saving any data (after confirmation). 
+     <p><a name="index-_003aq-178"></a><a name="index-exit-179"></a><a name="index-quit-180"></a><br><dt><span class="samp">q[!]</span><dd>Quits the program without saving any data (after confirmation). 
 q! doesn't ask for confirmation, it just quits.
 
-     <br><dt><code>s [filename]</code>
-     <dd>Data and the filename are passed to the command defined by the resource
+     <p><a name="index-_003as-181"></a><a name="index-saving-layouts-182"></a><a name="index-layout-files_002c-saving-of-183"></a><br><dt><span class="samp">s [filename]</span><dd>Data and the filename are passed to the command defined by the resource
 <em>saveCommand</em>. It must read the layout data from <em>stdin</em>. 
 If no filename is entered, either the last one is used
 again or, if it is not available, a file select box will pop up.
 
-     <br><dt><code>rn [filename]</code>
-     <dd>Reads in a netlist file.  If no filename is given
+     <p><a name="index-_003arn-184"></a><a name="index-rat_0027s-nest-185"></a><a name="index-layout_002dname-186"></a><br><dt><span class="samp">rn [filename]</span><dd>Reads in a netlist file.  If no filename is given
 a file select box will pop up. 
 The file is read via the command defined by the
 <em>RatCommand</em> resource. The command must send its output to <em>stdout</em>.
 
-     <p>Netlists are used for generating rat's nests (see <a href="Rats-Nest.html#Rats%20Nest">Rats Nest</a>) and for
+     <p>Netlists are used for generating rat's nests (see <a href="Rats-Nest.html#Rats-Nest">Rats Nest</a>) and for
 verifying the board layout (which is also accomplished by the <em>Ratsnest</em>
 command).
 
-     <br><dt><code>w[q] [filename]</code>
-     <dd>These commands have been added for the convenience of <code>vi</code> users and
+     <p><a name="index-_003aw_005bq_005d-187"></a><a name="index-saving-layouts-188"></a><a name="index-layout-files_002c-saving-of-189"></a><br><dt><span class="samp">w[q] [filename]</span><dd>These commands have been added for the convenience of <code>vi</code> users and
 have the same functionality as <em>s</em> combined with <em>q</em>.
 
-     <br><dt><code>actionCommand</code>
-     <dd>Causes the actionCommand to be executed.  This allows you to initiate actions
+     <p><a name="index-_003aactionCommand_0028_0029-190"></a><a name="index-action-command-191"></a><a name="index-Actions_002c-initiating-192"></a><br><dt><span class="samp">actionCommand</span><dd>Causes the actionCommand to be executed.  This allows you to initiate actions
 for which no bindings exist in the resource file.  It can be used to initiate any
 action with whatever arguments you enter.  This makes it possible to do things
 that otherwise would be extremely tedious.  For example, to change the drilling
@@ -100,5 +112,6 @@ see what actions are available.
 
    </dl>
 
-   </body></html>
+<!--  chapter 4 - -->
+</body></html>
 
