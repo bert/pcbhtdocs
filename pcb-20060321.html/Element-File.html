@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+<title>Element File - Pcb</title>
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="description" content="Pcb">
+<meta name="generator" content="makeinfo 4.7">
+<link title="Top" rel="start" href="index.html#Top">
+<link rel="up" href="File-Formats.html#File-Formats" title="File Formats">
+<link rel="prev" href="Layout-File.html#Layout-File" title="Layout File">
+<link rel="next" href="Font-File.html#Font-File" title="Font File">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc { font-variant:small-caps }
+  span.roman { font-family: serif; font-weight: normal; } 
+table.cartouche {
+  border-collapse: collapse;
+  border: 1px solid #800000;
+  width: 100%;
+}
+table.cartouche td {
+  padding: 4px;
+}
+pre.format {
+  font-family: monospace;
+}
+--></style>
+</head>
+<body>
+<div class="node">
+<p>
+<a name="Element-File"></a>Next:&nbsp;<a rel="next" accesskey="n" href="Font-File.html#Font-File">Font File</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="Layout-File.html#Layout-File">Layout File</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="File-Formats.html#File-Formats">File Formats</a>
+<hr><br>
+</div>
+
+   <p><a name="index-element_002c-file-format-758"></a><a name="index-format-of-element-files-759"></a><a name="index-file-format_002c-element-data-760"></a>
+
+<h3 class="section">7.3 Element File Format</h3>
+
+<p>Element files are used to describe one component which then may be used
+several times within one or more layouts. You will normally split the
+file into two parts, one for the pinout and one for the package description. 
+Using <code>m4</code> allows you to define pin names as macros in one file and
+include a package description file which evaluates the macros. See
+the resource <em>elementCommand</em> for more information. The pins (and pads)
+must appear in sequential order in the element file (new in 1.5) so that
+pin 1 must be the first PIN(...) in the file.
+
+   <p>Doing things this way makes it possible to use one package file for several
+different circuits. See the sample files <span class="file">dil*</span>.
+
+   <p>The lowest x and y coordinates of all sub-objects of an element are
+used as an attachment point for the cross hair cursor of the main
+window, unless the element has a mark, in which case that's the
+attachment point.
+
+   </body></html>
+

@@ -36,6 +36,141 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20060321">Development snapshot 20060321 available</A></H2>
+    <p>
+      A new snapshot release, pcb-20060321, is available.  As always, this is
+      a snapshot of a work in progress.
+      A summary of the changes since the last snapshot is:
+      </p>
+    <UL>
+    <LI>
+    Add internal support for more than 8 layers.  By default PCB is still
+    compiled for 8 copper layers.
+    </LI>
+
+    <LI>
+    Fixed several minor bugs in the GTK user interface including fixing
+    scrolling of the log window, fixed up some of the DRC reporting
+    and mm/mil units.
+    </LI>
+
+    <LI>
+    Fixed several key bindings.
+    </LI>
+
+    <LI>
+    Updated refcard.tex to reflect the current set of key bindings.
+    </LI>
+
+    <LI>
+    Fixed some minor bugs which caused compilation problems on some
+    systems.
+    </LI>
+
+    <LI>
+    Converted the QFN footprints to hi-res.
+    </LI>
+
+    <LI>
+    Added documentation to the manual for the centroid file format and
+    the algorithm used for finding the centroid and rotation.
+    </LI>
+
+    <LI>
+    Fixed a bug so that the initial layer named 'component' is actually
+    on the component side of the board and 'solder' is actually on the
+    solder side of the board.
+    </LI>
+
+    <LI>
+    Fixed the pin order in the bourns trim pots (~bourns library)
+    </LI>
+
+    <LI>
+    Added actions and a script to allow command line printing.
+    </LI>
+
+    <LI>
+    Added IPC-7351 recommended footprints for 0201, 0402, etc passives.
+    </LI>
+
+    <LI>
+    Fixed SME5 package.
+    </LI>
+
+    <LI>
+    Fixed a bug which prevented disabling nets from the ratsnest
+    </LI>
+
+    <LI>
+    Fixed a bug where clearances could be set 1 below the spacing
+    </LI>
+
+    <LI>
+    Fixed clearline flag so that arcs also have this property.
+    </LI>
+
+    <LI>
+    Speed up rtree searches and other autorouter speedups.
+    </LI>
+
+    <LI>
+    Fixed a bug in computation of the closest polygon point.
+    </LI>
+
+    <LI>
+    Use rtrees for polygon handling for speed improvements.
+    </LI>
+
+    <LI>
+    Add a ChangePinName() action.
+    </LI>
+
+    <LI>
+    Fix a bug which caused duplicate rats names when manually adding
+    rats lines.
+    </LI>
+
+    <LI>
+    Added DRC checks for minimum drill diameter and minimum annular ring.
+    </LI>
+
+    <LI>
+    Add a minimal glossary to the manual
+    </LI>
+
+    <LI>
+    Fix the author name in the fab drawing
+    </LI>
+
+    <LI>
+    Cause the crosshair to snap to pad ends instead of center for rat
+    drawing.
+    </LI>
+
+    <LI>
+    Add "join" to SetFlag, ClrFlag and ChangeFlag.
+    </LI>
+
+    <LI>
+    Added inline documentation for the pcb file syntax.  The manual now
+    is up to date and correctly documents the file format.  In addition
+    the inline documentation will make it much easier to maintain the
+    documentation.
+    </LI>
+
+    <LI>
+    Remove some broken m4lib footprints
+    </LI>
+
+    <LI>
+    Put the correct setting for the gschem footprint= attribute in []
+    in the library window for the m4 libraries.
+    </LI>
+    
+    </UL>
+
+    <HR>
     <H2><A NAME="20060311">File format documentation updated</A></H2>
     <p>
     DJ Delorie has brought the section in the <a href="manual.html">PCB
@@ -48,7 +183,7 @@ rs274x,
     <HR>
     <H2><A NAME="20050609">Development snapshot 20050609 available</A></H2>
     <p>
-      A new snapshot release, pcb-200609, is available.  As always, this is
+      A new snapshot release, pcb-20050609, is available.  As always, this is
       a snapshot of a work in progress.
       A summary of the changes since the last snapshot is:
       </p>
