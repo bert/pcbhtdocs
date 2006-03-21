@@ -166,6 +166,40 @@ their contents, and only use pin and pad definitions which use
 absolute coordinates.
 
    <p><table class="cartouche" summary="cartouche" border="1"><tr><td>
+<pre class="format">ElementArc [X Y Width Height StartAngle DeltaAngle Thickness]
+ElementArc (X Y Width Height StartAngle DeltaAngle Thickness)
+</pre>
+   </td></tr></table>
+
+     <dl>
+<dt><var>X Y</var><dd>Coordinates of the center of the arc.  These are relative to the
+Element's mark point for new element formats, or absolute for older
+formats. 
+<br><dt><var>Width Height</var><dd>The width and height, from the center to the edge.  The bounds of the
+circle of which this arc is a segment, is thus 2*Width by
+2*Height. 
+<br><dt><var>StartAngle</var><dd>The angle of one end of the arc, in degrees.  In PCB, an angle of zero
+points left (negative X direction), and 90 degrees points down
+(positive Y direction). 
+<br><dt><var>DeltaAngle</var><dd>The sweep of the arc.  This may be negative.  Positive angles sweep
+counterclockwise. 
+<br><dt><var>Thickness</var><dd>The width of the silk line which forms the arc. 
+</dl>
+
+   <p><table class="cartouche" summary="cartouche" border="1"><tr><td>
+<pre class="format">ElementLine [X1 Y1 X2 Y2 Thickness]
+ElementLine (X1 Y1 X2 Y2 Thickness)
+</pre>
+   </td></tr></table>
+
+     <dl>
+<dt><var>X1 Y1 X2 Y2</var><dd>Coordinates of the endpoints of the line.  These are relative to the
+Element's mark point for new element formats, or absolute for older
+formats. 
+<br><dt><var>Thickness</var><dd>The width of the silk for this line. 
+</dl>
+
+   <p><table class="cartouche" summary="cartouche" border="1"><tr><td>
 <pre class="format">Flags(Number)
 </pre>
    </td></tr></table>
@@ -240,6 +274,17 @@ thickness of the clear; thus the space between the line and the
 polygon is Clearance/2 wide. 
 <br><dt><var>SFlags</var><dd>Symbolic or numeric flags
 <br><dt><var>NFlags</var><dd>Numeric flags. 
+</dl>
+
+   <p><table class="cartouche" summary="cartouche" border="1"><tr><td>
+<pre class="format">Mark [X Y]
+Mark (X Y)
+</pre>
+   </td></tr></table>
+
+     <dl>
+<dt><var>X Y</var><dd>Coordinates of the Mark, for older element formats that don't have
+the mark as part of the Element line. 
 </dl>
 
    <p><table class="cartouche" summary="cartouche" border="1"><tr><td>
