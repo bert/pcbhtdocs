@@ -36,6 +36,25 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20060321hid">HID Code Merge</A></H2>
+    <p>
+      After several months of hard work lead by DJ Delorie, the Human Interface Device
+      (HID) version of PCB has been merged into CVS.  As part of this DJ has added
+      a lesstif GUI and Bill Wilson contributed a tremendous effort to get the GTK
+      GUI working in the HID framework.  In addition a new png/gif/jpeg export option
+      has been added.
+    </p>
+    <p>
+      The goal of the HID project was to remove all of the GUI dependent code from the
+      core of PCB.  In addition to opening the doors to a future win32 port (volunteers?),
+      this should make the core code easier to maintain.
+    </p>
+    <p>
+      This represents a fairly major overhaul of a lot of code so lots of testing would
+      be appreciated.
+    </p>
+
+    <HR>
     <H2><A NAME="20060321">Development snapshot 20060321 available</A></H2>
     <p>
       A new snapshot release, pcb-20060321, is available.  As always, this is
