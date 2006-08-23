@@ -31,7 +31,6 @@ pre.format {
 <p><hr>
 Node:&nbsp;<a name="Top">Top</a>,
 Next:&nbsp;<a rel="next" accesskey="n" href="#Copying">Copying</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="#dir">(dir)</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#dir">(dir)</a>
 <br>
 </div>
@@ -798,7 +797,6 @@ status line at the bottom of the window.
 <p><hr>
 Node:&nbsp;<a name="Menu">Menu</a>,
 Next:&nbsp;<a rel="next" accesskey="n" href="#Status-line%20and%20Input-field">Status-line and Input-field</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="#Layout%20Area">Layout Area</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Application%20Window">Application Window</a>
 <br>
 </div>
@@ -1289,7 +1287,6 @@ menu. Use the Lock tool sparingly.
 <div class="node">
 <p><hr>
 Node:&nbsp;<a name="Layout%20Area">Layout Area</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="#Menu">Menu</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Tool%20Selectors">Tool Selectors</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Application%20Window">Application Window</a>
 <br>
@@ -1462,7 +1459,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Drawing%20and%20Removing">Drawing and 
 <br>
 </div>
 
-   <p>There are several keystrokes and button events referring to an <em>object</em>
+<h3 class="subsection">Common Drawing and Removing Methods</h4>
+
+<p>There are several keystrokes and button events referring to an <em>object</em>
 without identifying its type. Here's a list of them:
 
    <p><em>&lt;Btn1&gt;</em> creates (or deletes)  an object depending on the
@@ -1889,7 +1888,7 @@ with the <code>DEFAULT_MEDIASIZE</code> variable in <code>globalconfig.h</code>.
 <div class="node">
 <p><hr>
 Node:&nbsp;<a name="Printing">Printing</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="#Connection%20Lists">Connection Lists</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Arrow%20Tool">Arrow Tool</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Loading%20and%20Saving">Loading and Saving</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Getting%20Started">Getting Started</a>
 <br>
@@ -2013,8 +2012,7 @@ Note, the normal <code>PostScript</code> units are 1/72 inch.
 <div class="node">
 <p><hr>
 Node:&nbsp;<a name="Connection%20Lists">Connection Lists</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="#Arrow%20Tool">Arrow Tool</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="#Printing">Printing</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Vendor%20drill%20mapping">Vendor drill mapping</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Getting%20Started">Getting Started</a>
 <br>
 </div>
@@ -2060,7 +2058,7 @@ menu.
 <p><hr>
 Node:&nbsp;<a name="Arrow%20Tool">Arrow Tool</a>,
 Next:&nbsp;<a rel="next" accesskey="n" href="#Rats%20Nest">Rats Nest</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="#Connection%20Lists">Connection Lists</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Printing">Printing</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Getting%20Started">Getting Started</a>
 <br>
 </div>
@@ -2329,6 +2327,7 @@ cursor coordinates.
 <div class="node">
 <p><hr>
 Node:&nbsp;<a name="Vendor%20drill%20mapping">Vendor drill mapping</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Connection%20Lists">Connection Lists</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#Measuring%20distances">Measuring distances</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#Getting%20Started">Getting Started</a>
 <br>
@@ -4102,7 +4101,45 @@ listed.
    <p>Symbolic and numeric flags (SFlags and NFlags) are described in
 <a href="#Object%20Flags">Object Flags</a>.
 
-   <table class="cartouche" border=1><tr><td>
+<ul class="menu">
+<li><a accesskey="1" href="#Arc%20syntax">Arc syntax</a>: 
+<li><a accesskey="2" href="#Connect%20syntax">Connect syntax</a>: 
+<li><a accesskey="3" href="#Cursor%20syntax">Cursor syntax</a>: 
+<li><a accesskey="4" href="#DRC%20syntax">DRC syntax</a>: 
+<li><a accesskey="5" href="#Element%20syntax">Element syntax</a>: 
+<li><a accesskey="6" href="#ElementArc%20syntax">ElementArc syntax</a>: 
+<li><a accesskey="7" href="#ElementLine%20syntax">ElementLine syntax</a>: 
+<li><a accesskey="8" href="#Flags%20syntax">Flags syntax</a>: 
+<li><a accesskey="9" href="#Grid%20syntax">Grid syntax</a>: 
+<li><a href="#Groups%20syntax">Groups syntax</a>: 
+<li><a href="#Layer%20syntax">Layer syntax</a>: 
+<li><a href="#Line%20syntax">Line syntax</a>: 
+<li><a href="#Mark%20syntax">Mark syntax</a>: 
+<li><a href="#Net%20syntax">Net syntax</a>: 
+<li><a href="#Netlist%20syntax">Netlist syntax</a>: 
+<li><a href="#Pad%20syntax">Pad syntax</a>: 
+<li><a href="#PCB%20syntax">PCB syntax</a>: 
+<li><a href="#Pin%20syntax">Pin syntax</a>: 
+<li><a href="#Polygon%20syntax">Polygon syntax</a>: 
+<li><a href="#Rat%20syntax">Rat syntax</a>: 
+<li><a href="#Styles%20syntax">Styles syntax</a>: 
+<li><a href="#Symbol%20syntax">Symbol syntax</a>: 
+<li><a href="#SymbolLine%20syntax">SymbolLine syntax</a>: 
+<li><a href="#Text%20syntax">Text syntax</a>: 
+<li><a href="#Thermal%20syntax">Thermal syntax</a>: 
+<li><a href="#Via%20syntax">Via syntax</a>: 
+</ul>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Arc%20syntax">Arc syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Connect%20syntax">Connect syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Arc</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Arc [X Y Width Height Thickness Clearance StartAngle DeltaAngle SFlags]
 Arc (X Y Width Height Thickness Clearance StartAngle DeltaAngle NFlags)
 Arc (X Y Width Height Thickness StartAngle DeltaAngle NFlags)
@@ -4136,7 +4173,18 @@ counterclockwise.
      <dd>Numeric flags. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Connect%20syntax">Connect syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Cursor%20syntax">Cursor syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Arc%20syntax">Arc syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Connect</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Connect ("PinPad")
 </pre>
    </td></tr></table>
@@ -4148,7 +4196,18 @@ names are named by the refdes and pin name, like <code>"U14-7"</code> for
 pin 7 of U14, or <code>"T4-E"</code> for pin E of T4. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Cursor%20syntax">Cursor syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#DRC%20syntax">DRC syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Connect%20syntax">Connect syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Cursor</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Cursor [X Y Zoom]
 Cursor (X Y Zoom)
 </pre>
@@ -4164,7 +4223,18 @@ first variant accepts floating point numbers.  The special value
 "1000" means "zoom to fit"
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="DRC%20syntax">DRC syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Element%20syntax">Element syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Cursor%20syntax">Cursor syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">DRC</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">DRC [Bloat Shrink Line Silk Drill Ring]
 DRC [Bloat Shrink Line Silk]
 DRC [Bloat Shrink Line]
@@ -4186,7 +4256,18 @@ DRC [Bloat Shrink Line]
      <dd>Minimum width of the annular ring around pins and vias. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Element%20syntax">Element syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ElementArc%20syntax">ElementArc syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#DRC%20syntax">DRC syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Element</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Element [SFlags "Desc" "Name" "Value" MX MY TX TY TDir TScale TSFlags] (
 Element (NFlags "Desc" "Name" "Value" MX MY TX TY TDir TScale TNFlags) (
 Element (NFlags "Desc" "Name" "Value" TX TY TDir TScale TNFlags) (
@@ -4236,7 +4317,18 @@ mark coordinates in the element line, may have a Mark definition in
 their contents, and only use pin and pad definitions which use
 absolute coordinates.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ElementArc%20syntax">ElementArc syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ElementLine%20syntax">ElementLine syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Element%20syntax">Element syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">ElementArc</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ElementArc [X Y Width Height StartAngle DeltaAngle Thickness]
 ElementArc (X Y Width Height StartAngle DeltaAngle Thickness)
 </pre>
@@ -4262,7 +4354,18 @@ counterclockwise.
      <dd>The width of the silk line which forms the arc. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ElementLine%20syntax">ElementLine syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Flags%20syntax">Flags syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ElementArc%20syntax">ElementArc syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">ElementLine</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ElementLine [X1 Y1 X2 Y2 Thickness]
 ElementLine (X1 Y1 X2 Y2 Thickness)
 </pre>
@@ -4277,7 +4380,18 @@ formats.
      <dd>The width of the silk for this line. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Flags%20syntax">Flags syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Grid%20syntax">Grid syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ElementLine%20syntax">ElementLine syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Flags</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Flags(Number)
 </pre>
    </td></tr></table>
@@ -4289,7 +4403,18 @@ represent pcb-wide flags as defined in <a href="#PCBFlags">PCBFlags</a>.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Grid%20syntax">Grid syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Groups%20syntax">Groups syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Flags%20syntax">Flags syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Grid</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Grid [Step OffsetX OffsetY Visible]
 Grid (Step OffsetX OffsetY Visible)
 Grid (Step OffsetX OffsetY)
@@ -4306,7 +4431,18 @@ floating point number for the first two variants.
      <dd>If non-zero, the grid will be visible on the screen. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Groups%20syntax">Groups syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Layer%20syntax">Layer syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Grid%20syntax">Grid syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Groups</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Groups("String")
 </pre>
    </td></tr></table>
@@ -4326,7 +4462,18 @@ group as being the top or bottom side of the board.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Layer%20syntax">Layer syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Line%20syntax">Line syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Groups%20syntax">Groups syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Layer</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Layer (LayerNum "Name") (
    ... contents ...
 )
@@ -4345,7 +4492,18 @@ component-side silk, in that order.
 text, and polygons. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Line%20syntax">Line syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Mark%20syntax">Mark syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Layer%20syntax">Layer syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Line</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Line [X1 Y1 X2 Y2 Thickness Clearance SFlags]
 Line (X1 Y1 X2 Y2 Thickness Clearance NFlags)
 Line (X1 Y1 X2 Y2 Thickness NFlags)
@@ -4368,7 +4526,18 @@ polygon is Clearance/2 wide.
      <dd>Numeric flags. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Mark%20syntax">Mark syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Net%20syntax">Net syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Line%20syntax">Line syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Mark</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Mark [X Y]
 Mark (X Y)
 </pre>
@@ -4380,7 +4549,18 @@ Mark (X Y)
 the mark as part of the Element line. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Net%20syntax">Net syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Netlist%20syntax">Netlist syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Mark%20syntax">Mark syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Net</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Net ("Name" "Style") (
    ... connects ...
 )
@@ -4394,14 +4574,36 @@ the mark as part of the Element line.
      <dd>The routing style that should be used when autorouting this net. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Netlist%20syntax">Netlist syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Pad%20syntax">Pad syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Net%20syntax">Net syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Netlist</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Netlist ( ) (
    ... nets ...
 )
 </pre>
    </td></tr></table>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Pad%20syntax">Pad syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#PCB%20syntax">PCB syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Netlist%20syntax">Netlist syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Pad</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Pad [rX1 rY1 rX2 rY2 Thickness Clearance Mask "Name" "Number" SFlags]
 Pad (rX1 rY1 rX2 rY2 Thickness Clearance Mask "Name" "Number" NFlags)
 Pad (aX1 aY1 aX2 aY2 Thickness "Name" "Number" NFlags)
@@ -4411,12 +4613,12 @@ Pad (aX1 aY1 aX2 aY2 Thickness "Name" NFlags)
 
      <dl>
 <dt><var>rX1 rY1 rX2 rY2</var>
-     <dd>Coordinates of the enpoints of the pad, relative to the element's
+     <dd>Coordinates of the endpoints of the pad, relative to the element's
 mark.  Note that the copper extends beyond these coordinates by half
 the thickness.  To make a square or round pad, specify the same
 coordinate twice. 
 <br><dt><var>aX1 aY1 aX2 aY2</var>
-     <dd>Same, but absolute coordinates of the enpoints of the pad. 
+     <dd>Same, but absolute coordinates of the endpoints of the pad. 
 <br><dt><var>Thickness</var>
      <dd>width of the pad. 
 <br><dt><var>Clearance</var>
@@ -4433,7 +4635,18 @@ coordinate twice.
      <dd>numerical flags only
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="PCB%20syntax">PCB syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Pin%20syntax">Pin syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Pad%20syntax">Pad syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">PCB</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">PCB ["Name" Width Height]
 PCB ("Name" Width Height]
 PCB ("Name")
@@ -4450,7 +4663,18 @@ PCB ("Name")
    <p>If you don't specify the size of the board, a very large default is
 chosen.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Pin%20syntax">Pin syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Polygon%20syntax">Polygon syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#PCB%20syntax">PCB syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Pin</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Pin [rX rY Thickness Clearance Mask Drill "Name" "Number" SFlags]
 Pin (rX rY Thickness Clearance Mask Drill "Name" "Number" NFlags)
 Pin (aX aY Thickness Drill "Name" "Number" NFlags)
@@ -4482,7 +4706,18 @@ Pin (aX aY Thickness "Name" NFlags)
      <dd>numerical flags only
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Polygon%20syntax">Polygon syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Rat%20syntax">Rat syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Pin%20syntax">Pin syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Polygon</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Polygon (SFlags) (
    ... (X Y) ...
    ... [X Y] ...
@@ -4497,7 +4732,18 @@ Pin (aX aY Thickness "Name" NFlags)
      <dd>Coordinates of each vertex.  You must list at least three coordinates. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Rat%20syntax">Rat syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Styles%20syntax">Styles syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Polygon%20syntax">Polygon syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Rat</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Rat [X1 Y1 Group1 X2 Y2 Group2 SFlags]
 Rat (X1 Y1 Group1 X2 Y2 Group2 NFlags)
 </pre>
@@ -4514,7 +4760,18 @@ Rat (X1 Y1 Group1 X2 Y2 Group2 NFlags)
      <dd>Numeric flags. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Styles%20syntax">Styles syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Symbol%20syntax">Symbol syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Rat%20syntax">Rat syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Styles</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Styles("String")
 </pre>
    </td></tr></table>
@@ -4549,7 +4806,18 @@ are separated by colons.  Each style consists of five parameters as follows:
 <p>Note that strings in actual files cannot span lines; the above example
 is split across lines only to make it readable.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Symbol%20syntax">Symbol syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SymbolLine%20syntax">SymbolLine syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Styles%20syntax">Styles syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Symbol</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Symbol [Char Delta] (
 Symbol (Char Delta) (
    ... symbol lines ...
@@ -4565,7 +4833,18 @@ Characters must be in single quotes.
      <dd>Additional space to allow after this character. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SymbolLine%20syntax">SymbolLine syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Text%20syntax">Text syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Symbol%20syntax">Symbol syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">SymbolLine</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SymbolLine [X1 Y1 X2 Y1 Thickness]
 SymbolLine (X1 Y1 X2 Y1 Thickness)
 </pre>
@@ -4578,7 +4857,18 @@ SymbolLine (X1 Y1 X2 Y1 Thickness)
      <dd>The width of this line. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Text%20syntax">Text syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Thermal%20syntax">Thermal syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SymbolLine%20syntax">SymbolLine syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Text</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Text [X Y Direction Scale "String" SFlags]
 Text (X Y Direction Scale "String" NFlags)
 Text (X Y Direction "String" NFlags)
@@ -4603,7 +4893,18 @@ mils).
      <dd>Numeric flags. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Thermal%20syntax">Thermal syntax</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Via%20syntax">Via syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Text%20syntax">Text syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Thermal</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Thermal [Scale]
 </pre>
    </td></tr></table>
@@ -4614,7 +4915,17 @@ mils).
 the annulus width (copper diameter minus drill diameter).  The normal value is 0.5. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Via%20syntax">Via syntax</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Thermal%20syntax">Thermal syntax</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#File%20Syntax">File Syntax</a>
+<br>
+</div>
+
+<h3 class="subsection">Via</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Via [X Y Thickness Clearance Mask Drill "Name" SFlags]
 Via (X Y Thickness Clearance Mask Drill "Name" NFlags)
 Via (X Y Thickness Clearance Drill "Name" NFlags)
@@ -5155,17 +5466,16 @@ pads for the part should go.  For surface mount pads, draw line
 segments.  Note that until the footprint is completed, the surface
 mount pads will remain rounded.  Currently a rectangle or polygon
 may not be used as a pad. 
-<li>For each via and line segment which will become a pad, select it,
-right-click to bring up the popup menu and choose "edit name".  Enter
-the pin number and press enter.  Alternatively, you can use the "n"
-hotkey to activate the rename command. 
+<li>For each via and line segment which will become a pad, select it
+and press 'n' to be able to enter a name.  Enter
+the pin number and press enter. 
 <li>Make the silk layer active. 
 <li>Using the line and arc tools, draw a silk screen outline for the
 part. 
 <li>Using the selection tool, select all of the pins and silk screen
 for the part. 
 <li>Place the pointer above the reference point for the part.  This is
-typically the common centroid.  Keeping the pointer there, right-click
+typically the common centroid.  Keeping the pointer there, shift-right-click
 to bring up the popup menu and choose "convert
 selection to element". 
 <li>At this point, the vias, line segments, and silk screen will have
@@ -5174,7 +5484,7 @@ have square ends rather than round ends, select the pads by holding
 down the shift key and clicking each pad with the center mouse button. 
 Now under the Select menu, "Change square-flag of selected objects"
 section, choose "Pins". 
-<li>Select the element, right-click to bring up the popup menu, and
+<li>Select the element, shift-right-click to bring up the popup menu, and
 choose "Copy Selection to Buffer".  Now left-click on the center of
 the new element. 
 <li>Under the buffer menu, choose "save buffer elements to file" to
@@ -6288,25 +6598,114 @@ selected objects for which the given action makes sense.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">About()</pre>
-   </td></tr></table>
+<ul class="menu">
+<li><a accesskey="1" href="#core%20actions">core actions</a>: 
+<li><a accesskey="2" href="#common%20actions">common actions</a>: 
+<li><a accesskey="3" href="#gtk%20actions">gtk actions</a>: 
+<li><a accesskey="4" href="#lesstif%20actions">lesstif actions</a>: 
+</ul>
 
-   <p>Tell the user about this version of PCB.
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="core%20actions">core actions</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#common%20actions">common actions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Action%20Reference">Action Reference</a>
+<br>
+</div>
 
-   <p>This just pops up a dialog telling the user which version of
-<code>pcb</code> they're running.
+<h3 class="section">Core actions</h3>
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">About()</pre>
-   </td></tr></table>
+<ul class="menu">
+<li><a accesskey="1" href="#AddRats%20Action">AddRats Action</a>:  Add one or more rat lines to the board. 
+<li><a accesskey="2" href="#ApplyVendor%20Action">ApplyVendor Action</a>:  Applies the currently loaded vendor drill table to the current design. 
+<li><a accesskey="3" href="#Atomic%20Action">Atomic Action</a>:  Save or restore the undo serial number. 
+<li><a accesskey="4" href="#AutoPlaceSelected%20Action">AutoPlaceSelected Action</a>:  Auto-place selected components. 
+<li><a accesskey="5" href="#AutoRoute%20Action">AutoRoute Action</a>:  Auto-route some or all rat lines. 
+<li><a accesskey="6" href="#ChangeClearSize%20Action">ChangeClearSize Action</a>:  Changes the clearance size of objects. 
+<li><a accesskey="7" href="#ChangeDrillSize%20Action">ChangeDrillSize Action</a>:  Changes the drilling hole size of objects. 
+<li><a accesskey="8" href="#ChangeFlag%20Action">ChangeFlag Action</a>:  Sets or clears flags on objects. 
+<li><a accesskey="9" href="#ChangeHole%20Action">ChangeHole Action</a>:  Changes the hole flag of objects. 
+<li><a href="#ChangeJoin%20Action">ChangeJoin Action</a>:  Changes the join (clearance through polygons) of objects. 
+<li><a href="#ChangeName%20Action">ChangeName Action</a>:  Sets the name of objects. 
+<li><a href="#ChangeOctagon%20Action">ChangeOctagon Action</a>:  Changes the octagon-flag of pins and vias. 
+<li><a href="#ChangePinName%20Action">ChangePinName Action</a>:  Sets the name of a specific pin on a specific element. 
+<li><a href="#ChangeSize%20Action">ChangeSize Action</a>:  Changes the size of objects. 
+<li><a href="#ChangeSquare%20Action">ChangeSquare Action</a>:  Changes the square flag of pins and pads. 
+<li><a href="#ClearOctagon%20Action">ClearOctagon Action</a>:  Clears the octagon-flag of pins and vias. 
+<li><a href="#ClearSquare%20Action">ClearSquare Action</a>:  Clears the square-flag of pins and pads. 
+<li><a href="#ClearThermal%20Action">ClearThermal Action</a>:  Clear a thermal (on the current layer) to pins or vias. 
+<li><a href="#ClrFlag%20Action">ClrFlag Action</a>:  Clears flags on objects. 
+<li><a href="#Connection%20Action">Connection Action</a>:  Searches connections of the object at the cursor position. 
+<li><a href="#DeleteRats%20Action">DeleteRats Action</a>:  Delete rat lines. 
+<li><a href="#DisableVendor%20Action">DisableVendor Action</a>:  Disables automatic drill size mapping. 
+<li><a href="#DisperseElements%20Action">DisperseElements Action</a>:  Disperses elements. 
+<li><a href="#Display%20Action">Display Action</a>:  Several display-related actions. 
+<li><a href="#djopt%20Action">djopt Action</a>:  Perform various optimizations on the current board
+<li><a href="#DRC%20Action">DRC Action</a>:  Invoke the DRC check. 
+<li><a href="#DumpLibrary%20Action">DumpLibrary Action</a>:  Display the entire contents of the libraries. 
+<li><a href="#EnableVendor%20Action">EnableVendor Action</a>:  Enables automatic drill size mapping. 
+<li><a href="#ExecuteFile%20Action">ExecuteFile Action</a>:  Run actions from the given file. 
+<li><a href="#Flip%20Action">Flip Action</a>:  Flip an element to the opposite side of the board. 
+<li><a href="#FontEdit%20Action">FontEdit Action</a>:  Convert the current font to a PCB for editing
+<li><a href="#FontSave%20Action">FontSave Action</a>:  Convert the current PCB back to a font
+<li><a href="#h%20Action">h Action</a>:  Print a help message for commands. 
+<li><a href="#l%20Action">l Action</a>:  Loads layout data. 
+<li><a href="#le%20Action">le Action</a>:  Loads an element into the current buffer. 
+<li><a href="#LoadFrom%20Action">LoadFrom Action</a>:  Load layout data from a file. 
+<li><a href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>:  Loads the specified vendor resource file. 
+<li><a href="#m%20Action">m Action</a>:  Loads a layout into the current buffer. 
+<li><a href="#MarkCrosshair%20Action">MarkCrosshair Action</a>:  Set/Reset the Crosshair mark
+<li><a href="#Message%20Action">Message Action</a>:  Writes a message to the log window. 
+<li><a href="#Mode%20Action">Mode Action</a>:  Change or use the tool mode. 
+<li><a href="#MoveObject%20Action">MoveObject Action</a>:  Moves the object under the crosshair. 
+<li><a href="#MoveToCurrentLayer%20Action">MoveToCurrentLayer Action</a>:  Moves objects to the current layer. 
+<li><a href="#Netlist%20Action">Netlist Action</a>:  Perform various actions on netlists. 
+<li><a href="#New%20Action">New Action</a>:  Starts a new layout. 
+<li><a href="#OptAutoOnly%20Action">OptAutoOnly Action</a>:  Toggles the optimize-only-autorouted flag. 
+<li><a href="#PasteBuffer%20Action">PasteBuffer Action</a>:  Various operations on the paste buffer. 
+<li><a href="#Polygon%20Action">Polygon Action</a>:  Some polygon related stuff. 
+<li><a href="#Puller%20Action">Puller Action</a>:  Pull an arc-line junction tight. 
+<li><a href="#q%20Action">q Action</a>:  Quits the application after confirming. 
+<li><a href="#q!%20Action">q! Action</a>:  Quits the application without confirming. 
+<li><a href="#Quit%20Action">Quit Action</a>:  Quits the application. 
+<li><a href="#Redo%20Action">Redo Action</a>:  Redo recent``undo''operations. 
+<li><a href="#RemoveSelected%20Action">RemoveSelected Action</a>:  Removes any selected objects. 
+<li><a href="#Renumber%20Action">Renumber Action</a>:  Renumber all elements.  The changes will be recorded to filename
+for use in backannotating these changes to the schematic. 
+<li><a href="#Report%20Action">Report Action</a>:  Produce various report. 
+<li><a href="#ReportDialog%20Action">ReportDialog Action</a>:  Report on the object under the crosshair
+<li><a href="#RipUp%20Action">RipUp Action</a>:  Ripup auto-routed tracks, or convert an element to parts. 
+<li><a href="#rn%20Action">rn Action</a>:  Reads netlist. 
+<li><a href="#RouteStyle%20Action">RouteStyle Action</a>:  Copies the indicated routing style into the current sizes. 
+<li><a href="#s%20Action">s Action</a>:  Saves layout data. 
+<li><a href="#SaveTo%20Action">SaveTo Action</a>:  Saves data to a file. 
+<li><a href="#Select%20Action">Select Action</a>:  Toggles or sets the selection
+<li><a href="#SetFlag%20Action">SetFlag Action</a>:  Sets flags on objects. 
+<li><a href="#SetOctagon%20Action">SetOctagon Action</a>:  Sets the octagon-flag of objects. 
+<li><a href="#SetSame%20Action">SetSame Action</a>:  Sets current layer and sizes to match indicated item. 
+<li><a href="#SetSquare%20Action">SetSquare Action</a>:  sets the square-flag of objects. 
+<li><a href="#SetThermal%20Action">SetThermal Action</a>:  Set a thermal (on the current layer) to pins or vias. 
+<li><a href="#SetValue%20Action">SetValue Action</a>:  Change various board-wide values and sizes. 
+<li><a href="#ToggleHideName%20Action">ToggleHideName Action</a>:  Toggles the visibility of element names. 
+<li><a href="#ToggleThermal%20Action">ToggleThermal Action</a>:  Toggle a thermal (on the current layer) to pins or vias. 
+<li><a href="#ToggleVendor%20Action">ToggleVendor Action</a>:  Toggles the state of automatic drill size mapping. 
+<li><a href="#Undo%20Action">Undo Action</a>:  Undo recent changes. 
+<li><a href="#UnloadVendor%20Action">UnloadVendor Action</a>:  Unloads the current vendor drill mapping table. 
+<li><a href="#Unselect%20Action">Unselect Action</a>:  unselects the object at the pointer location or the specified objects
+<li><a href="#w%20Action">w Action</a>:  Saves layout data. 
+<li><a href="#wq%20Action">wq Action</a>:  Saves the layout data and quits. 
+</ul>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="AddRats%20Action">AddRats Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ApplyVendor%20Action">ApplyVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
 
-   <p>Tell the user about this version of PCB.
+<h3 class="subsection">AddRats</h4>
 
-   <p>This just pops up a dialog telling the user which version of
-<code>pcb</code> they're running.
-
-   <table class="cartouche" border=1><tr><td>
+<table class="cartouche" border=1><tr><td>
 <pre class="format">AddRats(AllRats|SelectedRats|Close)</pre>
    </td></tr></table>
 
@@ -6327,7 +6726,18 @@ and pads.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ApplyVendor%20Action">ApplyVendor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Atomic%20Action">Atomic Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#AddRats%20Action">AddRats Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ApplyVendor</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ApplyVendor()</pre>
    </td></tr></table>
 
@@ -6336,7 +6746,18 @@ and pads.
    <p>This will modify all of your drill holes to match the list of allowed
 sizes for your vendor.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Atomic%20Action">Atomic Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#AutoPlaceSelected%20Action">AutoPlaceSelected Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ApplyVendor%20Action">ApplyVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Atomic</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Atomic(Save|Restore|Close|Block)</pre>
    </td></tr></table>
 
@@ -6370,7 +6791,18 @@ actions are counted as a single undo step.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="AutoPlaceSelected%20Action">AutoPlaceSelected Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#AutoRoute%20Action">AutoRoute Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Atomic%20Action">Atomic Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">AutoPlaceSelected</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">AutoPlaceSelected()</pre>
    </td></tr></table>
 
@@ -6379,7 +6811,18 @@ actions are counted as a single undo step.
    <p>Attempts to re-arrange the selected components such that the nets
 connecting them are minimized.  Note that you cannot undo this.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="AutoRoute%20Action">AutoRoute Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeClearSize%20Action">ChangeClearSize Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#AutoPlaceSelected%20Action">AutoPlaceSelected Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">AutoRoute</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">AutoRoute(AllRats|SelectedRats)</pre>
    </td></tr></table>
 
@@ -6404,7 +6847,18 @@ polygons" is set, in case you eventually want to add a copper pour.
    <p>Autorouting takes a while.  During this time, the program may not be
 responsive.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeClearSize%20Action">ChangeClearSize Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeDrillSize%20Action">ChangeDrillSize Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#AutoRoute%20Action">AutoRoute Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeClearSize</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeClearSize(Object, delta)
 ChangeClearSize(SelectedPins|SelectedPads|SelectedVias, delta)
 ChangeClearSize(SelectedLines|SelectedArcs, delta
@@ -6417,14 +6871,36 @@ ChangeClearSize(Selected|SelectedObjects, delta)</pre>
 solder mask clearance.  If the mask is not showing, this action
 changes the polygon clearance.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeDrillSize%20Action">ChangeDrillSize Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeFlag%20Action">ChangeFlag Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeClearSize%20Action">ChangeClearSize Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeDrillSize</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeDrillSize(Object, delta)
 ChangeDrillSize(SelectedPins|SelectedVias|Selected|SelectedObjects, delta)</pre>
    </td></tr></table>
 
    <p>Changes the drilling hole size of objects.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeFlag%20Action">ChangeFlag Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeHole%20Action">ChangeHole Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeDrillSize%20Action">ChangeDrillSize Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeFlag</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeFlag(Object|Selected|SelectedObjects, flag, value)
 ChangeFlag(SelectedLines|SelectedPins|SelectedVias, flag, value)
 ChangeFlag(SelectedPads|SelectedTexts|SelectedNames, flag, value)
@@ -6440,7 +6916,18 @@ one of the flags listed above (square, octagon, thermal, join).  The
 value may be the number 0 or 1.  If the value is 0, the flag is
 cleared.  If the value is 1, the flag is set.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeHole%20Action">ChangeHole Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeJoin%20Action">ChangeJoin Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeFlag%20Action">ChangeFlag Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeHole</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeHole(ToggleObject|Object|SelectedVias|Selected)</pre>
    </td></tr></table>
 
@@ -6449,7 +6936,18 @@ cleared.  If the value is 1, the flag is set.
    <p>The "hole flag" of a via determines whether the via is a
 plated-through hole (not set), or an unplated hole (set).
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeJoin%20Action">ChangeJoin Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeName%20Action">ChangeName Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeHole%20Action">ChangeHole Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeJoin</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeJoin(ToggleObject|SelectedLines|SelectedArcs|Selected)</pre>
    </td></tr></table>
 
@@ -6461,7 +6959,18 @@ the line/arc is simply drawn over the polygon, making an electrical
 connection.  When not joined, a gap is drawn between the line and the
 polygon, insulating them from each other.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeName%20Action">ChangeName Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeOctagon%20Action">ChangeOctagon Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeJoin%20Action">ChangeJoin Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeName</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeName(Object)
 ChangeName(Layout|Layer)</pre>
    </td></tr></table>
@@ -6481,7 +6990,18 @@ ChangeName(Layout|Layer)</pre>
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeOctagon%20Action">ChangeOctagon Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangePinName%20Action">ChangePinName Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeName%20Action">ChangeName Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeOctagon</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeOctagon(Object|ToggleObject|SelectedObjects|Selected)
 ChangeOctagon(SelectedElements|SelectedPins|SelectedVias)</pre>
    </td></tr></table>
@@ -6499,7 +7019,18 @@ thus, if both the square and octagon flags are set, the object is
 square.  When the square flag is cleared, the pins and pads will be
 either round or, if the octagon flag is set, octagonal.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangePinName%20Action">ChangePinName Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeSize%20Action">ChangeSize Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeOctagon%20Action">ChangeOctagon Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangePinName</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangePinName(ElementName,PinNumber,PinName)</pre>
    </td></tr></table>
 
@@ -6512,7 +7043,18 @@ format.
 <pre class="example">     ChangePinName(U3, 7, VCC)
      </pre>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeSize%20Action">ChangeSize Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ChangeSquare%20Action">ChangeSquare Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangePinName%20Action">ChangePinName Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeSize</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeSize(Object, delta)
 ChangeSize(SelectedObjects|Selected, delta)
 ChangeSize(SelectedLines|SelectedPins|SelectedVias, delta)
@@ -6528,7 +7070,18 @@ changes the width and, indirectly, the length.  For texts and names,
 this changes the scaling factor.  For elements, this changes the width
 of the silk layer lines and arcs for this element.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ChangeSquare%20Action">ChangeSquare Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ClearOctagon%20Action">ClearOctagon Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeSize%20Action">ChangeSize Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ChangeSquare</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ChangeSquare(ToggleObject)
 ChangeSquare(SelectedElements|SelectedPins)
 ChangeSquare(Selected|SelectedObjects)</pre>
@@ -6549,7 +7102,18 @@ thus, if both the square and octagon flags are set, the object is
 square.  When the square flag is cleared, the pins and pads will be
 either round or, if the octagon flag is set, octagonal.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ClearOctagon%20Action">ClearOctagon Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ClearSquare%20Action">ClearSquare Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ChangeSquare%20Action">ChangeSquare Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ClearOctagon</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ClearOctagon(ToggleObject|Object|SelectedObjects|Selected)
 ClearOctagon(SelectedElements|SelectedPins|SelectedVias)</pre>
    </td></tr></table>
@@ -6567,7 +7131,18 @@ thus, if both the square and octagon flags are set, the object is
 square.  When the square flag is cleared, the pins and pads will be
 either round or, if the octagon flag is set, octagonal.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ClearSquare%20Action">ClearSquare Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ClearThermal%20Action">ClearThermal Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ClearOctagon%20Action">ClearOctagon Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ClearSquare</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ClearSquare(ToggleObject|SelectedElements|SelectedPins)</pre>
    </td></tr></table>
 
@@ -6586,8 +7161,19 @@ thus, if both the square and octagon flags are set, the object is
 square.  When the square flag is cleared, the pins and pads will be
 either round or, if the octagon flag is set, octagonal.
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">ClearThermal(Object|SelectePins|SelectedVias|Selected|SelectedElements)</pre>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ClearThermal%20Action">ClearThermal Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ClrFlag%20Action">ClrFlag Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ClearSquare%20Action">ClearSquare Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ClearThermal</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">ClearThermal(Object|SelectedPins|SelectedVias|Selected|SelectedElements)</pre>
    </td></tr></table>
 
    <p>Clear a thermal (on the current layer) to pins or vias.
@@ -6595,7 +7181,18 @@ either round or, if the octagon flag is set, octagonal.
    <p>This removes any electrical connection.  Pins and vias that do not
 already have thermals are not changed.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ClrFlag%20Action">ClrFlag Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Connection%20Action">Connection Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ClearThermal%20Action">ClearThermal Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ClrFlag</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ClrFlag(Object|Selected|SelectedObjects, flag)
 ClrFlag(SelectedLines|SelectedPins|SelectedVias, flag)
 ClrFlag(SelectedPads|SelectedTexts|SelectedNames, flag)
@@ -6611,7 +7208,18 @@ flag = square | octagon | thermal | join</pre>
 <pre class="example">     ClrFlag(SelectedLines,join)
      </pre>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Connection%20Action">Connection Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#DeleteRats%20Action">DeleteRats Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ClrFlag%20Action">ClrFlag Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Connection</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Connection(Find|ResetLinesAndPolygons|ResetPinsAndVias|Reset)</pre>
    </td></tr></table>
 
@@ -6636,13 +7244,35 @@ flag = square | octagon | thermal | join</pre>
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="DeleteRats%20Action">DeleteRats Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#DisableVendor%20Action">DisableVendor Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Connection%20Action">Connection Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">DeleteRats</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">DeleteRats(AllRats|Selected|SelectedRats)</pre>
    </td></tr></table>
 
    <p>Delete rat lines.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="DisableVendor%20Action">DisableVendor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#DisperseElements%20Action">DisperseElements Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#DeleteRats%20Action">DeleteRats Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">DisableVendor</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">DisableVendor()</pre>
    </td></tr></table>
 
@@ -6652,7 +7282,18 @@ flag = square | octagon | thermal | join</pre>
 have their drill holes mapped to one of the allowed drill sizes
 specified in the currently loaded vendor drill table.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="DisperseElements%20Action">DisperseElements Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Display%20Action">Display Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#DisableVendor%20Action">DisableVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">DisperseElements</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">DisperseElements(All|Selected)</pre>
    </td></tr></table>
 
@@ -6664,7 +7305,18 @@ so that you can pick individual ones, rather than have all the
 elements at the same 0,0 coordinate and thus impossible to choose
 from.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Display%20Action">Display Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#djopt%20Action">djopt Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#DisperseElements%20Action">DisperseElements Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Display</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Display(NameOnPCB|Description|Value)
 Display(Grid|Redraw)
 Display(CycleClip|Toggle45Degree|ToggleStartDirection)
@@ -6696,7 +7348,7 @@ broken up according to the clip setting.
 
      <br><dt><code>CycleClip</code>
      <dd>Changes the way lines are restricted to 45 degree increments.  The
-varous settings are: straight only, orthogonal then angled, and angled
+various settings are: straight only, orthogonal then angled, and angled
 then orthogonal.  If AllDirections is set, this action disables it.
 
      <br><dt><code>ToggleRubberBandMode</code>
@@ -6780,7 +7432,18 @@ etc, according to the numeric keypad layout.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="djopt%20Action">djopt Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#DRC%20Action">DRC Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Display%20Action">Display Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">djopt</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">djopt(debumpify|unjaggy|simple|vianudge|viatrim|orthopull)
 djopt(auto) - all of the above
 djopt(miter)</pre>
@@ -6816,7 +7479,7 @@ different layer eliminates one or both vias.
 
      <br><dt><code>orthopull</code>
      <dd>Looks for chains of traces all going in one direction, with more
-traces orthagonal on one side than on the other.  Moves the chain in
+traces orthogonal on one side than on the other.  Moves the chain in
 that direction, causing a net reduction in trace length, possibly
 eliminating traces and/or corners.
 
@@ -6830,7 +7493,18 @@ RF losses and trace length.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="DRC%20Action">DRC Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#DumpLibrary%20Action">DumpLibrary Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#djopt%20Action">djopt Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">DRC</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">DRC()</pre>
    </td></tr></table>
 
@@ -6839,13 +7513,35 @@ RF losses and trace length.
    <p>Note that the design rule check uses the current board rule settings,
 not the current style settings.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="DumpLibrary%20Action">DumpLibrary Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#EnableVendor%20Action">EnableVendor Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#DRC%20Action">DRC Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">DumpLibrary</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">DumpLibrary()</pre>
    </td></tr></table>
 
    <p>Display the entire contents of the libraries.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="EnableVendor%20Action">EnableVendor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ExecuteFile%20Action">ExecuteFile Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#DumpLibrary%20Action">DumpLibrary Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">EnableVendor</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">EnableVendor()</pre>
    </td></tr></table>
 
@@ -6857,7 +7553,18 @@ specified in the currently loaded vendor drill table.  To enable drill
 mapping, a vendor resource file containing a drill table must be
 loaded first.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ExecuteFile%20Action">ExecuteFile Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Flip%20Action">Flip Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#EnableVendor%20Action">EnableVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ExecuteFile</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ExecuteFile(filename)</pre>
    </td></tr></table>
 
@@ -6865,7 +7572,18 @@ loaded first.
 
    <p>Lines starting with <code>#</code> are ignored.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Flip%20Action">Flip Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#FontEdit%20Action">FontEdit Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ExecuteFile%20Action">ExecuteFile Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Flip</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Flip(Object|Selected|SelectedElements)</pre>
    </td></tr></table>
 
@@ -6877,7 +7595,52 @@ the same spot once the element is on the other side.  When flipping
 multiple elements, this retains their positions relative to each
 other, not their absolute positions on the board.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="FontEdit%20Action">FontEdit Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#FontSave%20Action">FontSave Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Flip%20Action">Flip Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">FontEdit</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">FontEdit()</pre>
+   </td></tr></table>
+
+   <p>Convert the current font to a PCB for editing
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="FontSave%20Action">FontSave Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#h%20Action">h Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#FontEdit%20Action">FontEdit Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">FontSave</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">FontSave()</pre>
+   </td></tr></table>
+
+   <p>Convert the current PCB back to a font
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="h%20Action">h Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#l%20Action">l Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#FontSave%20Action">FontSave Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">h</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">h</pre>
    </td></tr></table>
 
@@ -6888,7 +7651,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="l%20Action">l Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#le%20Action">le Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#h%20Action">h Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">l</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">l [name]</pre>
    </td></tr></table>
 
@@ -6905,7 +7679,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="le%20Action">le Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#LoadFrom%20Action">LoadFrom Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#l%20Action">l Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">le</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">le [name]</pre>
    </td></tr></table>
 
@@ -6920,7 +7705,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="LoadFrom%20Action">LoadFrom Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#le%20Action">le Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">LoadFrom</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">LoadFrom(Layout|LayoutToBuffer|ElementToBuffer|Netlist|Revert,filename)</pre>
    </td></tr></table>
 
@@ -6953,7 +7749,18 @@ you may have made.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="LoadVendorFrom%20Action">LoadVendorFrom Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#m%20Action">m Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#LoadFrom%20Action">LoadFrom Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">LoadVendorFrom</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">LoadVendorFrom(filename)</pre>
    </td></tr></table>
 
@@ -6965,7 +7772,18 @@ you may have made.
 be prompted to enter one. 
 </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="m%20Action">m Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#MarkCrosshair%20Action">MarkCrosshair Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">m</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">m [name]</pre>
    </td></tr></table>
 
@@ -6980,7 +7798,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="MarkCrosshair%20Action">MarkCrosshair Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Message%20Action">Message Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#m%20Action">m Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">MarkCrosshair</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">MarkCrosshair()
 MarkCrosshair(Center)</pre>
    </td></tr></table>
@@ -6997,7 +7826,40 @@ enabled, or enabled at the current cursor position of disabled.  If
 the <code>Center</code> argument is given, the mark is moved to the current
 cursor location.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Message%20Action">Message Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Mode%20Action">Mode Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#MarkCrosshair%20Action">MarkCrosshair Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Message</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Message(message)</pre>
+   </td></tr></table>
+
+   <p>Writes a message to the log window.
+
+   <p>This action displays a message to the log window.  This action is primarily
+provided for use by other programs which may interface with PCB.  If
+multiple arguments are given, each one is sent to the log window
+followed by a newline.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Mode%20Action">Mode Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#MoveObject%20Action">MoveObject Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Message%20Action">Message Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Mode</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Mode(Arc|Arrow|Copy|InsertPoint|Line|Lock|Move|None|PasteBuffer)
 Mode(Polygon|Rectangle|Remove|Rotate|Text|Thermal|Via)
 Mode(Notify|Release|Cancel|Stroke)
@@ -7050,7 +7912,18 @@ drawing, else it will select objects.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="MoveObject%20Action">MoveObject Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#MoveToCurrentLayer%20Action">MoveToCurrentLayer Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Mode%20Action">Mode Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">MoveObject</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">MoveObject(X,Y,dim)</pre>
    </td></tr></table>
 
@@ -7062,7 +7935,18 @@ then that amount is relative.  Otherwise, it's absolute.  Units can be
 <code>mil</code> or <code>mm</code>; if unspecified, units are PCB's internal
 units, currently 1/100 mil.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="MoveToCurrentLayer%20Action">MoveToCurrentLayer Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Netlist%20Action">Netlist Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#MoveObject%20Action">MoveObject Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">MoveToCurrentLayer</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">MoveToCurrentLayer(Object|SelectedObjects)</pre>
    </td></tr></table>
 
@@ -7072,7 +7956,18 @@ units, currently 1/100 mil.
 or from solder to component, won't automatically flip it.  Use the
 <code>Flip()</code> action to do that.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Netlist%20Action">Netlist Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#New%20Action">New Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#MoveToCurrentLayer%20Action">MoveToCurrentLayer Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Netlist</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Net(find|select|rats|norats[,net[,pin]])</pre>
    </td></tr></table>
 
@@ -7092,7 +7987,7 @@ a pin matching <var>pin</var> apply.
      <dl>
 
      <br><dt><code>find</code>
-     <dd>Nets which apply are marked <em>found</em> and are drawin in the
+     <dd>Nets which apply are marked <em>found</em> and are drawn in the
 <code>connected-color</code> color.
 
      <br><dt><code>select</code>
@@ -7106,13 +8001,37 @@ a pin matching <var>pin</var> apply.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">New()</pre>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="New%20Action">New Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#OptAutoOnly%20Action">OptAutoOnly Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Netlist%20Action">Netlist Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">New</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">New([name])</pre>
    </td></tr></table>
 
    <p>Starts a new layout.
 
-   <table class="cartouche" border=1><tr><td>
+   <p>If a name is not given, one is prompted for.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="OptAutoOnly%20Action">OptAutoOnly Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#PasteBuffer%20Action">PasteBuffer Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#New%20Action">New Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">OptAutoOnly</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">OptAutoOnly()</pre>
    </td></tr></table>
 
@@ -7126,7 +8045,18 @@ But, sometimes you do.  By default, the optimizer only optimizes
 autorouted traces.  This action toggles that setting, so that you can
 optimize hand-routed traces also.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="PasteBuffer%20Action">PasteBuffer Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Polygon%20Action">Polygon Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#OptAutoOnly%20Action">OptAutoOnly Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">PasteBuffer</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">PasteBuffer(AddSelected|Clear|1..MAX_BUFFER)
 PasteBuffer(Rotate, 1..3)
 PasteBuffer(Convert|Save|Restore|Mirror)
@@ -7157,7 +8087,7 @@ pins, lines are converted to pads.
 
      <br><dt><code>Mirror</code>
      <dd>Flip all objects in the paste buffer vertically (up/down flip).  To mirror
-horizonally, combine this with rotations.
+horizontally, combine this with rotations.
 
      <br><dt><code>Rotate</code>
      <dd>Rotates the current buffer.  The number to pass is 1..3, where 1 means
@@ -7181,7 +8111,18 @@ units, currently 1/100 mil.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Polygon%20Action">Polygon Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Puller%20Action">Puller Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#PasteBuffer%20Action">PasteBuffer Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Polygon</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Polygon(Close|PreviousPoint)</pre>
    </td></tr></table>
 
@@ -7201,7 +8142,47 @@ will call Polygon(PreviousPoint) when appropriate to do so.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Puller%20Action">Puller Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#q%20Action">q Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Polygon%20Action">Polygon Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Puller</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Puller()</pre>
+   </td></tr></table>
+
+   <p>Pull an arc-line junction tight.
+
+   <p>The <code>Puller()</code> action is a special-purpose optimization.  When
+invoked while the crosshair is over the junction of an arc and a line,
+it will adjust the arc's angle and the connecting line's endpoint such
+that the line intersects the arc at a tangent.  In the example below,
+the left side is "before" with the black target marking where to put
+the crosshair:
+
+<div align="center"><img src="puller.png" alt="Example of how puller works"></div>
+
+The right side is "after" with the black target marking where the
+arc-line intersection was moved to.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="q%20Action">q Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#q!%20Action">q! Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Puller%20Action">Puller Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">q</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">q</pre>
    </td></tr></table>
 
@@ -7214,7 +8195,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="q!%20Action">q! Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Quit%20Action">Quit Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#q%20Action">q Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">q!</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">q!</pre>
    </td></tr></table>
 
@@ -7228,7 +8220,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Quit%20Action">Quit Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Redo%20Action">Redo Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#q!%20Action">q! Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Quit</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Quit()</pre>
    </td></tr></table>
 
@@ -7237,7 +8240,18 @@ is documented for that purpose.
    <p>If you have unsaved changes, you will be prompted to confirm before
 quitting.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Redo%20Action">Redo Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#RemoveSelected%20Action">RemoveSelected Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Quit%20Action">Quit Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Redo</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Redo()</pre>
    </td></tr></table>
 
@@ -7254,13 +8268,106 @@ could use redo to put them back, but if you move a line on the board
 before performing the redo, you will lose the ability to "redo" the
 three "undone" lines.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="RemoveSelected%20Action">RemoveSelected Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Renumber%20Action">Renumber Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Redo%20Action">Redo Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">RemoveSelected</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">RemoveSelected()</pre>
    </td></tr></table>
 
    <p>Removes any selected objects.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Renumber%20Action">Renumber Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Report%20Action">Report Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#RemoveSelected%20Action">RemoveSelected Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Renumber</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Renumber()
+Renumber(filename)</pre>
+   </td></tr></table>
+
+   <p>Renumber all elements.  The changes will be recorded to filename
+for use in backannotating these changes to the schematic.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Report%20Action">Report Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ReportDialog%20Action">ReportDialog Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Renumber%20Action">Renumber Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Report</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Report(Object|DrillReport|FoundPins)</pre>
+   </td></tr></table>
+
+   <p>Produce various report.
+
+     <dl>
+
+     <br><dt><code>Object</code>
+     <dd>The object under the crosshair will be reported, describing various
+aspects of the object.
+
+     <br><dt><code>DrillReport</code>
+     <dd>A report summarizing the number of drill sizes used, and how many of
+each, will be produced.
+
+     <br><dt><code>FoundPins</code>
+     <dd>A report listing all pins and pads which are marked as "found" will
+be produced.
+
+   </dl>
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ReportDialog%20Action">ReportDialog Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#RipUp%20Action">RipUp Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Report%20Action">Report Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ReportDialog</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">ReportDialog()</pre>
+   </td></tr></table>
+
+   <p>Report on the object under the crosshair
+
+   <p>This is a shortcut for <code>Report(Object)</code>.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="RipUp%20Action">RipUp Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#rn%20Action">rn Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ReportDialog%20Action">ReportDialog Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">RipUp</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">RipUp(All|Selected|Element)</pre>
    </td></tr></table>
 
@@ -7281,7 +8388,18 @@ that this uses the highest numbered paste buffer.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="rn%20Action">rn Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#RouteStyle%20Action">RouteStyle Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#RipUp%20Action">RipUp Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">rn</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">rn [name]</pre>
    </td></tr></table>
 
@@ -7300,13 +8418,35 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="RouteStyle%20Action">RouteStyle Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#s%20Action">s Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#rn%20Action">rn Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">RouteStyle</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">RouteStyle(1|2|3|4)</pre>
    </td></tr></table>
 
    <p>Copies the indicated routing style into the current sizes.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="s%20Action">s Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SaveTo%20Action">SaveTo Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#RouteStyle%20Action">RouteStyle Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">s</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">s [name]</pre>
    </td></tr></table>
 
@@ -7322,7 +8462,18 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SaveTo%20Action">SaveTo Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Select%20Action">Select Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#s%20Action">s Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SaveTo</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SaveTo(Layout|LayoutAs,filename)
 SaveTo(AllConnections|AllUnusedPins|ElementConnections,filename)</pre>
    </td></tr></table>
@@ -7348,7 +8499,18 @@ SaveTo(AllConnections|AllUnusedPins|ElementConnections,filename)</pre>
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Select%20Action">Select Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SetFlag%20Action">SetFlag Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SaveTo%20Action">SaveTo Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Select</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Select(ToggleObject)
 Select(All|Block|Connection)
 Select(ElementByName|ObjectByName|PadByName|PinByName)
@@ -7393,7 +8555,18 @@ numbered paste buffer.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SetFlag%20Action">SetFlag Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SetOctagon%20Action">SetOctagon Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Select%20Action">Select Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SetFlag</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SetFlag(Object|Selected|SelectedObjects, flag)
 SetFlag(SelectedLines|SelectedPins|SelectedVias, flag)
 SetFlag(SelectedPads|SelectedTexts|SelectedNames, flag)
@@ -7409,7 +8582,18 @@ flag = square | octagon | thermal | join</pre>
 <pre class="example">     SetFlag(SelectedPins,thermal)
      </pre>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SetOctagon%20Action">SetOctagon Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SetSame%20Action">SetSame Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SetFlag%20Action">SetFlag Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SetOctagon</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SetOctagon(Object|ToggleObject|SelectedElements|Selected)</pre>
    </td></tr></table>
 
@@ -7426,7 +8610,18 @@ thus, if both the square and octagon flags are set, the object is
 square.  When the square flag is cleared, the pins and pads will be
 either round or, if the octagon flag is set, octagonal.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SetSame%20Action">SetSame Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SetSquare%20Action">SetSquare Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SetOctagon%20Action">SetOctagon Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SetSame</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SetSame()</pre>
    </td></tr></table>
 
@@ -7436,7 +8631,18 @@ either round or, if the octagon flag is set, octagonal.
 current layer to be the layer that item is on, and changes the current
 sizes (thickness, keepaway, drill, etc) according to that item.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SetSquare%20Action">SetSquare Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SetThermal%20Action">SetThermal Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SetSame%20Action">SetSame Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SetSquare</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SetSquare(ToggleObject|SelectedElements|SelectedPins)</pre>
    </td></tr></table>
 
@@ -7455,8 +8661,19 @@ thus, if both the square and octagon flags are set, the object is
 square.  When the square flag is cleared, the pins and pads will be
 either round or, if the octagon flag is set, octagonal.
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">SetThermal(Object|SelectePins|SelectedVias|Selected|SelectedElements)</pre>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SetThermal%20Action">SetThermal Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#SetValue%20Action">SetValue Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SetSquare%20Action">SetSquare Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SetThermal</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">SetThermal(Object|SelectedPins|SelectedVias|Selected|SelectedElements)</pre>
    </td></tr></table>
 
    <p>Set a thermal (on the current layer) to pins or vias.
@@ -7464,7 +8681,18 @@ either round or, if the octagon flag is set, octagonal.
    <p>This adds an electrical connection between the pins or vias, and any
 rectangle or polygon on the current layer.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="SetValue%20Action">SetValue Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ToggleHideName%20Action">ToggleHideName Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SetThermal%20Action">SetThermal Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">SetValue</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">SetValue(Grid|Line|LineSize|Text|TextScale|ViaDrillingHole|Via|ViaSize, delta)</pre>
    </td></tr></table>
 
@@ -7492,7 +8720,18 @@ rectangle or polygon on the current layer.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ToggleHideName%20Action">ToggleHideName Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ToggleThermal%20Action">ToggleThermal Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#SetValue%20Action">SetValue Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ToggleHideName</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ToggleHideName(Object|SelectedElements)</pre>
    </td></tr></table>
 
@@ -7501,8 +8740,19 @@ rectangle or polygon on the current layer.
    <p>If names are hidden you won't see them on the screen and they will not
 appear on the silk layer when you print the layout.
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">ToggleThermal(Object|SelectePins|SelectedVias|Selected)</pre>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ToggleThermal%20Action">ToggleThermal Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#ToggleVendor%20Action">ToggleVendor Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ToggleHideName%20Action">ToggleHideName Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ToggleThermal</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">ToggleThermal(Object|SelectedPins|SelectedVias|Selected)</pre>
    </td></tr></table>
 
    <p>Toggle a thermal (on the current layer) to pins or vias.
@@ -7510,7 +8760,18 @@ appear on the silk layer when you print the layout.
    <p>This changes the electrical connection between the pins or vias, and
 any rectangle or polygon on the current layer.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="ToggleVendor%20Action">ToggleVendor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Undo%20Action">Undo Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ToggleThermal%20Action">ToggleThermal Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">ToggleVendor</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">ToggleVendor()</pre>
    </td></tr></table>
 
@@ -7522,7 +8783,18 @@ specified in the currently loaded vendor drill table.  To enable drill
 mapping, a vendor resource file containing a drill table must be
 loaded first.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Undo%20Action">Undo Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#UnloadVendor%20Action">UnloadVendor Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#ToggleVendor%20Action">ToggleVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Undo</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Undo()
 Undo(ClearList)</pre>
    </td></tr></table>
@@ -7540,13 +8812,35 @@ loaded. See also <code>Redo</code> and <code>Atomic</code>.
 same serial number will be undone (or redone) as a group.  See
 <code>Atomic</code>.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="UnloadVendor%20Action">UnloadVendor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#Unselect%20Action">Unselect Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Undo%20Action">Undo Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">UnloadVendor</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">UnloadVendor()</pre>
    </td></tr></table>
 
    <p>Unloads the current vendor drill mapping table.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="Unselect%20Action">Unselect Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#w%20Action">w Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#UnloadVendor%20Action">UnloadVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">Unselect</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Unselect(All|Block|Connection)
 Unselect(ElementByName|ObjectByName|PadByName|PinByName)
 Unselect(ElementByName|ObjectByName|PadByName|PinByName, Name)
@@ -7582,7 +8876,18 @@ type specified are unselected.
 
    </dl>
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="w%20Action">w Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#wq%20Action">wq Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Unselect%20Action">Unselect Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">w</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">w [name]</pre>
    </td></tr></table>
 
@@ -7596,7 +8901,17 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="wq%20Action">wq Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#w%20Action">w Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#core%20actions">core actions</a>
+<br>
+</div>
+
+<h3 class="subsection">wq</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">wq</pre>
    </td></tr></table>
 
@@ -7610,24 +8925,164 @@ action and can be used like any other action, its name and syntax are
 optimized for use with the command box (<code>:</code>) and thus the syntax
 is documented for that purpose.
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">Zoom(gtk)</pre>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="common%20actions">common actions</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20actions">gtk actions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#core%20actions">core actions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Action%20Reference">Action Reference</a>
+<br>
+</div>
+
+<h3 class="section">common actions</h3>
+
+<ul class="menu">
+<li><a accesskey="1" href="#LayersChanged%20Action">LayersChanged Action</a>:  Tells the GUI that the layers have changed. 
+<li><a accesskey="2" href="#LibraryChanged%20Action">LibraryChanged Action</a>:  Tells the GUI that the libraries have changed. 
+<li><a accesskey="3" href="#NetlistChanged%20Action">NetlistChanged Action</a>:  Tells the GUI that the netlist has changed. 
+<li><a accesskey="4" href="#PCBChanged%20Action">PCBChanged Action</a>:  Tells the GUI that the whole PCB has changed. 
+<li><a accesskey="5" href="#RouteStylesChanged%20Action">RouteStylesChanged Action</a>:  Tells the GUI that the routing styles have changed. 
+</ul>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="LayersChanged%20Action">LayersChanged Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#LibraryChanged%20Action">LibraryChanged Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#common%20actions">common actions</a>
+<br>
+</div>
+
+<h3 class="subsection">LayersChanged</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">LayersChanged()</pre>
    </td></tr></table>
 
-   <p>this is the gtk zoom
+   <p>Tells the GUI that the layers have changed.
 
-   <p>This is for the gtk zoom.
+   <p>This includes layer names, colors, stacking order, visibility, etc.
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">Zoom(lesstif)</pre>
+   <p>This is one of a number of actions which are part of the HID
+interface.  The core functions use these actions to tell the current
+GUI when to change the presented information in response to changes
+that the GUI may not know about.  The user normally does not invoke
+these directly.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="LibraryChanged%20Action">LibraryChanged Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#NetlistChanged%20Action">NetlistChanged Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#LayersChanged%20Action">LayersChanged Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#common%20actions">common actions</a>
+<br>
+</div>
+
+<h3 class="subsection">LibraryChanged</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">LibraryChanged()</pre>
    </td></tr></table>
 
-   <p>this is the lesstif zoom
+   <p>Tells the GUI that the libraries have changed.
 
-   <p>This is for the lesstif zoom.
+   <p>This is one of a number of actions which are part of the HID
+interface.  The core functions use these actions to tell the current
+GUI when to change the presented information in response to changes
+that the GUI may not know about.  The user normally does not invoke
+these directly.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="NetlistChanged%20Action">NetlistChanged Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#PCBChanged%20Action">PCBChanged Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#LibraryChanged%20Action">LibraryChanged Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#common%20actions">common actions</a>
+<br>
+</div>
+
+<h3 class="subsection">NetlistChanged</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">NetlistChanged()</pre>
+   </td></tr></table>
+
+   <p>Tells the GUI that the netlist has changed.
+
+   <p>This is one of a number of actions which are part of the HID
+interface.  The core functions use these actions to tell the current
+GUI when to change the presented information in response to changes
+that the GUI may not know about.  The user normally does not invoke
+these directly.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="PCBChanged%20Action">PCBChanged Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#RouteStylesChanged%20Action">RouteStylesChanged Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#NetlistChanged%20Action">NetlistChanged Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#common%20actions">common actions</a>
+<br>
+</div>
+
+<h3 class="subsection">PCBChanged</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">PCBChanged()</pre>
+   </td></tr></table>
+
+   <p>Tells the GUI that the whole PCB has changed.
+
+   <p>This is one of a number of actions which are part of the HID
+interface.  The core functions use these actions to tell the current
+GUI when to change the presented information in response to changes
+that the GUI may not know about.  The user normally does not invoke
+these directly.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="RouteStylesChanged%20Action">RouteStylesChanged Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#PCBChanged%20Action">PCBChanged Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#common%20actions">common actions</a>
+<br>
+</div>
+
+<h3 class="subsection">RouteStylesChanged</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">RouteStylesChanged()</pre>
+   </td></tr></table>
+
+   <p>Tells the GUI that the routing styles have changed.
+
+   <p>This is one of a number of actions which are part of the HID
+interface.  The core functions use these actions to tell the current
+GUI when to change the presented information in response to changes
+that the GUI may not know about.  The user normally does not invoke
+these directly.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="gtk%20actions">gtk actions</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20actions">lesstif actions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#common%20actions">common actions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Action%20Reference">Action Reference</a>
+<br>
+</div>
 
 <h3 class="section">gtk actions</h3>
 
+<ul class="menu">
+<li><a accesskey="1" href="#gtk%20About%20Action">gtk About Action</a>:  Tell the user about this version of PCB. 
+<li><a accesskey="2" href="#gtk%20Zoom%20Action">gtk Zoom Action</a>:  this is the gtk zoom
+</ul>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="gtk%20About%20Action">gtk About Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20Zoom%20Action">gtk Zoom Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
+<br>
+</div>
+
+<h3 class="subsection">gtk About</h4>
+
 <table class="cartouche" border=1><tr><td>
 <pre class="format">About()</pre>
    </td></tr></table>
@@ -7637,7 +9092,17 @@ is documented for that purpose.
    <p>This just pops up a dialog telling the user which version of
 <code>pcb</code> they're running.
 
-   <table class="cartouche" border=1><tr><td>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="gtk%20Zoom%20Action">gtk Zoom Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20About%20Action">gtk About Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
+<br>
+</div>
+
+<h3 class="subsection">gtk Zoom</h4>
+
+<table class="cartouche" border=1><tr><td>
 <pre class="format">Zoom(gtk)</pre>
    </td></tr></table>
 
@@ -7645,7 +9110,54 @@ is documented for that purpose.
 
    <p>This is for the gtk zoom.
 
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20actions">lesstif actions</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20actions">gtk actions</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Action%20Reference">Action Reference</a>
+<br>
+</div>
+
 <h3 class="section">lesstif actions</h3>
+
+<ul class="menu">
+<li><a accesskey="1" href="#lesstif%20About%20Action">lesstif About Action</a>:  Tell the user about this version of PCB. 
+<li><a accesskey="2" href="#lesstif%20AdjustSizes%20Action">lesstif AdjustSizes Action</a>:  Let the user change the board size, DRC parameters, etc
+<li><a accesskey="3" href="#lesstif%20AdjustStyle%20Action">lesstif AdjustStyle Action</a>:  Displays the route style adjustment window. 
+<li><a accesskey="4" href="#lesstif%20Benchmark%20Action">lesstif Benchmark Action</a>:  Benchmark the GUI speed. 
+<li><a accesskey="5" href="#lesstif%20Command%20Action">lesstif Command Action</a>:  Displays the command line input window. 
+<li><a accesskey="6" href="#lesstif%20Debug%20Action">lesstif Debug Action</a>:  Debug action. 
+<li><a accesskey="7" href="#lesstif%20DebugXY%20Action">lesstif DebugXY Action</a>:  Debug action, with coordinates
+<li><a accesskey="8" href="#lesstif%20DoWindows%20Action">lesstif DoWindows Action</a>:  Open various GUI windows. 
+<li><a accesskey="9" href="#lesstif%20DumpKeys%20Action">lesstif DumpKeys Action</a>:  Dump Lesstif key bindings. 
+<li><a href="#lesstif%20EditLayerGroups%20Action">lesstif EditLayerGroups Action</a>:  Let the user change the layer groupings
+<li><a href="#lesstif%20Export%20Action">lesstif Export Action</a>:  Export the layout. 
+<li><a href="#lesstif%20GetXY%20Action">lesstif GetXY Action</a>:  Get a coordinate. 
+<li><a href="#lesstif%20LibraryShow%20Action">lesstif LibraryShow Action</a>:  Displays the library window. 
+<li><a href="#lesstif%20Load%20Action">lesstif Load Action</a>:  Load layout data from a user-selected file. 
+<li><a href="#lesstif%20LoadVendor%20Action">lesstif LoadVendor Action</a>:  Loads a user-selected vendor resource file. 
+<li><a href="#lesstif%20NetlistShow%20Action">lesstif NetlistShow Action</a>:  Displays the netlist window. 
+<li><a href="#lesstif%20Print%20Action">lesstif Print Action</a>:  Print the layout. 
+<li><a href="#lesstif%20PromptFor%20Action">lesstif PromptFor Action</a>:  Prompt for a response. 
+<li><a href="#lesstif%20Return%20Action">lesstif Return Action</a>:  Simulate a passing or failing action. 
+<li><a href="#lesstif%20Save%20Action">lesstif Save Action</a>:  Save layout data to a user-selected file. 
+<li><a href="#lesstif%20SelectLayer%20Action">lesstif SelectLayer Action</a>:  Select which layer is the current layer. 
+<li><a href="#lesstif%20SetUnits%20Action">lesstif SetUnits Action</a>:  Set the default measurement units. 
+<li><a href="#lesstif%20SwapSides%20Action">lesstif SwapSides Action</a>:  Swaps the side of the board you're looking at. 
+<li><a href="#lesstif%20ThinDraw%20Action">lesstif ThinDraw Action</a>:  Sets the global thin-draw flag. 
+<li><a href="#lesstif%20ThinDrawPoly%20Action">lesstif ThinDrawPoly Action</a>:  Sets the thin-draw flag for polygons. 
+<li><a href="#lesstif%20ToggleView%20Action">lesstif ToggleView Action</a>:  Toggle the visibility of the specified layer or layer group. 
+<li><a href="#lesstif%20Zoom%20Action">lesstif Zoom Action</a>:  Various zoom factor changes. 
+</ul>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20About%20Action">lesstif About Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20AdjustSizes%20Action">lesstif AdjustSizes Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif About</h4>
 
 <table class="cartouche" border=1><tr><td>
 <pre class="format">About()</pre>
@@ -7656,13 +9168,666 @@ is documented for that purpose.
    <p>This just pops up a dialog telling the user which version of
 <code>pcb</code> they're running.
 
-   <table class="cartouche" border=1><tr><td>
-<pre class="format">Zoom(lesstif)</pre>
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20AdjustSizes%20Action">lesstif AdjustSizes Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20AdjustStyle%20Action">lesstif AdjustStyle Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20About%20Action">lesstif About Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif AdjustSizes</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">AdjustSizes()</pre>
    </td></tr></table>
 
-   <p>this is the lesstif zoom
+   <p>Let the user change the board size, DRC parameters, etc
 
-   <p>This is for the lesstif zoom.
+   <p>Displays a dialog box that lets the user change the board
+size, DRC parameters, and text scale.
+
+   <p>The units are determined by the default display units.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20AdjustStyle%20Action">lesstif AdjustStyle Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Benchmark%20Action">lesstif Benchmark Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20AdjustSizes%20Action">lesstif AdjustSizes Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif AdjustStyle</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">AdjustStyle()</pre>
+   </td></tr></table>
+
+   <p>Displays the route style adjustment window.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Benchmark%20Action">lesstif Benchmark Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Command%20Action">lesstif Command Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20AdjustStyle%20Action">lesstif AdjustStyle Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Benchmark</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Benchmark()</pre>
+   </td></tr></table>
+
+   <p>Benchmark the GUI speed.
+
+   <p>This action is used to speed-test the Lesstif graphics subsystem.  It
+redraws the current screen as many times as possible in ten seconds. 
+It reports the amount of time needed to draw the screen once.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Command%20Action">lesstif Command Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Debug%20Action">lesstif Debug Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Benchmark%20Action">lesstif Benchmark Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Command</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Command()</pre>
+   </td></tr></table>
+
+   <p>Displays the command line input window.
+
+   <p>The command window allows the user to manually enter actions to be
+executed.  Action syntax can be done one of two ways:
+
+     <dl>
+
+     <br><dt><code></code>
+     <dd>Follow the action name by an open parenthesis, arguments separated by
+commas, end with a close parenthesis.  Example: <code>Abc(1,2,3)</code>
+
+     <br><dt><code></code>
+     <dd>Separate the action name and arguments by spaces.  Example: <code>Abc
+1 2 3</code>.
+
+   </dl>
+
+   <p>The first option allows you to have arguments with spaces in them,
+but the second is more "natural" to type for most people.
+
+   <p>Note that action names are not case sensitive, but arguments normally
+are.  However, most actions will check for "keywords" in a case
+insensitive way.
+
+   <p>There are three ways to finish with the command window.  If you press
+the <code>Enter</code> key, the command is invoked, the window goes away,
+and the next time you bring up the command window it's empty.  If you
+press the <code>Esc</code> key, the window goes away without invoking
+anything, and the next time you bring up the command window it's
+empty.  If you change focus away from the command window (i.e. click
+on some other window), the command window goes away but the next time
+you bring it up it resumes entering the command you were entering
+before.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Debug%20Action">lesstif Debug Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20DebugXY%20Action">lesstif DebugXY Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Command%20Action">lesstif Command Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Debug</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Debug(...)</pre>
+   </td></tr></table>
+
+   <p>Debug action.
+
+   <p>This action exists to help debug scripts; it simply prints all its
+arguments to stdout.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20DebugXY%20Action">lesstif DebugXY Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20DoWindows%20Action">lesstif DoWindows Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Debug%20Action">lesstif Debug Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif DebugXY</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">DebugXY(...)</pre>
+   </td></tr></table>
+
+   <p>Debug action, with coordinates
+
+   <p>Like <code>Debug</code>, but requires a coordinate.  If the user hasn't yet
+indicated a location on the board, the user will be prompted to click
+on one.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20DoWindows%20Action">lesstif DoWindows Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20DumpKeys%20Action">lesstif DumpKeys Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20DebugXY%20Action">lesstif DebugXY Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif DoWindows</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">DoWindows(1|2|3|4)
+DoWindows(Layout|Library|Log|Netlist)</pre>
+   </td></tr></table>
+
+   <p>Open various GUI windows.
+
+     <dl>
+
+     <br><dt><code>1</code>
+     <dd><dt><code>Layout</code>
+     <dd>Open the layout window.  Since the layout window is always shown
+anyway, this has no effect.
+
+     <br><dt><code>2</code>
+     <dd><dt><code>Library</code>
+     <dd>Open the library window.
+
+     <br><dt><code>3</code>
+     <dd><dt><code>Log</code>
+     <dd>Open the log window.
+
+     <br><dt><code>4</code>
+     <dd><dt><code>Netlist</code>
+     <dd>Open the netlist window.
+
+   </dl>
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20DumpKeys%20Action">lesstif DumpKeys Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20EditLayerGroups%20Action">lesstif EditLayerGroups Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20DoWindows%20Action">lesstif DoWindows Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif DumpKeys</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">DumpKeys()</pre>
+   </td></tr></table>
+
+   <p>Dump Lesstif key bindings.
+
+   <p>Causes the list of key bindings (from <code>pcb-menu.res</code>) to be
+dumped to stdout.  This is most useful when invoked from the command
+line like this:
+
+<pre class="example">     pcb --action-string DumpKeys
+     </pre>
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20EditLayerGroups%20Action">lesstif EditLayerGroups Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Export%20Action">lesstif Export Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20DumpKeys%20Action">lesstif DumpKeys Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif EditLayerGroups</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">EditLayerGroups()</pre>
+   </td></tr></table>
+
+   <p>Let the user change the layer groupings
+
+   <p>Displays a dialog that lets the user view and change the layer
+groupings.  Each layer (row) can be a member of any one layer group
+(column).  Note the special layers <code>solder</code> and <code>component</code>
+allow you to specify which groups represent the top and bottom of the
+board.
+
+   <p>See <a href="#ChangeName%20Action">ChangeName Action</a>.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Export%20Action">lesstif Export Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20GetXY%20Action">lesstif GetXY Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20EditLayerGroups%20Action">lesstif EditLayerGroups Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Export</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Export()</pre>
+   </td></tr></table>
+
+   <p>Export the layout.
+
+   <p>Prompts the user for an exporter to use.  Then, prompts the user for
+that exporter's options, and exports the layout.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20GetXY%20Action">lesstif GetXY Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20LibraryShow%20Action">lesstif LibraryShow Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Export%20Action">lesstif Export Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif GetXY</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">GetXY()</pre>
+   </td></tr></table>
+
+   <p>Get a coordinate.
+
+   <p>Prompts the user for a coordinate, if one is not already selected.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20LibraryShow%20Action">lesstif LibraryShow Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Load%20Action">lesstif Load Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20GetXY%20Action">lesstif GetXY Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif LibraryShow</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">LibraryShow()</pre>
+   </td></tr></table>
+
+   <p>Displays the library window.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Load%20Action">lesstif Load Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20LoadVendor%20Action">lesstif LoadVendor Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20LibraryShow%20Action">lesstif LibraryShow Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Load</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Load()
+Load(Layout|LayoutToBuffer|ElementToBuffer|Netlist|Revert)</pre>
+   </td></tr></table>
+
+   <p>Load layout data from a user-selected file.
+
+   <p>This action is a GUI front-end to the core's <code>LoadFrom</code> action
+(see <a href="#LoadFrom%20Action">LoadFrom Action</a>).  If you happen to pass a filename, like
+<code>LoadFrom</code>, then <code>LoadFrom</code> is called directly.  Else, the
+user is prompted for a filename to load, and then <code>LoadFrom</code> is
+called with that filename.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20LoadVendor%20Action">lesstif LoadVendor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20NetlistShow%20Action">lesstif NetlistShow Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Load%20Action">lesstif Load Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif LoadVendor</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">LoadVendor()</pre>
+   </td></tr></table>
+
+   <p>Loads a user-selected vendor resource file.
+
+   <p>The user is prompted for a file to load, and then
+<code>LoadVendorFrom</code> is called (see <a href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>) to
+load that vendor file.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20NetlistShow%20Action">lesstif NetlistShow Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Print%20Action">lesstif Print Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20LoadVendor%20Action">lesstif LoadVendor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif NetlistShow</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">NetlistShow()</pre>
+   </td></tr></table>
+
+   <p>Displays the netlist window.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Print%20Action">lesstif Print Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20PromptFor%20Action">lesstif PromptFor Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20NetlistShow%20Action">lesstif NetlistShow Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Print</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Print()</pre>
+   </td></tr></table>
+
+   <p>Print the layout.
+
+   <p>This will find the default printing HID, prompt the user for its
+options, and print the layout.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20PromptFor%20Action">lesstif PromptFor Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Return%20Action">lesstif Return Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Print%20Action">lesstif Print Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif PromptFor</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">PromptFor([message[,default]])</pre>
+   </td></tr></table>
+
+   <p>Prompt for a response.
+
+   <p>This is mostly for testing the lesstif HID interface.  The parameters
+are passed to the <code>prompt_for()</code> HID function, causing the user
+to be prompted for a response.  The respose is simply printed to the
+user's stdout.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Return%20Action">lesstif Return Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Save%20Action">lesstif Save Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20PromptFor%20Action">lesstif PromptFor Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Return</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Return(0|1)</pre>
+   </td></tr></table>
+
+   <p>Simulate a passing or failing action.
+
+   <p>This is for testing.  If passed a 0, does nothing and succeeds.  If
+passed a 1, does nothing but pretends to fail.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Save%20Action">lesstif Save Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20SelectLayer%20Action">lesstif SelectLayer Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Return%20Action">lesstif Return Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Save</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Save()
+Save(Layout|LayoutAs)
+Save(AllConnections|AllUnusedPins|ElementConnections)</pre>
+   </td></tr></table>
+
+   <p>Save layout data to a user-selected file.
+
+   <p>This action is a GUI front-end to the core's <code>SaveTo</code> action
+(see <a href="#SaveTo%20Action">SaveTo Action</a>).  If you happen to pass a filename, like
+<code>SaveTo</code>, then <code>SaveTo</code> is called directly.  Else, the
+user is prompted for a filename to save, and then <code>SaveTo</code> is
+called with that filename.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20SelectLayer%20Action">lesstif SelectLayer Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20SetUnits%20Action">lesstif SetUnits Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20Save%20Action">lesstif Save Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif SelectLayer</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">SelectLayer(1..MAXLAYER|Silk|Rats)</pre>
+   </td></tr></table>
+
+   <p>Select which layer is the current layer.
+
+   <p>The specified layer becomes the currently active layer.  It is made
+visible if it is not already visible
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20SetUnits%20Action">lesstif SetUnits Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20SwapSides%20Action">lesstif SwapSides Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20SelectLayer%20Action">lesstif SelectLayer Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif SetUnits</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">SetUnits(mm|mil)</pre>
+   </td></tr></table>
+
+   <p>Set the default measurement units.
+
+     <dl>
+
+     <br><dt><code>mil</code>
+     <dd>Sets the display units to mils (1/1000 inch).
+
+     <br><dt><code>mm</code>
+     <dd>Sets the display units to millimeters.
+
+   </dl>
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20SwapSides%20Action">lesstif SwapSides Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20ThinDraw%20Action">lesstif ThinDraw Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20SetUnits%20Action">lesstif SetUnits Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif SwapSides</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">SwapSides(|v|h|r)</pre>
+   </td></tr></table>
+
+   <p>Swaps the side of the board you're looking at.
+
+   <p>This action changes the way you view the board.
+
+     <dl>
+
+     <br><dt><code>v</code>
+     <dd>Flips the board over vertically (up/down).
+
+     <br><dt><code>h</code>
+     <dd>Flips the board over horizontally (left/right), like flipping pages in
+a book.
+
+     <br><dt><code>r</code>
+     <dd>Rotates the board 180 degrees without changing sides.
+
+   </dl>
+
+   <p>If no argument is given, the board isn't moved but the opposite side
+is shown.
+
+   <p>Normally, this action changes which pads and silk layer are drawn as
+true silk, and which are drawn as the "invisible" layer.  It also
+determines which solder mask you see.
+
+   <p>As a special case, if the layer group for the side you're looking at
+is visible and currently active, and the layer group for the opposite
+is not visible (i.e. disabled), then this action will also swap which
+layer group is visible and active, effectively swapping the "working
+side" of the board.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20ThinDraw%20Action">lesstif ThinDraw Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20ThinDrawPoly%20Action">lesstif ThinDrawPoly Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20SwapSides%20Action">lesstif SwapSides Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif ThinDraw</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">ThinDraw()
+ThinDraw(1|0)</pre>
+   </td></tr></table>
+
+   <p>Sets the global thin-draw flag.
+
+   <p>When the thindraw flag is set, all board objects are drawn using
+"thin" lines.  Traces are drawn as single lines along their
+centerlines, other objects are drawn as outlines.  If you pass
+<code>0</code>, thin draw is disabled.  If you pass <code>1</code>, thin draw is
+enabled.  If you pass nothing, thin draw is toggled.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20ThinDrawPoly%20Action">lesstif ThinDrawPoly Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20ToggleView%20Action">lesstif ToggleView Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20ThinDraw%20Action">lesstif ThinDraw Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif ThinDrawPoly</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">ThinDrawPoly()
+ThinDrawPoly(0|1)</pre>
+   </td></tr></table>
+
+   <p>Sets the thin-draw flag for polygons.
+
+   <p>When the polygon thindraw flag is set, all polygons are drawn using
+"thin" lines along their outlines.  If you pass <code>0</code>, polygon
+thin draw is disabled.  If you pass <code>1</code>, polygon thin draw is
+enabled.  If you pass nothing, polygon thin draw is toggled.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20ToggleView%20Action">lesstif ToggleView Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#lesstif%20Zoom%20Action">lesstif Zoom Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20ThinDrawPoly%20Action">lesstif ThinDrawPoly Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif ToggleView</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">ToggleView(1..MAXLAYER)
+ToggleView(layername)
+ToggleView(Silk|Rats|Pins|Vias|Mask|BackSide)</pre>
+   </td></tr></table>
+
+   <p>Toggle the visibility of the specified layer or layer group.
+
+   <p>If you pass an integer, that layer is specified by index (the first
+layer is <code>1</code>, etc).  If you pass a layer name, that layer is
+specified by name.  When a layer is specified, the visibility of the
+layer group containing that layer is toggled.
+
+   <p>If you pass a special layer name, the visibility of those components
+(silk, rats, etc) is toggled.  Note that if you have a layer named
+the same as a special layer, the layer is chosen over the special layer.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="lesstif%20Zoom%20Action">lesstif Zoom Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#lesstif%20ToggleView%20Action">lesstif ToggleView Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#lesstif%20actions">lesstif actions</a>
+<br>
+</div>
+
+<h3 class="subsection">lesstif Zoom</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Zoom()
+Zoom(factor)</pre>
+   </td></tr></table>
+
+   <p>Various zoom factor changes.
+
+   <p>Changes the zoom (magnification) of the view of the board.  If no
+arguments are passed, the view is scaled such that the board just fits
+inside the visible window (i.e. "view all").  Otherwise,
+<var>factor</var> specifies a change in zoom factor.  It may be prefixed by
+<code>+</code>, <code>-</code>, or <code>=</code> to change how the zoom factor is
+modified.  The <var>factor</var> is a floating point number, such as
+<code>1.5</code> or <code>0.75</code>.
+
+     <dl>
+
+     <br><dt><code>+</code><var>factor</var><code></code>
+     <dd>Values greater than 1.0 cause the board to be drawn smaller; more of
+the board will be visible.  Values between 0.0 and 1.0 cause the board
+to be drawn bigger; less of the board will be visible.
+
+     <br><dt><code>-</code><var>factor</var><code></code>
+     <dd>Values greater than 1.0 cause the board to be drawn bigger; less of
+the board will be visible.  Values between 0.0 and 1.0 cause the board
+to be drawn smaller; more of the board will be visible.
+
+     <br><dt><code>=</code><var>factor</var><code></code>
+     <dd>
+The <var>factor</var> is an absolute zoom factor; the unit for this value
+is "PCB units per screen pixel".  Since PCB units are 0.01 mil, a
+<var>factor</var> of 1000 means 10 mils (0.01 in) per pixel, or 100 DPI,
+about the actual resolution of most screens - resulting in an "actual
+size" board.  Similarly, a <var>factor</var> of 100 gives you a 10x actual
+size.
+
+   </dl>
+
+   <p>Note that zoom factors of zero are silently ignored.
 
 <div class="node">
 <p><hr>
@@ -7838,7 +10003,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><code>:s</code>: <a href="#User%20Commands">User Commands</a>
 <li><code>:w[q]</code>: <a href="#User%20Commands">User Commands</a>
 <li><code>AddRats()</code>: <a href="#Actions">Actions</a>
-<li><code>ApplyVendor()</code>: <a href="#Action%20Reference">Action Reference</a>, <a href="#Actions">Actions</a>
+<li><code>ApplyVendor()</code>: <a href="#ApplyVendor%20Action">ApplyVendor Action</a>, <a href="#Actions">Actions</a>
 <li><code>Atomic()</code>: <a href="#Actions">Actions</a>
 <li><code>Bell()</code>: <a href="#Actions">Actions</a>
 <li><code>ChangeClearSize()</code>: <a href="#Actions">Actions</a>
@@ -7854,16 +10019,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><code>Command()</code>: <a href="#Actions">Actions</a>
 <li><code>Connection()</code>: <a href="#Actions">Actions</a>
 <li><code>DeleteRats()</code>: <a href="#Actions">Actions</a>
-<li><code>DisableVendor()</code>: <a href="#Actions">Actions</a>, <a href="#Action%20Reference">Action Reference</a>
+<li><code>DisableVendor()</code>: <a href="#Actions">Actions</a>, <a href="#DisableVendor%20Action">DisableVendor Action</a>
 <li><code>DisperseElements()</code>: <a href="#Actions">Actions</a>
 <li><code>Display()</code>: <a href="#Actions">Actions</a>
 <li><code>DRC()</code>: <a href="#Actions">Actions</a>
 <li><code>EditLayerGroups()</code>: <a href="#Actions">Actions</a>
-<li><code>EnableVendor()</code>: <a href="#Actions">Actions</a>, <a href="#Action%20Reference">Action Reference</a>
+<li><code>EnableVendor()</code>: <a href="#Actions">Actions</a>, <a href="#EnableVendor%20Action">EnableVendor Action</a>
 <li><code>ExecuteFile()</code>: <a href="#Actions">Actions</a>
 <li><code>Load()</code>: <a href="#Actions">Actions</a>
 <li><code>LoadVendor()</code>: <a href="#Actions">Actions</a>
-<li><code>LoadVendorFrom()</code>: <a href="#Action%20Reference">Action Reference</a>
+<li><code>LoadVendorFrom()</code>: <a href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>
 <li><code>MarkCrosshair()</code>: <a href="#Actions">Actions</a>
 <li><code>Mode()</code>: <a href="#Actions">Actions</a>
 <li><code>MovePointer()</code>: <a href="#Actions">Actions</a>
@@ -7884,10 +10049,10 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><code>SwapSides()</code>: <a href="#Actions">Actions</a>
 <li><code>SwitchDrawingLayer()</code>: <a href="#Actions">Actions</a>
 <li><code>ToggleHideName()</code>: <a href="#Actions">Actions</a>
-<li><code>ToggleVendor()</code>: <a href="#Action%20Reference">Action Reference</a>, <a href="#Actions">Actions</a>
+<li><code>ToggleVendor()</code>: <a href="#ToggleVendor%20Action">ToggleVendor Action</a>, <a href="#Actions">Actions</a>
 <li><code>ToggleVisibility()</code>: <a href="#Actions">Actions</a>
 <li><code>Undo()</code>: <a href="#Actions">Actions</a>
-<li><code>UnloadVendor()</code>: <a href="#Action%20Reference">Action Reference</a>, <a href="#Actions">Actions</a>
+<li><code>UnloadVendor()</code>: <a href="#UnloadVendor%20Action">UnloadVendor Action</a>, <a href="#Actions">Actions</a>
 <li><code>Unselect()</code>: <a href="#Actions">Actions</a>
 </ul>
 
@@ -8337,13 +10502,13 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li>user commands: <a href="#User%20Commands">User Commands</a>
 <li>user input: <a href="#Translations">Translations</a>
 <li>Vendor drill table: <a href="#Vendor%20drill%20mapping">Vendor drill mapping</a>
-<li>vendor drill table: <a href="#Action%20Reference">Action Reference</a>, <a href="#Actions">Actions</a>, <a href="#Action%20Reference">Action Reference</a>
+<li>vendor drill table: <a href="#ApplyVendor%20Action">ApplyVendor Action</a>, <a href="#DisableVendor%20Action">DisableVendor Action</a>, <a href="#Actions">Actions</a>, <a href="#EnableVendor%20Action">EnableVendor Action</a>, <a href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>, <a href="#ToggleVendor%20Action">ToggleVendor Action</a>, <a href="#UnloadVendor%20Action">UnloadVendor Action</a>
 <li>vendor drill table, disabling: <a href="#Actions">Actions</a>
 <li>vendor drill table, enabling: <a href="#Actions">Actions</a>
 <li>vendor drill table, loading: <a href="#Actions">Actions</a>
 <li>vendor drill table, toggling: <a href="#Actions">Actions</a>
 <li>vendor drill table, unloading: <a href="#Actions">Actions</a>
-<li>vendor map: <a href="#Action%20Reference">Action Reference</a>, <a href="#Actions">Actions</a>, <a href="#Action%20Reference">Action Reference</a>
+<li>vendor map: <a href="#ApplyVendor%20Action">ApplyVendor Action</a>, <a href="#EnableVendor%20Action">EnableVendor Action</a>, <a href="#Actions">Actions</a>, <a href="#DisableVendor%20Action">DisableVendor Action</a>, <a href="#UnloadVendor%20Action">UnloadVendor Action</a>, <a href="#LoadVendorFrom%20Action">LoadVendorFrom Action</a>, <a href="#ToggleVendor%20Action">ToggleVendor Action</a>
 <li>vendor map, disabling: <a href="#Actions">Actions</a>
 <li>vendor map, enabling: <a href="#Actions">Actions</a>
 <li>vendor map, loading: <a href="#Actions">Actions</a>
@@ -8412,6 +10577,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#Netlist%20Window">Netlist Window</a>
 <li><a href="#Drawing%20and%20Removing">Drawing and Removing Basic Objects</a>
 <ul>
+<li><a href="#Common">Common Drawing and Removing Methods</a>
 <li><a href="#Lines">Lines</a>
 <li><a href="#Arcs">Arcs</a>
 <li><a href="#Polygons">Polygons and Rectangles</a>
@@ -8454,6 +10620,34 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#Library%20Contents%20File">Library Contents File Format</a>
 <li><a href="#Library%20File">Library File Format</a>
 <li><a href="#File%20Syntax">File Syntax</a>
+<ul>
+<li><a href="#Arc%20syntax">Arc</a>
+<li><a href="#Connect%20syntax">Connect</a>
+<li><a href="#Cursor%20syntax">Cursor</a>
+<li><a href="#DRC%20syntax">DRC</a>
+<li><a href="#Element%20syntax">Element</a>
+<li><a href="#ElementArc%20syntax">ElementArc</a>
+<li><a href="#ElementLine%20syntax">ElementLine</a>
+<li><a href="#Flags%20syntax">Flags</a>
+<li><a href="#Grid%20syntax">Grid</a>
+<li><a href="#Groups%20syntax">Groups</a>
+<li><a href="#Layer%20syntax">Layer</a>
+<li><a href="#Line%20syntax">Line</a>
+<li><a href="#Mark%20syntax">Mark</a>
+<li><a href="#Net%20syntax">Net</a>
+<li><a href="#Netlist%20syntax">Netlist</a>
+<li><a href="#Pad%20syntax">Pad</a>
+<li><a href="#PCB%20syntax">PCB</a>
+<li><a href="#Pin%20syntax">Pin</a>
+<li><a href="#Polygon%20syntax">Polygon</a>
+<li><a href="#Rat%20syntax">Rat</a>
+<li><a href="#Styles%20syntax">Styles</a>
+<li><a href="#Symbol%20syntax">Symbol</a>
+<li><a href="#SymbolLine%20syntax">SymbolLine</a>
+<li><a href="#Text%20syntax">Text</a>
+<li><a href="#Thermal%20syntax">Thermal</a>
+<li><a href="#Via%20syntax">Via</a>
+</li></ul>
 <li><a href="#Object%20Flags">Object Flags</a>
 <li><a href="#PCBFlags">PCBFlags</a>
 </li></ul>
@@ -8538,8 +10732,129 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 </li></ul>
 <li><a name="toc_Action%20Reference" href="#Action%20Reference">Action Reference</a>
 <ul>
-<li><a href="#Action%20Reference">gtk actions</a>
-<li><a href="#Action%20Reference">lesstif actions</a>
+<li><a href="#core%20actions">Core actions</a>
+<ul>
+<li><a href="#AddRats%20Action">AddRats</a>
+<li><a href="#ApplyVendor%20Action">ApplyVendor</a>
+<li><a href="#Atomic%20Action">Atomic</a>
+<li><a href="#AutoPlaceSelected%20Action">AutoPlaceSelected</a>
+<li><a href="#AutoRoute%20Action">AutoRoute</a>
+<li><a href="#ChangeClearSize%20Action">ChangeClearSize</a>
+<li><a href="#ChangeDrillSize%20Action">ChangeDrillSize</a>
+<li><a href="#ChangeFlag%20Action">ChangeFlag</a>
+<li><a href="#ChangeHole%20Action">ChangeHole</a>
+<li><a href="#ChangeJoin%20Action">ChangeJoin</a>
+<li><a href="#ChangeName%20Action">ChangeName</a>
+<li><a href="#ChangeOctagon%20Action">ChangeOctagon</a>
+<li><a href="#ChangePinName%20Action">ChangePinName</a>
+<li><a href="#ChangeSize%20Action">ChangeSize</a>
+<li><a href="#ChangeSquare%20Action">ChangeSquare</a>
+<li><a href="#ClearOctagon%20Action">ClearOctagon</a>
+<li><a href="#ClearSquare%20Action">ClearSquare</a>
+<li><a href="#ClearThermal%20Action">ClearThermal</a>
+<li><a href="#ClrFlag%20Action">ClrFlag</a>
+<li><a href="#Connection%20Action">Connection</a>
+<li><a href="#DeleteRats%20Action">DeleteRats</a>
+<li><a href="#DisableVendor%20Action">DisableVendor</a>
+<li><a href="#DisperseElements%20Action">DisperseElements</a>
+<li><a href="#Display%20Action">Display</a>
+<li><a href="#djopt%20Action">djopt</a>
+<li><a href="#DRC%20Action">DRC</a>
+<li><a href="#DumpLibrary%20Action">DumpLibrary</a>
+<li><a href="#EnableVendor%20Action">EnableVendor</a>
+<li><a href="#ExecuteFile%20Action">ExecuteFile</a>
+<li><a href="#Flip%20Action">Flip</a>
+<li><a href="#FontEdit%20Action">FontEdit</a>
+<li><a href="#FontSave%20Action">FontSave</a>
+<li><a href="#h%20Action">h</a>
+<li><a href="#l%20Action">l</a>
+<li><a href="#le%20Action">le</a>
+<li><a href="#LoadFrom%20Action">LoadFrom</a>
+<li><a href="#LoadVendorFrom%20Action">LoadVendorFrom</a>
+<li><a href="#m%20Action">m</a>
+<li><a href="#MarkCrosshair%20Action">MarkCrosshair</a>
+<li><a href="#Message%20Action">Message</a>
+<li><a href="#Mode%20Action">Mode</a>
+<li><a href="#MoveObject%20Action">MoveObject</a>
+<li><a href="#MoveToCurrentLayer%20Action">MoveToCurrentLayer</a>
+<li><a href="#Netlist%20Action">Netlist</a>
+<li><a href="#New%20Action">New</a>
+<li><a href="#OptAutoOnly%20Action">OptAutoOnly</a>
+<li><a href="#PasteBuffer%20Action">PasteBuffer</a>
+<li><a href="#Polygon%20Action">Polygon</a>
+<li><a href="#Puller%20Action">Puller</a>
+<li><a href="#q%20Action">q</a>
+<li><a href="#q!%20Action">q!</a>
+<li><a href="#Quit%20Action">Quit</a>
+<li><a href="#Redo%20Action">Redo</a>
+<li><a href="#RemoveSelected%20Action">RemoveSelected</a>
+<li><a href="#Renumber%20Action">Renumber</a>
+<li><a href="#Report%20Action">Report</a>
+<li><a href="#ReportDialog%20Action">ReportDialog</a>
+<li><a href="#RipUp%20Action">RipUp</a>
+<li><a href="#rn%20Action">rn</a>
+<li><a href="#RouteStyle%20Action">RouteStyle</a>
+<li><a href="#s%20Action">s</a>
+<li><a href="#SaveTo%20Action">SaveTo</a>
+<li><a href="#Select%20Action">Select</a>
+<li><a href="#SetFlag%20Action">SetFlag</a>
+<li><a href="#SetOctagon%20Action">SetOctagon</a>
+<li><a href="#SetSame%20Action">SetSame</a>
+<li><a href="#SetSquare%20Action">SetSquare</a>
+<li><a href="#SetThermal%20Action">SetThermal</a>
+<li><a href="#SetValue%20Action">SetValue</a>
+<li><a href="#ToggleHideName%20Action">ToggleHideName</a>
+<li><a href="#ToggleThermal%20Action">ToggleThermal</a>
+<li><a href="#ToggleVendor%20Action">ToggleVendor</a>
+<li><a href="#Undo%20Action">Undo</a>
+<li><a href="#UnloadVendor%20Action">UnloadVendor</a>
+<li><a href="#Unselect%20Action">Unselect</a>
+<li><a href="#w%20Action">w</a>
+<li><a href="#wq%20Action">wq</a>
+</li></ul>
+<li><a href="#common%20actions">common actions</a>
+<ul>
+<li><a href="#LayersChanged%20Action">LayersChanged</a>
+<li><a href="#LibraryChanged%20Action">LibraryChanged</a>
+<li><a href="#NetlistChanged%20Action">NetlistChanged</a>
+<li><a href="#PCBChanged%20Action">PCBChanged</a>
+<li><a href="#RouteStylesChanged%20Action">RouteStylesChanged</a>
+</li></ul>
+<li><a href="#gtk%20actions">gtk actions</a>
+<ul>
+<li><a href="#gtk%20About%20Action">gtk About</a>
+<li><a href="#gtk%20Zoom%20Action">gtk Zoom</a>
+</li></ul>
+<li><a href="#lesstif%20actions">lesstif actions</a>
+<ul>
+<li><a href="#lesstif%20About%20Action">lesstif About</a>
+<li><a href="#lesstif%20AdjustSizes%20Action">lesstif AdjustSizes</a>
+<li><a href="#lesstif%20AdjustStyle%20Action">lesstif AdjustStyle</a>
+<li><a href="#lesstif%20Benchmark%20Action">lesstif Benchmark</a>
+<li><a href="#lesstif%20Command%20Action">lesstif Command</a>
+<li><a href="#lesstif%20Debug%20Action">lesstif Debug</a>
+<li><a href="#lesstif%20DebugXY%20Action">lesstif DebugXY</a>
+<li><a href="#lesstif%20DoWindows%20Action">lesstif DoWindows</a>
+<li><a href="#lesstif%20DumpKeys%20Action">lesstif DumpKeys</a>
+<li><a href="#lesstif%20EditLayerGroups%20Action">lesstif EditLayerGroups</a>
+<li><a href="#lesstif%20Export%20Action">lesstif Export</a>
+<li><a href="#lesstif%20GetXY%20Action">lesstif GetXY</a>
+<li><a href="#lesstif%20LibraryShow%20Action">lesstif LibraryShow</a>
+<li><a href="#lesstif%20Load%20Action">lesstif Load</a>
+<li><a href="#lesstif%20LoadVendor%20Action">lesstif LoadVendor</a>
+<li><a href="#lesstif%20NetlistShow%20Action">lesstif NetlistShow</a>
+<li><a href="#lesstif%20Print%20Action">lesstif Print</a>
+<li><a href="#lesstif%20PromptFor%20Action">lesstif PromptFor</a>
+<li><a href="#lesstif%20Return%20Action">lesstif Return</a>
+<li><a href="#lesstif%20Save%20Action">lesstif Save</a>
+<li><a href="#lesstif%20SelectLayer%20Action">lesstif SelectLayer</a>
+<li><a href="#lesstif%20SetUnits%20Action">lesstif SetUnits</a>
+<li><a href="#lesstif%20SwapSides%20Action">lesstif SwapSides</a>
+<li><a href="#lesstif%20ThinDraw%20Action">lesstif ThinDraw</a>
+<li><a href="#lesstif%20ThinDrawPoly%20Action">lesstif ThinDrawPoly</a>
+<li><a href="#lesstif%20ToggleView%20Action">lesstif ToggleView</a>
+<li><a href="#lesstif%20Zoom%20Action">lesstif Zoom</a>
+</li></ul>
 </li></ul>
 <li><a name="toc_Glossary" href="#Glossary">Glossary</a>
 <li><a name="toc_Index" href="#Index">Index of Resources</a>
