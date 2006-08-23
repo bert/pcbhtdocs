@@ -1,0 +1,50 @@
+#!/usr/bin/awk -f
+#
+# $Id$
+#
+# ./news2news ../pcb/NEWS
+
+BEGIN {
+	printf("    <UL>\n");
+	sec = 0;
+	str = "";
+}
+
+# count which release section we're in
+/Release/ {
+	sec = sec + 1;
+}
+
+# quit after the first "Release" section
+sec == 2 {
+	exit;
+}
+
+# eat blank lines
+/^[ \t]*$/ {
+	next;
+}
+
+# eat the "Release" or "=====" lines
+/^[R=]/ {
+	next;
+}
+
+/^-/ {
+	printf("%s    <LI>\n", str);
+	str = "    </LI>\n\n";
+	gsub(/^-/, "");
+}
+
+{
+	gsub(/^[ \t]*/, "");
+	gsub(/>/, "\\&gt;");
+	gsub(/</, "\\&lt;");
+
+	printf("    %s\n", $0);
+}
+
+END {
+	printf("%s", str);
+	printf("    </UL>\n\n");
+}
