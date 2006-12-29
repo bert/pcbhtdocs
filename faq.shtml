@@ -36,23 +36,13 @@ rs274x,
     <UL>
     <LI><A HREF="#windows">What about PCB under Windows?</A></LI>
 
-    <LI><A HREF="#appdefault">When I build PCB in cygwin (or Mac OS X) and start it within
-    XFree86, it comes up looking just fine but it doesn't respond to
-    keyboard chars, nor does it seem to have functional menus. I can
-    click on and highlight any menu heading, but nothing
-    drops down.</A></LI>
-
     <LI><A HREF="#wrongautconf">When I try to bootstrap and build the CVS version,
     autogen.sh complains of configure.in missing</A></LI>
-
-    <LI><A HREF="#ghostscript">How can I get Ghostscript to read the Postscript output from PCB?</A></LI>
 
     <LI><A HREF="#tcltk"><tt>configure</tt> complains that wish is not found, but I
     have TCL/TK installed!</A></LI>
 
     <LI><A HREF="#flex">When compiling, yywrap is missing during linking.</A></LI>
-    
-    <LI><A HREF="#xaw">Where can I find documentation on Xaw programming?</A></LI>
 
     </UL>
 
@@ -60,34 +50,22 @@ rs274x,
 
     <H2>Can I run PCB on my favorite operating system?</H2>
     <p>
-	PCB should run under any unix-like operating system that has X11 installed.
+	PCB should run under any unix-like operating system.  To do useful work,
+	you need either <a href="http://www.lesstif.org">lesstif</a> or
+	<a href="http://www.gtk.org">gtk</a> on your system.
     </p>
     
     <H2><A NAME="windows">What about PCB under Windows?</A></H2>
     <p>
-	Although a native windows port of PCB does not exist, PCB has
+	Although a native windows port of PCB does not currently exist, PCB has
 	been compiled successfully under cygwin.  You will need
 	Xfree86 to be installed as well as gcc, make, m4, and tcl/tk.
+	In addition you will need either <a href="http://www.lesstif.org">lesstif</a> or
+		<a href="http://www.gtk.org">gtk</a> on your system.
 	Please note that cygwin is not the typical platform of PCB
 	developers and support for this port may be lacking.
     </p>
    
-    <HR>
-
-    <H2><A NAME="appdefault">When I build PCB in cygwin (or Mac OS X) and start it within
-    XFree86, it comes up looking just fine but it doesn't respond to
-    keyboard chars, nor does it seem to have functional menus. I can
-    click on and highlight any menu heading, but nothing
-    drops down.</A>
-    </H2>
-    <p>
-    This is the symptom when PCB can't find its X application defaults
-    file.  On systems such as cygwin or Mac OS X which do not have case
-    sensitive file systems, the applications default file, "Pcb", was
-    being overwritten by the script "pcb".  This was corrected in CVS
-    on 2003-11-08.  Please make sure your sources are newer than this.
-    </p>
-
     <HR>
 
     <H2><A NAME="wrongautconf">When I try to bootstrap and build the CVS version,
@@ -99,13 +77,6 @@ rs274x,
     you have.
     </p>
     
-    <HR>
-
-    <H2><A NAME="ghostscript">How can I get Ghostscript to read the Postscript output from PCB?</A></H2>
-    <p>
-    Select a page size other than <tt>executive</tt>.
-    </p>
-
     <HR>
 
     <H2><A NAME="tcltk"><tt>configure</tt> complains that wish is not found, but I
@@ -156,14 +127,6 @@ configure: error: Did not find the wish executible.  You need to make sure
     to make sure the linker can find libfl.a.
     </P>
 
-    <HR>
-
-    <H2><A NAME="xaw">Where can I find documentation on Xaw programming?</A></H2>
-    <p>
-	The manual for Xaw, the widget set used by PCB, can be found in various places.
-	The <a href="http://cvs.freedesktop.org/xorg/xc/doc/hardcopy/Xaw/">freedesktop CVS</a>
-	server has copies.
-    </p>
     <HR>
 
     </font>
