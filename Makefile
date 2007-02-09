@@ -18,7 +18,8 @@ SHTML_IN=	\
 	index.shtml \
 	links.shtml \
 	manual.shtml \
-	news.shtml 
+	news.shtml \
+	obtaining.shtml
 
 INCL_FILES=\
 	left_column.incl \

@@ -44,6 +44,98 @@ rs274x,
     <font face="helvetica, arial">
 
     <HR>
+    <H2><A NAME="20070208">Development snapshot 20070208 available</A></H2>
+    <p>
+    Changes included in this release are:
+    </p>
+
+    <UL>
+
+<li> Add polygon clipping code.  This is a big change to how polygons are handled.  
+  The new code now removes islands and correctly identifies open circuits caused
+  by a trace fully cutting through a polygon.  In addition, the RS-274-X output
+  is now simpler and works with some board houses that use older non-conforming
+  sofware.  Different styles for thermal reliefs are also now supported as part
+  of the polygon clipper code.
+</li>
+<li> Add support for plugins
+</li>
+<li> Many improvements to the autorouter.
+</li>
+<li> Various improvements to the trace optimizer.
+</li>
+<li> Add a fontmode for editing pcb fonts
+</li>
+<li> Add progress() hook to HID structure
+</li>
+<li> Fix a bug with non-functional windows on some window managers commonly
+  found on OS-X
+</li>
+<li> Add support for controlling pcb via dbus
+</li>
+<li> Fix various bugs which would cause a crash
+</li>
+<li> Add --scale for postscript scaling
+</li>
+<li> Intercept window manager delete events with the GTK gui
+</li>
+<li> Scan the .pcb file for a FileVersion value.  This is not written out yet
+  but will be in future versions.  
+</li>
+<li> Warn if non-manhattan lines are trying to become pads.
+</li>
+<li> Allow no-solder paste pads to support fiducials
+</li>
+<li> Report in mm or mils as selected by user
+</li>
+<li> Allow reordering of layers
+</li>
+<li> add some more QFN packages
+</li>
+<li> fix building with sun studio c compiler
+</li>
+<li> Made a pcb installation be relocatable.
+</li>
+<li> Convert the m4 libraries to newlib libraries as part of building a distfile.
+  The m4 libraries are still considered the sources and as such are still
+  distributed but this eliminates the need for m4 at runtime for footprints.
+</li>
+<li> Got rid of the pcb wrapper script around pcb-bin.
+</li>
+<li> Remove some old footprints of questionable naming, accuracy, or usefulness.
+</li>
+<li> Get the autosave/backup code working on all GUI's
+</li>
+<li> Fix some drill size rounding in the reports
+</li>
+<li> Changed the backup file name to be derived from the .pcb file name
+</li>
+<li> Added a command line option for DrawGrid
+</li>
+<li> Fix logic for adding new ratlines
+</li>
+<li> Fix gtk grid when board is flipped
+</li>
+<li> Add "find" and "rip-up" buttons to the netlist window
+</li>
+<li> Draw plated holes when exporting
+</li>
+<li> Fix some bugs when converting selection to element
+</li>
+<li> Fix build on cygwin
+</li>
+<li> Enhance the win32/build_pcb script used to generate a non-cygwin windows
+  installer.
+</li>
+<li> Make pcb work under non-cygwin windows
+</li>
+</ul>
+
+========================================================================
+
+<!-- ************************************************* -->
+
+    <HR>
     <H2><A NAME="20060822">Development snapshot 20060822 available</A></H2>
     <p>
     Changes included in this release are:
@@ -903,6 +995,7 @@ rs274x,
 	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
 	&nbsp;<a href="faq.html">F.A.Q.</a><br>
 	&nbsp;<a href="index.html">Home</a><br>
+	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
 	&nbsp;<a href="links.html">Links</a><br>
 	&nbsp;<a href="manual.html">Manual</a><br>
 	&nbsp;<a href="news.html">News</a><br>

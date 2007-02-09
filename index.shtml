@@ -51,6 +51,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20070208">pcb-20070208 snapshot available</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20060822">pcb-20060822 snapshot available</a>
 	</font></li>
 
@@ -60,14 +64,6 @@
 
       <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20060414">pcb-20060414 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20060321hid">HID code merged in CVS</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20060321">pcb-20060321 snapshot available</a>
 	</font></li>
 
       <li><font face="helvetica, arial" size="-1">
