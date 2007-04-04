@@ -33,10 +33,10 @@
 				      border="0"
 				      hspace="10" vspace="5"> </a>
     </center>
-    <p>
-
       <font face="helvetica, arial">
+    <p>
       This page contains information about how to download and install PCB on your computer.
+    </p>
 
 
       <h2>
@@ -47,11 +47,13 @@
       Operating System
       </h3>
       <p>
-      Currently PCB runs on unix like operating systems such as Linux, NetBSD, Solaris, FreeBSD, Mac OS X, etc.
-      In addition PCB will work on a windows computer using <a href="http://www.cygwin.com/">cygwin</a>.  While
-      it is possible to compile PCB using <a href="http://www.mingw.org/">mingw</a> on windows, the program will
-      not currently be fully functional.  The fixes should be relatively simple -- they involve using fopen() instead
-      of <tt>popen()</tt> on windows systems that do not have cygwin.
+      Currently PCB runs on unix like operating systems such as Linux, NetBSD,
+      Solaris, FreeBSD, Mac OS X, etc.
+      In addition PCB will work on a windows computer using
+      <a href="http://www.cygwin.com/">cygwin</a>.
+      It is also possible to compile PCB using
+      <a href="http://www.mingw.org/">mingw</a> on windows using the <tt>win32/build_pcb.sh</tt>
+      script.
       </p>
 
       <h3>
@@ -59,8 +61,38 @@
       </h3>
       <ul>
       <li>GUI toolkit.  Currently PCB supports either <a href="http://www.gtk.org">gtk</a>
-	  or <a href="http://www.lesstif.org>lesstif</a>/motif based guis.  If you are using 
-	  </li>
+	  or <a href="http://www.lesstif.org">lesstif</a>/motif based guis.  If you are using 
+	  the GTK based gui, you will need gtk-2.4.0 or newer.  If you are using the
+	  lesstif based gui you will need lesstif, openmotif, or motif.
+      </li>
+
+      <li>If you wish to export your layout to png, jpeg, or gif formats you will need
+      the <a href="http://www.libgd.org">GD library</a>.  If you do not have this library you
+      will need to disable the png HID at configure time.
+      </li>
+
+      <li>GNU m4.  In particular your m4 must support -F for frozen files.</li>
+
+      <li>wish (part of tcl/tk).  If not installed, set WISH=/bin/false in
+	your configure environment and you just won't get the graphical
+	QFP footprint builder
+      </li>
+
+      <li>A suitable make program.  <a href="http://www.gnu.org/software/make/">GNU make</a>
+      will work as will the make which comes with NetBSD and some of the other *BSD operating
+      systems.  Other system make programs have not been tested.
+      </li>
+
+      <li><a href="http://flex.sourceforge.net/">flex</a>
+      </li>
+
+      <li><a href="http://www.gnu.org/software/bison/">bison</a>
+      </li>
+
+      <li>A C compiler.  Although most development of PCB is done using 
+      <a href="http://gcc.gnu.org">gcc</a>, PCB is known to build with the Sun Studio
+      C compiler.
+      </li>
 
       </ul>
 
@@ -77,6 +109,7 @@
       <h2>
       Tracking the Latest with CVS
       </h2>
+      <p>
       If you are interested in tracking the very latest sources in progress, then you may obtain them
       via anonymous CVS. 
       If you wish to track the current sources with CVS then refer to the
@@ -86,7 +119,7 @@
       <a href="http://pcb.cvs.sourceforge.net/*checkout*/pcb/pcb/README.cvs?revision=HEAD&pathrev=HEAD">README.cvs</a>
       in the top of the source tree for instructions.  Note that for most users, the snapshot releases should
       be sufficient.
-      </h2>
+      </p>
 
 
       </font>
