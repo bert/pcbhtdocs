@@ -6350,7 +6350,11 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 
 <p><code>Pcb</code>'s search is based on POSIX 1003.2 Regular Expressions.  Full POSIX
 Regular Expressions are supported by <code>Pcb</code> if the regex library was
-available when <code>Pcb</code> was built. 
+available when <code>Pcb</code> was built.  One difference from the regular
+expressions found in tools like awk or grep is that PCB implicitly
+adds a "^" to the begining of a regular expression and "$" to the
+end of the regular expression.  For example if you enter "C1", the
+actual regular expression used internally is "^C1$". 
 It is easier to show by example how to search than explain POSIX 1003.2.  The following table shows the most common
 Regular Expression characters used to find elements in <code>Pcb</code>:
 
@@ -6365,28 +6369,37 @@ normally is, and should be interpreted literally if it normally isn't.
 <br><dt><code>?</code>
      <dd>Matches 0 or 1 instances of preceding character. 
 <br><dt><code>.</code>
-     <dd>Matches any single character other than the newline character. 
-</dl>
+     <dd>Matches any single character other than the newline character.
+
+   </dl>
 
    <p>The following examples illustrate how regular expressions are used to
 specify element names (reference designators) to search for.
      <dl>
-<dt><code>Search for "C1":</code>
-     <dd>Enter "C1". 
-<br><dt><code>Search for all elements that start with "C", such as capacitors:</code>
-     <dd>Enter "C.*", that is "C-dot-star". 
-<br><dt><code>Search for all elements that start with "C" and end with "1",</code>
-     <dd>such as "C1", or "C51":
-Enter "C.*1", that is "C-dot-star-1". 
-<br><dt><code>Search for only R1 or R10, will not match R100:</code>
-     <dd>Enter "R10?". 
-<br><dt><code>Search for all parts starting with "R12" and ending with the number eight, or eighty-eight etc:</code>
-     <dd>Enter "R128+". 
-<br><dt><code>Search for all terminal blocks having a one digit designator such as TB1 or TB2:</code>
-     <dd>"TB.", that is "TB-dot". 
-<br><dt><code>Search for all terminal blocks having a two digit designator such as TB21 or TB15:</code>
-     <dd>"TB..", that is "TB-dot-dot". 
-</dl>
+
+     <br><dt><code>Search for the element whose name is exactly ``C1''.</code>
+     <dd>Enter "C1".
+
+     <br><dt><code>Search for all elements that start with ``C'', such as capacitors:</code>
+     <dd>Enter "C.*".
+
+     <br><dt><code>Search for all elements that start with ``C'' and end with ``1'', such as ``C1'', or ``C51'':</code>
+     <dd>Enter "C.*1".
+
+     <br><dt><code>Search for only R1 or R10, will not match R100:</code>
+     <dd>Enter "R10?".
+
+     <br><dt><code>Search for all parts starting with ``R12'' and ending with the number eight, or eighty-eight etc:</code>
+     <dd>Enter "R128+".
+
+     <br><dt><code>Search for all terminal blocks having a one digit designator</code>
+     <dd>such as "TB1", "TB2", or "TBx":
+"TB.".
+
+     <br><dt><code>Search for all terminal blocks having a two digit designator such as TB21 or TB15:</code>
+     <dd>"TB..".
+
+   </dl>
 
 <div class="node">
 <p><hr>
@@ -9336,7 +9349,9 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Action%20Reference">Action Reference</
 <li><a accesskey="8" href="#gtk%20Popup%20Action">gtk Popup Action</a>:  Bring up the popup menu specified by <code>MenuName</code>. 
 If called by a mouse event then the mouse button number
 must be specified as the optional second argument. 
-<li><a accesskey="9" href="#gtk%20Save%20Action">gtk Save Action</a>:  Save layout and/or element data to a user-selected file. 
+<li><a accesskey="9" href="#gtk%20Print%20Action">gtk Print Action</a>:  Print the layout. 
+<li><a href="#gtk%20PrintCalibrate%20Action">gtk PrintCalibrate Action</a>:  Calibrate the printer. 
+<li><a href="#gtk%20Save%20Action">gtk Save Action</a>:  Save layout and/or element data to a user-selected file. 
 <li><a href="#gtk%20SelectLayer%20Action">gtk SelectLayer Action</a>:  Select which layer is the current layer. 
 <li><a href="#gtk%20SetUnits%20Action">gtk SetUnits Action</a>:  Set the default measurement units. 
 <li><a href="#gtk%20SwapSides%20Action">gtk SwapSides Action</a>:  Swaps the side of the board you're looking at. 
@@ -9426,7 +9441,7 @@ user's view of the board.  Thus, a positive <var>DeltaUp</var> may move the
 cursor towards the board origin if the board is inverted.
 
    <p>Type is one of <code>Pan</code> or <code>Warp</code>.  <code>Pan</code> causes the
-viewport to move such that the crosshair is under the mouse curos. 
+viewport to move such that the crosshair is under the mouse cursor. 
 <code>Warp</code> causes the mouse cursor to move to be above the crosshair.
 
    <p><var>Units</var> can be one of the following:
@@ -9538,7 +9553,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
 <div class="node">
 <p><hr>
 Node:&nbsp;<a name="gtk%20Popup%20Action">gtk Popup Action</a>,
-Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20Save%20Action">gtk Save Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20Print%20Action">gtk Print Action</a>,
 Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20GetXY%20Action">gtk GetXY Action</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
 <br>
@@ -9561,9 +9576,49 @@ button number must be specified as the second argument.
 
 <div class="node">
 <p><hr>
+Node:&nbsp;<a name="gtk%20Print%20Action">gtk Print Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20PrintCalibrate%20Action">gtk PrintCalibrate Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20Popup%20Action">gtk Popup Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
+<br>
+</div>
+
+<h3 class="subsection">gtk Print</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">Print()</pre>
+   </td></tr></table>
+
+   <p>Print the layout.
+
+   <p>This will find the default printing HID, prompt the user for its
+options, and print the layout.
+
+<div class="node">
+<p><hr>
+Node:&nbsp;<a name="gtk%20PrintCalibrate%20Action">gtk PrintCalibrate Action</a>,
+Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20Save%20Action">gtk Save Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20Print%20Action">gtk Print Action</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
+<br>
+</div>
+
+<h3 class="subsection">gtk PrintCalibrate</h4>
+
+<table class="cartouche" border=1><tr><td>
+<pre class="format">PrintCalibrate()</pre>
+   </td></tr></table>
+
+   <p>Calibrate the printer.
+
+   <p>This will print a calibration page, which you would measure and type
+the measurements in, so that future printouts will be more precise.
+
+<div class="node">
+<p><hr>
 Node:&nbsp;<a name="gtk%20Save%20Action">gtk Save Action</a>,
 Next:&nbsp;<a rel="next" accesskey="n" href="#gtk%20SelectLayer%20Action">gtk SelectLayer Action</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20Popup%20Action">gtk Popup Action</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#gtk%20PrintCalibrate%20Action">gtk PrintCalibrate Action</a>,
 Up:&nbsp;<a rel="up" accesskey="u" href="#gtk%20actions">gtk actions</a>
 <br>
 </div>
@@ -9945,7 +10000,7 @@ user's view of the board.  Thus, a positive <var>DeltaUp</var> may move the
 cursor towards the board origin if the board is inverted.
 
    <p>Type is one of <code>Pan</code> or <code>Warp</code>.  <code>Pan</code> causes the
-viewport to move such that the crosshair is under the mouse curos. 
+viewport to move such that the crosshair is under the mouse cursor. 
 <code>Warp</code> causes the mouse cursor to move to be above the crosshair.
 
    <p><var>Units</var> can be one of the following:
@@ -11503,6 +11558,8 @@ Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
 <li><a href="#gtk%20EditLayerGroups%20Action">gtk EditLayerGroups</a>
 <li><a href="#gtk%20GetXY%20Action">gtk GetXY</a>
 <li><a href="#gtk%20Popup%20Action">gtk Popup</a>
+<li><a href="#gtk%20Print%20Action">gtk Print</a>
+<li><a href="#gtk%20PrintCalibrate%20Action">gtk PrintCalibrate</a>
 <li><a href="#gtk%20Save%20Action">gtk Save</a>
 <li><a href="#gtk%20SelectLayer%20Action">gtk SelectLayer</a>
 <li><a href="#gtk%20SetUnits%20Action">gtk SetUnits</a>
