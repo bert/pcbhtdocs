@@ -35,6 +35,64 @@ rs274x,
     
     <font face="helvetica, arial">
 
+    <!-- ********************* pcb-20070912 ******************* -->
+    <HR>
+    <H2><A NAME="20070912">Development snapshot 20070912 available</A></H2>
+    <p>
+This release represents nearly 200 commits and as such this summary 
+clearly is not complete.  See the ChangeLog file for the complete list
+of changes.
+    </p>
+    <p>
+    Changes included in this release are:
+    </p>
+
+<ul>
+<li> Many many bug fixes.  Too many to list.
+</li>
+<li> Added keystone, C&K, Nichicon, and Optek footprint libraries
+</li>
+<li> Add attribute editor to the GTK HID
+</li>
+<li> Add a fileselect() function to the HID spec
+</li>
+<li> Fix ps output with drill helper on
+</li>
+<li> Add a visual indicater when elements are locked
+</li>
+<li> Corrections to the manual
+</li>
+<li> BOM can export in mm as well as mil 
+</li>
+<li> Fix a ps output bug with arcs
+</li>
+<li> Fix some memory leaks found with Coverity
+</li>
+<li> Added autoconf test for buggy versions of m4
+</li>
+<li> Fixed some footprint drill sizes
+</li>
+<li> Add user customizable menus for the gtk HID.  The gtk HID now is capable
+  of reading the same format menu resource files as the lesstif HID.
+  This represents significant rework of the menu code and menu callback code.
+</li>
+<li> Added Center() action
+</li>
+<li> Store the file format in the .pcb file.  This will let pcb know when
+  presented with a file which is too new.  The code for checking the format
+  was present in the prior snapshot.
+</li>
+<li> Fix DRC checking of square pads to square pads
+</li>
+<li> Added window panning/cursor warping
+</li>
+<li> Add the ability to directly load a footprint from a file as if it were
+  a complete layout.
+</li>
+<li> Add a Popup() action
+</ul>
+
+
     <HR>
     <H2><A NAME="20070315">gEDA Accepted into Googles 2007 Summer of Code</A></H2>
     <p>
