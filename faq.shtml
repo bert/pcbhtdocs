@@ -57,12 +57,9 @@ rs274x,
     
     <H2><A NAME="windows">What about PCB under Windows?</A></H2>
     <p>
-	Although a native windows port of PCB does not currently exist, PCB has
-	been compiled successfully under cygwin.  You will need
-	Xfree86 to be installed as well as gcc, make, m4, and tcl/tk.
-	In addition you will need either <a href="http://www.lesstif.org">lesstif</a> or
-		<a href="http://www.gtk.org">gtk</a> on your system.
-	Please note that cygwin is not the typical platform of PCB
+	Recent snapshots of PCB will build under cygwin and/or mingw.  In addition
+	there is a windows installer in the file release area.  
+	Please note that windows is not the typical platform of PCB
 	developers and support for this port may be lacking.
     </p>
    
