@@ -39,6 +39,84 @@ rs274x,
     <HR>
     <H2><A NAME="20070912">Development snapshot 20070912 available</A></H2>
     <p>
+This release represents over 180 commits and as such this summary 
+clearly is not complete.  See the ChangeLog file for the complete list
+of changes.
+    </p>
+    <p>
+    Changes included in this release are:
+    </p>
+
+<ul>
+<li> Added a footprint preview in the library window
+</li>
+<li> Added gnome/kde desktop integration files (app and mime icons, and
+  .desktop file)
+</li>
+<li> Added i18n support
+</li>
+<li> Updated dbus support
+</li>
+<li> Fix a number of GCC 4 compiler warnings
+</li>
+<li> Make the gtk gui more robust against malformed menu resource files
+</li>
+<li> Added checking for duplicate hot key definitions in the menu resource
+  file in the gtk gui.
+</li>
+<li> Improved support for building on win32.
+</li>
+<li> Removed automake/autoconf generated files from cvs
+</li>
+<li> Fixed some parallel make bugs
+</li>
+<li> Fixed some scrolling/panning bugs in the gtk gui.
+</li>
+<li> Added the ability to load edif netlists
+</li>
+<li> Closed a number of bugs in the sourceforge tracker
+</li>
+<li> Fix a bg in the x-y output files where the y values were mirrored and offset
+</li>
+<li> Add XRENDER support to the lesstif HID to support layer transparency
+</li>
+<li> Fix some polygon dicer bugs
+</li>
+<li> Fix a handful of bugs in the png export HID
+</li>
+<li> Avoid vias snapping to pins and moving elements snapping to their own
+  pins/pads
+</li>
+<li> Fix a number of undo bugs
+</li>
+<li> Fix printer calibration
+</li>
+<li> Add global puller
+</li>
+<li> Various improvements to the postscript export HID
+</li>
+<li> Improve all the GetXY prompts in the menu resource files
+</li>
+<li> Improved the pin/via report
+</li>
+<li> Improved pin/pad vs grid snapping
+</li>
+<li> Various footprint improvements 
+  <ul>
+    <li> fixed some drill sizes</li>
+    <li> fixed some silk sizes</li>
+    <li> Added a handful of QFP family footprints</li>
+    <li> Converted the QFP family to the hi-res format</li>
+  </ul>
+</li>
+<li> Several other bug fixes
+</li>
+</ul>
+
+    <!-- ********************* pcb-20070912 ******************* -->
+    <HR>
+    <H2><A NAME="20070912">Development snapshot 20070912 available</A></H2>
+    <p>
 This release represents nearly 200 commits and as such this summary 
 clearly is not complete.  See the ChangeLog file for the complete list
 of changes.
