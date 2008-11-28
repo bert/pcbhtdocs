@@ -35,6 +35,58 @@ rs274x,
     
     <font face="helvetica, arial">
 
+    <!-- ********************* pcb-20081128 ******************* -->
+    <HR>
+    <H2><A NAME="20081128">Development snapshot 20081128 available</A></H2>
+    <p>
+This release represents over 70 commits and as such this summary 
+clearly is not complete.  See the ChangeLog file for the complete list
+of changes.
+    </p>
+    <p>
+    Changes included in this release are:
+    </p>
+
+    <ul>
+
+      <li> Minor bug fixes in RS274-X output.
+      </li>
+      <li>.Bug fixes in postscript output
+      </li>
+      <li> DRC checks for annular ring on pads only uses the mininum annular ring
+	drc setting instead of also checking minimum copper width.
+      </li>
+      <li> Fix postscript output for zero length lines.
+      </li>
+      <li> Improve the 'save before closing' dialogs.
+      </li>
+      <li> Fixed bugs where objects attached to the cursor vanish sometimes.
+      </li>
+      <li> Various minor code portability improvements.
+      </li>
+      <li> Enabled additional gcc warnings (when using gcc)
+      </li>
+      <li> Allow outline layers to have only arcs.
+      </li>
+      <li> Added "Ben Mode" png output which provides a simulated "photograph"
+	of the board.  Very nice for publications.
+      </li>
+      <li> Fix poly clearance around rotated pads.
+      </li>
+      <li> Fix the batch HID which had bit rotted a little.
+      </li>
+      <li> Display net names hierarchically.
+      </li>
+      <li> Various speed improvements in the GTK HID.
+      </li>
+      <li> Various speed improvements in the autorouter.
+      </li>
+      <li> Minor improvements to the windows port.
+      </li>
+      <li> Other various bug fixes.
+      </li>
+      </ul>
+
     <!-- ********************* pcb-20080202 ******************* -->
     <HR>
     <H2><A NAME="20080202">Development snapshot 20080202 available</A></H2>
