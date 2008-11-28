@@ -58,17 +58,7 @@ favicon.ico: favicon.xpm
 	xpmtoppm favicon.xpm | ppmtowinicon > $@
 
 .PHONY: update-man
-update-man: pcb-cvs.html pcb-cvs.pdf pcb-cvs.ps
-
-.PHONY: pcb-cvs.html
-pcb-cvs.html: ../pcb/doc/pcb.html
-	rm $@/*.html
-	cp -p ../pcb/doc/pcb.html/* $@
-
-pcb-cvs.pdf: ../pcb/doc/pcb.pdf
-	cp -p ../pcb/doc/pcb.pdf $@
-
-pcb-cvs.ps: ../pcb/doc/pcb.ps
-	cp -p ../pcb/doc/pcb.ps $@
-
+update-man:
+	cp ../pcb/doc/pcb.{html,ps,pdf} pcb-cvs/
+	cp ../pcb/doc/*.png pcb-cvs/
 
