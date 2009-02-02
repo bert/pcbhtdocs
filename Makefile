@@ -1,6 +1,5 @@
-## $Id$
+## Top level makefile for building the PCB web pages
 ##
-
 
 srcdir=	.
 top_srcdir=	.

@@ -1,7 +1,5 @@
 #! /usr/bin/awk -f
 #
-# $Id$
-#
 # Copyright (c) 2001, 2002 Dan McMahill
 # All rights reserved.
 #
