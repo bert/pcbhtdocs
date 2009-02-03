@@ -50,6 +50,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20090202">Main PCB web site moved to gpleda.org</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20081128">pcb-20081128 snapshot available</a>
 	</font></li>
 
