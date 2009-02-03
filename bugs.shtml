@@ -57,7 +57,7 @@
       Include the exact pcb version.  If it is a snapshot release, include the
       release number, if you built from CVS sources, include the date
       when you last updated your sources.  If we don't know what code you're running
-      we can't fix it!
+      we can't fix it!  Release version numbers can be found in the "About" menu.
       </LI>
 
       <LI>
