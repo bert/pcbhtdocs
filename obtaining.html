@@ -104,16 +104,26 @@
       </p>
 
       <h2>
-      Tracking the Latest with CVS
+      Tracking the Latest
       </h2>
       <p>
-      If you are interested in tracking the very latest sources in progress, then you may obtain them
-      via anonymous CVS. 
-      If you wish to track the current sources with CVS then refer to the
-      <a href="http://sourceforge.net/cvs/?group_id=73743">PCB CVS information page</a>.  The CVS module
-      you need is called <tt>pcb</tt>.  Users who wish to build from CVS sources instead of one of the
+      PCB uses <a href="http://git-scm.com/">git</a> for source code management.  For more information
+      on the git repository used by PCB see <a href="http://geda.seul.org/wiki/geda:scm">the gEDA scm wiki page</a>.  
+
+      In addition, you may obtain the latest sources via anonymous CVS.  To perform an initial check out of
+      PCB sources via anonymous CVS, run the following: <br><br>
+      <tt>
+	  cvs -d :pserver:anonymous@git.gpleda.org/home/git/pcb.git co pcb
+      </tt><br><br>
+      If you have a checked out source tree from the sourceforge anonymous CVS repository, then you will
+      need to replace the contents of all the CVS/Root files with <tt>:pserver:anonymous@git.gpleda.org/home/git/pcb.git</tt>.
+      A shell script can automate that procedure.
+      </p>
+
+      <p>
+      Users who wish to build from CVS or git sources instead of one of the
       snapshots should read the
-      <a href="http://pcb.cvs.sourceforge.net/*checkout*/pcb/pcb/README.cvs?revision=HEAD&pathrev=HEAD">README.cvs</a>
+      <a href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=README.cvs;hb=HEAD">README.cvs</a>
       in the top of the source tree for instructions.  Note that for most users, the snapshot releases should
       be sufficient.
       </p>
