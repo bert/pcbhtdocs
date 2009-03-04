@@ -107,7 +107,7 @@
       In addition, you may obtain the latest sources via anonymous CVS.  To perform an initial check out of
       PCB sources via anonymous CVS, run the following: <br><br>
       <tt>
-	  cvs -d :pserver:anonymous@git.gpleda.org/home/git/pcb.git co pcb
+	  cvs -d :pserver:anonymous@git.gpleda.org/home/git/pcb.git co master
       </tt><br><br>
       If you have a checked out source tree from the sourceforge anonymous CVS repository, then you will
       need to replace the contents of all the CVS/Root files with <tt>:pserver:anonymous@git.gpleda.org/home/git/pcb.git</tt>.
