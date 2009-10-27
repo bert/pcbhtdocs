@@ -108,20 +108,27 @@
       </h2>
       <p>
       PCB uses <a href="http://git-scm.com/">git</a> for source code management.  For more information
-      on the git repository used by PCB see <a href="http://geda.seul.org/wiki/geda:scm">the gEDA scm wiki page</a>.  
+      on the git repository used by PCB see <a href="http://geda.seul.org/wiki/geda:scm">the gEDA scm wiki page</a><br><br>
 
-      In addition, you may obtain the latest sources via anonymous CVS.  To perform an initial check out of
+      To perform an initial check out of PCB sources via anonymous GIT, run the following: <br><br>
+      <tt>
+          git clone git://git.gpleda.org/pcb.git
+      </tt><br><br>
+
+      In addition (for those who don't have git), you may obtain the latest sources via anonymous CVS.  To perform an initial check out of
       PCB sources via anonymous CVS, run the following: <br><br>
       <tt>
 	  cvs -d :pserver:anonymous@git.gpleda.org/home/git/pcb.git co master
       </tt><br><br>
       If you have a checked out source tree from the sourceforge anonymous CVS repository, then you will
       need to replace the contents of all the CVS/Root files with <tt>:pserver:anonymous@git.gpleda.org/home/git/pcb.git</tt>.
-      A shell script can automate that procedure.
+      A shell script can automate that procedure.<br><br>
+
+      Users intending to do development work on PCB, and/or submit patches should ideally check out from the git repository.
       </p>
 
       <p>
-      Users who wish to build from CVS or git sources instead of one of the
+      Those who wish to build from CVS or git sources instead of one of the
       snapshots should read the
       <a href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=README.cvs;hb=HEAD">README.cvs</a>
       in the top of the source tree for instructions.  Note that for most users, the snapshot releases should
@@ -171,7 +178,7 @@
 	&nbsp;&nbsp;&nbsp;<a href="http://sourceforge.net/projects/pcb/">Project Page</a><br>
       </font>
     </td></tr></table>
-    </tr>
+    </td></tr>
   </table>
 
   <br>
