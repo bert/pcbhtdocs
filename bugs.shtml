@@ -40,7 +40,7 @@
 
 
       <p>
-      Bugs reports and patchea for gschem or gsch2pcb (part of <a href="http://www.geda.seul.org/">gEDA/gaf</a>) should
+      Bugs reports and patches for gschem or gsch2pcb (part of <a href="http://www.geda.seul.org/">gEDA/gaf</a>) should
       be reported on the <a href="http://geda.sourceforge.net/">gEDA/gaf sourceforge site</a>.
       </p>
 
@@ -76,6 +76,17 @@
 
       <LI>
       If you are able to provide a patch, that is always helpful.
+      </LI>
+
+      <LI>
+      If you are able to provide a testsuite entry that demonstrates
+      the bug, this is extremely helpful.  Not only will it help in
+      reproducing the bug so we can debug it, it will help improve the
+      long term quality of PCB.  A good testsuite check is the
+      <em>simplest</em> example that demonstrates the bug.  A huge
+      example is much less effective of a test.  See <a
+      href="contributing.html">How to Help</a> for more information
+      about the testsuite.
       </LI>
 
       <LI>

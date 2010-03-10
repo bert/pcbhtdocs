@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+  <head>
+    <link rev="made" href="mailto:dan_at_mcmahill_net">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>How to Help</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
+    <meta name="KEYWORDS" content="
+	  pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
+  </head>
+
+  <!-- Start the main page table -->
+  <!--#include virtual="page_start.incl"-->
+
+  <!-- The main action area -->
+    <center>
+
+      <a href="images/logo.png"><img src="images/logo.png" 
+				      width="497" height="47"
+				      alt="[PCB Logo]" 
+				      border="0"
+				      hspace="10" vspace="5"> </a>
+    </center>
+      <font face="helvetica, arial">
+      <p>
+      PCB is developed by volunteers.  As with any volunteer project,
+      we always can use more help.  This page tries to give some
+      guidelines on how to more effectively help out.
+      </p>
+
+      <p>
+      See <a href="bugs.html">Reporting Bugs</a> for information on
+      where to report bugs and how to make an effective bug report.
+      </p>
+
+      <h2><a name="general">General Coding Guidelines</a></h2>
+      <ul>
+      <li>
+      Use the <a href="http://www.gnu.org/prep/standards/">GNU Coding
+      Standards</a> for source code formatting.  You can use the
+      <code>indent</code> program to help reformat your code.
+      </li>
+
+      <li>
+      Your code should compile cleanly without any compiler warnings.
+      In the past we have found and fixed many bugs by simply paying
+      attention to the compiler warnings.  Warnings that don't
+      indicate real bugs end up encouraging people to ignore all the
+      warnings.
+      </li>
+
+      <li>
+      Changes which require the use of an additional library or tool
+      are discouraged.  If there is a really good reason, then adding
+      a dependency is not out of the question.  However we don't want
+      to add extra baggage unnecessarily.
+      </li>
+
+      <li>
+      Changes which add new export options or new exporters should add
+      appropriate entries to the test suite.
+      </li>
+
+      <li>
+      When you submit your patch to the patch tracking system, please
+      log in.  This allows you to receive a notification
+      when additional content is added to the ticket or if its status changes.  It is
+      also useful when seeking feedback to see if a particular bug has
+      been fixed.  Just including your email and posting without
+      logging in causes additional work for the developers.
+      </li>
+      </ul>
+
+      <h2><a name="testsuite">Test suite</a></h2>
+      <p>PCB includes a test suite.  Currently the test suite does not
+      check the GUI but it does check the various exporters.  The
+      test suite is in the <code>pcb/tests</code> directory.  The
+      <a
+      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=tests/README.txt;hb=HEAD">
+      README.txt</a> file there has complete documentation on how to
+      use the test suite and how to add to the test suite.
+      </p>
+      <p>
+      If you add a
+      new exporter or if you add command line options to an existing
+      exporter you must add a test suite entry.  Similarly if you find
+      a bug in one of the exporters, the preferred procedure is to add
+      a test suite entry which demonstrates the bug, fix the bug, and
+      then verify that the test suite shows proper functionality.
+      </p>
+
+      <p>When a new test is added it is important to try and make it
+      as simple and modular as possible.  In other words, if there is a
+      problem with a particular footprint not exporting correctly,
+      then make a test suite entry with just that footprint or a
+      simplified view of that footprint.  Don't just use a board with
+      a thousand other components on it because it makes debugging
+      much harder.
+      </p>
+
+      <h2><a name="actions">PCB Actions</a></h2>
+      <p>PCB uses "actions" internally to do much of the work.  An
+      "action" can be thought of as a simplified function.  All of
+      PCB's actions are fully documented in the <a
+      href="manual.html">PCB manual</a>.  If you add any new actions,
+      then you <em>must</em> add the appropriate documentation.  The
+      documentation for all actions is embedded in the source code
+      using specially formatted comments.  Search for the string
+      "%start-doc" in the existing source code for many examples.
+      This documentation is later automatically extracted when the
+      manual is built.
+      </p>
+
+      <h2><a name="manual">PCB Manual</a></h2>
+      <p>
+      If your changes add to or modify the behavior of PCB in a way
+      which is not simply a bug fix, then update or add to the
+      manual.  The PCB manual is in the <code>doc/</code> directory
+      from the main source tree.
+      </p>
+
+      <h2><a name="fileformat">File Format Changes</a></h2>
+      <p>
+      Do not change any file formats unless absolutely required.  If
+      you do make a change to the file format (the parser is in
+      <a
+      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=src/parse_y.y;hb=HEAD">src/parse_y.y</a>
+      then you need to update the PCB_FILE_VERSION macro in
+      <a
+      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=src/file.h;hb=HEAD">src/file.h</a>.
+      The <code>.pcb</code> file format may not be changed in a way
+      that prevents PCB loading any older file formats
+      </p>
+      <p>
+      If you must change the file format, then the structured comments
+      in 
+      <a
+      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=src/parse_y.y;hb=HEAD">src/parse_y.y</a>
+      <em>must</em> be updated to reflect the change.  This is how the
+      manual section on file formats is generated.
+      </p>
+
+      </font>
+
+  </td>
+
+  </tr>
+
+    <!-- The left hand column -->
+    <!--#include virtual="left_column.incl"-->
+
+  </table>
+    <p>
+
+      <!--#include virtual="main_footer.incl"-->
+
+
+  </body>
+</html>
