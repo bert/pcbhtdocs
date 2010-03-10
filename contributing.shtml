@@ -41,7 +41,8 @@
       <li>
       Use the <a href="http://www.gnu.org/prep/standards/">GNU Coding
       Standards</a> for source code formatting.  You can use the
-      <code>indent</code> program to help reformat your code.
+      <a href="http://www.gnu.org/software/indent/">indent</a>
+      program to help reformat your code.
       </li>
 
       <li>
