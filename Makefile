@@ -59,6 +59,11 @@ favicon.ico: favicon.xpm
 
 .PHONY: update-man
 update-man:
-	cp ../pcb/doc/pcb.{html,ps,pdf} pcb-cvs/
+	cp ../pcb/doc/pcb.html pcb-cvs/
+	cp ../pcb/doc/pcb.pdf pcb-cvs/
+	cp ../pcb/doc/pcb.ps pcb-cvs/
 	cp ../pcb/doc/*.png pcb-cvs/
+	wc -c pcb-cvs/pcb.html | awk '{print $$1 / 1024}'
+	wc -c pcb-cvs/pcb.pdf | awk '{print $$1 / 1024}'
+	wc -c pcb-cvs/pcb.ps | awk '{print $$1 / (1024*1024)}'
 
