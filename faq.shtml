@@ -35,7 +35,7 @@ rs274x,
     <UL>
     <LI><A HREF="#windows">What about PCB under Windows?</A></LI>
 
-    <LI><A HREF="#wrongautconf">When I try to bootstrap and build the CVS version,
+    <LI><A HREF="#wrongautconf">When I try to bootstrap and build the git or anonymous CVS version,
     autogen.sh complains of configure.in missing</A></LI>
 
     <LI><A HREF="#tcltk"><tt>configure</tt> complains that wish is not found, but I
@@ -64,7 +64,7 @@ rs274x,
    
     <HR>
 
-    <H2><A NAME="wrongautconf">When I try to bootstrap and build the CVS version,
+    <H2><A NAME="wrongautconf">When I try to bootstrap and build the git or anonymous CVS version,
     autogen.sh complains of configure.in missing</A></H2>
     <p>
     Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.

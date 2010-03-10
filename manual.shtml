@@ -28,20 +28,20 @@
 
       <font face="helvetica, arial">
       This page contains links to the PCB manual and other documentation.  The manuals
-      linked here correspond to the various snapshots of PCB.  The "cvs version" of the 
-      manual is updated periodically to reflect what is currently in CVS.  However you
-      should examine the date on the title page of the cvs manual to see when it was
+      linked here correspond to the various snapshots of PCB.  The "git version" of the 
+      manual is updated periodically to reflect what is currently in git.  However you
+      should examine the date on the title page of the git manual to see when it was
       last updated.
 
       <UL>
       <LI>
-      The PCB manual (cvs version):  <A HREF="pcb-cvs/pcb.html">HTML (524 kB)</A>.
+      The PCB manual (git version):  <A HREF="pcb-cvs/pcb.html">HTML (524 kB)</A>.
       </LI>
       <LI>
-      The PCB manual (cvs version):  <A HREF="pcb-cvs/pcb.ps">postscript (1.43 MB)</A>.
+      The PCB manual (git version):  <A HREF="pcb-cvs/pcb.ps">postscript (1.43 MB)</A>.
       </LI>
       <LI>
-      The PCB manual (cvs version):  <A HREF="pcb-cvs/pcb.pdf">PDF (887 kB)</A>.
+      The PCB manual (git version):  <A HREF="pcb-cvs/pcb.pdf">PDF (887 kB)</A>.
       <BR>&nbsp;<BR>
       </LI>
 
