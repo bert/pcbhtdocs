@@ -40,6 +40,88 @@ rs274x,
     
     <font face="helvetica, arial">
 
+    <!-- ********************* pcb-20091103 ******************* -->
+    <HR>
+    <H2><A NAME="20091103">PCB Release 20091103 available</A></H2>
+    <p>
+This release represents almost 200 commits and as such this summary 
+clearly is not complete.  See the ChangeLog file for the complete list
+of changes.
+    </p>
+    <p>
+    Changes included in this release are:
+    </p>
+    <ul>
+<li> [feature] Add attributes to layers</li>
+<li> [bugfix]  Remove memory leak in attributes</li>
+<li> [bugfix]  Avoid layer buttons getting confused (GTK)</li>
+<li> [bugfix]  Fix dereference bug in hid_find_action()</li>
+<li> [feature] Speed up some polygon operations</li>
+<li> [bugfix]  Don't let DRC change the grid setting</li>
+<li> [bugfix]  Correct URL's in some dialogs and output</li>
+<li> [feature] Add filters to load file chooser dialog (GTK)</li>
+<li> [bugfix]  Avoid segfaults with png HID with newer versions of libgd</li>
+<li> [bugfix]  Don't disperse locked elements</li>
+<li> [feature] Added experimental topological autorouter</li>
+<li> [feature] Added the beginning of a testsuite.</li>
+<li> [docs]    Document FreeRotateBuffer()</li>
+<li> [docs]    Add some additional notes on the usage of the existing
+            autorouter</li>
+<li> [feature] Add --png-bloat option</li>
+<li> [bugfix]  Fix several bugs found with valgrind</li>
+<li> [bugfix]  Improve the pre-install wrapper script</li>
+<li> [bugfix]  Several fixes to the autorouter</li>
+<li> [feature] Allow quoted strings and escaped characters in action
+            arguments</li>
+<li> [footprints] Add missing INDC3216M, remove duplicated RESC3216M</li>
+<li> [feature] Added the ability to customize mouse events via gpcb-menu.res
+            in the GTK HID.</li>
+<li> [feature] Added the ability to use mod1 (alt)(option) in
+            HIDs.  Useful on OSX.</li>
+<li> [bugfix]  Fix compilation issues on centos</li>
+<li> [bugfix]  Make the detection of tools and build system around
+            building the documentation be more robust.  Users should
+            not be worrying about --disable-doc or --enable-maintainer-mode
+            anymore</li>
+<li> [footprints] Add T018, T039, fix pinout of T092 to match JEDEC</li>
+<li> [bugfix]  Speed up rendering of DRC violation previews under GTK</li>
+<li> [bugfix]  Fix some crashing bugs related to polygons and thindraw mode</li>
+<li> [feature] Added a DRC refresh button</li>
+<li> [bugfix]  Fix some pango markup in the GTK DRC dialog</li>
+<li> [bugfix]  Fix cursor warping on flipped boards (GTK)</li>
+<li> [feature] Added preview images in the DRC violations window (GTK)</li>
+<li> [feature] Add a DrcViolationType structure and add hooks to allow HID's to use this</li>
+<li> [bugfix]  Fix some polygon memory leaks</li>
+<li> [feature] Add an API for registering actions with a context to support scripting
+            languages like GPMI.</li>
+<li> [bugfix]  Fix a bug with the Report(NetLength) action and NULL pin/pad names</li>
+<li> [bugfix]  Allow exporters to work with hairlines (width of 0)</li>
+<li> [tools]   Increase autoconf version to 2.60 since we were using some features of it</li>
+<li> [bugfix]  Fix a number of polygon related issues</li>
+<li> [bugfix]  Fix a number of gcc warnings</li>
+<li> [feature] Don't display undocumented options in help output.  This helps
+            the transition when deprecating an option.</li>
+<li> [feature] Add outline mode for photo-mode exporting</li>
+<li> [footprints] Put the mark on pin 1 for axial footprints to make them more likely
+               to fall on grid</li>
+<li> [bugfix]  Fix flipping of arcs</li>
+<li> [bugfix]  Fix parsing of old-syntax arcs</li>
+<li> [bugfix]  Include explicit text/lines on silk layers in the assembly drawing output</li>
+<li> [feature] '--ben-mode' has been renamed to '--photo-mode'</li>
+<li> [bugfix]  Fix some crashign bugs on boards with a large number of rats</li>
+<li> [bugfix]  Fix an off-by-one bug in the GTK netlist window</li>
+<li> [docs]    Add getting started guide</li>
+<li> [feature] Add support for parsing suffixes on numbers ("um", "mm", "in", "mil")</li>
+<li> [bugfix]  Fix some configure/build issues when cross compiling</li>
+<li> [bugfix]  Fix some improperly used automake conditionals</li>
+<li> [bugfix]  Fix some uninstall of shortcuts issues under windows Vista</li>
+<li> [feature] Add additional crosshair shapes</li>
+<li> [bugfix]  Various windows build script improvements</li>
+
+    </ul>
+
+
+
     <!-- ********************* 20090202 -- website move to gpleda.org ******************* -->
     <HR>
     <H2><A NAME="20090202">Main PCB web site moved to gpleda.org</A></H2>
