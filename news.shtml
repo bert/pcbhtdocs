@@ -36,6 +36,71 @@ rs274x,
 
     <!-- ********************* pcb-20091103 ******************* -->
     <HR>
+    <H2><A NAME="20100929">PCB Release 20100929 available</A></H2>
+    <p>
+This release represents over 240 commits and as such this summary 
+clearly is not complete.  See the ChangeLog file for the complete list
+of changes.
+
+<p><b><u>Features</u></b></p>
+
+<ul>
+<li> PCB can directly import (forward annotate) schematics while running.
+<li> Many places where measurements are entered now accept units, like
+  "5mm", and "cm" and "in" are allowed too.
+<li> Free Rotate Buffer added to menu
+<li> Polygon Hole tool.
+<li> F12 invokes the Lock tool.
+<li> Russian translation added.
+<li> DBUS is enabled by default when possible.
+<li> Command-line exporters can run action scripts too.
+<li> GTK tool tips on elements, pins, and nets.
+<li> Command-line actions in GUIs do not require (,,) syntax.
+<li> PCB can import footprints both in subdirectories and the named directories.
+<li> New GCode exporter.
+<li> Footprint files use ".fp" as the suffix; this is automatically
+  searched for if needed.
+<li> GTK dialogs do not show at startup unless requested.
+<li> Stackup can be specified on the command line for command-line exporting.
+<li> Reference card updated.
+<li> The snap-point in pads is the center.
+<li> The 's' key toggles polygons to clear/notclear all pads and pins
+</ul>
+
+<p><b><u>Bug Fixes</u></b></p>
+
+<ul>
+<li> Various PNG export fixes.
+<li> lesstif's magic toggle-layers-on-flip fixed.
+<li> Arc bounding box math fixed.
+<li> Fixed: sometimes, disabling silk also disabled the solder layer.
+<li> "pcb --help" prints all options again
+<li> Add mnemonic for "close without saving"
+<li> Don't select silk on the back side when it's invisible.
+<li> Various polygon rendering bugs fixed.
+<li> PNG drill bloat export fixed.
+<li> Attempts to change polygon clearance *on* polygons results in a hint.
+<li> PNG doesn't segfault if not all graphic formats are supported.
+<li> Various toporouter fixes and improvements
+<li> HID_Mixed is supported in attribute dialogs
+<li> Flipped rectangles in PS exports are drawn correctly.
+<li> Optimizer removes micro-traces under pads.
+<li> Vias, pins, and pads are now drawn under the mask instead of over.
+<li> Windows supported better.
+</ul>
+
+<p><b><u>Other</u></b></p>
+
+<ul>
+<li> Sources converted to C99
+<li> Doc extraction gives more control over categories.
+<li> Thermal documentation updated.
+<li> Actions can see the context they were invoked in
+</ul>
+
+
+    <!-- ********************* pcb-20091103 ******************* -->
+    <HR>
     <H2><A NAME="20091103">PCB Release 20091103 available</A></H2>
     <p>
 This release represents almost 200 commits and as such this summary 
