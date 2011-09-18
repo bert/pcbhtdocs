@@ -50,6 +50,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20110918">pcb-20110918 snapshot available</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20100929">pcb-20100929 snapshot available</a>
 	</font></li>
 
@@ -77,27 +81,6 @@
 
     </ul>
 
-<hr noshade size=1 color="#000066">
-
-<p><font face="helvetica, arial" color="#000066">
-<b>Support the PCB Project!</b> </font></p>
-
-<a href="http://www.linuxfund.org/projects/pcb">
-<img align=right src="images/LinuxFundBanner-tux-150x75-Trans.png"
-BORDER=0 title="Support the gEDA Project!"></a>
-
-<p><a href="http://geda.seul.org/press/LFPressRelease.html">
-Announcing the partnership between Linux Fund and the PCB
-Project.</a></p>
-
-<p>Support for upgrade and enhancement of gEDA/PCB is now generously
-provided by <b>your</b> donations enhanced by financial and
-organizational infrastructure from <a href="http://www.linuxfund.org">
-Linux Fund</a>.</p>
-
-<p>Visit <a href="http://linuxfund.org/projects/pcb/"> the PCB fund
-project page</a> to make a donation.
-</p>
   </td>
 
   </tr>
