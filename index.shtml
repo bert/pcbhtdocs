@@ -18,15 +18,13 @@
   <!-- The main action area -->
     <center>
 
-      <a href="images/logo.png"><img src="images/logo.png" 
+      <a href="images/logo.png"><img src="images/pcb-banner.jpg" 
 				      width="497" height="47"
 				      alt="[PCB Logo]" 
 				      border="0"
 				      hspace="10" vspace="5"> </a>
     </center>
     <p>
-
-    <img src="sample-pcb.jpg" align=right width=170 height=640 alt="Sample PCB">
 
       <font face="helvetica, arial">
       PCB is an interactive printed circuit board editor for Unix,
@@ -125,13 +123,20 @@
 
   </td>
 
+    <td rowspan=3 align=right>
+    <img src="images/sample-pcb.jpg" width=170 height=640 alt="Sample PCB"><br>
+    <img src="images/sample-footprint.png" width=169 height=270 alt="Sample Footprint"><br>
+    </td>
+
   </tr>
 
     <!-- The left hand column -->
     <!--#include virtual="left_column.incl"-->
 
-    <tr><td valign=top><img src="sample-gui.jpg" width=150 height=450 alt="Sample GUI"></td></tr>
+    <tr><td valign=top><img src="images/sample-gui.jpg" width=150 height=450 alt="Sample GUI"></td>
 
+
+</tr>
   </table>
     <p>
 
