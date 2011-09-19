@@ -26,24 +26,23 @@
     </center>
     <p>
 
+    <img src="sample-pcb.jpg" align=right width=170 height=640 alt="Sample PCB">
+
       <font face="helvetica, arial">
-      PCB is an interactive printed circuit board editor for the X11
-      window system.  PCB includes a rats nest feature, design rule
-      checking, and can provide industry standard RS-274-X (Gerber),
-      NC drill, and centroid data (X-Y data) output for use in the
-      board fabrication and assembly process.  PCB offers high end
-      features such as an autorouter and trace optimizer which can
-      tremendously reduce layout time.
+      PCB is an interactive printed circuit board editor for Unix,
+      Linux, Windows, and Mac systems.  PCB includes a rats nest
+      feature and schematic/netlist import, design rule checking, and
+      can provide industry standard RS-274-X (Gerber), NC drill, and
+      centroid data (X-Y data) output for use in the board fabrication
+      and assembly process, as well as photorealistic and design
+      review images.  PCB offers high end features such as an
+      autorouter and trace optimizer which can tremendously reduce
+      layout time.  For custom requirements, PCB offers a plug-in API
+      for inserting new functionality and using that functionality
+      from within the GUI as well as in scripts.
       </font>
 
-    <dl>
-      <dt><dd><font face="helvetica, arial" color="#000066">
-	  <b>Recent News</b>
-	</font>
-	<font face="helvetica, arial" size="-1">
-	  &nbsp;[<a href="news.html">More</a>] 
-	</font>
-    </dl>
+    <h2>Recent News</h2>
 
     <ul>
 
@@ -66,14 +65,6 @@
 	</font></li>
 
       <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20081128">pcb-20081128 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20080202">pcb-20080202 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html">[more]</a>
 	</font></li>
 
@@ -81,12 +72,65 @@
 
     </ul>
 
+    <hr>
+
+    <h2>Getting Help</h2>
+
+    <p>PCB
+    shares <a href="http://geda.seul.org/wiki/geda:mailinglists">the
+    gEDA community's mailing lists</a>
+    and <a href="http://geda.seul.org/wiki/#geda_users">IRC
+    channel</a>.  Please
+    obey <a href="http://www.gpleda.org/CodeOfConduct.html">The gEDA Project
+    Code of Conduct</a> on these forums.
+
+    <h2>Reporting Bugs</h2>
+
+    <p>Please use <a href="https://bugs.launchpad.net/pcb">The PCB Launchpad Tracker</a>.</p>
+
+    <hr>
+
+    <h2>Installing From Source</h2>
+
+    <p>To install an official release from source, use the standard
+    "./configure; make; make install" commands.  The sources offer
+    three GUIs: GTK (the default), Lesstif, or Batch.  Use
+    --with-gui=lesstif or --with-gui=batch to switch.  The batch GUI
+    is suitable for scripting-only applications.  See the file INSTALL
+    for more details.</p>
+
+    <p>To install from GIT, you must first run "./autogen.sh", then
+    follow the above directions.</p>
+
+    <p><tt>git clone git://git.gpleda.org/pcb.git</tt></p>
+    
+    <h2>Pre-Built Binaries</h2>
+
+    <p>Many Unix-like distributions have their own mechanisms for
+    installing pre-built binaries, please check your existing or
+    add-on repositories for PCB binaries.</p>
+
+    <h2>Windows Binaries</h2>
+
+    <p>To more easily comply with the GPL and other copyrights, the
+    Windows installers are stored on a separate site with sufficient
+    space to hold the sources for all the runtime libraries that are
+    required for the Windows port of PCB.  Currently, the site is:
+
+    <blockquote>
+      <a href="http://www.delorie.com/pcb/geda-windows/">http://www.delorie.com/pcb/geda-windows/</a>
+    </blockquote>
+
+    Please see that site for windows-specific installation isntructions.</p>
+
   </td>
 
   </tr>
 
     <!-- The left hand column -->
     <!--#include virtual="left_column.incl"-->
+
+    <tr><td valign=top><img src="sample-gui.jpg" width=150 height=450 alt="Sample GUI"></td></tr>
 
   </table>
     <p>
