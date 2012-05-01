@@ -79,8 +79,7 @@
       <p>PCB includes a test suite.  Currently the test suite does not
       check the GUI but it does check the various exporters.  The
       test suite is in the <code>pcb/tests</code> directory.  The
-      <a
-      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=tests/README.txt;hb=HEAD">
+      <a href="http://git.geda-project.org/pcb/plain/tests/README.txt">
       README.txt</a> file there has complete documentation on how to
       use the test suite and how to add to the test suite.
       </p>
@@ -128,10 +127,10 @@
       Do not change any file formats unless absolutely required.  If
       you do make a change to the file format (the parser is in
       <a
-      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=src/parse_y.y;hb=HEAD">src/parse_y.y</a>
+      href="http://git.geda-project.org/pcb/plain/src/parse_y.y">src/parse_y.y</a>
       then you need to update the PCB_FILE_VERSION macro in
       <a
-      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=src/file.h;hb=HEAD">src/file.h</a>.
+      href="http://git.geda-project.org/pcb/plain/src/file.h">src/file.h</a>.
       The <code>.pcb</code> file format may not be changed in a way
       that prevents PCB loading any older file formats
       </p>
@@ -139,7 +138,7 @@
       If you must change the file format, then the structured comments
       in 
       <a
-      href="http://git.gpleda.org/?p=pcb.git;a=blob_plain;f=src/parse_y.y;hb=HEAD">src/parse_y.y</a>
+      href="http://git.geda-project.org/pcb/plain/src/parse_y.y">src/parse_y.y</a>
       <em>must</em> be updated to reflect the change.  This is how the
       manual section on file formats is generated.
       </p>

@@ -32,7 +32,7 @@
       <p>
       Bugs should be reported in the <a href="http://launchpad.net/pcb/+bugs/">
       PCB bug tracker</a>.  While it is fine to ask questions
-      on the <a href="http://www.geda.seul.org/mailinglist/index.html">gEDA mailing lists</a>,
+      on the <a href="http://www.delorie.com/listserv/">gEDA mailing lists</a>,
       the bug tracker is the prefered location for bug reports.  This is because when
       a developer has some time to work on bugs they are collected in one location.  Feel free to file
       a report in the bug tracker and also report it on the mailing list though.
@@ -40,8 +40,11 @@
 
 
       <p>
-      Bugs reports and patches for gschem or gsch2pcb (part of <a href="http://www.geda.seul.org/">gEDA/gaf</a>) should
-      be reported on the <a href="http://launchpad.net/geda/+bugs/">gEDA/gaf bug tracker</a>.
+      Bugs reports and patches for gschem or gsch2pcb (part
+      of <a href="http://www.geda-project.org/">gEDA/gaf</a>) should
+      be reported on
+      the <a href="http://launchpad.net/geda/+bugs/">gEDA/gaf bug
+      tracker</a>.
       </p>
 
       <p>

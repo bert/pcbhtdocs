@@ -34,6 +34,13 @@ rs274x,
     
     <font face="helvetica, arial">
 
+    <!-- ********************* 20120501 -- website move to geda-project.org ******************* -->
+    <HR>
+    <H2><A NAME="20120501">Main gEDA/PCB web sites moved to geda-project.org</A></H2>
+    <p>
+    All main gEDA/PCB web sites have moved from gpleda.org to geda-project.org.
+    </p>
+
     <!-- ********************* pcb-20110918 ******************* -->
     <HR>
     <H2><A NAME="20110918">PCB Release 20110918 available</A></H2>
@@ -480,10 +487,10 @@ of changes.
     <HR>
     <H2><A NAME="20070315">gEDA Accepted into Googles 2007 Summer of Code</A></H2>
     <p>
-    <a href="http://www.geda.seul.org">The gEDA Project</a> has been accepted as a
+    <a href="http://www.geda-project.org">The gEDA Project</a> has been accepted as a
     mentoring organization in Googles <a href="http://code.google.com/soc">2007 Summer of Code</a>.
     This represents a wonderful opportunity for gEDA/gaf, PCB, and students who have
-    an interest in open source CAD software.  For more details see <a href="http://www.geda.seul.org/gsoc/">
+    an interest in open source CAD software.  For more details see <a href="http://www.geda-project.org/gsoc/">
     The gEDA Google Summer of Code 2007</a> page.
     </p>
 
@@ -1352,7 +1359,7 @@ of changes.
     since moving to sourceforge.  This snapshot includes cygwin and
     Darwin support as well as new QFN footprints, improved documentation
     on how the libraries work and interfacing with
-    <A HREF="http://www.geda.seul.org">gEDA</A>, and several bug fixes.
+    <A HREF="http://www.geda-project.org">gEDA</A>, and several bug fixes.
     Many thanks to everyone who has supplied patches and bug reports.
     </p>
     <p>

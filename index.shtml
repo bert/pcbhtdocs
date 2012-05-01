@@ -47,6 +47,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#20120501">Main gEDA/PCB web sites moved to geda-project.org</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#20110918">pcb-20110918 snapshot available</a>
 	</font></li>
 
@@ -75,11 +79,11 @@
     <h2>Getting Help</h2>
 
     <p>PCB
-    shares <a href="http://geda.seul.org/wiki/geda:mailinglists">the
+    shares <a href="http://www.geda-project.org/wiki/geda:mailinglists">the
     gEDA community's mailing lists</a>
-    and <a href="http://geda.seul.org/wiki/#geda_users">IRC
+    and <a href="http://www.geda-project.org/wiki/#geda_users">IRC
     channel</a>.  Please
-    obey <a href="http://www.gpleda.org/CodeOfConduct.html">The gEDA Project
+    obey <a href="http://www.geda-project.org/CodeOfConduct.html">The gEDA Project
     Code of Conduct</a> on these forums.
 
     <h2>Reporting Bugs</h2>
@@ -100,7 +104,7 @@
     <p>To install from GIT, you must first run "./autogen.sh", then
     follow the above directions.</p>
 
-    <p><tt>git clone git://git.gpleda.org/pcb.git</tt></p>
+    <p><tt>git clone git://git.geda-project.org/pcb.git</tt></p>
     
     <h2>Pre-Built Binaries</h2>
 
