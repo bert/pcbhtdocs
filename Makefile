@@ -32,8 +32,8 @@ HTML_OUT=	${SHTML_IN:.shtml=.html}
 # add the dependency on the .incl files
 ${HTML_OUT} : ${INCL_FILES}
 
-# the include= is a ':' seperated search path for SSI directives
-SHTML2HTML=	${AWK} -f $(top_srcdir)/utils/shtml2html include=$(SHTML_INCLUDE_PATH)
+# the include_= is a ':' seperated search path for SSI directives
+SHTML2HTML=	${AWK} -f $(top_srcdir)/utils/shtml2html include_=$(SHTML_INCLUDE_PATH)
 
 # All the new suffix rules
 

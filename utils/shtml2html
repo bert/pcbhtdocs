@@ -49,13 +49,13 @@ BEGIN {
 # hack becasue command line variable assignments don't show up until
 # _after_ BEGIN
 start==1 {
-    if (include == "") {
-	include = "." ;
+    if (include_ == "") {
+	include_ = "." ;
     }
     else {
-	include=(".:" include);
+	include_=(".:" include_);
     }
-    npaths=split(include,includepath,":");
+    npaths=split(include_,includepath,":");
     start=0;
 }
 
