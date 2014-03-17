@@ -40,6 +40,67 @@ rs274x,
     
     <font face="helvetica, arial">
 
+
+    <!-- ********************* pcb-20110918 ******************* -->
+    <HR>
+    <H2><A NAME="20140316">PCB Release 20140316 available</A></H2>
+    <p>
+
+This release represents over 421 commits (mostly bugfixes and code
+refactoring) and as such this summary clearly is not complete.  See
+the ChangeLog file for the complete list of changes.
+
+<p><b><u>Features</u></b></p>
+
+<ul>
+<li> GTK gui uses GL now, including a pseudo-3D mode.
+<li> Brazilian translation added, others updated.
+<li> Many internationalization tweaks.
+<li> Mice with right-left scroll wheels now supported.
+<li> Major upgrades to the GCode exporter.
+<li> rat-thickness parameter can take a 'px' suffix
+<li> metric and imperial grids are now more independent.
+<li> photo exporter supports multiple color schemes.
+<li> gerbers can be output in metric.
+<li> There's now a difference between "found" (what the netlist wants)
+  and "connected" (what the copper says).
+<li> PNG exporter has --fill-holes to omit the "drill helper" completely.
+<li> gerber drill files now 0.1mil resolution.
+<li> XY file is now IPC 7531 compliant.
+</ul>
+
+<p><b><u>Bug Fixes</u></b></p>
+
+<ul>
+<li> Fix pan locking up pcb if you leave the window.
+<li> Many bugfixes related to the metric conversion, including the two
+  autorouters.
+<li> ps alignment marks fixed.
+<li> route styles in *.pcb files may contain units.
+<li> able to select more parts by their mark when their mark is on-grid.
+<li> gtk route selector may now have nothing selected, if the board has
+  custom route settings.
+<li> drc no longer hangs when some layers are skipped.
+<li> ps_bloat works again.
+<li> EPS header is more standards-compliant.
+<li> PS outlines are only drawn on copper layers, not mask layers.
+<li> cursor position and zoom are no longer written to the *.pcb file.
+<li> lines with different clearances aren't auto-merged.
+<li> pin names are drawn in the pinout window.
+<li> gerber aperture numbers won't increase between runs.
+<li> misc doc tweaks and fixes.
+</ul>
+
+<p><b><u>Other</u></b></p>
+
+<ul>
+<li> Many tweaks to the source code to make it cleaner.
+<li> The top and bottom layers are now consistently called "top" and
+  "bottom" instead of "solder" and "component"
+<li> *.pcb file version bumped to 20091103 to reflect coordinate units change.
+<li> gEDA/pcb project moved to geda-project.org
+</ul>
+
     <!-- ********************* 20120501 -- website move to geda-project.org ******************* -->
     <HR>
     <H2><A NAME="20120501">Main gEDA/PCB web sites moved to geda-project.org</A></H2>
