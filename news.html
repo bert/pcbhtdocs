@@ -41,6 +41,110 @@ rs274x,
     <font face="helvetica, arial">
 
 
+    <!-- ********************* pcb-4.0.1 ********************** -->
+    <HR>
+    <H2><A NAME="4.0.1">PCB Release 4.0.1 available</A></H2>
+    <p>
+Dear Users,<br>
+<br>
+This release fixes a number of bugs.<br>
+<br>
+Kind regards,<br>
+<br>
+The pcb development team<br>
+<br>
+<h3>User experience improvements</h3>
+<ul>
+<li>reorchestrated the closing of the command window to not crash.
+<li>only invalidate the screen after changes to the crosshair or mark
+are complete.
+</ul>
+
+<h3>Plugins</h3>
+<ul>
+<li>none
+</ul>
+
+<h3>Exporters</h3>
+<ul>
+<li>fix for gcode dimensions.
+<li>added a regression test for the IPC-D-356 exporter.
+<li>added more documentation for the IPC-D-356 netlist exporter.
+</ul>
+
+<h3>Footprints library</h3>
+<ul>
+<li>add macro with more programmability for 2 pin axial components. Use
+  this to add a few IPC-7251 compliant footprints for axial inductors,
+  horizontally mounted.  Use this in turn for the TDK B82145A RF chokes
+  family.
+<li>add toko category and the 7P variable inductors.
+<li>gen_geda_*.awk were nearly identical to gen_*.awk so add 2 lines to
+  geda.inc so we can use the same script for everything.  Verified that
+  pcblib-newlib builds with identical results before/after.
+<li>for the horizontally mounted axial macro add the missing bits for
+  marking polarity on parts like diodes.
+<li>add PKG_RADIAL_MM100 macro for doing more general metric 2 pin radial
+  packages.
+<li>add some IPC radial capacitor footprints and use those to create some
+  united chemicon footprints.
+<li>add DO-41 diode package, horizontally mounted.
+<li>add PKG_MTHOLE_GENERIC macro for fairly generic mounting holes.  Use
+  this to define IPC mounting holes for #4 and #6 machine screws with
+  pan heads or flat washers for both "tight" (board < 4") and "loose"
+  (board > 4") fits.
+<li>add TO-263 footprint.
+<li>add some notes about m4 library development.
+<li>fix problem in some possible invocations of the generic mounting hole
+  macro.  All footprints pass syntax checks again.
+<li>remove an extra empty attribute which is not needed and causes
+  warnings in the mounting hole macro.
+<li>fix clearance on the Toko 7P footprint.
+<li>in the mounting hole macro, change the calculation of the pad size for
+  the support vias to make them as large as possible without actually
+  changing the copper (the support vias are covered by the main pad).
+  This does not affect the fabricated board but it does remove some
+  false positive DRC complaints.
+</ul>
+
+<h3>Developer experience improvements</h3>
+<ul>
+<li>allow translators to change number of tabs in message.
+<li>In the test suite, check for a working X display using xhost before
+  running action script tests
+<li>match() with 3 arguments is a gawk extension. Rework the code to avoid
+  using a 3 argument call to match() in one spot.  Lets the script run
+  with gawk or NetBSD's awk (20121220).  Verified that the generated
+  result is identical to the previous gawk result using both gawk and
+  NetBSDs awk.
+<li>change from AC_FD_CC to AS_MESSAGE_LOG_FD
+<li>removed the antifork abomination.
+<li>disabled one of the checks used to deal with older gdlib installs on
+  some linux systems when building under cygwin as the test has
+  problems.  Repairs building for mingw under cygwin.
+<li>when building under cygwin, create a pcbtest.bat batch file that
+  allows testing the compiled pcb without installing.  This is somewhat
+  analogous to the pcbtest.sh script generated on linux and other
+  unix-like systems.
+<li>cleanup the win32 build script a good bit.  An important change is
+  that instead of blindly installing all of the mingw cross system root
+  files, only install a set of listed ones.  This not only reduces the
+  size of the windows installer but makes sure we have a more repeatable
+  build and know what we are actually bundling into the installer.
+<li>fixed the Attribute deletion code.
+</ul>
+
+<h3>Notes for early adapters</h3>
+<ul>
+<li>none
+</ul>
+
+<h3>Changed dependencies</h3>
+<ul>
+<li>none
+</ul>
+</p>
+
     <!-- ********************* pcb-4.0.0 ********************** -->
     <HR>
     <H2><A NAME="4.0.0">PCB Release 4.0.0 available</A></H2>
