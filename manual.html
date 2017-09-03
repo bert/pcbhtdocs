@@ -1,252 +1,415 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 
 <html>
-  <head>
-    <link rev="made" href="mailto:dan_at_mcmahill_net">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">    
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>PCB Manual</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
-    <meta name="KEYWORDS" content="
-	  pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
-  </head>
+<head>
+  <link href="mailto:dan_at_mcmahill_net" rev="made">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <!-- Start the main page table -->
-  <body bgcolor="#ffffff" text="#000000" link="#3535c5" vlink="#700080">
-
-<table border="0" cellspacing="0" cellpadding="5"><tr>
-  <td></td>
-  <td rowspan=4 valign="top" width="100%">
+  <title>PCB Manual</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="PCB: an interactive printed circuit board editor" name="DESCRIPTION">
+  <meta content=" pcb, pwb, printed circuit, printed circuit board, gerber, rs274x" name="KEYWORDS">
+</head><!-- Start the main page table -->
 
 
-
-  <!-- The main action area -->
-    <center>
-
-      <a href="images/logo.png"><img src="images/logo.png" 
-				      width="497" height="47"
-				      alt="[PCB Logo]" 
-				      border="0"
-				      hspace="10" vspace="5"> </a>
-    </center>
-    <p>
-
-      <font face="helvetica, arial">
-      This page contains links to the PCB manual and other documentation.  The manuals
-      linked here correspond to the various snapshots of PCB.  The "git version" of the 
-      manual is updated periodically to reflect what is currently in git.  However you
-      should examine the date on the title page of the git manual to see when it was
-      last updated.
-
-      <UL>
-      <LI>
-      The PCB manual (git version):  <A HREF="pcb-cvs/pcb.html">HTML (644 kB)</A>.
-      </LI>
-      <LI>
-      The PCB manual (git version):  <A HREF="pcb-cvs/pcb.ps">postscript (1.47 MB)</A>.
-      </LI>
-      <LI>
-      The PCB manual (git version):  <A HREF="pcb-cvs/pcb.pdf">PDF (909 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-
-      <LI>
-      The PCB-4.0.2 manual:  <A HREF="pcb-4.0.2/pcb.html">HTML (748 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-4.0.2 manual:  <A HREF="pcb-4.0.2/pcb.pdf">PDF (1.1 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-4.0.2 refcard:  <A HREF="pcb-4.0.2/refcard.pdf">PDF (36 kB)</A>.
-      </LI>
-      <BR>&nbsp;<BR>
-
-      <LI>
-      The PCB-4.0.1 manual:  <A HREF="pcb-4.0.1/pcb.html">HTML (732 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-4.0.1 manual:  <A HREF="pcb-4.0.1/pcb.pdf">PDF (1.1 MB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-4.0.0 manual:  <A HREF="pcb-4.0.0/pcb.html">HTML (732 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-4.0.0 manual:  <A HREF="pcb-4.0.0/pcb.pdf">PDF (1.1 MB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20140316 manual:  <A HREF="pcb-20140316/pcb.html">HTML (716 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20140316 manual:  <A HREF="pcb-20140316/pcb.pdf">PDF (947 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20110918 manual:  <A HREF="pcb-20110918/pcb.html">HTML (629 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20110918 manual:  <A HREF="pcb-20110918/pcb.pdf">PDF (897 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20100929 manual:  <A HREF="pcb-20100929/pcb.html">HTML (629 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20100929 manual:  <A HREF="pcb-20100929/pcb.ps">postscript (1.46 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20100929 manual:  <A HREF="pcb-20100929/pcb.pdf">PDF (897 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20091103 manual:  <A HREF="pcb-20091103/pcb.html">HTML (629 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20091103 manual:  <A HREF="pcb-20091103/pcb.ps">postscript (1.46 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20091103 manual:  <A HREF="pcb-20091103/pcb.pdf">PDF (897 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-
-      <LI>
-      The PCB-20081128 manual:  <A HREF="pcb-20081128/pcb.html">HTML (640 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20081128 manual:  <A HREF="pcb-20081128/pcb.ps">postscript (1.5 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20081128 manual:  <A HREF="pcb-20081128/pcb.pdf">PDF (900 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-
-      <LI>
-      The PCB-20080202 manual:  <A HREF="pcb-20080202/pcb.html">HTML (524 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20080202 manual:  <A HREF="pcb-20080202/pcb.ps">postscript (1.5 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20080202 manual:  <A HREF="pcb-20080202/pcb.pdf">PDF (887 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20070912 manual:  <A HREF="pcb-20070912/pcb.html">HTML (524 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20070912 manual:  <A HREF="pcb-20070912/pcb.ps">postscript (1.5 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20070912 manual:  <A HREF="pcb-20070912/pcb.pdf">PDF (887 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20070208 manual:  <A HREF="pcb-20070208/pcb.html">HTML (500 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20070208 manual:  <A HREF="pcb-20070208/pcb.ps">postscript (1.4 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20070208 manual:  <A HREF="pcb-20070208/pcb.pdf">PDF (850 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20060822 manual:  <A HREF="pcb-20060822/pcb.html">HTML (500 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20060822 manual:  <A HREF="pcb-20060822/pcb.ps">postscript (1.4 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20060822 manual:  <A HREF="pcb-20060822/pcb.pdf">PDF (850 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      <LI>
-      The PCB-20060422 manual:  <A HREF="pcb-20060422/pcb.html">HTML (400 kB)</A>.
-      </LI>
-      <LI>
-      The PCB-20060422 manual:  <A HREF="pcb-20060422/pcb.ps">postscript (1.4 MB)</A>.
-      </LI>
-      <LI>
-      The PCB-20060422 manual:  <A HREF="pcb-20060422/pcb.pdf">PDF (750 kB)</A>.
-      <BR>&nbsp;<BR>
-      </LI>
-
-      </UL>
-      </font>
-
-  </td>
-
-  </tr>
-
-    <!-- The left hand column -->
+<body bgcolor="#FFFFFF" link="#3535C5" text="#000000" vlink="#700080">
+  <table border="0" cellpadding="5" cellspacing="0">
     <tr>
-  <td valign="top">
+      <td>
+      </td>
 
-  <table width="100%" cellspacing=0 cellpadding=0 border=0>
-  <tr>
-  <td>
-  <img src="images/logo-small.png" width="165" height="111"
-   alt="[PCB Logo]">
-  </td></tr>
+      <td rowspan="4" valign="top" width="100%">
+        <!-- The main action area -->
+
+
+        <center>
+          <a href="images/logo.png"><img alt="[PCB Logo]" border="0" height="47" hspace="10" src="images/logo.png" vspace="5" width="497"></a>
+        </center>
+
+
+        <p><font face="helvetica, arial">This page contains links to the PCB manual and other documentation. The manuals linked here correspond to the various snapshots of PCB. The "git version" of
+        the manual is updated periodically to reflect what is currently in git. However you should examine the date on the title page of the git manual to see when it was last updated.</font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">The PCB manual (git version): <a href="pcb-cvs/pcb.html">HTML (644 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB manual (git version): <a href="pcb-cvs/pcb.ps">postscript (1.47 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB manual (git version): <a href="pcb-cvs/pcb.pdf">PDF (909 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.2 manual: <a href="pcb-4.0.2/pcb.html">HTML (748 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.2 manual: <a href="pcb-4.0.2/pcb.pdf">PDF (1.1 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.2 refcard: <a href="pcb-4.0.2/refcard.pdf">PDF (36 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"><br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.1 manual: <a href="pcb-4.0.1/pcb.html">HTML (732 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.1 manual: <a href="pcb-4.0.1/pcb.pdf">PDF (1.1 MB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.0 manual: <a href="pcb-4.0.0/pcb.html">HTML (732 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-4.0.0 manual: <a href="pcb-4.0.0/pcb.pdf">PDF (1.1 MB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20140316 manual: <a href="pcb-20140316/pcb.html">HTML (716 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20140316 manual: <a href="pcb-20140316/pcb.pdf">PDF (947 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20110918 manual: <a href="pcb-20110918/pcb.html">HTML (629 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20110918 manual: <a href="pcb-20110918/pcb.pdf">PDF (897 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20100929 manual: <a href="pcb-20100929/pcb.html">HTML (629 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20100929 manual: <a href="pcb-20100929/pcb.ps">postscript (1.46 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20100929 manual: <a href="pcb-20100929/pcb.pdf">PDF (897 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20091103 manual: <a href="pcb-20091103/pcb.html">HTML (629 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20091103 manual: <a href="pcb-20091103/pcb.ps">postscript (1.46 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20091103 manual: <a href="pcb-20091103/pcb.pdf">PDF (897 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20081128 manual: <a href="pcb-20081128/pcb.html">HTML (640 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20081128 manual: <a href="pcb-20081128/pcb.ps">postscript (1.5 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20081128 manual: <a href="pcb-20081128/pcb.pdf">PDF (900 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20080202 manual: <a href="pcb-20080202/pcb.html">HTML (524 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20080202 manual: <a href="pcb-20080202/pcb.ps">postscript (1.5 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20080202 manual: <a href="pcb-20080202/pcb.pdf">PDF (887 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20070912 manual: <a href="pcb-20070912/pcb.html">HTML (524 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20070912 manual: <a href="pcb-20070912/pcb.ps">postscript (1.5 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20070912 manual: <a href="pcb-20070912/pcb.pdf">PDF (887 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20070208 manual: <a href="pcb-20070208/pcb.html">HTML (500 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20070208 manual: <a href="pcb-20070208/pcb.ps">postscript (1.4 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20070208 manual: <a href="pcb-20070208/pcb.pdf">PDF (850 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20060822 manual: <a href="pcb-20060822/pcb.html">HTML (500 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20060822 manual: <a href="pcb-20060822/pcb.ps">postscript (1.4 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20060822 manual: <a href="pcb-20060822/pcb.pdf">PDF (850 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20060422 manual: <a href="pcb-20060422/pcb.html">HTML (400 kB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20060422 manual: <a href="pcb-20060422/pcb.ps">postscript (1.4 MB)</a>.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The PCB-20060422 manual: <a href="pcb-20060422/pcb.pdf">PDF (750 kB)</a>.<br>
+          &nbsp;<br></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <!-- The left hand column -->
+
+
+    <tr>
+      <td valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td><img alt="[PCB Logo]" height="111" src="images/logo-small.png" width="165">
+            </td>
+          </tr>
+        </table>
+        <br>
+
+
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#000000">
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td bgcolor="#E0E0F0" nowrap><font color="#000066" face="helvetica, arial"><b>Information</b></font>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td bgcolor="#FFFFFF" nowrap><font face="helvetica, arial" size="-1">&nbsp;<a href="bugs.html">Bug Reporting</a><br>
+                  &nbsp;<a href="contributing.html">How to Help</a><br>
+                  &nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
+                  &nbsp;<a href="faq.html">F.A.Q.</a><br>
+                  &nbsp;<a href="index.html">Home</a><br>
+                  &nbsp;<a href="obtaining.html">How to Get PCB</a><br>
+                  &nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
+                  &nbsp;<a href="links.html">Links</a><br>
+                  &nbsp;<a href="manual.html">Manual</a><br>
+                  &nbsp;<a href="news.html">News</a><br>
+                  &nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
+                  &nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
+                  <br>
+                  &nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br></font>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
   </table>
 
-  <br>
-  <table width="100%" cellspacing=0 cellpadding=2 border=0>
-  <tr>
-  <td bgcolor="#000000">
-    <table width="100%" cellspacing=0 cellpadding=4 border=0>
-  <tr><td bgcolor="#e0e0f0" nowrap>
-    <font face="helvetica, arial" color="#000066">
-      <b>Information</b>
-    </font>
-    </td></tr>
-   <tr><td bgcolor="#FFFFFF" nowrap>
-      <font face="helvetica, arial" size="-1">
-	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
-	&nbsp;<a href="contributing.html">How to Help</a><br>
-	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
-	&nbsp;<a href="faq.html">F.A.Q.</a><br>
-	&nbsp;<a href="index.html">Home</a><br>
-	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
-	&nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
-	&nbsp;<a href="links.html">Links</a><br>
-	&nbsp;<a href="manual.html">Manual</a><br>
-	&nbsp;<a href="news.html">News</a><br>
-	&nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
-	&nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
-	<br>
-	&nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br>
-      </font>
-    </td></tr></table>
-    </td></tr>
-  </table>
 
-  <br>
-
-  </td>
-</tr>
+  <p>
+  </p>
 
 
-
-  </table>
-    <p>
-
-      <center>
-<!--
+  <center>
+    <!--
   <A href="http://sourceforge.net"><IMG
      src="http://sourceforge.net/sflogo.php?group_id=73743&amp;type=5" 
      width="210"
@@ -255,20 +418,18 @@
      alt="SourceForge.net Logo"></A> 
 -->
 
-<table border=0 cellpadding=0 cellspacing=0><tr>
-  <td width=25>&nbsp;</td>
-  <td valign="top" align="center">
 
-  <address>
-    <font color="#000000" size="-1">
-    </font>
-  </address>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25">&nbsp;</td>
 
-  </td>
-</tr></table>
-</center>
-
-
-
-  </body>
+        <td align="center" valign="top">
+          <address>
+            <font color="#000000" size="-1"></font>
+          </address>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
 </html>

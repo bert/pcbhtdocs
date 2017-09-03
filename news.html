@@ -1,1808 +1,3840 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 
 <html>
 <head>
-<link rev="made" href="mailto:dan_at_mcmahill_net">
-<link rel="icon" href="favicon.ico" type="image/x-icon">    
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<title>PCB News</title>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="DESCRIPTION" content="PCB:  an interactive circuit board editor">
-<meta name="KEYWORDS" content="
-pcb,
-PCB,
-pwb,
-PWB,
-printed circuit,
-printed circuit board,
-gerber,
-rs274x,
-">
-</head>
-
-<!-- Start the main page table -->
-<body bgcolor="#ffffff" text="#000000" link="#3535c5" vlink="#700080">
-
-<table border="0" cellspacing="0" cellpadding="5"><tr>
-  <td></td>
-  <td rowspan=4 valign="top" width="100%">
-
-
-
-<!-- The main action area -->
-    <center>
-    <font face="helvetica, arial" size="+2">
-      PCB News Items
-    </font>
-    <br>
-    <br>
-    </center>
-    
-    <font face="helvetica, arial">
-
-
-    <!-- ********************* pcb-4.0.2 ********************** -->
-    <HR>
-    <H2><A NAME="4.0.2">PCB Release 4.0.2 available</A></H2>
-    <p>
-Dear Users,<br>
-<br>
-This release fixes a number of bugs.<br>
-<br>
-Kind regards,<br>
-<br>
-The pcb development team<br>
-<br>
-<h3>User experience improvements</h3>
-<ul>
-<li>include board outline on assembly drawings.
-<li>fixed the SMD pads resizing bug (fix a drawing routine).
-<li>fixed a segmentation fault when loading a pcb file with an empty style
-  field.
-<li>added an escape callback to the command window.
-  this allows the command window to now be closed with the escape key.
-</ul>
-
-<h3>Plugins</h3>
-<ul>
-<li>none
-</ul>
-
-<h3>Exporters</h3>
-<ul>
-<li>improvements in documentation.
-</ul>
-
-<h3>Footprints library</h3>
-<ul>
-<li>none
-</ul>
-
-<h3>Developer experience improvements</h3>
-<ul>
-<li>some more doxygenation of source code files.
-<li>added a "pcb release" howto in the developer docs.
-<li>corrections in the FSF address as to keep rpmlint quiet.
-<li>Small enhancements to the pcbtest.sh script.
-  allow the binary for gdb to be specified on the command line
-  make the definition of test paths more readable.
-<li>exclude eps files in the doc directory.
-<li>removed unused code when inserting points on rats.
-<li>fix of incorrect flag struct comparison.
-</ul>
-
-<h3>Notes for early adapters</h3>
-<ul>
-<li>none
-</ul>
-
-<h3>Changed dependencies</h3>
-<ul>
-<li>none
-</ul>
-</p>
-
-    <!-- ********************* pcb-4.0.1 ********************** -->
-    <HR>
-    <H2><A NAME="4.0.1">PCB Release 4.0.1 available</A></H2>
-    <p>
-Dear Users,<br>
-<br>
-This release fixes a number of bugs.<br>
-<br>
-Kind regards,<br>
-<br>
-The pcb development team<br>
-<br>
-<h3>User experience improvements</h3>
-<ul>
-<li>reorchestrated the closing of the command window to not crash.
-<li>only invalidate the screen after changes to the crosshair or mark
-are complete.
-</ul>
-
-<h3>Plugins</h3>
-<ul>
-<li>none
-</ul>
-
-<h3>Exporters</h3>
-<ul>
-<li>fix for gcode dimensions.
-<li>added a regression test for the IPC-D-356 exporter.
-<li>added more documentation for the IPC-D-356 netlist exporter.
-</ul>
-
-<h3>Footprints library</h3>
-<ul>
-<li>add macro with more programmability for 2 pin axial components. Use
-  this to add a few IPC-7251 compliant footprints for axial inductors,
-  horizontally mounted.  Use this in turn for the TDK B82145A RF chokes
-  family.
-<li>add toko category and the 7P variable inductors.
-<li>gen_geda_*.awk were nearly identical to gen_*.awk so add 2 lines to
-  geda.inc so we can use the same script for everything.  Verified that
-  pcblib-newlib builds with identical results before/after.
-<li>for the horizontally mounted axial macro add the missing bits for
-  marking polarity on parts like diodes.
-<li>add PKG_RADIAL_MM100 macro for doing more general metric 2 pin radial
-  packages.
-<li>add some IPC radial capacitor footprints and use those to create some
-  united chemicon footprints.
-<li>add DO-41 diode package, horizontally mounted.
-<li>add PKG_MTHOLE_GENERIC macro for fairly generic mounting holes.  Use
-  this to define IPC mounting holes for #4 and #6 machine screws with
-  pan heads or flat washers for both "tight" (board < 4") and "loose"
-  (board > 4") fits.
-<li>add TO-263 footprint.
-<li>add some notes about m4 library development.
-<li>fix problem in some possible invocations of the generic mounting hole
-  macro.  All footprints pass syntax checks again.
-<li>remove an extra empty attribute which is not needed and causes
-  warnings in the mounting hole macro.
-<li>fix clearance on the Toko 7P footprint.
-<li>in the mounting hole macro, change the calculation of the pad size for
-  the support vias to make them as large as possible without actually
-  changing the copper (the support vias are covered by the main pad).
-  This does not affect the fabricated board but it does remove some
-  false positive DRC complaints.
-</ul>
-
-<h3>Developer experience improvements</h3>
-<ul>
-<li>allow translators to change number of tabs in message.
-<li>In the test suite, check for a working X display using xhost before
-  running action script tests
-<li>match() with 3 arguments is a gawk extension. Rework the code to avoid
-  using a 3 argument call to match() in one spot.  Lets the script run
-  with gawk or NetBSD's awk (20121220).  Verified that the generated
-  result is identical to the previous gawk result using both gawk and
-  NetBSDs awk.
-<li>change from AC_FD_CC to AS_MESSAGE_LOG_FD
-<li>removed the antifork abomination.
-<li>disabled one of the checks used to deal with older gdlib installs on
-  some linux systems when building under cygwin as the test has
-  problems.  Repairs building for mingw under cygwin.
-<li>when building under cygwin, create a pcbtest.bat batch file that
-  allows testing the compiled pcb without installing.  This is somewhat
-  analogous to the pcbtest.sh script generated on linux and other
-  unix-like systems.
-<li>cleanup the win32 build script a good bit.  An important change is
-  that instead of blindly installing all of the mingw cross system root
-  files, only install a set of listed ones.  This not only reduces the
-  size of the windows installer but makes sure we have a more repeatable
-  build and know what we are actually bundling into the installer.
-<li>fixed the Attribute deletion code.
-</ul>
-
-<h3>Notes for early adapters</h3>
-<ul>
-<li>none
-</ul>
-
-<h3>Changed dependencies</h3>
-<ul>
-<li>none
-</ul>
-</p>
-
-    <!-- ********************* pcb-4.0.0 ********************** -->
-    <HR>
-    <H2><A NAME="4.0.0">PCB Release 4.0.0 available</A></H2>
-    <p>
-
-Dear Users,<br>
-<br>
-It has been quite some time since the last snapshot of pcb was released
-in March 2014.<br>
-<br>
-Since then quite a lot of bugs were fixed and new features added, below
-this introduction a summary is given of the improvements and additions
-since the latest snapshot "pcb-20140316".<br>
-<br>
-This release represents over 480 commits (mostly bugfixes and code
-refactoring) and as such this summary clearly is not complete.<br>
-<br>
-This pcb release 4.0.0 has a significant change in the major version
-number.<br>
-<br>
-This is done to make a fresh start and to get away from the 1.99z
-version with YYYYMMDD snapshots.<br>
-<br>
-Kind regards,<br>
-<br>
-The pcb development team<br>
-<br>
-<h3>User experience improvements</h3>
-<ul>
-<li> added the command-line option --save-metric-only.
-<li> added escaping of Attribute values.
-<li> added a translation of the Getting Started with PCB for pt_BR.
-<li> added translatable tooltips for toolbar buttons.
-<li> added "Report net length" to Menu -> Info in Gtk.
-<li> added a script for generating a key binding list.
-<li> added tooltips in the GTK HID UI.
-<li> the puller no longer crosses unplated holes.
-<li> solder/component outer layer names changed to top/bottom.
-<li> pcb now uses a tilde instead of a dash for backup filenames.
-<li> corrections in the user documentation.
-<li> the position "delta" display no longer forces the GTK HID window to
-  grow.
-<li> write time in ASCII locale into exported files.
-<li> allow for up to 10000 dpi on png exporter output.
-</ul>
-
-<h3>Plugins</h3>
-<ul>
-<li> added smartdisperse for dispersing elements better, contributed by
-  Ben Jackson.
-<li> added relocate for relocating elements, contributed by Jean Richard.
-<li> added RenumberBlock() and RenumberBuffer(), contributed by DJ Delorie.
-<li> added teardrops(), contributed by DJ Delorie.
-</ul>
-
-<h3>Exporters</h3>
-<ul>
-<li> added a netlister conforming to the IPC-D-356 standard, contributed by
-  Jerome Marchand.
-<li> changed "as-shown" to "screen-layer-order" in the png and eps hids.
-</ul>
-
-<h3>Footprints library</h3>
-<ul>
-<li> added a SC88A footprint.
-<li> added a LQFP80-10 footprint.
-<li> added QFN24_5 and TQFN24_5 footprints.
-<li> added a SOD523 footprint.
-<li> the SOT325 package had a wrong numbering.
-<li> renamed the SOT325 footprint to SOT353.
-<li> in the ALF footprint the drill holes were too tight.
-<li> an infinite loop in the SIL m4 macro was fixed.
-</ul>
-
-<h3>Developer experience improvements</h3>
-<ul>
-<li> made a start with adding Doxygen developer documentation tags in the
-  source files.
-  A pcb.dox configuration file is available in the "doc/doxygen"
-  directory so developers can build the documentation there by invoking
-  "doxygen pcb.dox" from the CLI.<br>
-  This is not done by configuring with --enable-docs, which is solely
-  reserved for the generation of User documentation.
-<li> added numerous fixes in the win32 target.
-</ul>
-
-<h3>Notes for early adapters</h3>
-<p>
-In the git repository two tags have been added to allow for checking
-out of pcb-4.0.0 at the branch point (git checkout pcb-4.0.0-base) or at
-the release point (git checkout pcb-4.0.0-RELEASE).<br>
-This is in line with tagging done in former snapshots.
-</p>
-
-<h3>Changed dependencies</h3>
-<ul>
-<li> autoconf 2.60 --> 2.69.
-<li> gettext 0.14 --> 0.19.3.
-</ul>
-</p>
-
-    <!-- ********************* pcb-20110918 ******************* -->
-    <HR>
-    <H2><A NAME="20140316">PCB Release 20140316 available</A></H2>
-    <p>
-
-This release represents over 421 commits (mostly bugfixes and code
-refactoring) and as such this summary clearly is not complete.  See
-the ChangeLog file for the complete list of changes.
-
-<p><b><u>Features</u></b></p>
-
-<ul>
-<li> GTK gui uses GL now, including a pseudo-3D mode.
-<li> Brazilian translation added, others updated.
-<li> Many internationalization tweaks.
-<li> Mice with right-left scroll wheels now supported.
-<li> Major upgrades to the GCode exporter.
-<li> rat-thickness parameter can take a 'px' suffix
-<li> metric and imperial grids are now more independent.
-<li> photo exporter supports multiple color schemes.
-<li> gerbers can be output in metric.
-<li> There's now a difference between "found" (what the netlist wants)
-  and "connected" (what the copper says).
-<li> PNG exporter has --fill-holes to omit the "drill helper" completely.
-<li> gerber drill files now 0.1mil resolution.
-<li> XY file is now IPC 7531 compliant.
-</ul>
-
-<p><b><u>Bug Fixes</u></b></p>
-
-<ul>
-<li> Fix pan locking up pcb if you leave the window.
-<li> Many bugfixes related to the metric conversion, including the two
-  autorouters.
-<li> ps alignment marks fixed.
-<li> route styles in *.pcb files may contain units.
-<li> able to select more parts by their mark when their mark is on-grid.
-<li> gtk route selector may now have nothing selected, if the board has
-  custom route settings.
-<li> drc no longer hangs when some layers are skipped.
-<li> ps_bloat works again.
-<li> EPS header is more standards-compliant.
-<li> PS outlines are only drawn on copper layers, not mask layers.
-<li> cursor position and zoom are no longer written to the *.pcb file.
-<li> lines with different clearances aren't auto-merged.
-<li> pin names are drawn in the pinout window.
-<li> gerber aperture numbers won't increase between runs.
-<li> misc doc tweaks and fixes.
-</ul>
-
-<p><b><u>Other</u></b></p>
-
-<ul>
-<li> Many tweaks to the source code to make it cleaner.
-<li> The top and bottom layers are now consistently called "top" and
-  "bottom" instead of "solder" and "component"
-<li> *.pcb file version bumped to 20091103 to reflect coordinate units change.
-<li> gEDA/pcb project moved to geda-project.org
-</ul>
-
-    <!-- ********************* 20120501 -- website move to geda-project.org ******************* -->
-    <HR>
-    <H2><A NAME="20120501">Main gEDA/PCB web sites moved to geda-project.org</A></H2>
-    <p>
-    All main gEDA/PCB web sites have moved from gpleda.org to geda-project.org.
-    </p>
-
-    <!-- ********************* pcb-20110918 ******************* -->
-    <HR>
-    <H2><A NAME="20110918">PCB Release 20110918 available</A></H2>
-    <p>
-This release represents over 797 commits and as such this summary 
-clearly is not complete.  See the ChangeLog file for the complete list
-of changes.
-
-<p><b><u>Features</u></b></p>
-
-<ul>
-<li> Internal coordinate space is now metric.  This should fix the "trace
-  nubs on metric grids" issue.  Also, units are allowed on pretty much
-  every "coordinate" that PCB accepts.  Example: 5.4in, 10cm, 0.55mm.
-  New configure option --enable-coord64 to force (slower?) 64-bit type
-  for coordinates on 32-bit systems (if you need a board bigger than 1
-  meter across).  The internal precision is 1 nanometer, the internal
-  type is "Coord".
-<li> MinGW support.
-<li> New GL mode for the gtk hid with translucent traces.
-
-<li> New GTK layer view/choose widget and other GUI enhancements.
-<li> GTK HID warns if the *.pcb file has changed on disk.
-<li> Enhanced grid snapping logic.
-<li> Select/report nets by name.
-<li> Auto-pan has been removed.
-<li> Zoom can zoom out beyond the edge of the board's workspace.
-<li> GTK: title string matches GNOME conventions.
-<li> Personally identifiable information is no longer stored in the PCB.
-<li> Toggling vias from hole to plated is reversible.
-<li> Gerber exporter has options for including outlines on other layers.
-<li> Edited footprint files are saved as footprints, not pcbs.
-<li> Improved gtk library search/filter.
-<li> Default layer stack is now a six-layer template with outline.
-<li> If the board has an outline layer, an outline will be shown if no
-  other outline is specified.
-<li> Group[] string allows t/b synonyms for c/s.  "top" and "bottom" are
-  the standard names now.
-<li> PCB will save files with an older version tag if newer features aren't needed.
-<li> Autorouter has a progress dialog.
-<li> PCB will no longer let you delete the last top/bottom layer.
-<li> Refcard has been updated.
-<li> Documentation updates.
-<li> Layes with the PCB::skip-drc attribute set are ignored during DRC.
-<li> Allow numeric keys to also choose the silk layer.
-<li> Minor readability tweaks to the default font.
-<li> Via copper may overlap.
-<li> User is notified if an Import() cannot find all the footprints.
-</ul>
-
-<p><b><u>Bug Fixes</u></b></p>
-
-<ul>
-<li> Optimizer won't try to optimize overlapping pads
-<li> Undo should fail less, in corner cases.
-<li> Nested key-bound actions won't crash lesstif.
-<li> Do not select invisible pads on the far side.
-<li> Protect Import() from command injection.
-<li> Fix conversion of far-side polygons to element pads.
-<li> Fix initial clearance values of text when loading PCBs.
-<li> Fix solder mask drawing on vias.
-<li> Add missing action documentation.
-<li> Fab drawing notes actual outline trace width.
-<li> Zero clearance pins and pads won't cause DRC failures.
-<li> PS export: fix draw-rectangle (used to do fill, not outline)
-<li> Gerber export no longer fills unfilled rectanges.
-<li> If there are no image formats available, the PNG hid is not enabled.
-<li> You can no longer select pins/pads of locked elements.
-<li> The m4-to-newlib converter now creates file names that match the
-  library view.
-<li> Never set the FOUND flag on new silk lines.
-<li> Lesstif HID won't crash if both Xinerama and XRender are detected.
-<li> Lesstif menu is now internationalizable.
-<li> Refdes labels in a font-less layout can be moved.
-<li> Import can correctly update elements on the bottom side.
-<li> DRC no longer treats unplated holes as conducting.
-</ul>
-
-<p><b><u>Other</u></b></p>
-
-<ul>
-<li> Updated and new translations, including Dutch.
-<li> Many polygon speedups.
-<li> Numerous build-related cleanups.
-<li> Numerous minor speed-related cleanups.
-<li> GTK 2.18 is the minimum required version.
-<li> GTS moved out of the src/ tree so it can be built with different flags.
-<li> More C++ compatible.
-<li> Expanded regex documentation.
-<li> Much code which is no longer needed has been removed.
-<li> HID init method changed to allow for hid struct expansion without
-  breaking everything.
-<li> New HID calls for whole-pad and whole-pin drawing.
-<li> ClearAndRedrawOutput() replaced with Redraw().
-<li> Board objects use hashes instead of lists to store parts, so
-  pointers don't change.
-<li> DVI documentation output is no longer generated.
-</ul>
-
-    <!-- ********************* pcb-20091103 ******************* -->
-    <HR>
-    <H2><A NAME="20100929">PCB Release 20100929 available</A></H2>
-    <p>
-This release represents over 240 commits and as such this summary 
-clearly is not complete.  See the ChangeLog file for the complete list
-of changes.
-
-<p><b><u>Features</u></b></p>
-
-<ul>
-<li> PCB can directly import (forward annotate) schematics while running.
-<li> Many places where measurements are entered now accept units, like
-  "5mm", and "cm" and "in" are allowed too.
-<li> Free Rotate Buffer added to menu
-<li> Polygon Hole tool.
-<li> F12 invokes the Lock tool.
-<li> Russian translation added.
-<li> DBUS is enabled by default when possible.
-<li> Command-line exporters can run action scripts too.
-<li> GTK tool tips on elements, pins, and nets.
-<li> Command-line actions in GUIs do not require (,,) syntax.
-<li> PCB can import footprints both in subdirectories and the named directories.
-<li> New GCode exporter.
-<li> Footprint files use ".fp" as the suffix; this is automatically
-  searched for if needed.
-<li> GTK dialogs do not show at startup unless requested.
-<li> Stackup can be specified on the command line for command-line exporting.
-<li> Reference card updated.
-<li> The snap-point in pads is the center.
-<li> The 's' key toggles polygons to clear/notclear all pads and pins
-</ul>
-
-<p><b><u>Bug Fixes</u></b></p>
-
-<ul>
-<li> Various PNG export fixes.
-<li> lesstif's magic toggle-layers-on-flip fixed.
-<li> Arc bounding box math fixed.
-<li> Fixed: sometimes, disabling silk also disabled the solder layer.
-<li> "pcb --help" prints all options again
-<li> Add mnemonic for "close without saving"
-<li> Don't select silk on the back side when it's invisible.
-<li> Various polygon rendering bugs fixed.
-<li> PNG drill bloat export fixed.
-<li> Attempts to change polygon clearance *on* polygons results in a hint.
-<li> PNG doesn't segfault if not all graphic formats are supported.
-<li> Various toporouter fixes and improvements
-<li> HID_Mixed is supported in attribute dialogs
-<li> Flipped rectangles in PS exports are drawn correctly.
-<li> Optimizer removes micro-traces under pads.
-<li> Vias, pins, and pads are now drawn under the mask instead of over.
-<li> Windows supported better.
-</ul>
-
-<p><b><u>Other</u></b></p>
-
-<ul>
-<li> Sources converted to C99
-<li> Doc extraction gives more control over categories.
-<li> Thermal documentation updated.
-<li> Actions can see the context they were invoked in
-</ul>
-
-
-    <!-- ********************* pcb-20091103 ******************* -->
-    <HR>
-    <H2><A NAME="20091103">PCB Release 20091103 available</A></H2>
-    <p>
-This release represents almost 200 commits and as such this summary 
-clearly is not complete.  See the ChangeLog file for the complete list
-of changes.
-    </p>
-    <p>
-    Changes included in this release are:
-    </p>
-    <ul>
-<li> [feature] Add attributes to layers</li>
-<li> [bugfix]  Remove memory leak in attributes</li>
-<li> [bugfix]  Avoid layer buttons getting confused (GTK)</li>
-<li> [bugfix]  Fix dereference bug in hid_find_action()</li>
-<li> [feature] Speed up some polygon operations</li>
-<li> [bugfix]  Don't let DRC change the grid setting</li>
-<li> [bugfix]  Correct URL's in some dialogs and output</li>
-<li> [feature] Add filters to load file chooser dialog (GTK)</li>
-<li> [bugfix]  Avoid segfaults with png HID with newer versions of libgd</li>
-<li> [bugfix]  Don't disperse locked elements</li>
-<li> [feature] Added experimental topological autorouter</li>
-<li> [feature] Added the beginning of a testsuite.</li>
-<li> [docs]    Document FreeRotateBuffer()</li>
-<li> [docs]    Add some additional notes on the usage of the existing
-            autorouter</li>
-<li> [feature] Add --png-bloat option</li>
-<li> [bugfix]  Fix several bugs found with valgrind</li>
-<li> [bugfix]  Improve the pre-install wrapper script</li>
-<li> [bugfix]  Several fixes to the autorouter</li>
-<li> [feature] Allow quoted strings and escaped characters in action
-            arguments</li>
-<li> [footprints] Add missing INDC3216M, remove duplicated RESC3216M</li>
-<li> [feature] Added the ability to customize mouse events via gpcb-menu.res
-            in the GTK HID.</li>
-<li> [feature] Added the ability to use mod1 (alt)(option) in
-            HIDs.  Useful on OSX.</li>
-<li> [bugfix]  Fix compilation issues on centos</li>
-<li> [bugfix]  Make the detection of tools and build system around
-            building the documentation be more robust.  Users should
-            not be worrying about --disable-doc or --enable-maintainer-mode
-            anymore</li>
-<li> [footprints] Add T018, T039, fix pinout of T092 to match JEDEC</li>
-<li> [bugfix]  Speed up rendering of DRC violation previews under GTK</li>
-<li> [bugfix]  Fix some crashing bugs related to polygons and thindraw mode</li>
-<li> [feature] Added a DRC refresh button</li>
-<li> [bugfix]  Fix some pango markup in the GTK DRC dialog</li>
-<li> [bugfix]  Fix cursor warping on flipped boards (GTK)</li>
-<li> [feature] Added preview images in the DRC violations window (GTK)</li>
-<li> [feature] Add a DrcViolationType structure and add hooks to allow HID's to use this</li>
-<li> [bugfix]  Fix some polygon memory leaks</li>
-<li> [feature] Add an API for registering actions with a context to support scripting
-            languages like GPMI.</li>
-<li> [bugfix]  Fix a bug with the Report(NetLength) action and NULL pin/pad names</li>
-<li> [bugfix]  Allow exporters to work with hairlines (width of 0)</li>
-<li> [tools]   Increase autoconf version to 2.60 since we were using some features of it</li>
-<li> [bugfix]  Fix a number of polygon related issues</li>
-<li> [bugfix]  Fix a number of gcc warnings</li>
-<li> [feature] Don't display undocumented options in help output.  This helps
-            the transition when deprecating an option.</li>
-<li> [feature] Add outline mode for photo-mode exporting</li>
-<li> [footprints] Put the mark on pin 1 for axial footprints to make them more likely
-               to fall on grid</li>
-<li> [bugfix]  Fix flipping of arcs</li>
-<li> [bugfix]  Fix parsing of old-syntax arcs</li>
-<li> [bugfix]  Include explicit text/lines on silk layers in the assembly drawing output</li>
-<li> [feature] '--ben-mode' has been renamed to '--photo-mode'</li>
-<li> [bugfix]  Fix some crashign bugs on boards with a large number of rats</li>
-<li> [bugfix]  Fix an off-by-one bug in the GTK netlist window</li>
-<li> [docs]    Add getting started guide</li>
-<li> [feature] Add support for parsing suffixes on numbers ("um", "mm", "in", "mil")</li>
-<li> [bugfix]  Fix some configure/build issues when cross compiling</li>
-<li> [bugfix]  Fix some improperly used automake conditionals</li>
-<li> [bugfix]  Fix some uninstall of shortcuts issues under windows Vista</li>
-<li> [feature] Add additional crosshair shapes</li>
-<li> [bugfix]  Various windows build script improvements</li>
-
-    </ul>
-
-
-
-    <!-- ********************* 20090202 -- website move to gpleda.org ******************* -->
-    <HR>
-    <H2><A NAME="20090202">Main PCB web site moved to gpleda.org</A></H2>
-    <p>
-    The main PCB web site has moved from sourceforge to gpleda.org.  Stay tuned
-    for more news!
-    </p>
-
-
-    <!-- ********************* pcb-20081128 ******************* -->
-    <HR>
-    <H2><A NAME="20081128">Development snapshot 20081128 available</A></H2>
-    <p>
-This release represents over 70 commits and as such this summary 
-clearly is not complete.  See the ChangeLog file for the complete list
-of changes.
-    </p>
-    <p>
-    Changes included in this release are:
-    </p>
-
-    <ul>
-
-      <li> Minor bug fixes in RS274-X output.
-      </li>
-      <li>.Bug fixes in postscript output
-      </li>
-      <li> DRC checks for annular ring on pads only uses the mininum annular ring
-	drc setting instead of also checking minimum copper width.
-      </li>
-      <li> Fix postscript output for zero length lines.
-      </li>
-      <li> Improve the 'save before closing' dialogs.
-      </li>
-      <li> Fixed bugs where objects attached to the cursor vanish sometimes.
-      </li>
-      <li> Various minor code portability improvements.
-      </li>
-      <li> Enabled additional gcc warnings (when using gcc)
-      </li>
-      <li> Allow outline layers to have only arcs.
-      </li>
-      <li> Added "Ben Mode" png output which provides a simulated "photograph"
-	of the board.  Very nice for publications.
-      </li>
-      <li> Fix poly clearance around rotated pads.
-      </li>
-      <li> Fix the batch HID which had bit rotted a little.
-      </li>
-      <li> Display net names hierarchically.
-      </li>
-      <li> Various speed improvements in the GTK HID.
-      </li>
-      <li> Various speed improvements in the autorouter.
-      </li>
-      <li> Minor improvements to the windows port.
-      </li>
-      <li> Other various bug fixes.
-      </li>
-      </ul>
-
-    <!-- ********************* pcb-20080202 ******************* -->
-    <HR>
-    <H2><A NAME="20080202">Development snapshot 20080202 available</A></H2>
-    <p>
-This release represents over 180 commits and as such this summary 
-clearly is not complete.  See the ChangeLog file for the complete list
-of changes.
-    </p>
-    <p>
-    Changes included in this release are:
-    </p>
-
-<ul>
-<li> Added a footprint preview in the library window
-</li>
-<li> Added gnome/kde desktop integration files (app and mime icons, and
-  .desktop file)
-</li>
-<li> Added i18n support
-</li>
-<li> Updated dbus support
-</li>
-<li> Fix a number of GCC 4 compiler warnings
-</li>
-<li> Make the gtk gui more robust against malformed menu resource files
-</li>
-<li> Added checking for duplicate hot key definitions in the menu resource
-  file in the gtk gui.
-</li>
-<li> Improved support for building on win32.
-</li>
-<li> Removed automake/autoconf generated files from cvs
-</li>
-<li> Fixed some parallel make bugs
-</li>
-<li> Fixed some scrolling/panning bugs in the gtk gui.
-</li>
-<li> Added the ability to load edif netlists
-</li>
-<li> Closed a number of bugs in the sourceforge tracker
-</li>
-<li> Fix a bg in the x-y output files where the y values were mirrored and offset
-</li>
-<li> Add XRENDER support to the lesstif HID to support layer transparency
-</li>
-<li> Fix some polygon dicer bugs
-</li>
-<li> Fix a handful of bugs in the png export HID
-</li>
-<li> Avoid vias snapping to pins and moving elements snapping to their own
-  pins/pads
-</li>
-<li> Fix a number of undo bugs
-</li>
-<li> Fix printer calibration
-</li>
-<li> Add global puller
-</li>
-<li> Various improvements to the postscript export HID
-</li>
-<li> Improve all the GetXY prompts in the menu resource files
-</li>
-<li> Improved the pin/via report
-</li>
-<li> Improved pin/pad vs grid snapping
-</li>
-<li> Various footprint improvements 
-  <ul>
-    <li> fixed some drill sizes</li>
-    <li> fixed some silk sizes</li>
-    <li> Added a handful of QFP family footprints</li>
-    <li> Converted the QFP family to the hi-res format</li>
-  </ul>
-</li>
-<li> Several other bug fixes
-</li>
-</ul>
-
-    <!-- ********************* pcb-20070912 ******************* -->
-    <HR>
-    <H2><A NAME="20070912">Development snapshot 20070912 available</A></H2>
-    <p>
-This release represents nearly 200 commits and as such this summary 
-clearly is not complete.  See the ChangeLog file for the complete list
-of changes.
-    </p>
-    <p>
-    Changes included in this release are:
-    </p>
-
-<ul>
-<li> Many many bug fixes.  Too many to list.
-</li>
-<li> Added keystone, C&K, Nichicon, and Optek footprint libraries
-</li>
-<li> Add attribute editor to the GTK HID
-</li>
-<li> Add a fileselect() function to the HID spec
-</li>
-<li> Fix ps output with drill helper on
-</li>
-<li> Add a visual indicater when elements are locked
-</li>
-<li> Corrections to the manual
-</li>
-<li> BOM can export in mm as well as mil 
-</li>
-<li> Fix a ps output bug with arcs
-</li>
-<li> Fix some memory leaks found with Coverity
-</li>
-<li> Added autoconf test for buggy versions of m4
-</li>
-<li> Fixed some footprint drill sizes
-</li>
-<li> Add user customizable menus for the gtk HID.  The gtk HID now is capable
-  of reading the same format menu resource files as the lesstif HID.
-  This represents significant rework of the menu code and menu callback code.
-</li>
-<li> Added Center() action
-</li>
-<li> Store the file format in the .pcb file.  This will let pcb know when
-  presented with a file which is too new.  The code for checking the format
-  was present in the prior snapshot.
-</li>
-<li> Fix DRC checking of square pads to square pads
-</li>
-<li> Added window panning/cursor warping
-</li>
-<li> Add the ability to directly load a footprint from a file as if it were
-  a complete layout.
-</li>
-<li> Add a Popup() action
-</ul>
-
-
-    <HR>
-    <H2><A NAME="20070315">gEDA Accepted into Googles 2007 Summer of Code</A></H2>
-    <p>
-    <a href="http://www.geda-project.org">The gEDA Project</a> has been accepted as a
-    mentoring organization in Googles <a href="http://code.google.com/soc">2007 Summer of Code</a>.
-    This represents a wonderful opportunity for gEDA/gaf, PCB, and students who have
-    an interest in open source CAD software.  For more details see <a href="http://www.geda-project.org/gsoc/">
-    The gEDA Google Summer of Code 2007</a> page.
-    </p>
-
-    <HR>
-    <H2><A NAME="20070208">Development snapshot 20070208 available</A></H2>
-    <p>
-    Changes included in this release are:
-    </p>
-
-    <UL>
-
-<li> Add polygon clipping code.  This is a big change to how polygons are handled.  
-  The new code now removes islands and correctly identifies open circuits caused
-  by a trace fully cutting through a polygon.  In addition, the RS-274-X output
-  is now simpler and works with some board houses that use older non-conforming
-  sofware.  Different styles for thermal reliefs are also now supported as part
-  of the polygon clipper code.
-</li>
-<li> Add support for plugins
-</li>
-<li> Many improvements to the autorouter.
-</li>
-<li> Various improvements to the trace optimizer.
-</li>
-<li> Add a fontmode for editing pcb fonts
-</li>
-<li> Add progress() hook to HID structure
-</li>
-<li> Fix a bug with non-functional windows on some window managers commonly
-  found on OS-X
-</li>
-<li> Add support for controlling pcb via dbus
-</li>
-<li> Fix various bugs which would cause a crash
-</li>
-<li> Add --scale for postscript scaling
-</li>
-<li> Intercept window manager delete events with the GTK gui
-</li>
-<li> Scan the .pcb file for a FileVersion value.  This is not written out yet
-  but will be in future versions.  
-</li>
-<li> Warn if non-manhattan lines are trying to become pads.
-</li>
-<li> Allow no-solder paste pads to support fiducials
-</li>
-<li> Report in mm or mils as selected by user
-</li>
-<li> Allow reordering of layers
-</li>
-<li> add some more QFN packages
-</li>
-<li> fix building with sun studio c compiler
-</li>
-<li> Made a pcb installation be relocatable.
-</li>
-<li> Convert the m4 libraries to newlib libraries as part of building a distfile.
-  The m4 libraries are still considered the sources and as such are still
-  distributed but this eliminates the need for m4 at runtime for footprints.
-</li>
-<li> Got rid of the pcb wrapper script around pcb-bin.
-</li>
-<li> Remove some old footprints of questionable naming, accuracy, or usefulness.
-</li>
-<li> Get the autosave/backup code working on all GUI's
-</li>
-<li> Fix some drill size rounding in the reports
-</li>
-<li> Changed the backup file name to be derived from the .pcb file name
-</li>
-<li> Added a command line option for DrawGrid
-</li>
-<li> Fix logic for adding new ratlines
-</li>
-<li> Fix gtk grid when board is flipped
-</li>
-<li> Add "find" and "rip-up" buttons to the netlist window
-</li>
-<li> Draw plated holes when exporting
-</li>
-<li> Fix some bugs when converting selection to element
-</li>
-<li> Fix build on cygwin
-</li>
-<li> Enhance the win32/build_pcb script used to generate a non-cygwin windows
-  installer.
-</li>
-<li> Make pcb work under non-cygwin windows
-</li>
-</ul>
-
-<!-- ************************************************* -->
-
-    <HR>
-    <H2><A NAME="20060822">Development snapshot 20060822 available</A></H2>
-    <p>
-    Changes included in this release are:
-    </p>
-
-    <UL>
-    <LI>
-    various manual updates
-    </LI>
-
-    <LI>
-    update the INSTALL documentation
-    </LI>
-
-    <LI>
-    fix a bug where pins turned into pure holes when an element
-    was smashed.
-    </LI>
-
-    <LI>
-    use locale-independent strtod and dtostr functions to avoid problems
-    loading files saved in some locales.
-    </LI>
-
-    <LI>
-    fixed various bugs which caused pcb to crash
-    </LI>
-
-    <LI>
-    update the gtk status line after save/save as
-    </LI>
-
-    <LI>
-    make the gerber file names be compatible with pre-HID versions
-    </LI>
-
-    <LI>
-    split plated and unplated drill output
-    </LI>
-
-    <LI>
-    fix various typos in menus and comments
-    </LI>
-
-    <LI>
-    add a batch mode HID.
-    </LI>
-
-    <LI>
-    fix drawing of box around text in the buffer
-    </LI>
-
-    <LI>
-    various fixes and improvements to the trace optimizer and the
-    autorouter
-    </LI>
-
-    <LI>
-    fix board flipping code
-    </LI>
-
-    <LI>
-    fix rounding bug when creating list of drill sizes
-    </LI>
-
-    <LI>
-    add support for &gt; 8 copper layers
-    </LI>
-
-    <LI>
-    avoid strict aliasing violations encountered with gcc4
-    </LI>
-
-    <LI>
-    refactor code related to handling the filenames in the export
-    HID's
-    </LI>
-
-    <LI>
-    fix layer group parsing code
-    </LI>
-
-    <LI>
-    add the ability to user-configure mouse actions in the lesstif GUI.
-    </LI>
-
-    <LI>
-    enable loaded netlists by default
-    </LI>
-
-    <LI>
-    improve the positioning of the drill list in the postscript output
-    </LI>
-
-    <LI>
-    various improvements to the configure script to improve robustness
-    and improve error messages when thing don't go well.
-    </LI>
-
-    <LI>
-    add IPC style footprints for 01005 passives.
-    </LI>
-
-    <LI>
-    added a Renumber() action which will renumber all reference designators
-    and produced an annotation file for backannotating to schematics.
-    </LI>
-
-    <LI>
-    Draw via annulii on assembly drawings
-    </LI>
-
-    <LI>
-    various other bug fixes and improvements.
-    </LI>
-
-    </UL>
-
-    <HR>
-    <H2><A NAME="20060422">Development snapshot 20060422 available</A></H2>
-    <p>
-    Snapshot release pcb-20060422 has been released.  This snapshot
-    was made primary to fix a problem with some menus not working at all
-    in the previous snapshot.
-
-    Additional changes are:
-    </p>
-    <UL>
-
-    <LI>
-     Several minor portability fixes for Solaris and the SunPRO compiler and
-     for Irix and the MIPSpro compiler.
-    </LI>
-
-    <LI>
-     Added --psfade option for the postscript HID.
-    </LI>
-
-    <LI>
-     Fixed a bug where the "load layout" and some other menu choices
-     didn't do anything.
-    </LI>
-
-    <LI>
-     Added remaining actions to the actions reference section of the manual.
-    </LI>
-
-    <LI>
-     Worked around X11 polluting the name space with some of the X
-     header files.
-    </LI>
-
-    <LI>
-     Fix route style "Save as default" bug.
-    </LI>
-
-    <LI>
-     For the Gtk HID, add an alternate vertical window layout mode to
-     help on lower vertical resolution displays.
-    </LI>
-
-    <LI>
-     Fix soldermask draw while TAB view from solder side.
-    </LI>
-
-    <LI>
-     Change default PNG output scaling to be 100 dpi instead of fixing
-     the max dimension at 800 pixels.
-    </LI>
-
-    <LI>
-     Added background image support for the GTK HID (lesstif one has it too).
-    </LI>
-
-    <LI>
-     Fix missing window icons for the main GTK window and log window.
-    </LI>
-    </UL>
-
-    <HR>
-    <H2><A NAME="20060414">Development snapshot 20060414 available</A></H2>
-    <p>
-    Snapshot release pcb-20060414 has been released.  This is the
-    first snapshot of the new HID version of PCB.
-    HID, which stands for Human Interface Device is
-    the abstraction created by DJ Delorie which
-    separates the core PCB code from the graphical
-    user interface.  In this release, two GUI HID's
-    are supported, gtk and lesstif.  In addition,
-    there are HID exporters for postscript and
-    encapsulated postscript, RS-274-X (gerber), bill
-    of materials, centroid file, and png/gif/jpeg.
-    This represents a major restructuring of the
-    code and many months of work.
-
-    Additional changes are:
-    </p>
-    <UL>
-    <LI>
-      PCB's actions (the commands which drive the core of the program and
-      may be directly accessed by the user) now have the documentation in-line
-      in the code and the actions reference section of the manual is 
-      extracted from the in-line documentation.  The goal it to provide more
-      complete and accurate documentation.  As always the manual is still
-      a work in progress but it is getting more complete and up to date.
-    </LI>
-
-    <LI>
-      Fixed a long standing segfault when saving connection data
-    </LI>
-
-    <LI>
-      Fixed a DRC bug
-    </LI>
-
-    <LI>
-      Fix some rounding issues when setting sizes.  Hopefully this will address
-      the issue with 23.99 mil drills and related problems.
-    </LI>
-
-    <LI>
-      The html manual is now in one file instead of many files
-    </LI>
-
-    <LI>
-      The lesstif HID now supports loading of background images to help
-      recover a layout which may exist in hardcopy form only.
-    </LI>
-    </UL>
-
-    <HR>
-    <H2><A NAME="20060321hid">HID Code Merge</A></H2>
-    <p>
-      After several months of hard work lead by DJ Delorie, the Human Interface Device
-      (HID) version of PCB was merged into CVS on 2006-03-21.  As part of this work,
-      DJ has added
-      a lesstif GUI and Bill Wilson contributed a tremendous effort to get his GTK
-      GUI working in the HID framework.  In addition a new png/gif/jpeg export option
-      has been added.
-    </p>
-    <p>
-      The goal of the HID project was to remove all of the GUI dependent code from the
-      core of PCB.  In addition to opening the doors to a future win32 port (volunteers?),
-      this should make the core code easier to maintain.
-    </p>
-    <p>
-      This represents a fairly major overhaul of a lot of code so lots of testing would
-      be appreciated.
-    </p>
-
-    <HR>
-    <H2><A NAME="20060321">Development snapshot 20060321 available</A></H2>
-    <p>
-      A new snapshot release, pcb-20060321, is available.  As always, this is
-      a snapshot of a work in progress.
-      A summary of the changes since the last snapshot is:
-      </p>
-    <UL>
-    <LI>
-    Add internal support for more than 8 layers.  By default PCB is still
-    compiled for 8 copper layers.
-    </LI>
-
-    <LI>
-    Fixed several minor bugs in the GTK user interface including fixing
-    scrolling of the log window, fixed up some of the DRC reporting
-    and mm/mil units.
-    </LI>
-
-    <LI>
-    Fixed several key bindings.
-    </LI>
-
-    <LI>
-    Updated refcard.tex to reflect the current set of key bindings.
-    </LI>
-
-    <LI>
-    Fixed some minor bugs which caused compilation problems on some
-    systems.
-    </LI>
-
-    <LI>
-    Converted the QFN footprints to hi-res.
-    </LI>
-
-    <LI>
-    Added documentation to the manual for the centroid file format and
-    the algorithm used for finding the centroid and rotation.
-    </LI>
-
-    <LI>
-    Fixed a bug so that the initial layer named 'component' is actually
-    on the component side of the board and 'solder' is actually on the
-    solder side of the board.
-    </LI>
-
-    <LI>
-    Fixed the pin order in the bourns trim pots (~bourns library)
-    </LI>
-
-    <LI>
-    Added actions and a script to allow command line printing.
-    </LI>
-
-    <LI>
-    Added IPC-7351 recommended footprints for 0201, 0402, etc passives.
-    </LI>
-
-    <LI>
-    Fixed SME5 package.
-    </LI>
-
-    <LI>
-    Fixed a bug which prevented disabling nets from the ratsnest
-    </LI>
-
-    <LI>
-    Fixed a bug where clearances could be set 1 below the spacing
-    </LI>
-
-    <LI>
-    Fixed clearline flag so that arcs also have this property.
-    </LI>
-
-    <LI>
-    Speed up rtree searches and other autorouter speedups.
-    </LI>
-
-    <LI>
-    Fixed a bug in computation of the closest polygon point.
-    </LI>
-
-    <LI>
-    Use rtrees for polygon handling for speed improvements.
-    </LI>
-
-    <LI>
-    Add a ChangePinName() action.
-    </LI>
-
-    <LI>
-    Fix a bug which caused duplicate rats names when manually adding
-    rats lines.
-    </LI>
-
-    <LI>
-    Added DRC checks for minimum drill diameter and minimum annular ring.
-    </LI>
-
-    <LI>
-    Add a minimal glossary to the manual
-    </LI>
-
-    <LI>
-    Fix the author name in the fab drawing
-    </LI>
-
-    <LI>
-    Cause the crosshair to snap to pad ends instead of center for rat
-    drawing.
-    </LI>
-
-    <LI>
-    Add "join" to SetFlag, ClrFlag and ChangeFlag.
-    </LI>
-
-    <LI>
-    Added inline documentation for the pcb file syntax.  The manual now
-    is up to date and correctly documents the file format.  In addition
-    the inline documentation will make it much easier to maintain the
-    documentation.
-    </LI>
-
-    <LI>
-    Remove some broken m4lib footprints
-    </LI>
-
-    <LI>
-    Put the correct setting for the gschem footprint= attribute in []
-    in the library window for the m4 libraries.
-    </LI>
-    
-    </UL>
-
-    <HR>
-    <H2><A NAME="20060311">File format documentation updated</A></H2>
-    <p>
-    DJ Delorie has brought the section in the <a href="manual.html">PCB
-    manual</a> which covers the file format up to date with the current
-    sources.  The documentation source now is in commented contained within
-    the source code.  The has the benefit of both making it much easier to
-    maintain the documentation as well as reducing duplication.
-    </p>
-
-    <HR>
-    <H2><A NAME="20050609">Development snapshot 20050609 available</A></H2>
-    <p>
-      A new snapshot release, pcb-20050609, is available.  As always, this is
-      a snapshot of a work in progress.
-      A summary of the changes since the last snapshot is:
-      </p>
-    <UL>
-    <LI><EM>The GUI is now based on gtk2 instead of Xaw</EM>. This represents
-     a fairly major change.  You will now need gtk-2.6 or higher installed
-     along with any of its dependencies to build pcb.  On linux
-     distributions, it is probably the case that you already have this.
-     For *BSD, Solaris, and others, you may want to use NetBSD's pkgsrc
-     to help install gtk2 and its dependencies.
-     </LI>
-
-     <LI>
-     Flags are stored symbolically in the .pcb file.  This is the start
-     of moving to support &gt;8 layers.  Please note that &gt;8 layer support
-     is not yet available in this snapshot.
-     </LI>
-
-     <LI>
-     Fixes for gcc-4
-     </LI>
-
-     <LI>
-     As part of the switch to gtk2, the user customizable menu feature has
-     been temporarily broken.  Hopefully this will be fixed by the next
-     snapshot.  In addition, the loading of background images has also been
-     temporarily broken.
-     </LI>
-    </UL>
-
-    <HR>
-    <H2><A NAME="20050315">Development snapshot 20050315 available</A></H2>
-    <p>
-      A new snapshot release, pcb-20050315, is available.  As always, this is
-      a snapshot of a work in progress.  There have been a small
-      handful bug fixes and feature additions.
-      Thanks to everyone who has provided
-      feedback.  Please note, this snapshot uses the same Xaw (Athena
-      Widgets) based user interface that pcb has had for quite some time.
-      A summary of the changes since the last snapshot is:
-      </p>
-    <UL>
-      <LI>Several footprint library fixes including TO-220 parse errors and
-        incorrect drill holes on several componenets. </LI>
-
-      <LI>Fixed a crashing bug in the pinout window.</LI>
-
-      <LI>Allow the FAB author to be set via an Xresource to override what
-           PCB might have gotten from the gecos information.</LI>
-
-      <LI>Added table of standard drill sizes to the manual.</LI>
-
-      <LI>Fixed a crashing bug when trying to use arrow keys to adjust the scale
-          slider in the print dialog box.</LI>
-    </UL>
-
-    <HR>
-    <H2><A NAME="20050311">GTK version in CVS</A></H2>
-    <p>
-      March 11, 2005.  Bill Wilson's port of pcb to <a
-    href="http://www.gtk.org">gtk</a>
-      has been imported into CVS.  As part of this effort, a branch in
-      cvs called "pcb-xaw" has been created which contains the Athena Widgets
-      (Xaw) version of pcb.  If you are tracking pcb with CVS and you want the
-      Xaw version, you will need to use the "-r pcb-xaw" option to cvs when
-      updating next time.</p>
-     <p>
-      This represents a fairly substantial change to pcb and there are a few
-      known issues which still need to be addressed.  However, the port is 
-      complete enough to try out.  Once some of the key issues are taken care
-      of and the port stabilizes a bit, a snapshot release using gtk will be
-      released.
-      </p>
-      <p>
-      Many thanks to Bill for all of his work in making this happen.
-      </p>
-
-    <HR>
-    <H2><A NAME="20050127">Development snapshot 20050127 available</A></H2>
-    <p>
-      A new snapshot release, pcb-20050127, is available.  As always, this is
-      a snapshot of a work in progress.  There have been many bug fixes and
-      feature additions and as always there is still more to do.
-      Thanks to everyone who has provided
-      feedback.  A summary of the changes since the last snapshot is:
-      </p>
-    <UL>
-
-	<LI>Fix drill size for PLCC sockets in ~geda library.  Fix drill size for
-  LED3 and LED5 footprints in ~geda library.
-	</LI>
-
-	<LI>Move the right-click popup menu to pcb-menu.res.
-	</LI>
-
-	<LI>Add DisperseElements() action for spreading out elements in an initial
-  layout.
-	</LI>
-
-	<LI>Fix fab drawing output for the case where a very small number of
-  drill sizes are used.
-	</LI>
-
-	<LI>Various documentation improvements.
-	</LI>
-
-	<LI>Remove many compiler warnings.
-	</LI>
-
-	<LI>Added metric output to the cursor display
-	</LI>
-
-	<LI>Fix &lt;Key&gt;. for toggling 45 degree mode.
-	</LI>
-
-	<LI>Crosshair snap snaps to center of pads and also to the mark of the
-  element.
-	</LI>
-
-	<LI>Protect all strcmp() calls with a check for a NULL pointer.  Fixes
-  various crashes.
-	</LI>
-
-	<LI>Fixed the mode buttons which were unresponsive in some versions of 
-  the X libraries.
-	</LI>
-
-	<LI>Element names may be edited over the element.
-	</LI>
-
-	<LI>Added --enable-efence for ElectricFence debugging.  Off by default
-	</LI>
-
-	<LI>Added --disable-rpath to avoid using rpath for the X libraries.
-	</LI>
-
-	<LI>Added vendor resource file support.  This allows lets you specify
-  a set of allowed drill sizes and drc rules for a particular vendor.
-	</LI>
-
-	<LI>Added -action command line option to allow executing an action on
-  startup.
-	</LI>
-
-	<LI>Date and time of compilation added to About dialog.
-	</LI>
-
-	<LI>Fix a bug where the soldermask relief on a new element is 100x smaller
-  than the default when "convert buffer to element" is used.
-	</LI>
-
-	<LI>Fix a name_tree corruption bug when changing an element name.
-	</LI>
-
-	<LI>Don't remove the formatted manual with a 'make clean' since they are
-  part of the distfile.  
-	</LI>
-
-	<LI>Let automake handle the html and pdf conversion.  This ends up using
-  texi2pdf for the pdf output which seems to do a better job than ps2pdf.
-	</LI>
-
-	<LI>Sort actions by modifier so that both Ctrl&lt;Key&gt;x and &lt;Key&gt;x work.
-	</LI>
-
-	<LI>Fix a SelectByName bug.
-	</LI>
-
-	<LI>Fix non-gcc compilation
-	</LI>
-
-	<LI>Command history added to :
-	</LI>
-
-	<LI>Fixed pinout window crash
-	</LI>
-
-	<LI>Allow Ctrl-drag to copy objects in arrow mode.
-	</LI>
-
-	<LI>Fixed a polygon clearance bug
-	</LI>
-
-	<LI>Fix an arc bounding box calculation error.
-	</LI>
-    </UL>
-
-
-    <HR>
-    <H2><A NAME="20040903">Development snapshot 20040903 available</A></H2>
-    <p>
-      A new snapshot, pcb-20040903, release is available.  As always, this is
-      a snapshot of a work in progress.  Thanks to everyone who has provided
-      feedback.  A summary of the changes since the last snapshot is:
-      </p>
-    <UL>
-      <LI> enable -Wall when compiling with gcc.  Many compiler warnings have
-        been fixed.
-      </LI>
-
-      <LI> add a short man page which refers the user to the real documentation
-      </LI>
-
-      <LI> Added ExecuteFile(file) action which allows the execution of several
-        actions contained in a text file.
-      </LI>
-
-      <LI> Added -script &lt;file&gt; flag which specifies a file containing actions
-        to be executed upon startup.
-      </LI>
-
-      <LI> Add support for a background image in the drawing area which can
-	help in importing a layout from a scanned image.
-      </LI>
-
-      <LI> Various documentation improvements
-      </LI>
-      
-      <LI> Protect some gcc extensions with tests for gcc.  This allows
-        compilation with the IRIX c compiler.
-      </LI>
-
-      <LI> Updated the ~geda library 150 and 300 mil width SOIC packages
-        to remove silk on pads and to more closely follow the IPC
-        recommendations
-      </LI>
-
-      <LI> Added support for menu accelerators.
-      </LI>
-
-      <LI> segfault when breaking apart an element with no element selected
-        bug fixed.
-      </LI>
-
-      <LI> autorouter improvements
-      </LI>
-      
-      <LI> added more 400mil DIP packages to ~geda library
-      </LI>
-
-      <LI> fix a trace optimizer bug which produced a segfault
-      </LI>
-
-      <LI> other various bug fixes
-      </LI>
-    </UL>
-
-    <HR>
-    <H2><A NAME="20040530">Development snapshot 20040530 available</A></H2>
-    <p>
-       This has been an exciting 3 months for PCB.  Many improvements have
-       been made in the program as well as additions and improvements to the
-       footprint library.  Thanks to everyone who has provided feedback,
-       patches, etc.
-    </p>
-    <H3>
-       Additions/Improvements
-    </H3>
-    <UL>
-      <LI> Expanded DRC checking
-      <LI> "Realtime" DRC checking
-      <LI> DRC settings are now stored in the board fle
-      <LI> Centroid (X-Y) and bill of materials output
-      <LI> Dynamic menus.  Users can now customize the menus via a
-           site-wide, per-user, or per-project menu resource file.
-      <LI> Significant improvements to autorouting of congested designs.
-      <LI> Autorouter can now use power planes.
-      <LI> Improved appearance in autorouter output.
-      <LI> Silk on pads/pins is clipped in RS-274-X output
-      <LI> Ordering is preserved when writing output files so that diff
-           may be effectively used on pcb files.
-      <LI> The autoplace feature now actually works
-      <LI> Added ToggleVisibility action
-      <LI> Most of the database is now kept in rtrees which avoids linear
-           searches.  This speeds up operation significantly.
-      <LI> Added SetFlag, ClrFlag, ChangeFlag actions.
-    </UL>
-       
-    <H3>
-       Bug Fixes
-    </H3>
-    <UL>
-      <LI> pin/pad bounding box calculation fixed.  Components can
-           now be placed closer to the edge of the board.
-      <LI> miter trace optimization bug.
-      <LI> Fix bug with pins which are enclosed by multiple polygons.
-      <LI> Shorts to unnamed elements and pins are handled correctly.
-      <LI> Various memory leaks fixed.
-      <LI> Fixed some bugs with a really high zoom.
-      <LI> Fixed default media selection in postscript print dialog
-      <LI> Fix some DRC bugs with square pins.
-    </UL>
-       
-    <H3>
-       Footprint Library:
-    </H3>
-    <UL>
-      <LI> Added SOJ footprint family (~geda library)
-      <LI> Added CTS series 742/3/4/5/6 resistor pack footprints (~cts library)
-      <LI> Added PKG_CONNECTOR_DIL macro to let the HEADER*_1 footprints work
-           (~geda library)
-      <LI> Correct the SDIP footprints (~geda library)
-      <LI> Correct some Minicircuits footprints (~minicircuits library)
-      <LI> Correct some panasonic footprints (~panasonic library)
-      <LI> Change refdes silk size for sockets (~johnstech library)
-      <LI> Increase soldermask relief on some mounting holes
-           (~johnstech library)
-      <LI> Convert the COMMON_SMT_DIL_MIL and COMMON_SMT_DIL_MM macros
-      used by several other libraries to the hi  <LI>res format.
-      <LI> Correct pin count on 100 pin QFP packages (100 not 72)
-           (~geda library)
-      <LI> Correct pin count on HEADER60_2 (60 not 50) (~geda library)
-    </UL>
-
-    <HR>
-    <H2><A NAME="20040215">Development snapshot 20040215 available</A></H2>
-    <p>
-    Febuary 15, 2004.  A new snapshot of the development sources for PCB
-    is available.
-    pcb-20040215 is the 3rd development snapshot release since moving to
-    SourceForge.  This snapshot represents a big step forward in PCB.  
-    Anyone following the CVS changes over the last month will have noticed
-    a very large number of bug fixes and feature enhancements by harry eaton.
-    A partial list of what's new is:
-    <UL>
-    <LI>Internal resolution changed to 0.01 mil from 1.0 mil</LI>
-    <LI>Improved DRC checking</LI>
-    <LI>Mirroring/rotating of buffers</LI>
-    <LI>Undo works on trace optimizations</LI>
-    <LI>Fixed polygon undo bugs</LI>
-    <LI>Fix arc DRC bugs</LI>
-    <LI>Added local measurement for line drawing</LI>
-    <LI>Added mode for polygon viewing to help examing planes</LI>
-    <LI>Added new footprint libraries (amp, amphenol, bourns, johnstech,
-	minicircuits, panasonic)</LI>
-    <LI>Added new footprints to the geda library</LI>
-    <LI>Other bug fixes</LI>
-    </UL>
-    Please note that, as with previous snapshots, this snapshot represents
-    a work in progress.  Download the snapshot
-    from the <a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Files Release section</a>
-    of the PCB SourceForge project page.
-    </p>
-
-    <HR>
-    <H2><A NAME="20040105">Internal resolution changed to 0.01 mil from 1 mil</A></H2>
-    <p>
-    January 5, 2004.  Harry Eaton has committed a series of changes which
-    increase the resolution of PCB.  Prior versions of PCB used 1 mil as the
-    fundamental unit.  As packaging and board fabrication technology has
-    progressed, this resolution is no longer adequate.  The new internal unit is 0.01
-    mil.  Old libraries may still be used and old designs may be opened, but
-    the design will be saved in the new hi-resolution format.  This means
-    you will not be able to re-open the layout in an older version of PCB.
-    </p>
-    <p>
-    The source tree immediately prior to the hi-resolution changes is tagged
-    with "low_res".  To update your CVS tree to the last version of the
-    low resolution PCB, use <tt>cvs update -PdA -r low_res</tt>.
-    </p>
-    <p>
-    We believe that most if not all of the bugs related to this change have been
-    worked out, but further independent testing is always useful.
-    </p>
-
-    <HR>
-    <H2><A NAME="20031113">Development snapshot 20031113 available</A></H2>
-    <p>
-    November 13, 2003.  A snapshot of the development sources for PCB
-    has been released and is available from the PCB <A
-    HREF="http://www.sourceforge.net/projects/pcb">Sourceforge 
-    Project Summary Page</A>.  This is the second snapshot release
-    since moving to sourceforge.  This snapshot includes cygwin and
-    Darwin support as well as new QFN footprints, improved documentation
-    on how the libraries work and interfacing with
-    <A HREF="http://www.geda-project.org">gEDA</A>, and several bug fixes.
-    Many thanks to everyone who has supplied patches and bug reports.
-    </p>
-    <p>
-    As with the previous snapshot, please note that this snapshot
-    has not gone through a rigorous
-    release engineering cycle but rather is a simple snapshot of a
-    work in progress.
-    </p>
-
-    <HR>
-    <H2><A NAME="20031111">PCB Ported to Cygwin</A></H2>
-    <p>
-    November 11, 2003.  PCB should now compile and run "out of the box"
-    under cygwin.  You will need Xfree86 installed as well as the same
-    set of development tools (gcc, m4, make, tcl/tk) as needed on other
-    operating systems.
-    </p>
-
-    <HR>
-    <H2><A NAME="20030815">Development snapshot 20030815 available</A></H2>
-    <p>
-    August 15, 2003.  A snapshot of the development sources for PCB
-    has been released and is available from the PCB <A
-    HREF="http://www.sourceforge.net/projects/pcb">Sourceforge 
-    Project Summary Page</A>.  We plan on making periodic snapshots
-    available to assist those who are unable to use the anonymous CVS
-    service.  This will also allow developers of various packaging
-    systems to create PCB snapshot packages.
-    </p>
-    <p>
-    Please note that these snapshots have not gone through a rigorous
-    release engineering cycle but rather are simple snapshots of a
-    work in progress.
-    </p>
-
-    <HR>
-    <H2><A NAME="20030813">Web page links section added</A></H2>
-    <p>
-    August 13, 2003.  A new <A HREF="links.html">links</A> section has
-    been added to the web pages to give pointers to additional PCB
-    related resources.
-    </p>
-
-    <HR>
-    <H2><A NAME="20030622">Trace optimizer added</A></H2>
-    <p>
-    June 22, 2003.  DJ Delorie has incorporated his trace optimizer.
-    </p>
-
-    </font>
-
-  </td>
-
-</tr>
-
-<!-- The left hand column -->
-<tr>
-  <td valign="top">
-
-  <table width="100%" cellspacing=0 cellpadding=0 border=0>
-  <tr>
-  <td>
-  <img src="images/logo-small.png" width="165" height="111"
-   alt="[PCB Logo]">
-  </td></tr>
+  <link href="mailto:dan_at_mcmahill_net" rev="made">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+  <title>PCB News</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="PCB: an interactive circuit board editor" name="DESCRIPTION">
+  <meta content="pcb, PCB, pwb, PWB, printed circuit, printed circuit board, gerber, rs274x," name="KEYWORDS">
+</head><!-- Start the main page table -->
+
+
+<body bgcolor="#FFFFFF" link="#3535C5" text="#000000" vlink="#700080">
+  <table border="0" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>
+      </td>
+
+      <td rowspan="4" valign="top" width="100%">
+        <!-- The main action area -->
+
+
+        <center>
+          <font face="helvetica, arial" size="+2">PCB News Items</font><br>
+          <br>
+        </center>
+        <font face="helvetica, arial"><!-- ********************* pcb-4.0.2 ********************** --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="4.0.2" name="4.0.2">PCB Release 4.0.2 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Dear Users,<br>
+        <br>
+        This release fixes a number of bugs.<br>
+        <br>
+        Kind regards,<br>
+        <br>
+        The pcb development team<br>
+        <br></font>
+        </p>
+
+
+        <h3><font face="helvetica, arial">User experience improvements</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">include board outline on assembly drawings.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fixed the SMD pads resizing bug (fix a drawing routine).</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fixed a segmentation fault when loading a pcb file with an empty style field.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added an escape callback to the command window. this allows the command window to now be closed with the escape key.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Plugins</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Exporters</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">improvements in documentation.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Footprints library</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Developer experience improvements</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">some more doxygenation of source code files.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a "pcb release" howto in the developer docs.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">corrections in the FSF address as to keep rpmlint quiet.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Small enhancements to the pcbtest.sh script. allow the binary for gdb to be specified on the command line make the definition of test paths more
+          readable.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">exclude eps files in the doc directory.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">removed unused code when inserting points on rats.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix of incorrect flag struct comparison.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Notes for early adapters</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Changed dependencies</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"><br>
+        <br>
+        <!-- ********************* pcb-4.0.1 ********************** --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="4.0.1" name="4.0.1">PCB Release 4.0.1 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Dear Users,<br>
+        <br>
+        This release fixes a number of bugs.<br>
+        <br>
+        Kind regards,<br>
+        <br>
+        The pcb development team<br>
+        <br></font>
+        </p>
+
+
+        <h3><font face="helvetica, arial">User experience improvements</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">reorchestrated the closing of the command window to not crash.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">only invalidate the screen after changes to the crosshair or mark are complete.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Plugins</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Exporters</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">fix for gcode dimensions.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a regression test for the IPC-D-356 exporter.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added more documentation for the IPC-D-356 netlist exporter.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Footprints library</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">add macro with more programmability for 2 pin axial components. Use this to add a few IPC-7251 compliant footprints for axial inductors, horizontally
+          mounted. Use this in turn for the TDK B82145A RF chokes family.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add toko category and the 7P variable inductors.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gen_geda_*.awk were nearly identical to gen_*.awk so add 2 lines to geda.inc so we can use the same script for everything. Verified that pcblib-newlib
+          builds with identical results before/after.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">for the horizontally mounted axial macro add the missing bits for marking polarity on parts like diodes.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add PKG_RADIAL_MM100 macro for doing more general metric 2 pin radial packages.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add some IPC radial capacitor footprints and use those to create some united chemicon footprints.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add DO-41 diode package, horizontally mounted.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add PKG_MTHOLE_GENERIC macro for fairly generic mounting holes. Use this to define IPC mounting holes for #4 and #6 machine screws with pan heads or flat
+          washers for both "tight" (board &lt; 4") and "loose" (board &gt; 4") fits.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add TO-263 footprint.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add some notes about m4 library development.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix problem in some possible invocations of the generic mounting hole macro. All footprints pass syntax checks again.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">remove an extra empty attribute which is not needed and causes warnings in the mounting hole macro.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix clearance on the Toko 7P footprint.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">in the mounting hole macro, change the calculation of the pad size for the support vias to make them as large as possible without actually changing the
+          copper (the support vias are covered by the main pad). This does not affect the fabricated board but it does remove some false positive DRC complaints.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Developer experience improvements</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">allow translators to change number of tabs in message.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">In the test suite, check for a working X display using xhost before running action script tests</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">match() with 3 arguments is a gawk extension. Rework the code to avoid using a 3 argument call to match() in one spot. Lets the script run with gawk or
+          NetBSD's awk (20121220). Verified that the generated result is identical to the previous gawk result using both gawk and NetBSDs awk.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">change from AC_FD_CC to AS_MESSAGE_LOG_FD</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">removed the antifork abomination.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">disabled one of the checks used to deal with older gdlib installs on some linux systems when building under cygwin as the test has problems. Repairs
+          building for mingw under cygwin.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">when building under cygwin, create a pcbtest.bat batch file that allows testing the compiled pcb without installing. This is somewhat analogous to the
+          pcbtest.sh script generated on linux and other unix-like systems.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">cleanup the win32 build script a good bit. An important change is that instead of blindly installing all of the mingw cross system root files, only install
+          a set of listed ones. This not only reduces the size of the windows installer but makes sure we have a more repeatable build and know what we are actually bundling into the
+          installer.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fixed the Attribute deletion code.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Notes for early adapters</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Changed dependencies</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">none</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"><br>
+        <br>
+        <!-- ********************* pcb-4.0.0 ********************** --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="4.0.0" name="4.0.0">PCB Release 4.0.0 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Dear Users,<br>
+        <br>
+        It has been quite some time since the last snapshot of pcb was released in March 2014.<br>
+        <br>
+        Since then quite a lot of bugs were fixed and new features added, below this introduction a summary is given of the improvements and additions since the latest snapshot "pcb-20140316".<br>
+        <br>
+        This release represents over 480 commits (mostly bugfixes and code refactoring) and as such this summary clearly is not complete.<br>
+        <br>
+        This pcb release 4.0.0 has a significant change in the major version number.<br>
+        <br>
+        This is done to make a fresh start and to get away from the 1.99z version with YYYYMMDD snapshots.<br>
+        <br>
+        Kind regards,<br>
+        <br>
+        The pcb development team<br>
+        <br></font>
+        </p>
+
+
+        <h3><font face="helvetica, arial">User experience improvements</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">added the command-line option --save-metric-only.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added escaping of Attribute values.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a translation of the Getting Started with PCB for pt_BR.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added translatable tooltips for toolbar buttons.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added "Report net length" to Menu -&gt; Info in Gtk.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a script for generating a key binding list.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added tooltips in the GTK HID UI.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">the puller no longer crosses unplated holes.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">solder/component outer layer names changed to top/bottom.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">pcb now uses a tilde instead of a dash for backup filenames.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">corrections in the user documentation.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">the position "delta" display no longer forces the GTK HID window to grow.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">write time in ASCII locale into exported files.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">allow for up to 10000 dpi on png exporter output.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Plugins</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">added smartdisperse for dispersing elements better, contributed by Ben Jackson.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added relocate for relocating elements, contributed by Jean Richard.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added RenumberBlock() and RenumberBuffer(), contributed by DJ Delorie.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added teardrops(), contributed by DJ Delorie.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Exporters</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">added a netlister conforming to the IPC-D-356 standard, contributed by Jerome Marchand.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">changed "as-shown" to "screen-layer-order" in the png and eps hids.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Footprints library</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">added a SC88A footprint.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a LQFP80-10 footprint.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added QFN24_5 and TQFN24_5 footprints.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a SOD523 footprint.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">the SOT325 package had a wrong numbering.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">renamed the SOT325 footprint to SOT353.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">in the ALF footprint the drill holes were too tight.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">an infinite loop in the SIL m4 macro was fixed.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Developer experience improvements</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">made a start with adding Doxygen developer documentation tags in the source files. A pcb.dox configuration file is available in the "doc/doxygen" directory
+          so developers can build the documentation there by invoking "doxygen pcb.dox" from the CLI.<br>
+          This is not done by configuring with --enable-docs, which is solely reserved for the generation of User documentation.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added numerous fixes in the win32 target.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Notes for early adapters</font>
+        </h3>
+
+
+        <p><font face="helvetica, arial">In the git repository two tags have been added to allow for checking out of pcb-4.0.0 at the branch point (git checkout pcb-4.0.0-base) or at the release
+        point (git checkout pcb-4.0.0-RELEASE).<br>
+        This is in line with tagging done in former snapshots.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Changed dependencies</font>
+        </h3>
+
+
+        <ul>
+          <li><font face="helvetica, arial">autoconf 2.60 --&gt; 2.69.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gettext 0.14 --&gt; 0.19.3.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"><br>
+        <br>
+        <!-- ********************* pcb-20110918 ******************* --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20140316" name="20140316">PCB Release 20140316 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents over 421 commits (mostly bugfixes and code refactoring) and as such this summary clearly is not complete. See the ChangeLog file for
+        the complete list of changes.</font>
+        </p>
+
+
+        <p><font face="helvetica, arial"><b><u>Features</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">GTK gui uses GL now, including a pseudo-3D mode.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Brazilian translation added, others updated.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Many internationalization tweaks.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Mice with right-left scroll wheels now supported.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Major upgrades to the GCode exporter.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">rat-thickness parameter can take a 'px' suffix</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">metric and imperial grids are now more independent.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">photo exporter supports multiple color schemes.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gerbers can be output in metric.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">There's now a difference between "found" (what the netlist wants) and "connected" (what the copper says).</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PNG exporter has --fill-holes to omit the "drill helper" completely.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gerber drill files now 0.1mil resolution.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">XY file is now IPC 7531 compliant.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial"><b><u>Bug Fixes</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Fix pan locking up pcb if you leave the window.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Many bugfixes related to the metric conversion, including the two autorouters.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">ps alignment marks fixed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">route styles in *.pcb files may contain units.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">able to select more parts by their mark when their mark is on-grid.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gtk route selector may now have nothing selected, if the board has custom route settings.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">drc no longer hangs when some layers are skipped.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">ps_bloat works again.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">EPS header is more standards-compliant.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PS outlines are only drawn on copper layers, not mask layers.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">cursor position and zoom are no longer written to the *.pcb file.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">lines with different clearances aren't auto-merged.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">pin names are drawn in the pinout window.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gerber aperture numbers won't increase between runs.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">misc doc tweaks and fixes.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial"><b><u>Other</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Many tweaks to the source code to make it cleaner.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The top and bottom layers are now consistently called "top" and "bottom" instead of "solder" and "component"</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">*.pcb file version bumped to 20091103 to reflect coordinate units change.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">gEDA/pcb project moved to geda-project.org</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"><!-- ********************* 20120501 == website move to geda-project.org ******************* --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20120501" name="20120501">Main gEDA/PCB web sites moved to geda-project.org</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">All main gEDA/PCB web sites have moved from gpleda.org to geda-project.org.</font>
+        </p>
+        <font face="helvetica, arial"><!-- ********************* pcb-20110918 ******************* --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20110918" name="20110918">PCB Release 20110918 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents over 797 commits and as such this summary clearly is not complete. See the ChangeLog file for the complete list of changes.</font>
+        </p>
+
+
+        <p><font face="helvetica, arial"><b><u>Features</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Internal coordinate space is now metric. This should fix the "trace nubs on metric grids" issue. Also, units are allowed on pretty much every "coordinate"
+          that PCB accepts. Example: 5.4in, 10cm, 0.55mm. New configure option --enable-coord64 to force (slower?) 64-bit type for coordinates on 32-bit systems (if you need a board bigger than 1
+          meter across). The internal precision is 1 nanometer, the internal type is "Coord".</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">MinGW support.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">New GL mode for the gtk hid with translucent traces.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">New GTK layer view/choose widget and other GUI enhancements.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GTK HID warns if the *.pcb file has changed on disk.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Enhanced grid snapping logic.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Select/report nets by name.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Auto-pan has been removed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Zoom can zoom out beyond the edge of the board's workspace.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GTK: title string matches GNOME conventions.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Personally identifiable information is no longer stored in the PCB.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Toggling vias from hole to plated is reversible.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Gerber exporter has options for including outlines on other layers.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Edited footprint files are saved as footprints, not pcbs.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improved gtk library search/filter.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Default layer stack is now a six-layer template with outline.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">If the board has an outline layer, an outline will be shown if no other outline is specified.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Group[] string allows t/b synonyms for c/s. "top" and "bottom" are the standard names now.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PCB will save files with an older version tag if newer features aren't needed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Autorouter has a progress dialog.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PCB will no longer let you delete the last top/bottom layer.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Refcard has been updated.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Documentation updates.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Layes with the PCB::skip-drc attribute set are ignored during DRC.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Allow numeric keys to also choose the silk layer.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Minor readability tweaks to the default font.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Via copper may overlap.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">User is notified if an Import() cannot find all the footprints.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial"><b><u>Bug Fixes</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Optimizer won't try to optimize overlapping pads</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Undo should fail less, in corner cases.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Nested key-bound actions won't crash lesstif.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Do not select invisible pads on the far side.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Protect Import() from command injection.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix conversion of far-side polygons to element pads.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix initial clearance values of text when loading PCBs.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix solder mask drawing on vias.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add missing action documentation.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fab drawing notes actual outline trace width.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Zero clearance pins and pads won't cause DRC failures.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PS export: fix draw-rectangle (used to do fill, not outline)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Gerber export no longer fills unfilled rectanges.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">If there are no image formats available, the PNG hid is not enabled.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">You can no longer select pins/pads of locked elements.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The m4-to-newlib converter now creates file names that match the library view.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Never set the FOUND flag on new silk lines.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Lesstif HID won't crash if both Xinerama and XRender are detected.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Lesstif menu is now internationalizable.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Refdes labels in a font-less layout can be moved.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Import can correctly update elements on the bottom side.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">DRC no longer treats unplated holes as conducting.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial"><b><u>Other</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Updated and new translations, including Dutch.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Many polygon speedups.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Numerous build-related cleanups.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Numerous minor speed-related cleanups.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GTK 2.18 is the minimum required version.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GTS moved out of the src/ tree so it can be built with different flags.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">More C++ compatible.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Expanded regex documentation.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Much code which is no longer needed has been removed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">HID init method changed to allow for hid struct expansion without breaking everything.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">New HID calls for whole-pad and whole-pin drawing.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">ClearAndRedrawOutput() replaced with Redraw().</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Board objects use hashes instead of lists to store parts, so pointers don't change.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">DVI documentation output is no longer generated.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"><!-- ********************* pcb-20091103 ******************* --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20100929" name="20100929">PCB Release 20100929 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents over 240 commits and as such this summary clearly is not complete. See the ChangeLog file for the complete list of changes.</font>
+        </p>
+
+
+        <p><font face="helvetica, arial"><b><u>Features</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">PCB can directly import (forward annotate) schematics while running.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Many places where measurements are entered now accept units, like "5mm", and "cm" and "in" are allowed too.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Free Rotate Buffer added to menu</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Polygon Hole tool.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">F12 invokes the Lock tool.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Russian translation added.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">DBUS is enabled by default when possible.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Command-line exporters can run action scripts too.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GTK tool tips on elements, pins, and nets.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Command-line actions in GUIs do not require (,,) syntax.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PCB can import footprints both in subdirectories and the named directories.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">New GCode exporter.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Footprint files use ".fp" as the suffix; this is automatically searched for if needed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GTK dialogs do not show at startup unless requested.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Stackup can be specified on the command line for command-line exporting.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Reference card updated.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The snap-point in pads is the center.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The 's' key toggles polygons to clear/notclear all pads and pins</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial"><b><u>Bug Fixes</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Various PNG export fixes.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">lesstif's magic toggle-layers-on-flip fixed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Arc bounding box math fixed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed: sometimes, disabling silk also disabled the solder layer.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">"pcb --help" prints all options again</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add mnemonic for "close without saving"</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Don't select silk on the back side when it's invisible.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various polygon rendering bugs fixed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PNG drill bloat export fixed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Attempts to change polygon clearance *on* polygons results in a hint.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">PNG doesn't segfault if not all graphic formats are supported.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various toporouter fixes and improvements</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">HID_Mixed is supported in attribute dialogs</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Flipped rectangles in PS exports are drawn correctly.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Optimizer removes micro-traces under pads.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Vias, pins, and pads are now drawn under the mask instead of over.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Windows supported better.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial"><b><u>Other</u></b></font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Sources converted to C99</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Doc extraction gives more control over categories.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Thermal documentation updated.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Actions can see the context they were invoked in</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"><!-- ********************* pcb-20091103 ******************* --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20091103" name="20091103">PCB Release 20091103 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents almost 200 commits and as such this summary clearly is not complete. See the ChangeLog file for the complete list of changes.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Changes included in this release are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">[feature] Add attributes to layers</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Remove memory leak in attributes</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Avoid layer buttons getting confused (GTK)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix dereference bug in hid_find_action()</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Speed up some polygon operations</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Don't let DRC change the grid setting</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Correct URL's in some dialogs and output</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add filters to load file chooser dialog (GTK)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Avoid segfaults with png HID with newer versions of libgd</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Don't disperse locked elements</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Added experimental topological autorouter</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Added the beginning of a testsuite.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[docs] Document FreeRotateBuffer()</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[docs] Add some additional notes on the usage of the existing autorouter</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add --png-bloat option</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix several bugs found with valgrind</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Improve the pre-install wrapper script</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Several fixes to the autorouter</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Allow quoted strings and escaped characters in action arguments</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[footprints] Add missing INDC3216M, remove duplicated RESC3216M</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Added the ability to customize mouse events via gpcb-menu.res in the GTK HID.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Added the ability to use mod1 (alt)(option) in HIDs. Useful on OSX.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix compilation issues on centos</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Make the detection of tools and build system around building the documentation be more robust. Users should not be worrying about --disable-doc or
+          --enable-maintainer-mode anymore</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[footprints] Add T018, T039, fix pinout of T092 to match JEDEC</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Speed up rendering of DRC violation previews under GTK</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some crashing bugs related to polygons and thindraw mode</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Added a DRC refresh button</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some pango markup in the GTK DRC dialog</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix cursor warping on flipped boards (GTK)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Added preview images in the DRC violations window (GTK)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add a DrcViolationType structure and add hooks to allow HID's to use this</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some polygon memory leaks</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add an API for registering actions with a context to support scripting languages like GPMI.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix a bug with the Report(NetLength) action and NULL pin/pad names</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Allow exporters to work with hairlines (width of 0)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[tools] Increase autoconf version to 2.60 since we were using some features of it</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix a number of polygon related issues</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix a number of gcc warnings</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Don't display undocumented options in help output. This helps the transition when deprecating an option.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add outline mode for photo-mode exporting</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[footprints] Put the mark on pin 1 for axial footprints to make them more likely to fall on grid</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix flipping of arcs</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix parsing of old-syntax arcs</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Include explicit text/lines on silk layers in the assembly drawing output</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] '--ben-mode' has been renamed to '--photo-mode'</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some crashign bugs on boards with a large number of rats</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix an off-by-one bug in the GTK netlist window</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[docs] Add getting started guide</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add support for parsing suffixes on numbers ("um", "mm", "in", "mil")</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some configure/build issues when cross compiling</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some improperly used automake conditionals</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Fix some uninstall of shortcuts issues under windows Vista</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[feature] Add additional crosshair shapes</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">[bugfix] Various windows build script improvements</font>
+          </li>
+        </ul>
+        <!-- ********************* 20090202 == website move to gpleda.org ******************* -->
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20090202" name="20090202">Main PCB web site moved to gpleda.org</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">The main PCB web site has moved from sourceforge to gpleda.org. Stay tuned for more news!</font>
+        </p>
+        <font face="helvetica, arial"><!-- ********************* pcb-20081128 ******************* --></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20081128" name="20081128">Development snapshot 20081128 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents over 70 commits and as such this summary clearly is not complete. See the ChangeLog file for the complete list of changes.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Changes included in this release are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Minor bug fixes in RS274-X output.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">.Bug fixes in postscript output</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">DRC checks for annular ring on pads only uses the mininum annular ring drc setting instead of also checking minimum copper width.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix postscript output for zero length lines.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improve the 'save before closing' dialogs.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed bugs where objects attached to the cursor vanish sometimes.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various minor code portability improvements.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Enabled additional gcc warnings (when using gcc)</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Allow outline layers to have only arcs.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added "Ben Mode" png output which provides a simulated "photograph" of the board. Very nice for publications.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix poly clearance around rotated pads.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix the batch HID which had bit rotted a little.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Display net names hierarchically.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various speed improvements in the GTK HID.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various speed improvements in the autorouter.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Minor improvements to the windows port.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Other various bug fixes.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+        <!-- ********************* pcb-20080202 ******************* -->
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20080202" name="20080202">Development snapshot 20080202 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents over 180 commits and as such this summary clearly is not complete. See the ChangeLog file for the complete list of changes.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Changes included in this release are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Added a footprint preview in the library window</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added gnome/kde desktop integration files (app and mime icons, and .desktop file)</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added i18n support</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Updated dbus support</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a number of GCC 4 compiler warnings</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Make the gtk gui more robust against malformed menu resource files</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added checking for duplicate hot key definitions in the menu resource file in the gtk gui.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improved support for building on win32.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Removed automake/autoconf generated files from cvs</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed some parallel make bugs</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed some scrolling/panning bugs in the gtk gui.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added the ability to load edif netlists</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Closed a number of bugs in the sourceforge tracker</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a bg in the x-y output files where the y values were mirrored and offset</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add XRENDER support to the lesstif HID to support layer transparency</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix some polygon dicer bugs</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a handful of bugs in the png export HID</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Avoid vias snapping to pins and moving elements snapping to their own pins/pads</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a number of undo bugs</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix printer calibration</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add global puller</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various improvements to the postscript export HID</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improve all the GetXY prompts in the menu resource files</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improved the pin/via report</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improved pin/pad vs grid snapping</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li>
+            <font face="helvetica, arial">Various footprint improvements</font>
+
+            <ul>
+              <li><font face="helvetica, arial">fixed some drill sizes</font>
+              </li>
+
+
+              <li><font face="helvetica, arial">fixed some silk sizes</font>
+              </li>
+
+
+              <li><font face="helvetica, arial">Added a handful of QFP family footprints</font>
+              </li>
+
+
+              <li><font face="helvetica, arial">Converted the QFP family to the hi-res format</font>
+              </li>
+            </ul>
+          </li>
+
+
+          <li><font face="helvetica, arial">Several other bug fixes</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+        <!-- ********************* pcb-20070912 ******************* -->
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20070912" name="20070912">Development snapshot 20070912 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This release represents nearly 200 commits and as such this summary clearly is not complete. See the ChangeLog file for the complete list of changes.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Changes included in this release are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Many many bug fixes. Too many to list.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added keystone, C&K, Nichicon, and Optek footprint libraries</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add attribute editor to the GTK HID</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add a fileselect() function to the HID spec</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix ps output with drill helper on</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add a visual indicater when elements are locked</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Corrections to the manual</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">BOM can export in mm as well as mil</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a ps output bug with arcs</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix some memory leaks found with Coverity</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added autoconf test for buggy versions of m4</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed some footprint drill sizes</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add user customizable menus for the gtk HID. The gtk HID now is capable of reading the same format menu resource files as the lesstif HID. This represents
+          significant rework of the menu code and menu callback code.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added Center() action</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Store the file format in the .pcb file. This will let pcb know when presented with a file which is too new. The code for checking the format was present in
+          the prior snapshot.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix DRC checking of square pads to square pads</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added window panning/cursor warping</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add the ability to directly load a footprint from a file as if it were a complete layout.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add a Popup() action</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20070315" name="20070315">gEDA Accepted into Googles 2007 Summer of Code</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial"><a href="http://www.geda-project.org">The gEDA Project</a> has been accepted as a mentoring organization in Googles <a href="http://code.google.com/soc">2007
+        Summer of Code</a>. This represents a wonderful opportunity for gEDA/gaf, PCB, and students who have an interest in open source CAD software. For more details see <a href=
+        "http://www.geda-project.org/gsoc/">The gEDA Google Summer of Code 2007</a> page.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20070208" name="20070208">Development snapshot 20070208 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Changes included in this release are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Add polygon clipping code. This is a big change to how polygons are handled. The new code now removes islands and correctly identifies open circuits caused
+          by a trace fully cutting through a polygon. In addition, the RS-274-X output is now simpler and works with some board houses that use older non-conforming sofware. Different styles for
+          thermal reliefs are also now supported as part of the polygon clipper code.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add support for plugins</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Many improvements to the autorouter.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various improvements to the trace optimizer.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add a fontmode for editing pcb fonts</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add progress() hook to HID structure</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a bug with non-functional windows on some window managers commonly found on OS-X</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add support for controlling pcb via dbus</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix various bugs which would cause a crash</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add --scale for postscript scaling</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Intercept window manager delete events with the GTK gui</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Scan the .pcb file for a FileVersion value. This is not written out yet but will be in future versions.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Warn if non-manhattan lines are trying to become pads.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Allow no-solder paste pads to support fiducials</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Report in mm or mils as selected by user</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Allow reordering of layers</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add some more QFN packages</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix building with sun studio c compiler</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Made a pcb installation be relocatable.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Convert the m4 libraries to newlib libraries as part of building a distfile. The m4 libraries are still considered the sources and as such are still
+          distributed but this eliminates the need for m4 at runtime for footprints.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Got rid of the pcb wrapper script around pcb-bin.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Remove some old footprints of questionable naming, accuracy, or usefulness.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Get the autosave/backup code working on all GUI's</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix some drill size rounding in the reports</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Changed the backup file name to be derived from the .pcb file name</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added a command line option for DrawGrid</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix logic for adding new ratlines</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix gtk grid when board is flipped</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add "find" and "rip-up" buttons to the netlist window</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Draw plated holes when exporting</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix some bugs when converting selection to element</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix build on cygwin</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Enhance the win32/build_pcb script used to generate a non-cygwin windows installer.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Make pcb work under non-cygwin windows</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+        <!-- ************************************************* -->
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20060822" name="20060822">Development snapshot 20060822 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Changes included in this release are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">various manual updates</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">update the INSTALL documentation</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix a bug where pins turned into pure holes when an element was smashed.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">use locale-independent strtod and dtostr functions to avoid problems loading files saved in some locales.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fixed various bugs which caused pcb to crash</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">update the gtk status line after save/save as</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">make the gerber file names be compatible with pre-HID versions</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">split plated and unplated drill output</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix various typos in menus and comments</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add a batch mode HID.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix drawing of box around text in the buffer</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">various fixes and improvements to the trace optimizer and the autorouter</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix board flipping code</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix rounding bug when creating list of drill sizes</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add support for &gt; 8 copper layers</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">avoid strict aliasing violations encountered with gcc4</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">refactor code related to handling the filenames in the export HID's</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix layer group parsing code</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add the ability to user-configure mouse actions in the lesstif GUI.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">enable loaded netlists by default</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">improve the positioning of the drill list in the postscript output</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">various improvements to the configure script to improve robustness and improve error messages when thing don't go well.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add IPC style footprints for 01005 passives.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added a Renumber() action which will renumber all reference designators and produced an annotation file for backannotating to schematics.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Draw via annulii on assembly drawings</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">various other bug fixes and improvements.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20060422" name="20060422">Development snapshot 20060422 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Snapshot release pcb-20060422 has been released. This snapshot was made primary to fix a problem with some menus not working at all in the previous snapshot.
+        Additional changes are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Several minor portability fixes for Solaris and the SunPRO compiler and for Irix and the MIPSpro compiler.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added --psfade option for the postscript HID.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a bug where the "load layout" and some other menu choices didn't do anything.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added remaining actions to the actions reference section of the manual.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Worked around X11 polluting the name space with some of the X header files.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix route style "Save as default" bug.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">For the Gtk HID, add an alternate vertical window layout mode to help on lower vertical resolution displays.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix soldermask draw while TAB view from solder side.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Change default PNG output scaling to be 100 dpi instead of fixing the max dimension at 800 pixels.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added background image support for the GTK HID (lesstif one has it too).</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix missing window icons for the main GTK window and log window.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20060414" name="20060414">Development snapshot 20060414 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Snapshot release pcb-20060414 has been released. This is the first snapshot of the new HID version of PCB. HID, which stands for Human Interface Device is the
+        abstraction created by DJ Delorie which separates the core PCB code from the graphical user interface. In this release, two GUI HID's are supported, gtk and lesstif. In addition, there are
+        HID exporters for postscript and encapsulated postscript, RS-274-X (gerber), bill of materials, centroid file, and png/gif/jpeg. This represents a major restructuring of the code and many
+        months of work. Additional changes are:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">PCB's actions (the commands which drive the core of the program and may be directly accessed by the user) now have the documentation in-line in the code
+          and the actions reference section of the manual is extracted from the in-line documentation. The goal it to provide more complete and accurate documentation. As always the manual is still a
+          work in progress but it is getting more complete and up to date.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a long standing segfault when saving connection data</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a DRC bug</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix some rounding issues when setting sizes. Hopefully this will address the issue with 23.99 mil drills and related problems.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The html manual is now in one file instead of many files</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The lesstif HID now supports loading of background images to help recover a layout which may exist in hardcopy form only.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20060321hid" name="20060321hid">HID Code Merge</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">After several months of hard work lead by DJ Delorie, the Human Interface Device (HID) version of PCB was merged into CVS on 2006-03-21. As part of this work,
+        DJ has added a lesstif GUI and Bill Wilson contributed a tremendous effort to get his GTK GUI working in the HID framework. In addition a new png/gif/jpeg export option has been added.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">The goal of the HID project was to remove all of the GUI dependent code from the core of PCB. In addition to opening the doors to a future win32 port
+        (volunteers?), this should make the core code easier to maintain.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">This represents a fairly major overhaul of a lot of code so lots of testing would be appreciated.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20060321" name="20060321">Development snapshot 20060321 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">A new snapshot release, pcb-20060321, is available. As always, this is a snapshot of a work in progress. A summary of the changes since the last snapshot
+        is:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Add internal support for more than 8 layers. By default PCB is still compiled for 8 copper layers.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed several minor bugs in the GTK user interface including fixing scrolling of the log window, fixed up some of the DRC reporting and mm/mil
+          units.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed several key bindings.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Updated refcard.tex to reflect the current set of key bindings.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed some minor bugs which caused compilation problems on some systems.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Converted the QFN footprints to hi-res.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added documentation to the manual for the centroid file format and the algorithm used for finding the centroid and rotation.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a bug so that the initial layer named 'component' is actually on the component side of the board and 'solder' is actually on the solder side of the
+          board.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed the pin order in the bourns trim pots (~bourns library)</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added actions and a script to allow command line printing.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added IPC-7351 recommended footprints for 0201, 0402, etc passives.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed SME5 package.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a bug which prevented disabling nets from the ratsnest</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a bug where clearances could be set 1 below the spacing</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed clearline flag so that arcs also have this property.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Speed up rtree searches and other autorouter speedups.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a bug in computation of the closest polygon point.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Use rtrees for polygon handling for speed improvements.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add a ChangePinName() action.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a bug which caused duplicate rats names when manually adding rats lines.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added DRC checks for minimum drill diameter and minimum annular ring.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add a minimal glossary to the manual</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix the author name in the fab drawing</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Cause the crosshair to snap to pad ends instead of center for rat drawing.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add "join" to SetFlag, ClrFlag and ChangeFlag.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added inline documentation for the pcb file syntax. The manual now is up to date and correctly documents the file format. In addition the inline
+          documentation will make it much easier to maintain the documentation.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Remove some broken m4lib footprints</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Put the correct setting for the gschem footprint= attribute in [] in the library window for the m4 libraries.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20060311" name="20060311">File format documentation updated</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">DJ Delorie has brought the section in the <a href="manual.html">PCB manual</a> which covers the file format up to date with the current sources. The
+        documentation source now is in commented contained within the source code. The has the benefit of both making it much easier to maintain the documentation as well as reducing
+        duplication.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20050609" name="20050609">Development snapshot 20050609 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">A new snapshot release, pcb-20050609, is available. As always, this is a snapshot of a work in progress. A summary of the changes since the last snapshot
+        is:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial"><em>The GUI is now based on gtk2 instead of Xaw</em>. This represents a fairly major change. You will now need gtk-2.6 or higher installed along with any
+          of its dependencies to build pcb. On linux distributions, it is probably the case that you already have this. For *BSD, Solaris, and others, you may want to use NetBSD's pkgsrc to help
+          install gtk2 and its dependencies.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Flags are stored symbolically in the .pcb file. This is the start of moving to support &gt;8 layers. Please note that &gt;8 layer support is not yet
+          available in this snapshot.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixes for gcc-4</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">As part of the switch to gtk2, the user customizable menu feature has been temporarily broken. Hopefully this will be fixed by the next snapshot. In
+          addition, the loading of background images has also been temporarily broken.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20050315" name="20050315">Development snapshot 20050315 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">A new snapshot release, pcb-20050315, is available. As always, this is a snapshot of a work in progress. There have been a small handful bug fixes and feature
+        additions. Thanks to everyone who has provided feedback. Please note, this snapshot uses the same Xaw (Athena Widgets) based user interface that pcb has had for quite some time. A summary of
+        the changes since the last snapshot is:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Several footprint library fixes including TO-220 parse errors and incorrect drill holes on several componenets.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a crashing bug in the pinout window.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Allow the FAB author to be set via an Xresource to override what PCB might have gotten from the gecos information.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added table of standard drill sizes to the manual.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a crashing bug when trying to use arrow keys to adjust the scale slider in the print dialog box.</font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20050311" name="20050311">GTK version in CVS</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">March 11, 2005. Bill Wilson's port of pcb to <a href="http://www.gtk.org">gtk</a> has been imported into CVS. As part of this effort, a branch in cvs called
+        "pcb-xaw" has been created which contains the Athena Widgets (Xaw) version of pcb. If you are tracking pcb with CVS and you want the Xaw version, you will need to use the "-r pcb-xaw" option
+        to cvs when updating next time.</font>
+        </p>
+
+
+        <p><font face="helvetica, arial">This represents a fairly substantial change to pcb and there are a few known issues which still need to be addressed. However, the port is complete enough to
+        try out. Once some of the key issues are taken care of and the port stabilizes a bit, a snapshot release using gtk will be released.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Many thanks to Bill for all of his work in making this happen.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20050127" name="20050127">Development snapshot 20050127 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">A new snapshot release, pcb-20050127, is available. As always, this is a snapshot of a work in progress. There have been many bug fixes and feature additions
+        and as always there is still more to do. Thanks to everyone who has provided feedback. A summary of the changes since the last snapshot is:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Fix drill size for PLCC sockets in ~geda library. Fix drill size for LED3 and LED5 footprints in ~geda library.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Move the right-click popup menu to pcb-menu.res.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add DisperseElements() action for spreading out elements in an initial layout.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix fab drawing output for the case where a very small number of drill sizes are used.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various documentation improvements.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Remove many compiler warnings.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added metric output to the cursor display</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix &lt;Key&gt;. for toggling 45 degree mode.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Crosshair snap snaps to center of pads and also to the mark of the element.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Protect all strcmp() calls with a check for a NULL pointer. Fixes various crashes.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed the mode buttons which were unresponsive in some versions of the X libraries.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Element names may be edited over the element.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added --enable-efence for ElectricFence debugging. Off by default</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added --disable-rpath to avoid using rpath for the X libraries.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added vendor resource file support. This allows lets you specify a set of allowed drill sizes and drc rules for a particular vendor.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added -action command line option to allow executing an action on startup.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Date and time of compilation added to About dialog.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a bug where the soldermask relief on a new element is 100x smaller than the default when "convert buffer to element" is used.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a name_tree corruption bug when changing an element name.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Don't remove the formatted manual with a 'make clean' since they are part of the distfile.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Let automake handle the html and pdf conversion. This ends up using texi2pdf for the pdf output which seems to do a better job than ps2pdf.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Sort actions by modifier so that both Ctrl&lt;Key&gt;x and &lt;Key&gt;x work.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix a SelectByName bug.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix non-gcc compilation</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Command history added to :</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed pinout window crash</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Allow Ctrl-drag to copy objects in arrow mode.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed a polygon clearance bug</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix an arc bounding box calculation error.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20040903" name="20040903">Development snapshot 20040903 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">A new snapshot, pcb-20040903, release is available. As always, this is a snapshot of a work in progress. Thanks to everyone who has provided feedback. A
+        summary of the changes since the last snapshot is:</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">enable -Wall when compiling with gcc. Many compiler warnings have been fixed.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">add a short man page which refers the user to the real documentation</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added ExecuteFile(file) action which allows the execution of several actions contained in a text file.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added -script &lt;file&gt; flag which specifies a file containing actions to be executed upon startup.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Add support for a background image in the drawing area which can help in importing a layout from a scanned image.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various documentation improvements</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Protect some gcc extensions with tests for gcc. This allows compilation with the IRIX c compiler.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Updated the ~geda library 150 and 300 mil width SOIC packages to remove silk on pads and to more closely follow the IPC recommendations</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added support for menu accelerators.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">segfault when breaking apart an element with no element selected bug fixed.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">autorouter improvements</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">added more 400mil DIP packages to ~geda library</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">fix a trace optimizer bug which produced a segfault</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">other various bug fixes</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20040530" name="20040530">Development snapshot 20040530 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">This has been an exciting 3 months for PCB. Many improvements have been made in the program as well as additions and improvements to the footprint library.
+        Thanks to everyone who has provided feedback, patches, etc.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Additions/Improvements</font>
+        </h3>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Expanded DRC checking</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">"Realtime" DRC checking</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">DRC settings are now stored in the board fle</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Centroid (X-Y) and bill of materials output</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Dynamic menus. Users can now customize the menus via a site-wide, per-user, or per-project menu resource file.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Significant improvements to autorouting of congested designs.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Autorouter can now use power planes.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improved appearance in autorouter output.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Silk on pads/pins is clipped in RS-274-X output</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Ordering is preserved when writing output files so that diff may be effectively used on pcb files.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">The autoplace feature now actually works</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added ToggleVisibility action</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Most of the database is now kept in rtrees which avoids linear searches. This speeds up operation significantly.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added SetFlag, ClrFlag, ChangeFlag actions.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Bug Fixes</font>
+        </h3>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">pin/pad bounding box calculation fixed. Components can now be placed closer to the edge of the board.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">miter trace optimization bug.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix bug with pins which are enclosed by multiple polygons.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Shorts to unnamed elements and pins are handled correctly.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Various memory leaks fixed.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed some bugs with a really high zoom.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed default media selection in postscript print dialog</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix some DRC bugs with square pins.</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Footprint Library:</font>
+        </h3>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">Added SOJ footprint family (~geda library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added CTS series 742/3/4/5/6 resistor pack footprints (~cts library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added PKG_CONNECTOR_DIL macro to let the HEADER*_1 footprints work (~geda library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Correct the SDIP footprints (~geda library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Correct some Minicircuits footprints (~minicircuits library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Correct some panasonic footprints (~panasonic library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Change refdes silk size for sockets (~johnstech library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Increase soldermask relief on some mounting holes (~johnstech library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Convert the COMMON_SMT_DIL_MIL and COMMON_SMT_DIL_MM macros used by several other libraries to the hi</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">res format.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Correct pin count on 100 pin QFP packages (100 not 72) (~geda library)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Correct pin count on HEADER60_2 (60 not 50) (~geda library)</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20040215" name="20040215">Development snapshot 20040215 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Febuary 15, 2004. A new snapshot of the development sources for PCB is available. pcb-20040215 is the 3rd development snapshot release since moving to
+        SourceForge. This snapshot represents a big step forward in PCB. Anyone following the CVS changes over the last month will have noticed a very large number of bug fixes and feature
+        enhancements by harry eaton. A partial list of what's new is:</font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Internal resolution changed to 0.01 mil from 1.0 mil</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Improved DRC checking</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Mirroring/rotating of buffers</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Undo works on trace optimizations</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fixed polygon undo bugs</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Fix arc DRC bugs</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added local measurement for line drawing</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added mode for polygon viewing to help examing planes</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added new footprint libraries (amp, amphenol, bourns, johnstech, minicircuits, panasonic)</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Added new footprints to the geda library</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Other bug fixes</font>
+          </li>
+        </ul>
+        <font face="helvetica, arial">Please note that, as with previous snapshots, this snapshot represents a work in progress. Download the snapshot from the <a href=
+        "http://sourceforge.net/project/showfiles.php?group_id=73743">Files Release section</a> of the PCB SourceForge project page.<br>
+        <br></font>
+
+        <hr>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="20040105" name="20040105">Internal resolution changed to 0.01 mil from 1 mil</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">January 5, 2004. Harry Eaton has committed a series of changes which increase the resolution of PCB. Prior versions of PCB used 1 mil as the fundamental unit.
+        As packaging and board fabrication technology has progressed, this resolution is no longer adequate. The new internal unit is 0.01 mil. Old libraries may still be used and old designs may be
+        opened, but the design will be saved in the new hi-resolution format. This means you will not be able to re-open the layout in an older version of PCB.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">The source tree immediately prior to the hi-resolution changes is tagged with "low_res". To update your CVS tree to the last version of the low resolution
+        PCB, use <tt>cvs update -PdA -r low_res</tt>.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">We believe that most if not all of the bugs related to this change have been worked out, but further independent testing is always useful.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20031113" name="20031113">Development snapshot 20031113 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">November 13, 2003. A snapshot of the development sources for PCB has been released and is available from the PCB <a href=
+        "http://www.sourceforge.net/projects/pcb">Sourceforge Project Summary Page</a>. This is the second snapshot release since moving to sourceforge. This snapshot includes cygwin and Darwin
+        support as well as new QFN footprints, improved documentation on how the libraries work and interfacing with <a href="http://www.geda-project.org">gEDA</a>, and several bug fixes. Many thanks
+        to everyone who has supplied patches and bug reports.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">As with the previous snapshot, please note that this snapshot has not gone through a rigorous release engineering cycle but rather is a simple snapshot of a
+        work in progress.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20031111" name="20031111">PCB Ported to Cygwin</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">November 11, 2003. PCB should now compile and run "out of the box" under cygwin. You will need Xfree86 installed as well as the same set of development tools
+        (gcc, m4, make, tcl/tk) as needed on other operating systems.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20030815" name="20030815">Development snapshot 20030815 available</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">August 15, 2003. A snapshot of the development sources for PCB has been released and is available from the PCB <a href=
+        "http://www.sourceforge.net/projects/pcb">Sourceforge Project Summary Page</a>. We plan on making periodic snapshots available to assist those who are unable to use the anonymous CVS service.
+        This will also allow developers of various packaging systems to create PCB snapshot packages.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Please note that these snapshots have not gone through a rigorous release engineering cycle but rather are simple snapshots of a work in progress.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20030813" name="20030813">Web page links section added</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">August 13, 2003. A new <a href="links.html">links</a> section has been added to the web pages to give pointers to additional PCB related resources.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="20030622" name="20030622">Trace optimizer added</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">June 22, 2003. DJ Delorie has incorporated his trace optimizer.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+      </td>
+    </tr>
+    <!-- The left hand column -->
+
+
+    <tr>
+      <td valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td><img alt="[PCB Logo]" height="111" src="images/logo-small.png" width="165">
+            </td>
+          </tr>
+        </table>
+        <br>
+
+
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#000000">
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td bgcolor="#E0E0F0" nowrap><font color="#000066" face="helvetica, arial"><b>Information</b></font>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td bgcolor="#FFFFFF" nowrap><font face="helvetica, arial" size="-1">&nbsp;<a href="bugs.html">Bug Reporting</a><br>
+                  &nbsp;<a href="contributing.html">How to Help</a><br>
+                  &nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
+                  &nbsp;<a href="faq.html">F.A.Q.</a><br>
+                  &nbsp;<a href="index.html">Home</a><br>
+                  &nbsp;<a href="obtaining.html">How to Get PCB</a><br>
+                  &nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
+                  &nbsp;<a href="links.html">Links</a><br>
+                  &nbsp;<a href="manual.html">Manual</a><br>
+                  &nbsp;<a href="news.html">News</a><br>
+                  &nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
+                  &nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
+                  <br>
+                  &nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br></font>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td valign="top"><img alt="Sample GUI" height="450" src="images/sample-gui.jpg" width="150">
+      </td>
+    </tr>
   </table>
 
-  <br>
-  <table width="100%" cellspacing=0 cellpadding=2 border=0>
-  <tr>
-  <td bgcolor="#000000">
-    <table width="100%" cellspacing=0 cellpadding=4 border=0>
-  <tr><td bgcolor="#e0e0f0" nowrap>
-    <font face="helvetica, arial" color="#000066">
-      <b>Information</b>
-    </font>
-    </td></tr>
-   <tr><td bgcolor="#FFFFFF" nowrap>
-      <font face="helvetica, arial" size="-1">
-	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
-	&nbsp;<a href="contributing.html">How to Help</a><br>
-	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
-	&nbsp;<a href="faq.html">F.A.Q.</a><br>
-	&nbsp;<a href="index.html">Home</a><br>
-	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
-	&nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
-	&nbsp;<a href="links.html">Links</a><br>
-	&nbsp;<a href="manual.html">Manual</a><br>
-	&nbsp;<a href="news.html">News</a><br>
-	&nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
-	&nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
-	<br>
-	&nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br>
-      </font>
-    </td></tr></table>
-    </td></tr>
-  </table>
 
-  <br>
-
-  </td>
-</tr>
+  <p>
+  </p>
 
 
-
-</table>
-<p>
-
-<center>
-<!--
+  <center>
+    <!--
   <A href="http://sourceforge.net"><IMG
      src="http://sourceforge.net/sflogo.php?group_id=73743&amp;type=5" 
      width="210"
@@ -1811,20 +3843,18 @@ of changes.
      alt="SourceForge.net Logo"></A> 
 -->
 
-<table border=0 cellpadding=0 cellspacing=0><tr>
-  <td width=25>&nbsp;</td>
-  <td valign="top" align="center">
 
-  <address>
-    <font color="#000000" size="-1">
-    </font>
-  </address>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25">&nbsp;</td>
 
-  </td>
-</tr></table>
-</center>
-
-
-
+        <td align="center" valign="top">
+          <address>
+            <font color="#000000" size="-1"></font>
+          </address>
+        </td>
+      </tr>
+    </table>
+  </center>
 </body>
 </html>

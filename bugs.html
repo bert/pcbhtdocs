@@ -1,172 +1,183 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 
 <html>
-  <head>
-    <link rev="made" href="mailto:dan_at_mcmahill_net">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">    
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Reporting Bugs</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
-    <meta name="KEYWORDS" content="
-	  pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
-  </head>
+<head>
+  <link href="mailto:dan_at_mcmahill_net" rev="made">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <!-- Start the main page table -->
-  <body bgcolor="#ffffff" text="#000000" link="#3535c5" vlink="#700080">
-
-<table border="0" cellspacing="0" cellpadding="5"><tr>
-  <td></td>
-  <td rowspan=4 valign="top" width="100%">
+  <title>Reporting Bugs</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="PCB: an interactive printed circuit board editor" name="DESCRIPTION">
+  <meta content=" pcb, pwb, printed circuit, printed circuit board, gerber, rs274x" name="KEYWORDS">
+</head><!-- Start the main page table -->
 
 
-
-  <!-- The main action area -->
-    <center>
-
-      <a href="images/logo.png"><img src="images/logo.png" 
-				      width="497" height="47"
-				      alt="[PCB Logo]" 
-				      border="0"
-				      hspace="10" vspace="5"> </a>
-    </center>
-      <font face="helvetica, arial">
-      <p>
-      Please note that while the PCB developers do care about fixing bugs,
-      we all work on PCB in our free time and patience is appreciated.
-      </p>
-      <p>
-      Bugs should be reported in the <a href="http://launchpad.net/pcb/+bugs/">
-      PCB bug tracker</a>.  While it is fine to ask questions
-      on the <a href="http://www.delorie.com/listserv/">gEDA mailing lists</a>,
-      the bug tracker is the prefered location for bug reports.  This is because when
-      a developer has some time to work on bugs they are collected in one location.  Feel free to file
-      a report in the bug tracker and also report it on the mailing list though.
-      </p>
-
-
-      <p>
-      Bugs reports and patches for gschem or gsch2pcb (part
-      of <a href="http://www.geda-project.org/">gEDA/gaf</a>) should
-      be reported on
-      the <a href="http://launchpad.net/geda/+bugs/">gEDA/gaf bug
-      tracker</a>.
-      </p>
-
-      <p>
-      When reporting bugs in PCB, please follow these guidelines.
-      <UL>
-      <LI>
-      Please see if this bug has already been reported.  Also if you are running a snapshot
-      release which is not the latest, read over the release notes for the newer releases
-      to see if the bug has already been fixed.
-      </LI>
-
-      <LI>
-      Include the exact pcb version.  If it is a snapshot release, include the
-      release number, if you built from git or anonymous-cvs sources, include the date
-      when you last updated your sources.  If we don't know what code you're running
-      we can't fix it!  Release version numbers can be found in the "About" menu.
-      </LI>
-
-      <LI>
-      Describe how the problem can easily be reproduced.  If you are able to provide
-      a <em>small</em> test case that will be a tremendous help.  Bugs which require
-      hours of effort to reproduce are likely to take a low priority.
-      </LI>
-
-      <LI>
-      Include any other information which may be relevant to your bug.  Examples are:
-      <UL>
-          <LI>Please use any of the relevant official tags you can find when submitting the bug.</LI>
-	  <LI>Which GUI?  GTK or Lesstif?  If you do not know, look at the "About" window in PCB.</LI>
-	  <LI>Versions of 3rd party libraries.</LI>
-      </UL>
-      </LI>
-
-      <LI>
-      If you are able to provide a patch, that is always helpful.
-      </LI>
-
-      <LI>
-      If you are able to provide a testsuite entry that demonstrates
-      the bug, this is extremely helpful.  Not only will it help in
-      reproducing the bug so we can debug it, it will help improve the
-      long term quality of PCB.  A good testsuite check is the
-      <em>simplest</em> example that demonstrates the bug.  A huge
-      example is much less effective of a test.  See <a
-      href="contributing.html">How to Help</a> for more information
-      about the testsuite.
-      </LI>
-
-      <LI>
-      Please log into the bug tracking system.  This allows you to receive a notification
-      when additional content is added to the bug report or if its status changes.  It is
-      also useful when seeking feedback to see if a particular bug has been fixed.
-      </LI>
-
-      </UL>
-      </font>
-
-  </td>
-
-  </tr>
-
-    <!-- The left hand column -->
+<body bgcolor="#FFFFFF" link="#3535C5" text="#000000" vlink="#700080">
+  <table border="0" cellpadding="5" cellspacing="0">
     <tr>
-  <td valign="top">
+      <td>
+      </td>
 
-  <table width="100%" cellspacing=0 cellpadding=0 border=0>
-  <tr>
-  <td>
-  <img src="images/logo-small.png" width="165" height="111"
-   alt="[PCB Logo]">
-  </td></tr>
+      <td rowspan="4" valign="top" width="100%">
+        <!-- The main action area -->
+
+
+        <center>
+          <a href="images/logo.png"><img alt="[PCB Logo]" border="0" height="47" hspace="10" src="images/logo.png" vspace="5" width="497"></a>
+        </center>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Please note that while the PCB developers do care about fixing bugs, we all work on PCB in our free time and patience is appreciated.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Bugs should be reported in the <a href="http://launchpad.net/pcb/+bugs/">PCB bug tracker</a>. While it is fine to ask questions on the <a href=
+        "http://www.delorie.com/listserv/">gEDA mailing lists</a>, the bug tracker is the prefered location for bug reports. This is because when a developer has some time to work on bugs they are
+        collected in one location. Feel free to file a report in the bug tracker and also report it on the mailing list though.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Bugs reports and patches for gschem or gsch2pcb (part of <a href="http://www.geda-project.org/">gEDA/gaf</a>) should be reported on the <a href=
+        "http://launchpad.net/geda/+bugs/">gEDA/gaf bug tracker</a>.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">When reporting bugs in PCB, please follow these guidelines.</font>
+        </p>
+
+
+        <ul>
+          <li><font face="helvetica, arial">Please see if this bug has already been reported. Also if you are running a snapshot release which is not the latest, read over the release notes for the
+          newer releases to see if the bug has already been fixed.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Include the exact pcb version. If it is a snapshot release, include the release number, if you built from git or anonymous-cvs sources, include the date
+          when you last updated your sources. If we don't know what code you're running we can't fix it! Release version numbers can be found in the "About" menu.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Describe how the problem can easily be reproduced. If you are able to provide a <em>small</em> test case that will be a tremendous help. Bugs which require
+          hours of effort to reproduce are likely to take a low priority.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li>
+            <font face="helvetica, arial">Include any other information which may be relevant to your bug. Examples are:</font>
+
+            <ul>
+              <li><font face="helvetica, arial">Please use any of the relevant official tags you can find when submitting the bug.</font>
+              </li>
+
+
+              <li><font face="helvetica, arial">Which GUI? GTK or Lesstif? If you do not know, look at the "About" window in PCB.</font>
+              </li>
+
+
+              <li><font face="helvetica, arial">Versions of 3rd party libraries.</font>
+              </li>
+            </ul>
+          </li>
+
+
+          <li><font face="helvetica, arial">If you are able to provide a patch, that is always helpful.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">If you are able to provide a testsuite entry that demonstrates the bug, this is extremely helpful. Not only will it help in reproducing the bug so we can
+          debug it, it will help improve the long term quality of PCB. A good testsuite check is the <em>simplest</em> example that demonstrates the bug. A huge example is much less effective of a
+          test. See <a href="contributing.html">How to Help</a> for more information about the testsuite.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">Please log into the bug tracking system. This allows you to receive a notification when additional content is added to the bug report or if its status
+          changes. It is also useful when seeking feedback to see if a particular bug has been fixed.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <!-- The left hand column -->
+
+
+    <tr>
+      <td valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td><img alt="[PCB Logo]" height="111" src="images/logo-small.png" width="165">
+            </td>
+          </tr>
+        </table>
+        <br>
+
+
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#000000">
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td bgcolor="#E0E0F0" nowrap><font color="#000066" face="helvetica, arial"><b>Information</b></font>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td bgcolor="#FFFFFF" nowrap><font face="helvetica, arial" size="-1">&nbsp;<a href="bugs.html">Bug Reporting</a><br>
+                  &nbsp;<a href="contributing.html">How to Help</a><br>
+                  &nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
+                  &nbsp;<a href="faq.html">F.A.Q.</a><br>
+                  &nbsp;<a href="index.html">Home</a><br>
+                  &nbsp;<a href="obtaining.html">How to Get PCB</a><br>
+                  &nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
+                  &nbsp;<a href="links.html">Links</a><br>
+                  &nbsp;<a href="manual.html">Manual</a><br>
+                  &nbsp;<a href="news.html">News</a><br>
+                  &nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
+                  &nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
+                  <br>
+                  &nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br></font>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
   </table>
 
-  <br>
-  <table width="100%" cellspacing=0 cellpadding=2 border=0>
-  <tr>
-  <td bgcolor="#000000">
-    <table width="100%" cellspacing=0 cellpadding=4 border=0>
-  <tr><td bgcolor="#e0e0f0" nowrap>
-    <font face="helvetica, arial" color="#000066">
-      <b>Information</b>
-    </font>
-    </td></tr>
-   <tr><td bgcolor="#FFFFFF" nowrap>
-      <font face="helvetica, arial" size="-1">
-	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
-	&nbsp;<a href="contributing.html">How to Help</a><br>
-	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
-	&nbsp;<a href="faq.html">F.A.Q.</a><br>
-	&nbsp;<a href="index.html">Home</a><br>
-	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
-	&nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
-	&nbsp;<a href="links.html">Links</a><br>
-	&nbsp;<a href="manual.html">Manual</a><br>
-	&nbsp;<a href="news.html">News</a><br>
-	&nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
-	&nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
-	<br>
-	&nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br>
-      </font>
-    </td></tr></table>
-    </td></tr>
-  </table>
 
-  <br>
-
-  </td>
-</tr>
+  <p>
+  </p>
 
 
-
-  </table>
-    <p>
-
-      <center>
-<!--
+  <center>
+    <!--
   <A href="http://sourceforge.net"><IMG
      src="http://sourceforge.net/sflogo.php?group_id=73743&amp;type=5" 
      width="210"
@@ -175,20 +186,18 @@
      alt="SourceForge.net Logo"></A> 
 -->
 
-<table border=0 cellpadding=0 cellspacing=0><tr>
-  <td width=25>&nbsp;</td>
-  <td valign="top" align="center">
 
-  <address>
-    <font color="#000000" size="-1">
-    </font>
-  </address>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25">&nbsp;</td>
 
-  </td>
-</tr></table>
-</center>
-
-
-
-  </body>
+        <td align="center" valign="top">
+          <address>
+            <font color="#000000" size="-1"></font>
+          </address>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
 </html>

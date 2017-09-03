@@ -1,220 +1,207 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 
 <html>
-  <head>
-    <link rev="made" href="mailto:dan_at_mcmahill_net">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
-<title>PCB</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
-    <meta name="KEYWORDS" content="
-	  layout editor, pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
-  </head>
+<head>
+  <link href="mailto:dan_at_mcmahill_net" rev="made">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <!-- Start the main page table -->
-  <body bgcolor="#ffffff" text="#000000" link="#3535c5" vlink="#700080">
-
-<table border="0" cellspacing="0" cellpadding="5"><tr>
-  <td></td>
-  <td rowspan=4 valign="top" width="100%">
+  <title>PCB</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="PCB: an interactive printed circuit board editor" name="DESCRIPTION">
+  <meta content="layout editor, pcb, pwb, printed circuit, printed circuit board, gerber, rs274x" name="KEYWORDS">
+</head><!-- Start the main page table -->
 
 
-
-  <!-- The main action area -->
-    <center>
-
-      <a href="images/logo.png"><img src="images/pcb-banner.jpg" 
-				      width="497" height="47"
-				      alt="[PCB Logo]" 
-				      border="0"
-				      hspace="10" vspace="5"> </a>
-    </center>
-    <p>
-
-      <font face="helvetica, arial">
-      PCB is an interactive printed circuit board editor for Unix,
-      Linux, Windows, and Mac systems.  PCB includes a rats nest
-      feature and schematic/netlist import, design rule checking, and
-      can provide industry standard RS-274X (Gerber), NC drill, and
-      centroid data (X-Y data) output for use in the board fabrication
-      and assembly process, as well as photorealistic and design
-      review images.  PCB offers high end features such as an
-      autorouter and trace optimizer which can tremendously reduce
-      layout time.  For custom requirements, PCB offers a plug-in API
-      for inserting new functionality and using that functionality
-      from within the GUI as well as in scripts.
-      </font>
-
-    <h2>Recent News</h2>
-
-    <ul>
-
-      <!-- Recent news  -->
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#4.0.2">pcb-4.0.2 release available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#4.0.1">pcb-4.0.1 release available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#4.0.0">pcb-4.0.0 release available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20140316">pcb-20140316 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20120501">Main gEDA/PCB web sites moved to geda-project.org</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20110918">pcb-20110918 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20100929">pcb-20100929 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20091103">pcb-20091103 snapshot available</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html#20090202">Main PCB web site moved to gpleda.org</a>
-	</font></li>
-
-      <li><font face="helvetica, arial" size="-1">
-	  <a href="news.html">[more]</a>
-	</font></li>
-
-      <!-- End of news -->
-
-    </ul>
-
-    <hr>
-
-    <h2>Getting Help</h2>
-
-    <p>PCB
-    shares <a href="http://www.geda-project.org/wiki/geda:mailinglists">the
-    gEDA community's mailing lists</a>
-    and <a href="http://www.geda-project.org/wiki/#geda_users">IRC
-    channel</a>.  Please
-    obey <a href="http://www.geda-project.org/CodeOfConduct.html">The gEDA Project
-    Code of Conduct</a> on these forums.
-
-    <h2>Reporting Bugs</h2>
-
-    <p>Please use <a href="https://bugs.launchpad.net/pcb">The PCB Launchpad Tracker</a>.</p>
-
-    <hr>
-
-    <h2>Installing From Source</h2>
-
-    <p>To install an official release from source, use the standard
-    "./configure; make; make install" commands.  The sources offer
-    three GUIs: GTK (the default), Lesstif, or Batch.  Use
-    --with-gui=lesstif or --with-gui=batch to switch.  The batch GUI
-    is suitable for scripting-only applications.  See the file INSTALL
-    for more details.</p>
-
-    <p>To install from GIT, you must first run "./autogen.sh", then
-    follow the above directions.</p>
-
-    <p><tt>git clone git://git.geda-project.org/pcb.git</tt></p>
-    
-    <h2>Pre-Built Binaries</h2>
-
-    <p>Many Unix-like distributions have their own mechanisms for
-    installing pre-built binaries, please check your existing or
-    add-on repositories for PCB binaries.</p>
-
-    <h2>Windows Binaries</h2>
-
-    <p>To more easily comply with the GPL and other copyrights, the
-    Windows installers are stored on a separate site with sufficient
-    space to hold the sources for all the runtime libraries that are
-    required for the Windows port of PCB.  Currently, the site is:
-
-    <blockquote>
-      <a href="http://www.delorie.com/pcb/geda-windows/">http://www.delorie.com/pcb/geda-windows/</a>
-    </blockquote>
-
-    Please see that site for windows-specific installation instructions.</p>
-
-  </td>
-
-    <td rowspan=3 align=right>
-    <img src="images/sample-pcb.jpg" width=170 height=640 alt="Sample PCB"><br>
-    <img src="images/sample-footprint.png" width=169 height=270 alt="Sample Footprint"><br>
-    </td>
-
-  </tr>
-
-    <!-- The left hand column -->
+<body bgcolor="#FFFFFF" link="#3535C5" text="#000000" vlink="#700080">
+  <table border="0" cellpadding="5" cellspacing="0">
     <tr>
-  <td valign="top">
+      <td>
+      </td>
 
-  <table width="100%" cellspacing=0 cellpadding=0 border=0>
-  <tr>
-  <td>
-  <img src="images/logo-small.png" width="165" height="111"
-   alt="[PCB Logo]">
-  </td></tr>
+      <td rowspan="4" valign="top" width="100%">
+        <!-- The main action area -->
+
+
+        <center>
+          <a href="images/logo.png"><img alt="[PCB Logo]" border="0" height="47" hspace="10" src="images/pcb-banner.jpg" vspace="5" width="497"></a>
+        </center>
+
+
+        <p><font face="helvetica, arial">PCB is an interactive printed circuit board editor for Unix, Linux, Windows, and Mac systems. PCB includes a rats nest feature and schematic/netlist import,
+        design rule checking, and can provide industry standard RS-274X (Gerber), NC drill, and centroid data (X-Y data) output for use in the board fabrication and assembly process, as well as
+        photorealistic and design review images. PCB offers high end features such as an autorouter and trace optimizer which can tremendously reduce layout time. For custom requirements, PCB offers
+        a plug-in API for inserting new functionality and using that functionality from within the GUI as well as in scripts.</font>
+        </p>
+
+
+        <h2>Recent News</h2>
+
+
+        <ul>
+          <!-- Recent news  -->
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#4.0.2">pcb-4.0.2 release available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#4.0.1">pcb-4.0.1 release available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#4.0.0">pcb-4.0.0 release available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#20140316">pcb-20140316 snapshot available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#20120501">Main gEDA/PCB web sites moved to geda-project.org</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#20110918">pcb-20110918 snapshot available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#20100929">pcb-20100929 snapshot available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#20091103">pcb-20091103 snapshot available</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html#20090202">Main PCB web site moved to gpleda.org</a></font>
+          </li>
+
+
+          <li><font face="helvetica, arial" size="-1"><a href="news.html">[more]</a></font>
+          </li>
+          <!-- End of news -->
+        </ul>
+
+        <hr>
+
+
+        <h2>Getting Help</h2>
+
+
+        <p>PCB shares <a href="http://www.geda-project.org/wiki/geda:mailinglists">the gEDA community's mailing lists</a> and <a href="http://www.geda-project.org/wiki/#geda_users">IRC channel</a>.
+        Please obey <a href="http://www.geda-project.org/CodeOfConduct.html">The gEDA Project Code of Conduct</a> on these forums.</p>
+
+
+        <h2>Reporting Bugs</h2>
+
+
+        <p>Please use <a href="https://bugs.launchpad.net/pcb">The PCB Launchpad Tracker</a>.</p>
+
+        <hr>
+
+
+        <h2>Installing From Source</h2>
+
+
+        <p>To install an official release from source, use the standard "./configure; make; make install" commands. The sources offer three GUIs: GTK (the default), Lesstif, or Batch. Use
+        --with-gui=lesstif or --with-gui=batch to switch. The batch GUI is suitable for scripting-only applications. See the file INSTALL for more details.</p>
+
+
+        <p>To install from GIT, you must first run "./autogen.sh", then follow the above directions.</p>
+
+
+        <p><tt>git clone git://git.geda-project.org/pcb.git</tt>
+        </p>
+
+
+        <h2>Pre-Built Binaries</h2>
+
+
+        <p>Many Unix-like distributions have their own mechanisms for installing pre-built binaries, please check your existing or add-on repositories for PCB binaries.</p>
+
+
+        <h2>Windows Binaries</h2>
+
+
+        <p>To more easily comply with the GPL and other copyrights, the Windows installers are stored on a separate site with sufficient space to hold the sources for all the runtime libraries that
+        are required for the Windows port of PCB. Currently, the site is:</p>
+
+
+        <blockquote>
+          <a href="http://www.delorie.com/pcb/geda-windows/">http://www.delorie.com/pcb/geda-windows/</a>
+        </blockquote>
+        Please see that site for windows-specific installation instructions.
+        <p>
+      </td>
+
+      <td align="right" rowspan="3"><img alt="Sample PCB" height="640" src="images/sample-pcb.jpg" width="170"><br>
+      <img alt="Sample Footprint" height="270" src="images/sample-footprint.png" width="169"><br>
+      </td>
+    </tr>
+    <!-- The left hand column -->
+
+
+    <tr>
+      <td valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td><img alt="[PCB Logo]" height="111" src="images/logo-small.png" width="165">
+            </td>
+          </tr>
+        </table>
+        <br>
+
+
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#000000">
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td bgcolor="#E0E0F0" nowrap><font color="#000066" face="helvetica, arial"><b>Information</b></font>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td bgcolor="#FFFFFF" nowrap><font face="helvetica, arial" size="-1">&nbsp;<a href="bugs.html">Bug Reporting</a><br>
+                  &nbsp;<a href="contributing.html">How to Help</a><br>
+                  &nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
+                  &nbsp;<a href="faq.html">F.A.Q.</a><br>
+                  &nbsp;<a href="index.html">Home</a><br>
+                  &nbsp;<a href="obtaining.html">How to Get PCB</a><br>
+                  &nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
+                  &nbsp;<a href="links.html">Links</a><br>
+                  &nbsp;<a href="manual.html">Manual</a><br>
+                  &nbsp;<a href="news.html">News</a><br>
+                  &nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
+                  &nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
+                  <br>
+                  &nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br></font>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td valign="top"><img alt="Sample GUI" height="450" src="images/sample-gui.jpg" width="150">
+      </td>
+    </tr>
   </table>
 
-  <br>
-  <table width="100%" cellspacing=0 cellpadding=2 border=0>
-  <tr>
-  <td bgcolor="#000000">
-    <table width="100%" cellspacing=0 cellpadding=4 border=0>
-  <tr><td bgcolor="#e0e0f0" nowrap>
-    <font face="helvetica, arial" color="#000066">
-      <b>Information</b>
-    </font>
-    </td></tr>
-   <tr><td bgcolor="#FFFFFF" nowrap>
-      <font face="helvetica, arial" size="-1">
-	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
-	&nbsp;<a href="contributing.html">How to Help</a><br>
-	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
-	&nbsp;<a href="faq.html">F.A.Q.</a><br>
-	&nbsp;<a href="index.html">Home</a><br>
-	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
-	&nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
-	&nbsp;<a href="links.html">Links</a><br>
-	&nbsp;<a href="manual.html">Manual</a><br>
-	&nbsp;<a href="news.html">News</a><br>
-	&nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
-	&nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
-	<br>
-	&nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br>
-      </font>
-    </td></tr></table>
-    </td></tr>
-  </table>
 
-  <br>
-
-  </td>
-</tr>
+  <p>
+  </p>
 
 
-
-    <tr><td valign=top><img src="images/sample-gui.jpg" width=150 height=450 alt="Sample GUI"></td>
-
-
-</tr>
-  </table>
-    <p>
-
-      <center>
-<!--
+  <center>
+    <!--
   <A href="http://sourceforge.net"><IMG
      src="http://sourceforge.net/sflogo.php?group_id=73743&amp;type=5" 
      width="210"
@@ -223,20 +210,18 @@
      alt="SourceForge.net Logo"></A> 
 -->
 
-<table border=0 cellpadding=0 cellspacing=0><tr>
-  <td width=25>&nbsp;</td>
-  <td valign="top" align="center">
 
-  <address>
-    <font color="#000000" size="-1">
-    </font>
-  </address>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25">&nbsp;</td>
 
-  </td>
-</tr></table>
-</center>
-
-
-
-  </body>
+        <td align="center" valign="top">
+          <address>
+            <font color="#000000" size="-1"></font>
+          </address>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
 </html>

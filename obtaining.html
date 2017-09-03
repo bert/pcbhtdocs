@@ -1,202 +1,216 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 
 <html>
-  <head>
-    <link rev="made" href="mailto:dan_at_mcmahill_net">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">    
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Getting PCB</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <meta name="DESCRIPTION" content="PCB:  an interactive printed circuit board editor">
-    <meta name="KEYWORDS" content="
-	  pcb, pwb, printed circuit, printed circuit board, gerber, rs274x">
-  </head>
+<head>
+  <link href="mailto:dan_at_mcmahill_net" rev="made">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <!-- Start the main page table -->
-  <body bgcolor="#ffffff" text="#000000" link="#3535c5" vlink="#700080">
-
-<table border="0" cellspacing="0" cellpadding="5"><tr>
-  <td></td>
-  <td rowspan=4 valign="top" width="100%">
+  <title>Getting PCB</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="PCB: an interactive printed circuit board editor" name="DESCRIPTION">
+  <meta content=" pcb, pwb, printed circuit, printed circuit board, gerber, rs274x" name="KEYWORDS">
+</head><!-- Start the main page table -->
 
 
-
-  <!-- The main action area -->
-    <center>
-
-      <a href="images/logo.png"><img src="images/logo.png" 
-				      width="497" height="47"
-				      alt="[PCB Logo]" 
-				      border="0"
-				      hspace="10" vspace="5"> </a>
-    </center>
-      <font face="helvetica, arial">
-    <p>
-      This page contains information about how to download and install PCB on your computer.
-    </p>
-
-
-      <h2>
-      Prerequisites
-      </h2>
-
-      <h3>
-      Operating System
-      </h3>
-      <p>
-      Currently PCB runs on unix like operating systems such as Linux, NetBSD,
-      Solaris, FreeBSD, Mac OS X, etc.
-      In addition PCB will work on a windows computer using
-      <a href="http://www.cygwin.com/">cygwin</a>.
-      It is also possible to compile PCB using
-      <a href="http://www.mingw.org/">mingw</a> on windows using the <tt>win32/build_pcb.sh</tt>
-      script.
-      </p>
-
-      <h3>
-      External Libraries
-      </h3>
-      <ul>
-      <li>GUI toolkit.  Currently PCB supports either <a href="http://www.gtk.org">gtk</a>
-	  or <a href="http://www.lesstif.org">lesstif</a>/motif based guis.  If you are using 
-	  the GTK based gui, you will need gtk-2.4.0 or newer.  If you are using the
-	  lesstif based gui you will need lesstif, openmotif, or motif.
-      </li>
-
-      <li>If you wish to export your layout to png, jpeg, or gif formats you will need
-      the <a href="http://www.libgd.org">GD library</a>.  If you do not have this library you
-      will need to disable the png HID at configure time.
-      </li>
-
-      <li>GNU m4.  In particular your m4 must support -F for frozen files.</li>
-
-      <li>wish (part of tcl/tk).  If not installed, set WISH=/bin/false in
-	your configure environment and you just won't get the graphical
-	QFP footprint builder
-      </li>
-
-      <li>A suitable make program.  <a href="http://www.gnu.org/software/make/">GNU make</a>
-      will work as will the make which comes with NetBSD and some of the other *BSD operating
-      systems.  Other system make programs have not been tested.
-      </li>
-
-      <li><a href="http://flex.sourceforge.net/">flex</a>
-      </li>
-
-      <li><a href="http://www.gnu.org/software/bison/">bison</a>
-      </li>
-
-      <li>A C compiler.  Although most development of PCB is done using 
-      <a href="http://gcc.gnu.org">gcc</a>, PCB is known to build with the Sun Studio
-      C compiler.
-      </li>
-
-      </ul>
-
-
-      <h2>
-      Download the Sources -- Snapshot Releases
-      </h2>
-      <p>
-      PCB is distributed in source code format.  Periodic snapshot releases are made which help the
-      average user build and install the software.  The latest snapshots may be found on 
-      <a href="http://sourceforge.net/project/showfiles.php?group_id=73743">the PCB file release page</a>.
-      </p>
-
-      <h2>
-      Tracking the Latest
-      </h2>
-      <p>
-      PCB uses <a href="http://git-scm.com/">git</a> for source code management.  For more information
-      on the git repository used by PCB see <a href="http://www.geda-project.org/wiki/geda:scm">the gEDA scm wiki page</a><br><br>
-
-      To perform an initial check out of PCB sources via anonymous GIT, run the following: <br><br>
-      <tt>
-          git clone git://git.geda-project.org/pcb.git
-      </tt><br><br>
-
-      In addition (for those who don't have git), you may obtain the latest sources via anonymous CVS.  To perform an initial check out of
-      PCB sources via anonymous CVS, run the following: <br><br>
-      <tt>
-	  cvs -d :pserver:anonymous@git.geda-project.org/home/git/pcb.git co master
-      </tt><br><br>
-      If you have a checked out source tree from the sourceforge anonymous CVS repository, then you will
-      need to replace the contents of all the CVS/Root files with <tt>:pserver:anonymous@git.geda-project.org/home/git/pcb.git</tt>.
-      A shell script can automate that procedure.<br><br>
-
-      Users intending to do development work on PCB, and/or submit patches should ideally check out from the git repository.
-      </p>
-
-      <p>
-      Those who wish to build from CVS or git sources instead of one of the
-      snapshots should read the
-      <a href="http://git.geda-project.org/pcb/plain/README.git">README.git</a>
-      in the top of the source tree for instructions.  Note that for most users, the snapshot releases should
-      be sufficient.
-      </p>
-
-
-      </font>
-
-  </td>
-
-  </tr>
-
-    <!-- The left hand column -->
+<body bgcolor="#FFFFFF" link="#3535C5" text="#000000" vlink="#700080">
+  <table border="0" cellpadding="5" cellspacing="0">
     <tr>
-  <td valign="top">
+      <td>
+      </td>
 
-  <table width="100%" cellspacing=0 cellpadding=0 border=0>
-  <tr>
-  <td>
-  <img src="images/logo-small.png" width="165" height="111"
-   alt="[PCB Logo]">
-  </td></tr>
+      <td rowspan="4" valign="top" width="100%">
+        <!-- The main action area -->
+
+
+        <center>
+          <a href="images/logo.png"><img alt="[PCB Logo]" border="0" height="47" hspace="10" src="images/logo.png" vspace="5" width="497"></a>
+        </center>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">This page contains information about how to download and install PCB on your computer.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial">Prerequisites</font>
+        </h2>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">Operating System</font>
+        </h3>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Currently PCB runs on unix like operating systems such as Linux, NetBSD, Solaris, FreeBSD, Mac OS X, etc. In addition PCB will work on a windows computer
+        using <a href="http://www.cygwin.com/">cygwin</a>. It is also possible to compile PCB using <a href="http://www.mingw.org/">mingw</a> on windows using the <tt>win32/build_pcb.sh</tt>
+        script.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <h3><font face="helvetica, arial">External Libraries</font>
+        </h3>
+        <font face="helvetica, arial"></font>
+
+        <ul>
+          <li><font face="helvetica, arial">GUI toolkit. Currently PCB supports either <a href="http://www.gtk.org">gtk</a> or <a href="http://www.lesstif.org">lesstif</a>/motif based guis. If you
+          are using the GTK based gui, you will need gtk-2.4.0 or newer. If you are using the lesstif based gui you will need lesstif, openmotif, or motif.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">If you wish to export your layout to png, jpeg, or gif formats you will need the <a href="http://www.libgd.org">GD library</a>. If you do not have this
+          library you will need to disable the png HID at configure time.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">GNU m4. In particular your m4 must support -F for frozen files.</font>
+          </li>
+
+
+          <li><font face="helvetica, arial">wish (part of tcl/tk). If not installed, set WISH=/bin/false in your configure environment and you just won't get the graphical QFP footprint
+          builder</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">A suitable make program. <a href="http://www.gnu.org/software/make/">GNU make</a> will work as will the make which comes with NetBSD and some of the other
+          *BSD operating systems. Other system make programs have not been tested.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial"><a href="http://flex.sourceforge.net/">flex</a></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial"><a href="http://www.gnu.org/software/bison/">bison</a></font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+
+
+          <li><font face="helvetica, arial">A C compiler. Although most development of PCB is done using <a href="http://gcc.gnu.org">gcc</a>, PCB is known to build with the Sun Studio C
+          compiler.</font>
+          </li>
+
+
+          <li style="list-style: none"><font face="helvetica, arial"></font>
+          </li>
+        </ul>
+
+
+        <h2><font face="helvetica, arial">Download the Sources -- Snapshot Releases</font>
+        </h2>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">PCB is distributed in source code format. Periodic snapshot releases are made which help the average user build and install the software. The latest snapshots
+        may be found on <a href="http://sourceforge.net/project/showfiles.php?group_id=73743">the PCB file release page</a>.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial">Tracking the Latest</font>
+        </h2>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">PCB uses <a href="http://git-scm.com/">git</a> for source code management. For more information on the git repository used by PCB see <a href=
+        "http://www.geda-project.org/wiki/geda:scm">the gEDA scm wiki page</a><br>
+        <br>
+        To perform an initial check out of PCB sources via anonymous GIT, run the following:<br>
+        <br>
+        <tt>git clone git://git.geda-project.org/pcb.git</tt><br>
+        <br>
+        In addition (for those who don't have git), you may obtain the latest sources via anonymous CVS. To perform an initial check out of PCB sources via anonymous CVS, run the following:<br>
+        <br>
+        <tt>cvs -d :pserver:anonymous@git.geda-project.org/home/git/pcb.git co master</tt><br>
+        <br>
+        If you have a checked out source tree from the sourceforge anonymous CVS repository, then you will need to replace the contents of all the CVS/Root files with
+        <tt>:pserver:anonymous@git.geda-project.org/home/git/pcb.git</tt>. A shell script can automate that procedure.<br>
+        <br>
+        Users intending to do development work on PCB, and/or submit patches should ideally check out from the git repository.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Those who wish to build from CVS or git sources instead of one of the snapshots should read the <a href=
+        "http://git.geda-project.org/pcb/plain/README.git">README.git</a> in the top of the source tree for instructions. Note that for most users, the snapshot releases should be sufficient.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+      </td>
+    </tr>
+    <!-- The left hand column -->
+
+
+    <tr>
+      <td valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td><img alt="[PCB Logo]" height="111" src="images/logo-small.png" width="165">
+            </td>
+          </tr>
+        </table>
+        <br>
+
+
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#000000">
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td bgcolor="#E0E0F0" nowrap><font color="#000066" face="helvetica, arial"><b>Information</b></font>
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td bgcolor="#FFFFFF" nowrap><font face="helvetica, arial" size="-1">&nbsp;<a href="bugs.html">Bug Reporting</a><br>
+                  &nbsp;<a href="contributing.html">How to Help</a><br>
+                  &nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
+                  &nbsp;<a href="faq.html">F.A.Q.</a><br>
+                  &nbsp;<a href="index.html">Home</a><br>
+                  &nbsp;<a href="obtaining.html">How to Get PCB</a><br>
+                  &nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
+                  &nbsp;<a href="links.html">Links</a><br>
+                  &nbsp;<a href="manual.html">Manual</a><br>
+                  &nbsp;<a href="news.html">News</a><br>
+                  &nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
+                  &nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
+                  <br>
+                  &nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br></font>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
   </table>
 
-  <br>
-  <table width="100%" cellspacing=0 cellpadding=2 border=0>
-  <tr>
-  <td bgcolor="#000000">
-    <table width="100%" cellspacing=0 cellpadding=4 border=0>
-  <tr><td bgcolor="#e0e0f0" nowrap>
-    <font face="helvetica, arial" color="#000066">
-      <b>Information</b>
-    </font>
-    </td></tr>
-   <tr><td bgcolor="#FFFFFF" nowrap>
-      <font face="helvetica, arial" size="-1">
-	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
-	&nbsp;<a href="contributing.html">How to Help</a><br>
-	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
-	&nbsp;<a href="faq.html">F.A.Q.</a><br>
-	&nbsp;<a href="index.html">Home</a><br>
-	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
-	&nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
-	&nbsp;<a href="links.html">Links</a><br>
-	&nbsp;<a href="manual.html">Manual</a><br>
-	&nbsp;<a href="news.html">News</a><br>
-	&nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
-	&nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
-	<br>
-	&nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br>
-      </font>
-    </td></tr></table>
-    </td></tr>
-  </table>
 
-  <br>
-
-  </td>
-</tr>
+  <p>
+  </p>
 
 
-
-  </table>
-    <p>
-
-      <center>
-<!--
+  <center>
+    <!--
   <A href="http://sourceforge.net"><IMG
      src="http://sourceforge.net/sflogo.php?group_id=73743&amp;type=5" 
      width="210"
@@ -205,20 +219,18 @@
      alt="SourceForge.net Logo"></A> 
 -->
 
-<table border=0 cellpadding=0 cellspacing=0><tr>
-  <td width=25>&nbsp;</td>
-  <td valign="top" align="center">
 
-  <address>
-    <font color="#000000" size="-1">
-    </font>
-  </address>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25">&nbsp;</td>
 
-  </td>
-</tr></table>
-</center>
-
-
-
-  </body>
+        <td align="center" valign="top">
+          <address>
+            <font color="#000000" size="-1"></font>
+          </address>
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
 </html>

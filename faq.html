@@ -1,197 +1,190 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE html>
 
 <html>
 <head>
-<link rev="made" href="mailto:dan_at_mcmahill_net">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<title>PCB F.A.Q.</title>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="DESCRIPTION" content="PCB:  Interactive printed circuit board editor">
-<meta name="KEYWORDS" content="
-pcb,
-PCB,
-pwb,
-PWB,
-printed circuit board,
-gerber,
-rs274x,
-">
-</head>
+  <link href="mailto:dan_at_mcmahill_net" rev="made">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
+  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-<!-- Start the main page table -->
-<body bgcolor="#ffffff" text="#000000" link="#3535c5" vlink="#700080">
-
-<table border="0" cellspacing="0" cellpadding="5"><tr>
-  <td></td>
-  <td rowspan=4 valign="top" width="100%">
+  <title>PCB F.A.Q.</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="PCB: Interactive printed circuit board editor" name="DESCRIPTION">
+  <meta content=" pcb, PCB, pwb, PWB, printed circuit board, gerber, rs274x," name="KEYWORDS">
+</head><!-- Start the main page table -->
 
 
+<body bgcolor="#FFFFFF" link="#3535C5" text="#000000" vlink="#700080">
+  <table border="0" cellpadding="5" cellspacing="0">
+    <tr>
+      <td>
+      </td>
 
-<!-- The main action area -->
-    <center>
-    <font face="helvetica, arial" size="+2">
-      PCB F.A.Q.
-    </font>
-    <br>
-    <br>
-    </center>
-    
-    <font face="helvetica, arial">
-    <UL>
-    <LI><A HREF="#windows">What about PCB under Windows?</A></LI>
+      <td rowspan="4" valign="top" width="100%">
+        <!-- The main action area -->
 
-    <LI><A HREF="#wrongautconf">When I try to bootstrap and build the git or anonymous CVS version,
-    autogen.sh complains of configure.in missing</A></LI>
 
-    <LI><A HREF="#tcltk"><tt>configure</tt> complains that wish is not found, but I
-    have TCL/TK installed!</A></LI>
+        <center>
+          <font face="helvetica, arial" size="+2">PCB F.A.Q.</font><br>
+          <br>
+        </center>
+        <font face="helvetica, arial"></font>
 
-    <LI><A HREF="#flex">When compiling, yywrap is missing during linking.</A></LI>
+        <ul>
+          <li><font face="helvetica, arial"><a href="#windows">What about PCB under Windows?</a></font>
+          </li>
 
-    </UL>
 
-    <HR>
+          <li><font face="helvetica, arial"><a href="#wrongautconf">When I try to bootstrap and build the git or anonymous CVS version, autogen.sh complains of configure.in missing</a></font>
+          </li>
 
-    <H2>Can I run PCB on my favorite operating system?</H2>
-    <p>
-	PCB should run under any unix-like operating system.  To do useful work,
-	you need either <a href="http://www.lesstif.org">lesstif</a> or
-	<a href="http://www.gtk.org">gtk</a> on your system.
-    </p>
-    
-    <H2><A NAME="windows">What about PCB under Windows?</A></H2>
-    <p>
-	Recent snapshots of PCB will build under cygwin and/or mingw.  In addition
-	there is a windows installer in the file release area.  
-	Please note that windows is not the typical platform of PCB
-	developers and support for this port may be lacking.
-    </p>
-   
-    <HR>
 
-    <H2><A NAME="wrongautconf">When I try to bootstrap and build the git or anonymous CVS version,
-    autogen.sh complains of configure.in missing</A></H2>
-    <p>
-    Make sure you have a recent version of autoconf installed.  Version 2.13 is too old.
-    Try running	"<code>autoconf --version</code>" 
-    to figure out what version
-    you have.
-    </p>
-    
-    <HR>
+          <li><font face="helvetica, arial"><a href="#tcltk"><tt>configure</tt> complains that wish is not found, but I have TCL/TK installed!</a></font>
+          </li>
 
-    <H2><A NAME="tcltk"><tt>configure</tt> complains that wish is not found, but I
-    have TCL/TK installed!</A></H2>
-    <p>
-    If you get a message like the following:<br>
-    <tt>
-configure: error: Did not find the wish executible.  You need to make sure
-        that tcl is installed on your system and that wish is in your path
-	</tt>
-	<br>
-	This can happen if the wish program that comes with TK is not
-    called "wish" on your system.  In this case, you need to set the
-    WISH environment variable to the complete path to the wish
-    executible.  For example in <tt>sh/ksh/bash</tt>:
-    <br><tt>
-	WISH=/usr/bin/wish83<br>
-	export WISH<br>
-	</tt>
-	or in <tt>csh/tcsh</tt>:
-    <br><tt>
-	setenv WISH /usr/bin/wish84<br>
-	</tt>
-    </p>
-    <p>
-    Now when you run the <tt>./configure</tt> script, it should be
-    possible to find wish.
-    </p>
 
-    <HR>
+          <li><font face="helvetica, arial"><a href="#flex">When compiling, yywrap is missing during linking.</a></font>
+          </li>
+        </ul>
 
-    <H2><A NAME="flex">When compiling, yywrap is missing during linking.</A></H2>
-    <P>
-    If you get a message like the following:<BR>
-    <PRE>
+        <hr>
+
+
+        <h2><font face="helvetica, arial">Can I run PCB on my favorite operating system?</font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">PCB should run under any unix-like operating system. To do useful work, you need either <a href="http://www.lesstif.org">lesstif</a> or <a href=
+        "http://www.gtk.org">gtk</a> on your system.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <h2><font face="helvetica, arial"><a id="windows" name="windows">What about PCB under Windows?</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Recent snapshots of PCB will build under cygwin and/or mingw. In addition there is a windows installer in the file release area. Please note that windows is
+        not the typical platform of PCB developers and support for this port may be lacking.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="wrongautconf" name="wrongautconf">When I try to bootstrap and build the git or anonymous CVS version, autogen.sh complains of configure.in
+        missing</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">Make sure you have a recent version of autoconf installed. Version 2.13 is too old. Try running "<code>autoconf --version</code>" to figure out what version
+        you have.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="tcltk" name="tcltk"><tt>configure</tt> complains that wish is not found, but I have TCL/TK installed!</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">If you get a message like the following:<br>
+        <tt>configure: error: Did not find the wish executible. You need to make sure that tcl is installed on your system and that wish is in your path</tt><br>
+        This can happen if the wish program that comes with TK is not called "wish" on your system. In this case, you need to set the WISH environment variable to the complete path to the wish
+        executible. For example in <tt>sh/ksh/bash</tt>:<br>
+        <tt>WISH=/usr/bin/wish83<br>
+        export WISH<br></tt> or in <tt>csh/tcsh</tt>:<br>
+        <tt>setenv WISH /usr/bin/wish84<br></tt></font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <p><font face="helvetica, arial">Now when you run the <tt>./configure</tt> script, it should be possible to find wish.</font>
+        </p>
+        <font face="helvetica, arial"></font>
+
+        <hr>
+
+
+        <h2><font face="helvetica, arial"><a id="flex" name="flex">When compiling, yywrap is missing during linking.</a></font>
+        </h2>
+
+
+        <p><font face="helvetica, arial">If you get a message like the following:<br></font>
+        </p>
+
+        <pre><font face="helvetica, arial">
     Undefined         first referenced
      symbol                in file
      yywrap               parse_l.o
      ld: fatal: Symbol referencing errors. No output....
-    </PRE>
-    <BR>when trying to compile PCB, it is probably because you do not have
-    <A HREF="http://www.gnu.org/software/flex/flex.html">flex</A> installed
-    on your system or the <tt>configure</tt> script did not find it.  You 
-    may need to help out <tt>configure</tt> if flex is not installed in the
-    standard system library directory.  For example, if you have installed 
-    flex in <tt>/opt/flex</tt> then you'll want to use something like:<br>
-    <tt>env LDFLAGS="-L/opt/flex/lib" ./configure</tt><br>
-    to make sure the linker can find libfl.a.
-    </P>
+    </font></pre><font face="helvetica, arial"><br>
+        when trying to compile PCB, it is probably because you do not have <a href="http://www.gnu.org/software/flex/flex.html">flex</a> installed on your system or the <tt>configure</tt> script did
+        not find it. You may need to help out <tt>configure</tt> if flex is not installed in the standard system library directory. For example, if you have installed flex in <tt>/opt/flex</tt> then
+        you'll want to use something like:<br>
+        <tt>env LDFLAGS="-L/opt/flex/lib" ./configure</tt><br>
+        to make sure the linker can find libfl.a.<br>
+        <br></font>
 
-    <HR>
+        <hr>
+        <font face="helvetica, arial"></font>
+      </td>
+    </tr>
+    <!-- The left hand column -->
 
-    </font>
 
-  </td>
+    <tr>
+      <td valign="top">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+            <td><img alt="[PCB Logo]" height="111" src="images/logo-small.png" width="165">
+            </td>
+          </tr>
+        </table>
+        <br>
 
-</tr>
 
-<!-- The left hand column -->
-<tr>
-  <td valign="top">
+        <table border="0" cellpadding="2" cellspacing="0" width="100%">
+          <tr>
+            <td bgcolor="#000000">
+              <table border="0" cellpadding="4" cellspacing="0" width="100%">
+                <tr>
+                  <td bgcolor="#E0E0F0" nowrap><font color="#000066" face="helvetica, arial"><b>Information</b></font>
+                  </td>
+                </tr>
 
-  <table width="100%" cellspacing=0 cellpadding=0 border=0>
-  <tr>
-  <td>
-  <img src="images/logo-small.png" width="165" height="111"
-   alt="[PCB Logo]">
-  </td></tr>
+
+                <tr>
+                  <td bgcolor="#FFFFFF" nowrap><font face="helvetica, arial" size="-1">&nbsp;<a href="bugs.html">Bug Reporting</a><br>
+                  &nbsp;<a href="contributing.html">How to Help</a><br>
+                  &nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
+                  &nbsp;<a href="faq.html">F.A.Q.</a><br>
+                  &nbsp;<a href="index.html">Home</a><br>
+                  &nbsp;<a href="obtaining.html">How to Get PCB</a><br>
+                  &nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
+                  &nbsp;<a href="links.html">Links</a><br>
+                  &nbsp;<a href="manual.html">Manual</a><br>
+                  &nbsp;<a href="news.html">News</a><br>
+                  &nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
+                  &nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
+                  <br>
+                  &nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br></font>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </td>
+    </tr>
   </table>
 
-  <br>
-  <table width="100%" cellspacing=0 cellpadding=2 border=0>
-  <tr>
-  <td bgcolor="#000000">
-    <table width="100%" cellspacing=0 cellpadding=4 border=0>
-  <tr><td bgcolor="#e0e0f0" nowrap>
-    <font face="helvetica, arial" color="#000066">
-      <b>Information</b>
-    </font>
-    </td></tr>
-   <tr><td bgcolor="#FFFFFF" nowrap>
-      <font face="helvetica, arial" size="-1">
-	&nbsp;<a href="bugs.html">Bug Reporting</a><br>
-	&nbsp;<a href="contributing.html">How to Help</a><br>
-	&nbsp;<a href="http://sourceforge.net/project/showfiles.php?group_id=73743">Downloads</a><br>
-	&nbsp;<a href="faq.html">F.A.Q.</a><br>
-	&nbsp;<a href="index.html">Home</a><br>
-	&nbsp;<a href="obtaining.html">How to Get PCB</a><br>
-	&nbsp;<a href="http://www.delorie.com/pcb/docs/gs/gs.html">Getting Started With PCB</a><br>
-	&nbsp;<a href="links.html">Links</a><br>
-	&nbsp;<a href="manual.html">Manual</a><br>
-	&nbsp;<a href="news.html">News</a><br>
-	&nbsp;<a href="http://launchpad.net/pcb/">Launchpad Project Page</a><br>
-	&nbsp;<a href="http://sourceforge.net/projects/pcb/">Sourceforge Project Page</a><br>
-	<br>
-	&nbsp;<a href="http://www.geda-project.org/">gEDA Home Page</a><br>
-      </font>
-    </td></tr></table>
-    </td></tr>
-  </table>
 
-  <br>
-
-  </td>
-</tr>
+  <p>
+  </p>
 
 
-
-</table>
-<p>
-
-<center>
-<!--
+  <center>
+    <!--
   <A href="http://sourceforge.net"><IMG
      src="http://sourceforge.net/sflogo.php?group_id=73743&amp;type=5" 
      width="210"
@@ -200,20 +193,18 @@ configure: error: Did not find the wish executible.  You need to make sure
      alt="SourceForge.net Logo"></A> 
 -->
 
-<table border=0 cellpadding=0 cellspacing=0><tr>
-  <td width=25>&nbsp;</td>
-  <td valign="top" align="center">
 
-  <address>
-    <font color="#000000" size="-1">
-    </font>
-  </address>
+    <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="25">&nbsp;</td>
 
-  </td>
-</tr></table>
-</center>
-
-
-
+        <td align="center" valign="top">
+          <address>
+            <font color="#000000" size="-1"></font>
+          </address>
+        </td>
+      </tr>
+    </table>
+  </center>
 </body>
 </html>
