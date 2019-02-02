@@ -35,6 +35,77 @@ rs274x,
     <font face="helvetica, arial">
 
 
+    <!-- ********************* pcb-4.2.0 ********************** -->
+    <HR>
+    <H2><A NAME="4.2.0">PCB Release 4.2.0 available</A></H2>
+    <p>
+Dear Users,<br>
+<br>
+This release introduces a file format change.<br>
+<br>
+This is required by the improved routing style feature.<br>
+<br>
+Kind regards,<br>
+<br>
+The pcb development team.<br>
+<br>
+
+<h3>Contributors</h3>
+The following authors contributed to 4.2.0 release:<br>
+<ul>
+  <li>Charles Parker</li>
+  <li>Rob Spanton</li>
+  <li>Peter Clifton</li>
+  <li>DJ Delorie</li>
+  <li>Bert Timmerman</li>
+</ul>
+Please note that names are in no particular order and all e-mail
+addresses have been removed for privacy.<br>
+<br>
+
+<h3>User experience improvements</h3>
+<ul>
+  <li>Improved routing styles.</li>
+  <li>Improved DRC testing.</li>
+</ul>
+
+<h3>Plugins</h3>
+<ul>
+  <li>none</li>
+</ul>
+
+<h3>Exporters</h3>
+<ul>
+  <li>Footprint attributes can now be added to the Bill of Materials [BOM]
+      in a similar way as with gschem by defining attributes in a input
+      file.</li>
+  <li>XY output for Pick-and-Place now has proper values for non mm and mil
+      units.</li>
+</ul>
+
+<h3>Footprints library</h3>
+<ul>
+  <li>none</li>
+</ul>
+
+<h3>Developer experience improvements</h3>
+<ul>
+  <li>Batch has become the default UI (non-GUI) for 'make distcheck' in
+      order to run regression tests without a GUI being in the way.</li>
+  <li>Added regression tests.</li>
+</ul>
+
+<h3>Notes for packagers</h3>
+<ul>
+  <li>For building packages with a GTK UI or a Lesstif UI, configure with
+      the --with-gui=gtk or --with-gui=lesstif option (as usual).</li>
+</ul>
+
+<h3>Changed dependencies</h3>
+<ul>
+  <li>none</li>
+</ul>
+
     <!-- ********************* pcb-4.1.3 ********************** -->
     <HR>
     <H2><A NAME="4.1.3">PCB Release 4.1.3 available</A></H2>
