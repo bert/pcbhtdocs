@@ -47,6 +47,10 @@
       <!-- Recent news  -->
 
       <li><font face="helvetica, arial" size="-1">
+	  <a href="news.html#4.2.2">pcb-4.2.2 release available</a>
+	</font></li>
+
+      <li><font face="helvetica, arial" size="-1">
 	  <a href="news.html#4.2.1">pcb-4.2.1 release available</a>
 	</font></li>
 
