@@ -35,6 +35,78 @@ rs274x,
     <font face="helvetica, arial">
 
 
+    <!-- ********************* pcb-4.3.0 ********************** -->
+    <HR>
+    <H2><A NAME="4.2.2">PCB Release 4.3.0 available</A></H2>
+    <p>
+Dear Users,<br>
+<br>
+This is a feature release (no pcb file format change).<br>
+<br>
+This is a feature release as the footprint file format now allows for
+stating the pad center and length, width parameters. This is in addition
+to the existing footprint format. pcb parses both definitions.  
+<br>
+Kind regards,<br>
+<br>
+The pcb development team.<br>
+<br>
+
+<h3>Contributors</h3>
+The following authors contributed to this release:<br>
+<ul>
+<li>Charles Parker</li>
+<li>Bert Timmerman</li>
+</ul>
+Please note that names are in no particular order and all e-mail
+addresses have been removed for privacy.<br>
+<br>
+
+<h3>User experience improvements</h3>
+<ul>
+<li>the gtk hid no longer hides "clearline" lines, arcs, text under polygons in
+  "thin draw" mode.</li>
+<li>Updated zoom action comments.</li>
+<li>Pads can now be defined by centerpoint coordinates and length, width parameters.</li>
+<li>Pcb is no longer quiet when a save operation fails.</li>
+</ul>
+
+<h3>Plugins</h3>
+<ul>
+<li>none</li>
+</ul>
+
+
+<h3>Exporters</h3>
+<ul>
+<li>added an exporter for a BOM in MarkDown format.</li>
+</ul>
+
+
+<h3>Footprints library</h3>
+<ul>
+<li>none</li>
+</ul>
+
+
+<h3>Developer experience improvements</h3>
+<ul>
+<li>none</li>
+</ul>
+
+
+<h3>Notes for package builders</h3>
+<ul>
+<li>For building packages with a GTK UI or a Lesstif UI, configure with
+  the --with-gui=gtk or --with-gui=lesstif option (as usual).</li>
+<li>Added a --with-gaf-datadir configure option.</li>
+</ul>
+
+<h3>Changed dependencies</h3>
+<ul>
+<li>none</li>
+</ul>
+
     <!-- ********************* pcb-4.2.2 ********************** -->
     <HR>
     <H2><A NAME="4.2.2">PCB Release 4.2.2 available</A></H2>
